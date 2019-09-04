@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>WorkerStateGUI.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CarcasaJavaFX</a> &gt; <a href="index.source.html" class="el_package">concurrent</a> &gt; <span class="el_source">WorkerStateGUI.java</span></div><h1>WorkerStateGUI.java</h1><pre class="source lang-java linenums">package concurrent;
+
+import javafx.beans.binding.When;
+import javafx.collections.ObservableList;
+import javafx.concurrent.Worker;
+import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
+public class WorkerStateGUI extends GridPane
+{
+	// Create the Labels
+<span class="nc" id="L17">	private final Label title = new Label(&quot;&quot;);</span>
+<span class="nc" id="L18">	private final Label message = new Label(&quot;&quot;);</span>
+<span class="nc" id="L19">	private final Label running = new Label(&quot;&quot;);</span>
+<span class="nc" id="L20">	private final Label state = new Label(&quot;&quot;);</span>
+<span class="nc" id="L21">	private final Label totalWork = new Label(&quot;&quot;);</span>
+<span class="nc" id="L22">	private final Label workDone = new Label(&quot;&quot;);</span>
+<span class="nc" id="L23">	private final Label progress = new Label(&quot;&quot;);</span>
+
+	// Create the TextAreas
+<span class="nc" id="L26">	private final TextArea value = new TextArea(&quot;&quot;);</span>
+<span class="nc" id="L27">	private final TextArea exception = new TextArea(&quot;&quot;);</span>
+
+	// Create the ProgressBar
+<span class="nc" id="L30">	private final ProgressBar progressBar = new ProgressBar();</span>
+
+	public WorkerStateGUI()
+<span class="nc" id="L33">	{</span>
+<span class="nc" id="L34">		addGUI();</span>
+<span class="nc" id="L35">	}</span>
+
+	public WorkerStateGUI(Worker&lt;ObservableList&lt;Long&gt;&gt; worker)
+<span class="nc" id="L38">	{</span>
+<span class="nc" id="L39">		addGUI();</span>
+<span class="nc" id="L40">		bindToWorker(worker);</span>
+<span class="nc" id="L41">	}</span>
+
+	private void addGUI()
+	{
+<span class="nc" id="L45">		value.setPrefColumnCount(20);</span>
+<span class="nc" id="L46">		value.setPrefRowCount(3);</span>
+<span class="nc" id="L47">		exception.setPrefColumnCount(20);</span>
+<span class="nc" id="L48">		exception.setPrefRowCount(3);</span>
+
+<span class="nc" id="L50">		this.setHgap(5);</span>
+<span class="nc" id="L51">		this.setVgap(5);</span>
+
+<span class="nc" id="L53">		addRow(0, new Label(&quot;Title:&quot;), title);</span>
+<span class="nc" id="L54">		addRow(1, new Label(&quot;Message:&quot;), message);</span>
+<span class="nc" id="L55">		addRow(2, new Label(&quot;Running:&quot;), running);</span>
+<span class="nc" id="L56">		addRow(3, new Label(&quot;State:&quot;), state);</span>
+<span class="nc" id="L57">		addRow(4, new Label(&quot;Total Work:&quot;), totalWork);</span>
+<span class="nc" id="L58">		addRow(5, new Label(&quot;Work Done:&quot;), workDone);</span>
+<span class="nc" id="L59">		addRow(6, new Label(&quot;Progress:&quot;), new HBox(2, progressBar, progress));</span>
+<span class="nc" id="L60">		addRow(7, new Label(&quot;Value:&quot;), value);</span>
+<span class="nc" id="L61">		addRow(8, new Label(&quot;Exception:&quot;), exception);</span>
+<span class="nc" id="L62">	}</span>
+
+	public void bindToWorker(final Worker&lt;ObservableList&lt;Long&gt;&gt; worker)
+	{
+		// Bind Labels to the properties of the worker
+<span class="nc" id="L67">		title.textProperty().bind(worker.titleProperty());</span>
+<span class="nc" id="L68">		message.textProperty().bind(worker.messageProperty());</span>
+<span class="nc" id="L69">		running.textProperty().bind(worker.runningProperty().asString());</span>
+<span class="nc" id="L70">		state.textProperty().bind(worker.stateProperty().asString());</span>
+
+<span class="nc" id="L72">		totalWork.textProperty().bind(</span>
+<span class="nc" id="L73">			new When(worker.totalWorkProperty().isEqualTo(-1)).then(&quot;Unknown&quot;)</span>
+<span class="nc" id="L74">			.otherwise(worker.totalWorkProperty().asString()));</span>
+
+<span class="nc" id="L76">		workDone.textProperty().bind(</span>
+<span class="nc" id="L77">			new When(worker.workDoneProperty().isEqualTo(-1)).then(&quot;Unknown&quot;)</span>
+<span class="nc" id="L78">			.otherwise(worker.workDoneProperty().asString()));</span>
+
+<span class="nc" id="L80">		progress.textProperty().bind(</span>
+<span class="nc" id="L81">			new When(worker.progressProperty().isEqualTo(-1)).then(&quot;Unknown&quot;)</span>
+<span class="nc" id="L82">			.otherwise(worker.progressProperty().multiply(100.0).asString(&quot;%.2f%%&quot;)));</span>
+
+<span class="nc" id="L84">		progressBar.progressProperty().bind(worker.progressProperty());</span>
+<span class="nc" id="L85">		value.textProperty().bind(worker.valueProperty().asString());</span>
+
+<span class="nc" id="L87">		worker.exceptionProperty().addListener(new ChangeListener&lt;Throwable&gt;()</span>
+<span class="nc" id="L88">		{</span>
+			public void changed(ObservableValue&lt;? extends Throwable&gt; prop,
+		            final Throwable oldValue, final Throwable newValue)
+			{
+<span class="nc bnc" id="L92" title="All 2 branches missed.">				if (newValue != null)</span>
+				{
+<span class="nc" id="L94">					exception.setText(newValue.getMessage());</span>
+				}
+				else
+				{
+<span class="nc" id="L98">					exception.setText(&quot;&quot;);</span>
+				}
+<span class="nc" id="L100">			}</span>
+		});
+<span class="nc" id="L102">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
