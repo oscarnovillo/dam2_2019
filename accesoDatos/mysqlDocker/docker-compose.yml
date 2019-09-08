@@ -8,6 +8,6 @@ services:
         ports:
             - "3309:3306"
         volumes:
-            - /C/Users/oscar/Documents/CLASES ALCALA/2019-2020/dam2_2019/accesoDatos/mysqlDocker/mysql-data:/var/lib/mysql
+            - ${DATA}:/var/lib/mysql
        
     
