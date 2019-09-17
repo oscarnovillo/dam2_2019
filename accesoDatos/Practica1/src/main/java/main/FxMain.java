@@ -5,6 +5,7 @@
  */
 package main;
 
+import config.ConfigurationProperties;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -29,6 +30,11 @@ public class FxMain extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
         primaryStage.setResizable(false);
+        
+        //ConfigurationProperties c = new ConfigurationProperties();
+        
+        System.out.println(ConfigurationProperties.getInstance().getClave());
+        System.out.println(ConfigurationProperties.getInstance().getP().getProperty("claves"));
     }
     
     

@@ -1,0 +1,7 @@
+## YAML Template.
+---
+clave: valor
+claves:
+    - valor1
+    - valor2
+    - valor3
