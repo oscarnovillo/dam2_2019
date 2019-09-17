@@ -32,16 +32,7 @@ public class NewServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet NewServlet</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
+        request.getRequestDispatcher("resultado.html").forward(request, response);
 
     }
 
@@ -57,7 +48,17 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Servlet NewServlet</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h1>Servlet CON GET NewServlet at " + request.getContextPath() + "</h1>");
+        out.println("</body>");
+        out.println("</html>");
     }
 
     /**
