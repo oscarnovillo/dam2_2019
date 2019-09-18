@@ -7,6 +7,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,7 +33,9 @@ public class NewServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("resultado.html").forward(request, response);
+        request.setAttribute("test", "conseguido!!!");
+        request.setAttribute("numList", List.of("hola", "adios"));
+        request.getRequestDispatcher("jsp/resultado.jsp").forward(request, response);
 
     }
 
