@@ -34,6 +34,7 @@ public class NewServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setAttribute("test", "conseguido!!!");
+      
         request.setAttribute("numList", List.of("hola", "adios"));
         request.getRequestDispatcher("jsp/resultado.jsp").forward(request, response);
 
