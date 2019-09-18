@@ -7,6 +7,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,16 +33,10 @@ public class NewServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet NewServlet</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
+        request.setAttribute("test", "conseguido!!!");
+      
+        request.setAttribute("numList", List.of("hola", "adios"));
+        request.getRequestDispatcher("jsp/resultado.jsp").forward(request, response);
 
     }
 
@@ -57,7 +52,17 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        out.println("<!DOCTYPE html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>Servlet NewServlet</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h1>Servlet CON GET NewServlet at " + request.getContextPath() + "</h1>");
+        out.println("</body>");
+        out.println("</html>");
     }
 
     /**
