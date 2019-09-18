@@ -31,10 +31,7 @@ public class FxMain extends Application {
         primaryStage.show();
         primaryStage.setResizable(false);
         
-        //ConfigurationProperties c = new ConfigurationProperties();
-        
-        System.out.println(ConfigurationProperties.getInstance().getClave());
-        System.out.println(ConfigurationProperties.getInstance().getP().getProperty("claves"));
+
     }
     
     

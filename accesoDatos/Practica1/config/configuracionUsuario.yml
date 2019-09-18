@@ -1,7 +1,7 @@
 ## YAML Template.
 ---
-clave: valor
+clave: valorYaml
 claves:
-    - valor1
-    - valor2
-    - valor3
+    - valor1Yaml
+    - valor2Yaml
+    - valor3Yaml

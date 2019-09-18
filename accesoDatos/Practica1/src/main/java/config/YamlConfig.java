@@ -7,6 +7,7 @@ package config;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.yaml.snakeyaml.Yaml;
@@ -22,6 +23,29 @@ public class YamlConfig {
     private YamlConfig() {
 
     }
+    
+    private String clave;
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+    
+    
+    private List<String> claves;
+
+    public List<String> getClaves() {
+        return claves;
+    }
+
+    public void setClaves(List<String> claves) {
+        this.claves = claves;
+    }
+    
+    
 
     public static YamlConfig getInstance() {
 
