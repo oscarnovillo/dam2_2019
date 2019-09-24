@@ -33,10 +33,28 @@ public class NewServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setAttribute("test", "conseguido!!!");
-      
-        request.setAttribute("numList", List.of("hola", "adios"));
-        request.getRequestDispatcher("jsp/resultado.jsp").forward(request, response);
+
+        String op = request.getParameter("OP");
+        switch (op) {
+            case "SUMAR":
+                
+                break;
+            default:
+                throw new AssertionError();
+        }
+        if (request.getParameter("num") != null) {
+            int num = Integer.parseInt(request.getParameter("num"));
+            request.setAttribute("jjj", request.getParameter("hhh"));
+
+            request.setAttribute("test", "conseguido!!!");
+
+            request.setAttribute("numList", List.of("hola", "adios"));
+            request.getRequestDispatcher("jsp/resultado.jsp").forward(request, response);
+        } else {
+            request.setAttribute("error", "esto no funciona");
+
+            request.getRequestDispatcher("jsp/error.jsp").forward(request, response);
+        }
 
     }
 
@@ -52,17 +70,7 @@ public class NewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE html>");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Servlet NewServlet</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Servlet CON GET NewServlet at " + request.getContextPath() + "</h1>");
-        out.println("</body>");
-        out.println("</html>");
+        processRequest(request, response);
     }
 
     /**
