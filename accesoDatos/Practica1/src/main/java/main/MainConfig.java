@@ -5,6 +5,7 @@
  */
 package main;
 
+import com.sun.xml.internal.ws.util.Pool;
 import config.ConfigurationProperties;
 import config.YamlConfig;
 import java.awt.print.Book;
@@ -20,6 +21,7 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 import model.Ejemplo;
 import model.EjemplosRoot;
 
@@ -79,12 +81,14 @@ public class MainConfig {
       JAXBContext context = JAXBContext.newInstance(EjemplosRoot.class);
       Marshaller mar = context.createMarshaller();
       mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-      mar.marshal(new EjemplosRoot(ej),
+      EjemplosRoot root = new EjemplosRoot(ej);
+      mar.marshal(root,
               Files.newBufferedWriter(
                       Paths.get("files/ejemplo.xml")));
       
-      EjemplosRoot root = 
-              (EjemplosRoot)context.createUnmarshaller().unmarshal(Files.newBufferedReader(
+      Unmarshaller unmarshaller = context.createUnmarshaller();
+      root = 
+              (EjemplosRoot)unmarshaller.unmarshal(Files.newBufferedReader(
                       Paths.get("files/ejemplo.xml")));
       root.getEjemplos().forEach(System.out::println);
 
