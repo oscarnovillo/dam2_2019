@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ejemplosRoot>
     <ejemplos>
-        <title>una oveja</title>
+      <title>una oveja</title>
         <edad>23</edad>
         <fecha>2009-10-10</fecha>
     </ejemplos>

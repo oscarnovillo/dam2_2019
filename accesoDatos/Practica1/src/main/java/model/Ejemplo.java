@@ -16,7 +16,6 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
  *
  * @author oscar
  */
-@XmlRootElement
 @XmlType(propOrder = { "nombre", "edad","fecha" })
 public class Ejemplo {
   
