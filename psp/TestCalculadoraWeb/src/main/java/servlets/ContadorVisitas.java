@@ -7,7 +7,6 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author oscar
  */
-@WebServlet(name = "NewServlet", urlPatterns = {"/calculadora"})
-public class NewServlet extends HttpServlet {
+@WebServlet(name = "ContadorVisitas", urlPatterns = {"/visitas"})
+public class ContadorVisitas extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,30 +31,10 @@ public class NewServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
-//        String op = request.getParameter("OP");
-//        switch (op) {
-//            case "SUMAR":
-//                
-//                break;
-//            default:
-//                throw new AssertionError();
-//        }
-        if (request.getParameter("num") != null) {
-            int num = Integer.parseInt(request.getParameter("num"));
-            request.setAttribute("jjj", request.getParameter("hhh"));
-
-            request.setAttribute("test", "conseguido!!!");
-
-            request.setAttribute("numList", List.of("hola", "adios"));
-            request.getRequestDispatcher("jsp/resultado.jsp").forward(request, response);
-        } else {
-            request.setAttribute("error", "esto no funciona");
-
-            request.getRequestDispatcher("jsp/error.jsp").forward(request, response);
-        }
-
+        if (null == request.getSession().getAttribute("contador"))
+            request.getSession().setAttribute("contador", 0);
+         
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
