@@ -48,7 +48,7 @@ public class NewServlet extends HttpServlet {
 
             request.setAttribute("test", "conseguido!!!");
 
-            request.setAttribute("numList", List.of("hola", "adios"));
+            //request.setAttribute("numList", List.of("hola", "adios"));
             request.getRequestDispatcher("jsp/resultado.jsp").forward(request, response);
         } else {
             request.setAttribute("error", "esto no funciona");
