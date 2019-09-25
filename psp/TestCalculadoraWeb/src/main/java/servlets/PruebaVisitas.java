@@ -6,6 +6,7 @@
 package servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author oscar
  */
-@WebServlet(name = "ContadorVisitas", urlPatterns = {"/visitas"})
-public class ContadorVisitas extends HttpServlet {
+@WebServlet(name = "PruebaVisitas", urlPatterns = {"/pruebaVisitas"})
+public class PruebaVisitas extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,16 +31,11 @@ public class ContadorVisitas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int visitas = 0;
         
-        if (null != request.getSession().getAttribute("contador"))
-            visitas = (Integer)request.getSession().getAttribute("contador");
         
-        visitas++;
+        response.getWriter().println("visitas "+
+                request.getSession().getAttribute("contador"));
         
-        request.getSession().setAttribute("contador",visitas);
-        
-        response.getWriter().println("visitas "+visitas);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
