@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ContadorVisitas", urlPatterns = {"/visitas"})
 public class ContadorVisitas extends HttpServlet {
 
+    public static final String CONTADOR = "contador";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,12 +33,12 @@ public class ContadorVisitas extends HttpServlet {
             throws ServletException, IOException {
         int visitas = 0;
         
-        if (null != request.getSession().getAttribute("contador"))
-            visitas = (Integer)request.getSession().getAttribute("contador");
+        if (null != request.getSession().getAttribute(CONTADOR))
+            visitas = (Integer)request.getSession().getAttribute(CONTADOR);
         
         visitas++;
         
-        request.getSession().setAttribute("contador",visitas);
+        request.getSession().setAttribute(CONTADOR,visitas);
         
         response.getWriter().println("visitas "+visitas);
     }
