@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="TestCalculadoraWeb" options="-endorseddirs C:\Users\oscar\IdeaProjects\dam2_2019\psp\TestCalculadoraWeb\target/endorsed" />
+      <module name="TestCalculadoraWeb" options="-endorseddirs &quot;C:\Users\oscar\Documents\CLASES ALCALA\2019-2020\CODIGO\dam2_2019\psp\TestCalculadoraWeb\target/endorsed&quot;" />
     </option>
   </component>
 </project>
