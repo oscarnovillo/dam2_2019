@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ContadorVisitas", urlPatterns = {"/visitas"})
 public class ContadorVisitas extends HttpServlet {
 
+    public static final String CONTADOR = "contador";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
