@@ -34,28 +34,21 @@ public class NewServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-//        String op = request.getParameter("OP");
-//        switch (op) {
-//            case "SUMAR":
-//                
-//                break;
-//            default:
-//                throw new AssertionError();
-//        }
-        if (request.getParameter("num") != null) {
-            int num = Integer.parseInt(request.getParameter("num"));
-            request.setAttribute("jjj", request.getParameter("hhh"));
+       
+            if (request.getParameter("num") != null) {
+                int num = Integer.parseInt(request.getParameter("num"));
+                request.setAttribute("jjj", request.getParameter("hhh"));
 
-            request.setAttribute("test", "conseguido!!!");
+                request.setAttribute("test", "conseguido!!!");
 
-            request.setAttribute("numList", List.of("hola", "adios"));
-            request.getRequestDispatcher("jsp/resultado.jsp").forward(request, response);
-        } else {
-            request.setAttribute("error", "esto no funciona");
+                request.setAttribute("numList", null);
+                request.getRequestDispatcher("jsp/resultado.jsp").forward(request, response);
+            } else {
+                request.setAttribute("error", "esto no funciona");
 
-            request.getRequestDispatcher("jsp/error.jsp").forward(request, response);
-        }
-
+                request.getRequestDispatcher("jsp/error.jsp").forward(request, response);
+            }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

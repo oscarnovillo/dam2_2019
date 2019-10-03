@@ -17,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author oscar
  */
-@WebServlet(name = "PruebaVisitas", urlPatterns = {"/private/pruebaVisitas"})
-public class PruebaVisitas extends HttpServlet {
+@WebServlet(name = "Login", urlPatterns = {"/login"})
+public class Login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,10 +31,20 @@ public class PruebaVisitas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        if (request.getParameter("user").equals("root") && 
+                request.getParameter("pass").equals("root"))
+        {
+            request.getSession().setAttribute("login", "OK");
+            response.getWriter().println("HOLA");
+        }
+        else
+        {
+            response.getWriter().println("NO PASAS");
+        }
         
-            response.getWriter().println("visitas "
-                    + request.getSession().getAttribute("contador"));
-
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

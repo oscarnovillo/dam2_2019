@@ -30,16 +30,20 @@ public class ContadorVisitas extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int visitas = 0;
         
-        if (null != request.getSession().getAttribute("contador"))
-            visitas = (Integer)request.getSession().getAttribute("contador");
+            int visitas = 0;
+
+            if (null != request.getSession().getAttribute("contador")) {
+                visitas = (Integer) request.getSession().getAttribute("contador");
+            }
+
+            visitas++;
+
+            request.getSession().setAttribute("contador", visitas);
+
+            response.getWriter().println("visitas " + visitas);
         
-        visitas++;
-        
-        request.getSession().setAttribute("contador",visitas);
-        
-        response.getWriter().println("visitas "+visitas);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
