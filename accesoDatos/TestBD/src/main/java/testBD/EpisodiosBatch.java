@@ -12,10 +12,11 @@ public class EpisodiosBatch {
 
         DBConnection db = new DBConnection();
         Connection con = db.getConnection();
+        con.setAutoCommit(false);
         Faker f = new Faker();
 
         PreparedStatement stmt = con.prepareStatement("insert into episodios (numero,id_serie) values (?,?)", Statement.RETURN_GENERATED_KEYS);
-        for (int i = 200001; i < 300000; i++) {
+        for (int i = 200000; i < 300000; i++) {
             int numeroEpisodios = f.random().nextInt(20,50);
             for (int j = 1; j < numeroEpisodios; j++) {
                 long idEpisodio = 0;
@@ -25,8 +26,10 @@ public class EpisodiosBatch {
             }
 
         }
+        System.out.println("ejecutando 200000");
         stmt.executeBatch();
-        for (int i = 400001; i < 500000; i++) {
+        System.out.println("ejecutando 200000");
+        for (int i = 400000; i < 500000; i++) {
             int numeroEpisodios = f.random().nextInt(20,50);
             for (int j = 1; j < numeroEpisodios; j++) {
                 long idEpisodio = 0;
@@ -36,8 +39,10 @@ public class EpisodiosBatch {
             }
 
         }
+        System.out.println("ejecutando 400000");
         stmt.executeBatch();
-        for (int i = 300001; i < 400000; i++) {
+        System.out.println("ejecutando 400000");
+        for (int i = 300000; i < 400000; i++) {
             int numeroEpisodios = f.random().nextInt(20,50);
             for (int j = 1; j < numeroEpisodios; j++) {
                 long idEpisodio = 0;
@@ -47,6 +52,10 @@ public class EpisodiosBatch {
             }
 
         }
+        System.out.println("ejecutando 400000");
         stmt.executeBatch();
+        System.out.println("ejecutando 400000");
+
+        con.commit();
     }
 }
