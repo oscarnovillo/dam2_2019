@@ -24,7 +24,7 @@ public class ActoresActuanSeries {
         stmt.setInt(2,i);
         stmt.addBatch();
       }
-      if ((i % 10000)==0)
+      if ((i % 1000)==0)
       {
         System.out.println(i);
         stmt.executeBatch();

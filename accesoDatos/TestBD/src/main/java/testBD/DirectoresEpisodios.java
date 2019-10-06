@@ -11,7 +11,6 @@ public class DirectoresEpisodios {
   public static void main(String[] args) throws Exception {
     DBConnection db = new DBConnection();
     Connection con = db.getConnection();
-    con.setAutoCommit(false);
     Faker f = new Faker();
 
     PreparedStatement stmt = con.prepareStatement("update episodios set id_director = ? where id = ?");
@@ -22,11 +21,10 @@ public class DirectoresEpisodios {
       stmt.setInt(1,idDirector);
       stmt.setInt(2,i);
       stmt.addBatch();
-      if ((i % 100000)==0)
+      if ((i % 10000)==0)
       {
         System.out.println(i);
         stmt.executeBatch();
-        con.commit();
         System.out.println(i);
       }
     }
