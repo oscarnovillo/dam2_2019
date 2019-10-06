@@ -1,39 +1,46 @@
 package controllers;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
+import utils.Constantes;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.net.URL;
+import java.net.*;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.ResourceBundle;
 
 public class PantallaInicioTest implements Initializable {
 
-  public MenuItem fxMenuClose;
-  public TextArea fxText;
+  @FXML
+  private MenuItem fxMenuLogin;
+  @FXML
+  private TextArea fxText;
+
+  private OkHttpClient clientOK;
 
   public void test(ActionEvent actionEvent) {
-  }
-
-  public void menuClose(ActionEvent actionEvent) {
-    Alert a = new Alert(Alert.AlertType.CONFIRMATION);
+    Alert a = new Alert(Alert.AlertType.INFORMATION);
+    a.setContentText("file");
     a.showAndWait();
   }
 
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    fxMenuClose.setText("jjjj");
 
+  @FXML
+  private void menuClose(ActionEvent actionEvent) {
+    Alert a = new Alert(Alert.AlertType.INFORMATION);
+    a.showAndWait();
+  }
+
+
+  private void pedirHttpClient11() {
     HttpClient client = HttpClient.newBuilder()
         // Redirect except https to http
         .followRedirects(HttpClient.Redirect.NORMAL)
@@ -46,15 +53,34 @@ public class PantallaInicioTest implements Initializable {
           .GET()
           .build();
 
-//      client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
-//          .thenAccept(response -> fxText.setText(response.body()));
+      client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+          .thenAccept(response -> fxText.setText(response.body()));
     } catch (URISyntaxException e) {
       e.printStackTrace();
     }
-    OkHttpClient clientOK = new OkHttpClient();
 
+  }
+
+  @Override
+  public void initialize(URL location, ResourceBundle resources) {
+    CookieManager cookieManager = new CookieManager();
+    cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+
+    clientOK = new OkHttpClient.Builder()
+        .cookieJar(new JavaNetCookieJar(cookieManager))
+        .build();
+  }
+
+  @FXML
+  private void menuLogin(ActionEvent actionEvent) {
+    HttpUrl.Builder urlBuilder
+        = HttpUrl.parse(Constantes.BASE_URL + "/login").newBuilder();
+    urlBuilder.addQueryParameter("user", "root");
+    urlBuilder.addQueryParameter("pass", "root");
+
+    String url = urlBuilder.build().toString();
     Request request = new Request.Builder()
-        .url("http://www.as.com")
+        .url(url)
         .build();
 
     Call call = clientOK.newCall(request);
@@ -69,6 +95,23 @@ public class PantallaInicioTest implements Initializable {
         fxText.setText(response.body().string());
       }
     });
+  }
+
+
+  @FXML
+  private void menuVisitas(ActionEvent actionEvent) throws IOException {
+
+    HttpUrl.Builder urlBuilder
+        = HttpUrl.parse(Constantes.BASE_URL + "/visitas").newBuilder();
+
+    String url = urlBuilder.build().toString();
+    Request request = new Request.Builder()
+        .url(url)
+        .build();
+
+    Call call = clientOK.newCall(request);
+    Response response = call.execute();
+        fxText.setText(response.body().string());
 
   }
 }

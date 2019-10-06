@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8d6dd45-f126-4b0a-87f7-a36fe07e648e" name="Default Changelist" comment="" />
+    <list default="true" id="d8d6dd45-f126-4b0a-87f7-a36fe07e648e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../CarcasaJavaFX/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CarcasaJavaFX/src/main/java/main/Main.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -477,6 +479,7 @@
       <workItem from="1569880456089" duration="195000" />
       <workItem from="1569880686958" duration="679000" />
       <workItem from="1569881386807" duration="911000" />
+      <workItem from="1570385313248" duration="133000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1569882068270</created>
