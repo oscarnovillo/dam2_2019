@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import utils.Constantes_FXML;
+import utils.ConstantesFxml;
 
 public class MainFX extends Application {
 
@@ -20,7 +20,7 @@ public class MainFX extends Application {
   @Override
   public void start(Stage primaryStage) throws Exception {
     FXMLLoader loaderMenu = new FXMLLoader(
-        getClass().getResource(Constantes_FXML.FXML_PANTALLA_INICIO_FXML));
+        getClass().getResource(ConstantesFxml.FXML_PANTALLA_INICIO_FXML));
     BorderPane root = loaderMenu.load();
     Scene scene = new Scene(root);
     primaryStage.setTitle("IES Quevedo");
