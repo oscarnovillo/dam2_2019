@@ -74,7 +74,7 @@ public class PantallaInicio implements Initializable {
   @FXML
   private void menuLogin(ActionEvent actionEvent) {
     HttpUrl.Builder urlBuilder
-        = HttpUrl.parse(Constantes.BASE_URL + "/login").newBuilder();
+        = HttpUrl.parse(Constantes.BASE_URL + Constantes.URL_LOGIN).newBuilder();
     urlBuilder.addQueryParameter("user", "root");
     urlBuilder.addQueryParameter("pass", "root");
 
