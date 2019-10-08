@@ -6,7 +6,32 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8d6dd45-f126-4b0a-87f7-a36fe07e648e" name="Default Changelist" comment="" />
+    <list default="true" id="d8d6dd45-f126-4b0a-87f7-a36fe07e648e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/filters/FilterDatos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/seguridad/Seguridad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/servlets/Cifrado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/.env" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_1.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_1.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_10.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_10.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_2.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_2.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_3.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_3.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_4.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_4.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_5.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_5.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_6.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_6.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_7.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_8.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/#innodb_temp/temp_9.ibt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/binlog.000006" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/binlog.000006" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/binlog.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/ib_logfile0" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/ibdata1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/ibtmp1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/mysql.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/undo_001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/mysqlDocker/mysql-data/undo_002" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filters/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filters/Login.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +78,16 @@
     </expand>
     <select />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -66,6 +99,7 @@
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
         <option name="jdkForImporter" value="12" />
       </MavenImportingSettings>
     </option>
@@ -81,11 +115,11 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -477,6 +511,9 @@
       <workItem from="1569880456089" duration="195000" />
       <workItem from="1569880686958" duration="679000" />
       <workItem from="1569881386807" duration="911000" />
+      <workItem from="1570433174090" duration="1035000" />
+      <workItem from="1570435078563" duration="605000" />
+      <workItem from="1570530829686" duration="2546000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1569882068270</created>
