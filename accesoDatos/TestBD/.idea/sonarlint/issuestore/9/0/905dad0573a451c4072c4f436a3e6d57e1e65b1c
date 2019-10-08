@@ -1,0 +1,4 @@
+
+ksquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÀêŽÓÿÿÿÿÿ
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿å¯¼
+hsquid:UselessImportCheck"DRemove this unused import 'com.github.javafaker.service.FakeValues'.(Âï“¢

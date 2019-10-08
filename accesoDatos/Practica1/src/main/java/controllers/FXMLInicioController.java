@@ -10,6 +10,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import config.ConfigurationProperties;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -47,7 +49,6 @@ public class FXMLInicioController implements Initializable {
     public FXMLPantalla2Controller controllerPantalla2;
     
     private void preCargarPantalla1(){
-       
         try {
             FXMLLoader loaderMenu = new FXMLLoader(
                     getClass().getResource(

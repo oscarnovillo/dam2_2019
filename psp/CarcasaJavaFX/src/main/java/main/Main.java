@@ -46,48 +46,41 @@ public class Main extends Application {
       Label lbl3 = new Label();
       Label lbl4 = new Label();
 
-      btnStart.setOnAction(new
-            EventHandler<ActionEvent>() {
-         @Override
-         public void handle(ActionEvent event) {
-            try {
-               int ival = Integer.parseInt(tf1.getText());
-               FiboCalcTask task = new FiboCalcTask(ival);
-               lbl1.textProperty().bind(task.messageProperty());
+      btnStart.setOnAction(event -> {
+         try {
+            int ival = Integer.parseInt(tf1.getText());
+            FiboCalcTask task = new FiboCalcTask(ival);
+            lbl1.textProperty().bind(task.messageProperty());
 
-               task.setOnRunning((succeesesEvent) -> {
-                  btnStart.setDisable(true);
-                  lbl2.setText("");
-               });
+            task.setOnRunning((succeesesEvent) -> {
+               btnStart.setDisable(true);
+               lbl2.setText("");
+            });
 
-               task.setOnSucceeded((succeededEvent) -> {
-                  lbl2.setText(task.getValue().toString());
-                  btnStart.setDisable(false);
-               });
+            task.setOnSucceeded((succeededEvent) -> {
+               lbl2.setText(task.getValue().toString());
+               btnStart.setDisable(false);
+            });
 
-               ExecutorService executorService
-                  = Executors.newFixedThreadPool(1);
-               executorService.execute(task);
-               executorService.shutdown();
+            ExecutorService executorService
+               = Executors.newFixedThreadPool(1);
+            executorService.execute(task);
+            executorService.shutdown();
 
-            } catch (NumberFormatException e) {
-               tf1.setText("Enter a number");
-               tf1.selectAll();
-               tf1.requestFocus();
-            }
+         } catch (NumberFormatException e) {
+            tf1.setText("Enter a number");
+            tf1.selectAll();
+            tf1.requestFocus();
          }
       });
 
-      btnNext.setOnAction(new EventHandler<ActionEvent>() {
-         @Override
-         public void handle(ActionEvent event) {
-            lbl3.setText(num+"the Fibonacci number is = ");
-            lbl4.setText(String.valueOf(n2));
-            long temp = n1 + n2;
-            n1 = n2;
-            n2 = temp;
-            ++num;
-         }
+      btnNext.setOnAction(event -> {
+         lbl3.setText(num+"the Fibonacci number is = ");
+         lbl4.setText(String.valueOf(n2));
+         long temp = n1 + n2;
+         n1 = n2;
+         n2 = temp;
+         ++num;
       });
 
       gp.add(new Label("Enter a number: "), 0, 0);
