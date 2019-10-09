@@ -1,11 +1,13 @@
 package filters;
 
+import org.w3c.dom.ls.LSOutput;
 import utils.Constantes;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.stream.Collectors;
 
 @WebFilter(filterName = "FilterDatos",
         urlPatterns = {"/cifrado", "/cifradoAppellidos"})
@@ -15,25 +17,25 @@ public class FilterDatos implements Filter {
         String nombre = req.getParameter("nombre");
         if (null != nombre) {
             String nombreDescifrado = "";
-            for (int i = 0; i < nombre.length(); i++) {
-                nombreDescifrado += Character.toString((char) (nombre.charAt(i) - 1));
-            }
+
+            nombreDescifrado = nombre.chars().map(operand -> operand - 1)
+                    .mapToObj(value -> String.valueOf((char) value)).collect(Collectors.joining());
+
+//            for (int i = 0; i < nombre.length(); i++) {
+//                nombreDescifrado += Character.toString((char) (nombre.charAt(i) - 1));
+//            }
             req.setAttribute("nombre", nombreDescifrado);
         }
         String apellidos = req.getParameter("apellidos");
         if (null != apellidos) {
             String nombreDescifrado = "";
-            for (int i = 0; i < apellidos.length(); i++) {
-                nombreDescifrado += Character.toString((char) (apellidos.charAt(i) - 1));
-            }
+            nombreDescifrado = nombre.chars().map(operand -> operand - 1)
+                    .mapToObj(value -> String.valueOf((char) value)).collect(Collectors.joining());
             req.setAttribute("apellidos", nombreDescifrado);
         }
 
 
-
         return;
-
-
 
 
     }
@@ -52,11 +54,10 @@ public class FilterDatos implements Filter {
     }
 
     private String doAfterProcessing(HttpServletRequest req) {
-        String nombreCifrado = (String) req.getAttribute(Constantes.RESULTADO);
+        String nombreDesCifrado = (String) req.getAttribute(Constantes.RESULTADO);
         String resultadoCifrado = "";
-        for (int i = 0; i < nombreCifrado.length(); i++) {
-            resultadoCifrado += Character.toString((char) (nombreCifrado.charAt(i) + 1));
-        }
+        resultadoCifrado = nombreDesCifrado.chars().map(operand -> operand + 1)
+                .mapToObj(value -> String.valueOf((char) value)).collect(Collectors.joining());
         return resultadoCifrado;
     }
 
