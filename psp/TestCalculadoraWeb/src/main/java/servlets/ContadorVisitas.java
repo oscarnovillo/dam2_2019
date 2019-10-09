@@ -5,6 +5,8 @@
  */
 package servlets;
 
+import config.Configuration;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -42,7 +44,7 @@ public class ContadorVisitas extends HttpServlet {
 
             request.getSession().setAttribute("contador", visitas);
 
-            response.getWriter().println("visitas " + visitas);
+            response.getWriter().println("visitas " + Configuration.getInstance().getPass() + visitas);
         
 
     }
