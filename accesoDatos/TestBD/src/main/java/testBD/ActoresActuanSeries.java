@@ -16,7 +16,7 @@ public class ActoresActuanSeries {
     PreparedStatement stmt = con.prepareStatement("insert into  actuan (id_actor,id_serie) values (?,?)");
 
     for (int i = 1; i <= 601008; i++) {
-      int numeroActores = f.random().nextInt(10, 200);
+      int numeroActores = f.random().nextInt(10, 50);
 
       for (int j = 0; j < numeroActores; j++) {
         int id_actor = f.random().nextInt(5685,581198);
@@ -24,10 +24,10 @@ public class ActoresActuanSeries {
         stmt.setInt(2,i);
         stmt.addBatch();
       }
-      if ((i % 1000)==0)
+      if ((i % 100)==0)
       {
         System.out.println(i);
-        stmt.executeBatch();
+        System.out.println(stmt.executeBatch().length);
         con.commit();
         System.out.println(i);
       }

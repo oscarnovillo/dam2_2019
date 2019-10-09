@@ -2,6 +2,8 @@ package testBD;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.logging.Logger;
 
 public class TestDelete {
@@ -20,12 +22,17 @@ public class TestDelete {
             stmt = con.prepareStatement
                     (DELETE_TABLE_FECHAS_WHERE_ID);
             stmt.setInt(1,
-                    15);
+                    14);
 
             int numeroFilas = stmt.executeUpdate();
 
             System.out.println("numero de filas afecto " + numeroFilas);
-        } catch (Exception e) {
+        }
+        catch (SQLIntegrityConstraintViolationException e) {
+            Logger.getLogger("Main").info("INTE!"+e.getMessage());
+        } catch (SQLException e) {
+            Logger.getLogger("Main").info("SQL"+e.getMessage());
+        }  catch (Exception e) {
             Logger.getLogger("Main").info(e.getMessage());
         } finally {
             db.cerrarStatement(stmt);
