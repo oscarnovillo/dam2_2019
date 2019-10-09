@@ -13,7 +13,9 @@ public class SeriesBatch {
         Connection con = db.getConnection();
         Faker f = new Faker();
         con.setAutoCommit(false);
-        PreparedStatement stmt = con.prepareStatement("insert into series (name) values (?)", Statement.RETURN_GENERATED_KEYS);
+        PreparedStatement stmt = con.prepareStatement
+                ("insert into series (name) values (?)",
+                        Statement.RETURN_GENERATED_KEYS);
         for (int i = 0; i < 500000; i++) {
             stmt.setString(1, f.funnyName().name() + " " + f.number().digits(10));
             stmt.addBatch();
@@ -23,6 +25,6 @@ public class SeriesBatch {
 
         stmt.executeBatch();
         con.commit();
-
+        con.close();
     }
 }

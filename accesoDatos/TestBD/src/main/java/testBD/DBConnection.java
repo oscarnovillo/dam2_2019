@@ -25,6 +25,8 @@ public class DBConnection {
 
         Connection connection = null;
 
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
         connection = DriverManager.getConnection(
                 "jdbc:mysql://dam2.mysql.iesquevedo.es:3335/netflisssss",
                 "root",
