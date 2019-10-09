@@ -1,21 +1,70 @@
 package filters;
 
+import utils.Constantes;
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @WebFilter(filterName = "FilterDatos",
-        urlPatterns = "/visitas")
+        urlPatterns = {"/cifrado", "/cifradoAppellidos"})
 public class FilterDatos implements Filter {
-    public void destroy() {
+
+    private void doBeforeProcessing(ServletRequest req) {
+        String nombre = req.getParameter("nombre");
+        if (null != nombre) {
+            String nombreDescifrado = "";
+            for (int i = 0; i < nombre.length(); i++) {
+                nombreDescifrado += Character.toString((char) (nombre.charAt(i) - 1));
+            }
+            req.setAttribute("nombre", nombreDescifrado);
+        }
+        String apellidos = req.getParameter("apellidos");
+        if (null != apellidos) {
+            String nombreDescifrado = "";
+            for (int i = 0; i < apellidos.length(); i++) {
+                nombreDescifrado += Character.toString((char) (apellidos.charAt(i) - 1));
+            }
+            req.setAttribute("apellidos", nombreDescifrado);
+        }
+
+
+
+        return;
+
+
+
+
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
+
+
+        doBeforeProcessing(req);
+
         chain.doFilter(req, resp);
+
+        String resultadoCifrado = doAfterProcessing((HttpServletRequest) req);
+
+        resp.getWriter().println(resultadoCifrado);
+
+    }
+
+    private String doAfterProcessing(HttpServletRequest req) {
+        String nombreCifrado = (String) req.getAttribute(Constantes.RESULTADO);
+        String resultadoCifrado = "";
+        for (int i = 0; i < nombreCifrado.length(); i++) {
+            resultadoCifrado += Character.toString((char) (nombreCifrado.charAt(i) + 1));
+        }
+        return resultadoCifrado;
     }
 
     public void init(FilterConfig config) throws ServletException {
 
+    }
+
+    public void destroy() {
     }
 
 }

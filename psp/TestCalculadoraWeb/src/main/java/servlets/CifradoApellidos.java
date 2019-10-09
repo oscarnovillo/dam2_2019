@@ -9,24 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "Cifrado", urlPatterns = "/cifrado")
-public class Cifrado extends HttpServlet {
+@WebServlet(name = "CifradoApellidos",urlPatterns = "/cifradoAppellidos" )
+public class CifradoApellidos extends HttpServlet {
+    private void processRequest(HttpServletRequest request) {
+        String nombreDescifrado = (String) request.getAttribute("apellidos");
 
-
-    private void processResquest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
-        String nombreDescifrado = (String) request.getAttribute("nombre");
-
-        nombreDescifrado = "hola " + nombreDescifrado;
+        nombreDescifrado = "Vivan las Constantes " + nombreDescifrado;
 
         request.setAttribute(Constantes.RESULTADO, nombreDescifrado);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processResquest(request, response);
+        processRequest(request);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        processResquest(request, response);
+        processRequest(request);
     }
 }
