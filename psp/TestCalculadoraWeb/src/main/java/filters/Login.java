@@ -5,6 +5,8 @@
  */
 package filters;
 
+import seguridad.Seguridad;
+
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -55,8 +57,9 @@ public class Login implements Filter {
 
         Throwable problem = null;
         try {
-            if (((HttpServletRequest) request).getSession().getAttribute("login") != null
-                    && ((HttpServletRequest) request).getSession().getAttribute("login").equals("OK")) {
+            Seguridad seguridad = new Seguridad();
+            if (seguridad.testLogin(
+                    (HttpServletRequest)request)) {
                 chain.doFilter(request, response);
             } else {
                 response.getWriter().println("NO PASAS");
