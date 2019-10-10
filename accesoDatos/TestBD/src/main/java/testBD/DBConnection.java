@@ -38,6 +38,7 @@ public class DBConnection {
     public void cerrarConexion(Connection connection) {
         try {
             if (connection != null) {
+                connection.setAutoCommit(false);
                 connection.close();
             }
         } catch (SQLException ex) {
