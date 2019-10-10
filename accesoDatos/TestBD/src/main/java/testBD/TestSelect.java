@@ -22,6 +22,7 @@ public class TestSelect {
             stmt = con.createStatement();
 
             rs = stmt.executeQuery(SELECT_FROM_TABLE_FECHAS);
+
             while (rs.next())
             {
                 System.out.print(rs.getInt("id"));

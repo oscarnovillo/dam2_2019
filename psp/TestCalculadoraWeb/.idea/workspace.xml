@@ -6,43 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8d6dd45-f126-4b0a-87f7-a36fe07e648e" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/.idea/dictionaries/oscar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/ConstantesBD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/TestDelete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/TestInsert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/TestSelect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/TestUpdate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/3/1337d72a3b1928dba82aa5210f5cdc0e88ce895b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/1/7/178b295a604db721b4499160c6420025450224f9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/7/2794cd4f47feb7b38b89b4a34cc3a594b17aac16" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/3/5/356366564d0a57e890cd31fbe2d2b9050f58cbac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/a/faef6ee5dcdca7d90f14466bed3b87b4931defc7" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/ConfigListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/config/config.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/.idea/sonarlint/issuestore/7/4/740808288303c8f439c04a42caa2e125858cd4bc" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/.idea/sonarlint/issuestore/7/4/740808288303c8f439c04a42caa2e125858cd4bc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/.idea/sonarlint/issuestore/e/7/e7096fb195c60bb5655ee121525ca49e6c3b505c" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/.idea/sonarlint/issuestore/e/7/e7096fb195c60bb5655ee121525ca49e6c3b505c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/.idea/sonarlint/issuestore/f/8/f8245cb49f02878a149e21edc24af257914de1b5" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/.idea/sonarlint/issuestore/f/8/f8245cb49f02878a149e21edc24af257914de1b5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/ActoresActuanSeries.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/ActoresActuanSeries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/DirectoresEpisodios.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/DirectoresEpisodios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/SeriesBatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/SeriesBatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CarcasaJavaFX/.idea/sonarlint/issuestore/4/0/407a31e9bba176e4fe48166caacc522b3f3c77e9" beforeDir="false" afterPath="$PROJECT_DIR$/../CarcasaJavaFX/.idea/sonarlint/issuestore/4/0/407a31e9bba176e4fe48166caacc522b3f3c77e9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CarcasaJavaFX/.idea/sonarlint/issuestore/8/7/87c9bbc5b7d564b391e2b9976d74184e0efe97da" beforeDir="false" afterPath="$PROJECT_DIR$/../CarcasaJavaFX/.idea/sonarlint/issuestore/8/7/87c9bbc5b7d564b391e2b9976d74184e0efe97da" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CarcasaJavaFX/.idea/sonarlint/issuestore/a/2/a25ed358c02cb90868f6956c854eb08c915245a4" beforeDir="false" afterPath="$PROJECT_DIR$/../CarcasaJavaFX/.idea/sonarlint/issuestore/a/2/a25ed358c02cb90868f6956c854eb08c915245a4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CarcasaJavaFX/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../CarcasaJavaFX/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/24cd55c90a209e9a111a7cdb2d15b8a172fb2176" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/4/24cd55c90a209e9a111a7cdb2d15b8a172fb2176" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+    <list default="true" id="d8d6dd45-f126-4b0a-87f7-a36fe07e648e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/TestDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/TestDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/TestSelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../accesoDatos/TestBD/src/main/java/testBD/TestSelect.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/filters/FilterDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/filters/FilterDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlets/ContadorVisitas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlets/ContadorVisitas.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +95,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../accesoDatos/TestBD" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -556,7 +523,21 @@
       <option name="project" value="LOCAL" />
       <updated>1570533795776</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="test">
+      <created>1570695343916</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1570695343916</updated>
+    </task>
+    <task id="LOCAL-00005" summary="test">
+      <created>1570695374256</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570695374256</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

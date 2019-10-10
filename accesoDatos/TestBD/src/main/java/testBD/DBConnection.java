@@ -62,4 +62,14 @@ public class DBConnection {
             Logger.getLogger(DBConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    public void rollbackCon(Connection con) {
+        try {
+            if (con != null)
+                con.rollback();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+
 }
