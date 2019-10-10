@@ -1,0 +1,19 @@
+## YAML Template.
+---
+user: kiko
+pass: kiko
+casas:
+  - azul
+  - verde
+  - gris
+recetas:
+  tortilla: huevos verdes
+  risotto: arroz
+usuarios:
+  - usuario:
+      name: juan
+      pass: juan
+      direccion: kk
+  - usuario:
+      name: pedro
+      pass: pedro
