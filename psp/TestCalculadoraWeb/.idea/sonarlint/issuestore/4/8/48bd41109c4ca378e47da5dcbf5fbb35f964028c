@@ -1,0 +1,12 @@
+
+Dsquid:S00108")Either remove or fill this block of code.(±Ÿ—±ÿÿÿÿÿ
+=squid:S1148"#Use a logger to log this exception.(¯Óí‘úÿÿÿÿ
+–squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
+›squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ØÈÙ­üÿÿÿÿ
+usquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ˆ€„Šûÿÿÿÿ
+?squid:S1181"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+Dsquid:S00108")Either remove or fill this block of code.(±Ÿ—±ÿÿÿÿÿ
+Dsquid:S00108")Either remove or fill this block of code.(±Ÿ—±ÿÿÿÿÿ
+Osquid:S1161":Add the "@Override" annotation above this method signature(ß¹¶¼
+Dsquid:S1066"/Merge this if statement with the enclosing one.(ˆø¶ª
+Osquid:S1161":Add the "@Override" annotation above this method signature(‚“¶î
