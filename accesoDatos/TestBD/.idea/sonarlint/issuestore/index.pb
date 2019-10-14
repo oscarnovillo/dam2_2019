@@ -19,3 +19,13 @@ Y
 .src/main/java/testBD/RetransmisionesBatch.java,e\b\eba1ee30badf98117895cfa6f5f73eaf77442844
 ]
 -src/main/java/testBD/DirectoresEpisodios.java,a\b\abd76bfc2ffc0fb8790e6679177941fb4240b39f
+T
+$src/main/java/testBD/TestSelect.java,f\0\f00383d448ed297e6486c4c5168e27e196ad7f7d
+T
+$src/main/java/testBD/TestInsert.java,7\c\7cd6426d6904cf9cc8f8eafdc700729e66016082
+]
+-src/main/java/testBD/ActoresActuanSeries.java,9\0\9064b0d7e46ced9fc414d1fb2997862064afc6c6
+T
+$src/main/java/testBD/TestUpdate.java,8\3\83b7491c2d7cd7325644e1ef892623ea9c6b12d9
+T
+$src/main/java/testBD/TestDelete.java,2\a\2a0bbe698182a3995aa02025eb5c6323fa415362
