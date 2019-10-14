@@ -17,9 +17,9 @@ public class TestInterceptor implements Interceptor {
     //chain get
     HttpUrl.Builder builder = r.url()
         .newBuilder();
-    r.url().queryParameterNames().stream().forEach(name -> {
-      builder.addQueryParameter(name, cf.cifra(r.url().queryParameter(name), 1));
-    });
+    r.url().queryParameterNames().stream().forEach(name ->
+        builder.addQueryParameter(name, cf.cifra(r.url().queryParameter(name), 1))
+    );
 
 
     FormBody.Builder formBuilder = new FormBody.Builder();
