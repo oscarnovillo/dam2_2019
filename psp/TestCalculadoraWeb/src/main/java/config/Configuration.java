@@ -36,10 +36,19 @@ public class Configuration {
     private String pass;
 
     private List<String> casas;
+    private List<Usuario> usuarios;
     private Map<String, String> recetas;
 
     public List<String> getCasas() {
       return casas;
+    }
+
+    public List<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
+    public void setUsuarios(List<Usuario> usuarios) {
+        this.usuarios = usuarios;
     }
 
     public void setCasas(List<String> casas) {

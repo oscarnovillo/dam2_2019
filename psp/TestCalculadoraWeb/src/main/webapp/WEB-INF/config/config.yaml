@@ -10,10 +10,8 @@ recetas:
   tortilla: huevos verdes
   risotto: arroz
 usuarios:
-  - usuario:
-      name: juan
-      pass: juan
-      direccion: kk
-  - usuario:
-      name: pedro
-      pass: pedro
+  - name: juan
+    pass: juan
+    direccion: kk
+  - name: pedro
+    pass: pedro

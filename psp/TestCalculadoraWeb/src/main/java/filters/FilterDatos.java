@@ -42,8 +42,6 @@ public class FilterDatos implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-
-
         doBeforeProcessing(req);
 
         chain.doFilter(req, resp);
