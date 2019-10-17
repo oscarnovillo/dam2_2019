@@ -1,7 +1,0 @@
-
-¢%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÌÏÒğıÿÿÿÿ
-Ksquid:S1172"/Remove this unused method parameter "response".(ÌÏÒğıÿÿÿÿ
-Qsquid:S1161":Add the "@Override" annotation above this method signature(‹¨¯¿
-Esquid:S1989".Add a "try/catch" block for "processResquest".(¨›«
-Vsquid:S1161":Add the "@Override" annotation above this method signature(Ïû©Öûÿÿÿÿ
-Esquid:S1989".Add a "try/catch" block for "processResquest".(¨›«

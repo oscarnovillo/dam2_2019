@@ -1,22 +1,0 @@
-
-Ssquid:UselessImportCheck!"*Remove this unused import 'java.util.Set'.(ö²„¤şÿÿÿÿ
-squid:S1186Q"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ú¬ŞÚşÿÿÿÿ
-Tsquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
-Msquid:S2696="6Make the enclosing method "static" or remove this set.(÷Ÿ·é
-Isquid:S1135i"2Complete the task associated to this TODO comment.(û‰©Ï
-˜squid:S11860"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(£Ü”©
-Nsquid:S1135D"2Complete the task associated to this TODO comment.(ÕÌ®şÿÿÿÿ
-gsquid:CommentedOutCodeLine%"<This block of commented-out lines of code should be removed.(‰Ï×Úúÿÿÿÿ
-csquid:UselessImportCheck":Remove this unused import 'javafx.scene.control.MenuItem'.(¶—øäûÿÿÿÿ
-Lsquid:UselessImportCheck"(Remove this unused import 'main.FXMain'.(âĞ”
-Rsquid:S2696<"6Make the enclosing method "static" or remove this set.(ââ­ùÿÿÿÿ
-squid:S1186L"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(´ñ’ßşÿÿÿÿ
-asquid:UselessImportCheck""8Remove this unused import 'javafx.scene.control.Button'.(Ë Í‹øÿÿÿÿ
-Nsquid:S10683"2Remove this unused "rootController" private field.(Æ¸â‚øÿÿÿÿ
-gsquid:CommentedOutCodeLineo"<This block of commented-out lines of code should be removed.(ò¬‹ªùÿÿÿÿ
-ysquid:S14503"]Remove the "rootController" field and declare it as a local variable in the relevant methods.(Æ¸â‚øÿÿÿÿ
-squid:S1186U"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(•¨ó­úÿÿÿÿ
-squid:S1186Y"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(êÉø„øÿÿÿÿ
-gsquid:CommentedOutCodeLinew"<This block of commented-out lines of code should be removed.(‡›–Èøÿÿÿÿ
-Tsquid:UselessImportCheck "+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
-?squid:S1148E"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ

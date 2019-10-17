@@ -1,7 +1,0 @@
-
-ksquid:S00100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÚ€ÿÿÿÿÿ
-squid:S1319""sThe type of the "niÃ±atos" object should be an interface such as "List" rather than the implementation "ArrayList".(òÚ€ÿÿÿÿÿ
-nsquid:S00117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òÚ€ÿÿÿÿÿ
-fsquid:S00100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑŞâ÷
-Isquid:S11358"2Complete the task associated to this TODO comment.(…ïœ†
-qsquid:S00116"YRename this field "fxComboNiÃ±ato" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šËé
