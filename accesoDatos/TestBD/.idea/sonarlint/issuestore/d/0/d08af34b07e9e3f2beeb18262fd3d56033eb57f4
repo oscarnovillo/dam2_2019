@@ -1,19 +1,0 @@
-
-V
-squid:S106*"9Replace this use of System.out or System.err by a logger.(¶ùË8¶èìÛÙ-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(™İï8ç íÛÙ-
-V
-squid:S106"9Replace this use of System.out or System.err by a logger.(™İï8½µìÛÙ-
-Msquid:S14810"/Remove this unused "idEpisodio" local variable.(úŠèê8¾˜ëÛÙ-
-rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿å¯¼
-Msquid:S1481#"/Remove this unused "idEpisodio" local variable.(úŠèê8¾˜ëÛÙ-
-rsquid:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(®­Äöüÿÿÿÿ8¾˜ëÛÙ-
-V
-squid:S106,"9Replace this use of System.out or System.err by a logger.(¶ùË8¶èìÛÙ-
-Msquid:S1481"/Remove this unused "idEpisodio" local variable.(úŠèê8¾˜ëÛÙ-
-psquid:S1192*"RDefine a constant instead of duplicating this literal "ejecutando 400000" 4 times.(¶ùË8ä÷íÛÙ-
-V
-squid:S1067"9Replace this use of System.out or System.err by a logger.(¶ùË8ä÷íÛÙ-
-V
-squid:S1069"9Replace this use of System.out or System.err by a logger.(¶ùË8ä÷íÛÙ-
