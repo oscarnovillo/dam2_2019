@@ -15,6 +15,7 @@
             <items>
               <MenuItem fx:id="fxMenuLogin" mnemonicParsing="false" onAction="#menuLogin" text="Login" />
                 <MenuItem fx:id="fxMenuVisitas" mnemonicParsing="false" onAction="#menuVisitas" text="Visitas" />
+                <MenuItem fx:id="fxMenuCifrado" mnemonicParsing="false" onAction="#menuCifrado" text="Cifrado" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">

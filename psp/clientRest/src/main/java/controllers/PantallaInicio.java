@@ -1,5 +1,6 @@
 package controllers;
 
+import dao.TestInterceptor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -68,6 +69,7 @@ public class PantallaInicio implements Initializable {
 
     clientOK = new OkHttpClient.Builder()
         .cookieJar(new JavaNetCookieJar(cookieManager))
+       .addInterceptor(new TestInterceptor())
         .build();
   }
 
@@ -112,6 +114,25 @@ public class PantallaInicio implements Initializable {
     Call call = clientOK.newCall(request);
     Response response = call.execute();
         fxText.setText(response.body().string());
+
+  }
+
+
+  @FXML
+  private void menuCifrado(ActionEvent actionEvent) throws IOException {
+
+    RequestBody formBody = new FormBody.Builder()
+        .add("nombre", "caca")
+        .build();
+
+    Request request = new Request.Builder()
+        .url(Constantes.BASE_URL + "/cifrado")
+        .post(formBody)
+        .build();
+
+    Call call = clientOK.newCall(request);
+    Response response = call.execute();
+    fxText.setText(response.body().string());
 
   }
 }

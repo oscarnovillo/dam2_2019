@@ -22,10 +22,12 @@ public class Cifrado extends HttpServlet {
         request.setAttribute(Constantes.RESULTADO, nombreDescifrado);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processResquest(request, response);
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processResquest(request, response);
     }

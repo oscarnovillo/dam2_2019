@@ -1,9 +1,9 @@
 
-:squid:S1643"Use a StringBuilder instead.(¬Ú“È8Ãõ¹üÚ-
-Xsquid:S1161C":Add the "@Override" annotation above this method signature(‚“¶î8ğÂåûÚ-
-:squid:S1643:"Use a StringBuilder instead.(¢ø¸8Óò„üÚ-
-9squid:S3626""Remove this redundant jump.(ûÁİ…8ÍüÚ-
-¤squid:S1186?"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õ­¥Ûşÿÿÿÿ8ğÂåûÚ-
-]squid:S1161?":Add the "@Override" annotation above this method signature(õ­¥Ûşÿÿÿÿ8ğÂåûÚ-
-?squid:S1643"Use a StringBuilder instead.(ıÕÒÄøÿÿÿÿ8ïùşûÚ-
-Ÿsquid:S1186C"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8ğÂåûÚ-
+]squid:S1161>":Add the "@Override" annotation above this method signature(õ­¥Ûşÿÿÿÿ8ğÂåûÚ-
+9squid:S3626&"Remove this redundant jump.(ûÁİ…8ÍüÚ-
+Ÿsquid:S1186B"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î8ğÂåûÚ-
+Xsquid:S1161B":Add the "@Override" annotation above this method signature(‚“¶î8ğÂåûÚ-
+¤squid:S1186>"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õ­¥Ûşÿÿÿÿ8ğÂåûÚ-
+_squid:UselessImportCheck"4Remove this unused import 'org.w3c.dom.ls.LSOutput'.(Ò½¾Š8øòõÚÜ-
+hsquid:UselessImportCheck"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ8øòõÚÜ-
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(–“Ù8øòõÚÜ-

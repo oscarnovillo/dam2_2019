@@ -6,13 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="utils" />
         <module name="TestCalculadoraWeb" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="TestCalculadoraWeb" options="-endorseddirs &quot;D:\Educa\oscar\Mis documentos\NetBeansProjects\dam2_2019\psp\TestCalculadoraWeb\target/endorsed&quot;" />
+      <module name="TestCalculadoraWeb" options="-endorseddirs &quot;C:\Users\oscar\Documents\CLASES ALCALA\2019-2020\CODIGO\dam2_2019\psp\TestCalculadoraWeb\target/endorsed&quot;" />
     </option>
   </component>
 </project>
