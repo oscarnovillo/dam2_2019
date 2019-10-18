@@ -1,6 +1,7 @@
 package controllers;
 
 import dao.TestInterceptor;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -69,7 +70,7 @@ public class PantallaInicio implements Initializable {
 
     clientOK = new OkHttpClient.Builder()
         .cookieJar(new JavaNetCookieJar(cookieManager))
-       .addInterceptor(new TestInterceptor())
+        .addInterceptor(new TestInterceptor())
         .build();
   }
 
@@ -86,6 +87,7 @@ public class PantallaInicio implements Initializable {
         .build();
 
     Call call = clientOK.newCall(request);
+
     call.enqueue(new Callback() {
       @Override
       public void onFailure(@NotNull Call call, @NotNull IOException e) {
@@ -96,24 +98,40 @@ public class PantallaInicio implements Initializable {
       public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
         fxText.setText(response.body().string());
       }
+
     });
+
   }
 
 
   @FXML
   private void menuVisitas(ActionEvent actionEvent) throws IOException {
 
-    HttpUrl.Builder urlBuilder
-        = HttpUrl.parse(Constantes.BASE_URL + "/visitas").newBuilder();
 
-    String url = urlBuilder.build().toString();
-    Request request = new Request.Builder()
-        .url(url)
-        .build();
+    Task<String> tarea = new Task<String>() {
+      @Override
+      protected String call() throws Exception {
+        HttpUrl.Builder urlBuilder
+            = HttpUrl.parse(Constantes.BASE_URL + "/visitas").newBuilder();
 
-    Call call = clientOK.newCall(request);
-    Response response = call.execute();
-        fxText.setText(response.body().string());
+        String url = urlBuilder.build().toString();
+        Request request = new Request.Builder()
+            .url(url)
+            .build();
+
+        Call call = clientOK.newCall(request);
+       // Response response = call.execute();
+        //return response.body().string();
+        return "OK";
+      }
+    };
+    tarea.setOnSucceeded(cadena -> {
+      System.out.println(tarea.getValue());
+      fxText.setText(tarea.getValue());
+    });
+    tarea.setOnFailed(workerStateEvent -> System.out.println(workerStateEvent));
+    new Thread(tarea).start();
+
 
   }
 
