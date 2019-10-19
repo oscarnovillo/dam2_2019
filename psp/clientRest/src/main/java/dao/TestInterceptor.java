@@ -22,15 +22,18 @@ public class TestInterceptor implements Interceptor {
     );
 
 
-    FormBody.Builder formBuilder = new FormBody.Builder();
-    for (int i = 0; i < ((FormBody) r.body()).size(); i++) {
-      formBuilder.add(((FormBody) r.body()).name(i), cf.cifra(((FormBody) r.body()).value(i), 1));
-    }
+
     Request.Builder requestCodificado = r
         .newBuilder()
         .url(builder.build());
 
     if (r.method().equals("POST")) {
+      FormBody.Builder formBuilder = new FormBody.Builder();
+      if (r.body() != null) {
+        for (int i = 0; i < ((FormBody) r.body()).size(); i++) {
+          formBuilder.add(((FormBody) r.body()).name(i), cf.cifra(((FormBody) r.body()).value(i), 1));
+        }
+      }
       requestCodificado.post(formBuilder.build());
     }
     Response retorno = chain.proceed(requestCodificado.build());

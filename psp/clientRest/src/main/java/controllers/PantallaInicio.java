@@ -18,6 +18,10 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class PantallaInicio implements Initializable {
 
@@ -27,6 +31,7 @@ public class PantallaInicio implements Initializable {
   private TextArea fxText;
 
   private OkHttpClient clientOK;
+  ExecutorService executorService;
 
   public void test(ActionEvent actionEvent) {
     Alert a = new Alert(Alert.AlertType.INFORMATION);
@@ -72,6 +77,9 @@ public class PantallaInicio implements Initializable {
         .cookieJar(new JavaNetCookieJar(cookieManager))
         .addInterceptor(new TestInterceptor())
         .build();
+
+
+    executorService = Executors.newFixedThreadPool(1);
   }
 
   @FXML
@@ -106,8 +114,6 @@ public class PantallaInicio implements Initializable {
 
   @FXML
   private void menuVisitas(ActionEvent actionEvent) throws IOException {
-
-
     Task<String> tarea = new Task<String>() {
       @Override
       protected String call() throws Exception {
@@ -120,19 +126,18 @@ public class PantallaInicio implements Initializable {
             .build();
 
         Call call = clientOK.newCall(request);
-       // Response response = call.execute();
-        //return response.body().string();
-        return "OK";
+        Response response = call.execute();
+        return response.body().string();
+        //return "OK";
       }
     };
+    fxText.textProperty().bind(tarea.valueProperty());
     tarea.setOnSucceeded(cadena -> {
       System.out.println(tarea.getValue());
-      fxText.setText(tarea.getValue());
+      //fxText.setText(tarea.getValue());
     });
-    tarea.setOnFailed(workerStateEvent -> System.out.println(workerStateEvent));
-    new Thread(tarea).start();
-
-
+    tarea.setOnFailed(workerStateEvent -> Logger.getLogger("PantallaInicio").log(Level.SEVERE,"error ",workerStateEvent.getSource().getException()));
+    executorService.execute(tarea);
   }
 
 
