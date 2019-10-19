@@ -133,7 +133,6 @@ public class PantallaInicio implements Initializable {
     };
     fxText.textProperty().bind(tarea.valueProperty());
     tarea.setOnSucceeded(cadena -> {
-      System.out.println(tarea.getValue());
       //fxText.setText(tarea.getValue());
     });
     tarea.setOnFailed(workerStateEvent -> Logger.getLogger("PantallaInicio").log(Level.SEVERE,"error ",workerStateEvent.getSource().getException()));

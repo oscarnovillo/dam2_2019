@@ -14,31 +14,35 @@ public class TestInterceptor implements Interceptor {
     CifradoCesar cf = new CifradoCesar();
     Request r = chain.request();
 
-    //chain get
-    HttpUrl.Builder builder = r.url()
-        .newBuilder();
-    r.url().queryParameterNames().stream().forEach(name ->
-        builder.addQueryParameter(name, cf.cifra(r.url().queryParameter(name), 1))
-    );
+    if (!r.url().encodedPath().contains("/visitas")) {
+      //chain get
+      HttpUrl.Builder builder = r.url()
+          .newBuilder();
+      r.url().queryParameterNames().stream().forEach(name ->
+          builder.addQueryParameter(name, cf.cifra(r.url().queryParameter(name), 1))
+      );
 
 
+      Request.Builder requestCodificado = r
+          .newBuilder()
+          .url(builder.build());
 
-    Request.Builder requestCodificado = r
-        .newBuilder()
-        .url(builder.build());
-
-    if (r.method().equals("POST")) {
-      FormBody.Builder formBuilder = new FormBody.Builder();
-      if (r.body() != null) {
-        for (int i = 0; i < ((FormBody) r.body()).size(); i++) {
-          formBuilder.add(((FormBody) r.body()).name(i), cf.cifra(((FormBody) r.body()).value(i), 1));
+      if (r.method().equals("POST")) {
+        FormBody.Builder formBuilder = new FormBody.Builder();
+        if (r.body() != null) {
+          for (int i = 0; i < ((FormBody) r.body()).size(); i++) {
+            formBuilder.add(((FormBody) r.body()).name(i), cf.cifra(((FormBody) r.body()).value(i), 1));
+          }
         }
+        requestCodificado.post(formBuilder.build());
       }
-      requestCodificado.post(formBuilder.build());
+      Response retorno = chain.proceed(requestCodificado.build());
+      MediaType contentType = retorno.body().contentType();
+      ResponseBody body = ResponseBody.create(cf.descifra(retorno.body().string(), 1), contentType);
+
+      return retorno.newBuilder().body(body).build();
     }
-    Response retorno = chain.proceed(requestCodificado.build());
-    MediaType contentType = retorno.body().contentType();
-    ResponseBody body = ResponseBody.create(cf.descifra(retorno.body().string(), 1), contentType);
-    return retorno.newBuilder().body(body).build();
+    else
+      return chain.proceed(chain.request());
   }
 }
