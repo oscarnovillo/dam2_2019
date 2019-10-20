@@ -1,6 +1,9 @@
 package controllers;
 
 import dao.TestInterceptor;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -115,6 +118,17 @@ public class PantallaInicio implements Initializable {
   @FXML
   private void menuVisitas(ActionEvent actionEvent) throws IOException {
     Task<String> tarea = new Task<String>() {
+
+      private StringProperty valueNuevo = new SimpleStringProperty();
+
+      public String getValueNuevo() {
+        return valueNuevo.get();
+      }
+
+      public StringProperty valueNuevoProperty() {
+        return valueNuevo;
+      }
+
       @Override
       protected String call() throws Exception {
         HttpUrl.Builder urlBuilder
@@ -131,12 +145,32 @@ public class PantallaInicio implements Initializable {
         //return "OK";
       }
     };
+
     fxText.textProperty().bind(tarea.valueProperty());
     tarea.setOnSucceeded(cadena -> {
       //fxText.setText(tarea.getValue());
     });
     tarea.setOnFailed(workerStateEvent -> Logger.getLogger("PantallaInicio").log(Level.SEVERE,"error ",workerStateEvent.getSource().getException()));
-    executorService.execute(tarea);
+    executorService.submit(tarea);
+
+
+    Service<String> service = new Service<String>() {
+      private StringProperty valueNuevo = new SimpleStringProperty();
+
+      public String getValueNuevo() {
+        return valueNuevo.get();
+      }
+
+      public StringProperty valueNuevoProperty() {
+        return valueNuevo;
+      }
+      @Override
+      protected Task<String> createTask() {
+        return null;
+      }
+    };
+
+
   }
 
 

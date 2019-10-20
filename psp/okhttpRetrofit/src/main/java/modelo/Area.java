@@ -27,4 +27,17 @@ public class Area {
 
     public ParentArea getParentArea() { return parentArea; }
     public void setParentArea(ParentArea value) { this.parentArea = value; }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("Area{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", countryCode='").append(countryCode).append('\'');
+        sb.append(", ensignURL='").append(ensignURL).append('\'');
+        sb.append(", parentAreaID=").append(parentAreaID);
+        sb.append(", parentArea=").append(parentArea);
+        sb.append('}');
+        return sb.toString();
+    }
 }
