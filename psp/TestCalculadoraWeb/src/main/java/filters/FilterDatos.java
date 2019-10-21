@@ -22,7 +22,7 @@ public class FilterDatos implements Filter {
 
             nombreDescifrado = cf.descifra(nombre,1);
 
-//            for (int i = 0; i < nombre.length(); i++) {
+            //            for (int i = 0; i < nombre.length(); i++) {
 //                nombreDescifrado += Character.toString((char) (nombre.charAt(i) - 1));
 //            }
             req.setAttribute("nombre", nombreDescifrado);

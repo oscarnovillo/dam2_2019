@@ -18,4 +18,9 @@ public class CifradoCesar {
         .collect(Collectors.joining());
   }
 
+  public void dummy()
+  {
+
+  }
+
 }
