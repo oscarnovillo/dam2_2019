@@ -18,9 +18,10 @@
                 <MenuItem fx:id="fxMenuCifrado" mnemonicParsing="false" onAction="#menuCifrado" text="Cifrado" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="Contador">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem  fx:id="fxMenuContador" onAction="#menuContador" mnemonicParsing="false" text="Contador" />
+                <MenuItem  fx:id="fxMenuContadorOk" onAction="#menuContadorOk" mnemonicParsing="false" text="ContadorOk" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

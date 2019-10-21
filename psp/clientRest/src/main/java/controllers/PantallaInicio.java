@@ -192,4 +192,45 @@ public class PantallaInicio implements Initializable {
         fxText.setText(response.body().string());
 
     }
+
+    public void menuContador(ActionEvent actionEvent) throws InterruptedException {
+        int numero;
+        fxText.setText("0");
+        do {
+            numero = Integer.parseInt(fxText.getText());
+            Thread.sleep(1000);
+            numero ++;
+            fxText.setText(numero+"");
+        }
+        while (numero <10);
+
+
+    }
+
+    public void menuContadorOk(ActionEvent actionEvent) throws InterruptedException {
+        Task<Void> task = new Task<Void>() {
+            @Override
+            protected Void call() throws Exception {
+
+                int numero = 0;
+                updateMessage(numero+"");
+                do {
+//                    numero = Integer.parseInt(fxText.getText());
+                    Thread.sleep(1000);
+                    numero ++;
+                    updateMessage(numero+"");
+                    //fxText.setText(numero+"");
+                }
+                while (numero <10);
+                return null;
+            }
+        } ;
+        task.setOnFailed(workerStateEvent -> Logger.getLogger("PantallaInicio").log(Level.SEVERE, "error ", workerStateEvent.getSource().getException()));
+        fxText.textProperty().bind(task.messageProperty());
+
+
+        new Thread(task).start();
+
+
+    }
 }
