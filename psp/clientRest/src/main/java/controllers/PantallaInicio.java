@@ -28,167 +28,168 @@ import java.util.logging.Logger;
 
 public class PantallaInicio implements Initializable {
 
-  @FXML
-  private MenuItem fxMenuLogin;
-  @FXML
-  private TextArea fxText;
+    ExecutorService executorService;
+    @FXML
+    private MenuItem fxMenuLogin;
+    @FXML
+    private TextArea fxText;
+    private OkHttpClient clientOK;
 
-  private OkHttpClient clientOK;
-  ExecutorService executorService;
-
-  public void test(ActionEvent actionEvent) {
-    Alert a = new Alert(Alert.AlertType.INFORMATION);
-    a.setContentText("file");
-    a.showAndWait();
-  }
-
-
-  @FXML
-  private void menuClose(ActionEvent actionEvent) {
-    Alert a = new Alert(Alert.AlertType.INFORMATION);
-    a.showAndWait();
-  }
-
-
-  private void pedirHttpClient11() {
-    HttpClient client = HttpClient.newBuilder()
-        // Redirect except https to http
-        .followRedirects(HttpClient.Redirect.NORMAL)
-        .build();
-
-    try {
-
-      HttpRequest request = HttpRequest.newBuilder()
-          .uri(new URI("http://www.marca.com"))
-          .GET()
-          .build();
-
-      client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
-          .thenAccept(response -> fxText.setText(response.body()));
-    } catch (URISyntaxException e) {
-      e.printStackTrace();
+    public void test(ActionEvent actionEvent) {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.setContentText("file");
+        a.showAndWait();
     }
 
-  }
 
-  @Override
-  public void initialize(URL location, ResourceBundle resources) {
-    CookieManager cookieManager = new CookieManager();
-    cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
-
-    clientOK = new OkHttpClient.Builder()
-        .cookieJar(new JavaNetCookieJar(cookieManager))
-        .addInterceptor(new TestInterceptor())
-        .build();
+    @FXML
+    private void menuClose(ActionEvent actionEvent) {
+        Alert a = new Alert(Alert.AlertType.INFORMATION);
+        a.showAndWait();
+    }
 
 
-    executorService = Executors.newFixedThreadPool(1);
-  }
+    private void pedirHttpClient11() {
+        HttpClient client = HttpClient.newBuilder()
+                // Redirect except https to http
+                .followRedirects(HttpClient.Redirect.NORMAL)
+                .build();
 
-  @FXML
-  private void menuLogin(ActionEvent actionEvent) {
-    HttpUrl.Builder urlBuilder
-        = HttpUrl.parse(Constantes.BASE_URL + Constantes.URL_LOGIN).newBuilder();
-    urlBuilder.addQueryParameter("user", "root");
-    urlBuilder.addQueryParameter("pass", "root");
+        try {
 
-    String url = urlBuilder.build().toString();
-    Request request = new Request.Builder()
-        .url(url)
-        .build();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(new URI("http://www.marca.com"))
+                    .GET()
+                    .build();
 
-    Call call = clientOK.newCall(request);
+            client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                    .thenAccept(response -> fxText.setText(response.body()));
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
 
-    call.enqueue(new Callback() {
-      @Override
-      public void onFailure(@NotNull Call call, @NotNull IOException e) {
-        fxText.setText("ERROR");
-      }
+    }
 
-      @Override
-      public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-        fxText.setText(response.body().string());
-      }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        CookieManager cookieManager = new CookieManager();
+        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
 
-    });
-
-  }
+        clientOK = new OkHttpClient.Builder()
+                .cookieJar(new JavaNetCookieJar(cookieManager))
+                .addInterceptor(new TestInterceptor())
+                .build();
 
 
-  @FXML
-  private void menuVisitas(ActionEvent actionEvent) throws IOException {
-    Task<String> tarea = new Task<String>() {
+        executorService = Executors.newFixedThreadPool(1);
+    }
 
-      private StringProperty valueNuevo = new SimpleStringProperty();
-
-      public String getValueNuevo() {
-        return valueNuevo.get();
-      }
-
-      public StringProperty valueNuevoProperty() {
-        return valueNuevo;
-      }
-
-      @Override
-      protected String call() throws Exception {
+    @FXML
+    private void menuLogin(ActionEvent actionEvent) {
         HttpUrl.Builder urlBuilder
-            = HttpUrl.parse(Constantes.BASE_URL + "/visitas").newBuilder();
+                = HttpUrl.parse(Constantes.BASE_URL + Constantes.URL_LOGIN).newBuilder();
+        urlBuilder.addQueryParameter("user", "root");
+        urlBuilder.addQueryParameter("pass", "root");
 
         String url = urlBuilder.build().toString();
         Request request = new Request.Builder()
-            .url(url)
-            .build();
+                .url(url)
+                .build();
+
+        Call call = clientOK.newCall(request);
+
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+
+                fxText.setText("ERROR");
+            }
+
+            @Override
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                fxText.setText(response.body().string());
+            }
+
+        });
+
+    }
+
+
+    @FXML
+    private void menuVisitas(ActionEvent actionEvent) throws IOException {
+        Task<String> tarea = new Task<String>() {
+
+            private StringProperty valueNuevo = new SimpleStringProperty();
+
+            public String getValueNuevo() {
+                return valueNuevo.get();
+            }
+
+            public StringProperty valueNuevoProperty() {
+                return valueNuevo;
+            }
+
+            @Override
+            protected String call() throws Exception {
+                HttpUrl.Builder urlBuilder
+                        = HttpUrl.parse(Constantes.BASE_URL + "/visitas").newBuilder();
+
+                String url = urlBuilder.build().toString();
+                Request request = new Request.Builder()
+                        .url(url)
+                        .build();
+
+                Call call = clientOK.newCall(request);
+                Response response = call.execute();
+                return response.body().string();
+                //return "OK";
+            }
+        };
+
+        fxText.textProperty().bind(tarea.valueProperty());
+        tarea.setOnSucceeded(cadena -> {
+            //fxText.setText(tarea.getValue());
+        });
+        tarea.setOnFailed(workerStateEvent -> Logger.getLogger("PantallaInicio").log(Level.SEVERE, "error ", workerStateEvent.getSource().getException()));
+        executorService.submit(tarea);
+
+
+        Service<String> service = new Service<String>() {
+            private StringProperty valueNuevo = new SimpleStringProperty();
+
+            public String getValueNuevo() {
+                return valueNuevo.get();
+            }
+
+            public StringProperty valueNuevoProperty() {
+                return valueNuevo;
+            }
+
+            @Override
+            protected Task<String> createTask() {
+                return null;
+            }
+        };
+
+
+    }
+
+
+    @FXML
+    private void menuCifrado(ActionEvent actionEvent) throws IOException {
+
+        RequestBody formBody = new FormBody.Builder()
+                .add("nombre", "caca")
+                .build();
+
+        Request request = new Request.Builder()
+                .url(Constantes.BASE_URL + "/cifrado")
+                .post(formBody)
+                .build();
 
         Call call = clientOK.newCall(request);
         Response response = call.execute();
-        return response.body().string();
-        //return "OK";
-      }
-    };
+        fxText.setText(response.body().string());
 
-    fxText.textProperty().bind(tarea.valueProperty());
-    tarea.setOnSucceeded(cadena -> {
-      //fxText.setText(tarea.getValue());
-    });
-    tarea.setOnFailed(workerStateEvent -> Logger.getLogger("PantallaInicio").log(Level.SEVERE,"error ",workerStateEvent.getSource().getException()));
-    executorService.submit(tarea);
-
-
-    Service<String> service = new Service<String>() {
-      private StringProperty valueNuevo = new SimpleStringProperty();
-
-      public String getValueNuevo() {
-        return valueNuevo.get();
-      }
-
-      public StringProperty valueNuevoProperty() {
-        return valueNuevo;
-      }
-      @Override
-      protected Task<String> createTask() {
-        return null;
-      }
-    };
-
-
-  }
-
-
-  @FXML
-  private void menuCifrado(ActionEvent actionEvent) throws IOException {
-
-    RequestBody formBody = new FormBody.Builder()
-        .add("nombre", "caca")
-        .build();
-
-    Request request = new Request.Builder()
-        .url(Constantes.BASE_URL + "/cifrado")
-        .post(formBody)
-        .build();
-
-    Call call = clientOK.newCall(request);
-    Response response = call.execute();
-    fxText.setText(response.body().string());
-
-  }
+    }
 }
