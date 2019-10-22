@@ -16,6 +16,8 @@ public class TestUpdate {
 
         try {
             con = db.getConnection();
+
+            Thread.sleep(100000);
             stmt = con.prepareStatement
                     (UPDATE_TABLE_FECHAS_SET_NAME_WHERE_ID);
             stmt.setInt(3,

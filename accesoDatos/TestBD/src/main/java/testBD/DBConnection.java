@@ -25,20 +25,21 @@ public class DBConnection {
 
         Connection connection = null;
 
-        Class.forName("com.mysql.cj.jdbc.Driver");
+//        Class.forName("com.mysql.cj.jdbc.Driver");
+//
+//        connection = DriverManager.getConnection(
+//                "jdbc:mysql://dam2.mysql.iesquevedo.es:3335/netflisssss",
+//                "root",
+//                "root");
 
-        connection = DriverManager.getConnection(
-                "jdbc:mysql://dam2.mysql.iesquevedo.es:3335/netflisssss",
-                "root",
-                "root");
-
+        connection = DBConnectionPool.getInstance().getConnection();
         return connection;
     }
 
     public void cerrarConexion(Connection connection) {
         try {
             if (connection != null) {
-                connection.setAutoCommit(false);
+                connection.setAutoCommit(true);
                 connection.close();
             }
         } catch (SQLException ex) {
