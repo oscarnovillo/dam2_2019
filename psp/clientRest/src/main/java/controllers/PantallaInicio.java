@@ -92,6 +92,7 @@ public class PantallaInicio implements Initializable {
         urlBuilder.addQueryParameter("pass", "root");
 
         String url = urlBuilder.build().toString();
+
         Request request = new Request.Builder()
                 .url(url)
                 .build();
@@ -119,16 +120,6 @@ public class PantallaInicio implements Initializable {
     private void menuVisitas(ActionEvent actionEvent) throws IOException {
         Task<String> tarea = new Task<String>() {
 
-            private StringProperty valueNuevo = new SimpleStringProperty();
-
-            public String getValueNuevo() {
-                return valueNuevo.get();
-            }
-
-            public StringProperty valueNuevoProperty() {
-                return valueNuevo;
-            }
-
             @Override
             protected String call() throws Exception {
                 HttpUrl.Builder urlBuilder
@@ -146,11 +137,14 @@ public class PantallaInicio implements Initializable {
             }
         };
 
-        fxText.textProperty().bind(tarea.valueProperty());
+       // fxText.textProperty().bind(tarea.valueProperty());
         tarea.setOnSucceeded(cadena -> {
-            //fxText.setText(tarea.getValue());
+            fxText.setText(tarea.getValue());
         });
-        tarea.setOnFailed(workerStateEvent -> Logger.getLogger("PantallaInicio").log(Level.SEVERE, "error ", workerStateEvent.getSource().getException()));
+        tarea.setOnFailed(workerStateEvent ->
+                Logger.getLogger("PantallaInicio")
+                        .log(Level.SEVERE, "error ",
+                                workerStateEvent.getSource().getException()));
         executorService.submit(tarea);
 
 
@@ -199,33 +193,44 @@ public class PantallaInicio implements Initializable {
         do {
             numero = Integer.parseInt(fxText.getText());
             Thread.sleep(1000);
-            numero ++;
-            fxText.setText(numero+"");
+            numero++;
+            fxText.setText(numero + "");
         }
-        while (numero <10);
+        while (numero < 10);
 
 
     }
 
     public void menuContadorOk(ActionEvent actionEvent) throws InterruptedException {
         Task<Void> task = new Task<Void>() {
+
+
             @Override
             protected Void call() throws Exception {
-
                 int numero = 0;
-                updateMessage(numero+"");
+                updateMessage(numero + "");
+                updateProgress(10, 100);
                 do {
-//                    numero = Integer.parseInt(fxText.getText());
+                    //numero = Integer.parseInt(fxText.getText());
                     Thread.sleep(1000);
-                    numero ++;
-                    updateMessage(numero+"");
-                    //fxText.setText(numero+"");
+                    numero++;
+                    updateMessage(numero + "");
                 }
-                while (numero <10);
+                while (numero < 10);
                 return null;
             }
-        } ;
-        task.setOnFailed(workerStateEvent -> Logger.getLogger("PantallaInicio").log(Level.SEVERE, "error ", workerStateEvent.getSource().getException()));
+        };
+        task.setOnSucceeded(workerStateEvent -> {
+            Alert a = new Alert(Alert.AlertType.INFORMATION);
+            a.setContentText("TAREA ACABADA");
+            a.showAndWait();
+
+        });
+        task.setOnFailed(workerStateEvent ->
+                Logger.getLogger("PantallaInicio")
+                        .log(Level.SEVERE, "error ",
+                                workerStateEvent.getSource().getException()));
+
         fxText.textProperty().bind(task.messageProperty());
 
 

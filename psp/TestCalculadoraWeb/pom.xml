@@ -23,6 +23,7 @@
             <version>${jakartaee}</version>
             <scope>provided</scope>
         </dependency>
+
         <dependency>
             <groupId>help</groupId>
             <artifactId>utils</artifactId>
