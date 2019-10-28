@@ -6,12 +6,17 @@
 package dao;
 
 import model.Alumno;
+import model.Asignatura;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -25,24 +30,23 @@ public class AlumnosDaoImpl implements AlumnosDao {
 
     //Select DBUtils
     public List<Alumno> getAllAlumnosDBUtils() {
-        List<Alumno> lista = null;
+        JdbcTemplate jtm = new JdbcTemplate(
+            DBConnectionPool.getInstance().getDataSource());
+        return jtm.query("Select * from alumnos inner join miembros on alumnos.id_miembro = miembros.id_miembro",
+            BeanPropertyRowMapper.newInstance(Alumno.class));
+    }
 
-        Connection con = null;
-        try {
-            con = DBConnectionPool.getInstance().getConnection();
-
-            QueryRunner qr = new QueryRunner();
-            ResultSetHandler<List<Alumno>> handler
-                    = new BeanListHandler<>(Alumno.class);
-            lista = qr.query(con, "select * FROM alumnos", 
-                    handler);
-
-        } catch (Exception ex) {
-            Logger.getLogger(AsignaturasDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            DBConnectionPool.getInstance().cerrarConexion(con);
-        }
-        return lista;
+    //Select DBUtils
+    public List<Alumno> getAllAlumnosTemplate() {
+        JdbcTemplate jtm = new JdbcTemplate(
+            DBConnectionPool.getInstance().getDataSource());
+        return jtm.query("Select * from alumnos inner join miembros on alumnos.id_miembro = miembros.id_miembro",
+            new RowMapper<Alumno>() {
+                @Override
+                public Alumno mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    return null;
+                }
+            });
     }
 
     //Select DBUtils

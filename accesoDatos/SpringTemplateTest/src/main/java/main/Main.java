@@ -1,5 +1,6 @@
 package main;
 
+import servicios.AlumnosServicios;
 import servicios.AsignaturasServicios;
 import tablas.TablasDao;
 
@@ -13,6 +14,11 @@ public class Main {
     AsignaturasServicios a = new AsignaturasServicios();
     a.getAllAsignatura().forEach(System.out::println);
 
-    System.out.println(a.getAsigntura(830));
+    System.out.println(a.getAsigntura(212));
+
+
+    AlumnosServicios al = new AlumnosServicios();
+    al.getAllAlumnos().forEach(System.out::println);
+
   }
 }

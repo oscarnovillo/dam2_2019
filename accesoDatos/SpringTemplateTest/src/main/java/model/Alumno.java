@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author oscar
  */
-public class Alumno {
+public class Alumno extends Miembro{
 
     private int id;
     private String nombre;
@@ -62,7 +62,12 @@ public class Alumno {
 
     @Override
     public String toString() {
-        return "ID: " + id + ", Nombre: " + nombre + ", Fecha de nacimiento: " + fecha_nacimiento + ", Mayor edad: " + mayor_edad + '.';
+        return "Alumno{" +
+            "id=" + id +
+            ", nombre='" + nombre + '\'' +
+            ", fecha_nacimiento=" + fecha_nacimiento +
+            ", mayor_edad=" + mayor_edad +
+            "} " + super.toString();
     }
 
     @Override

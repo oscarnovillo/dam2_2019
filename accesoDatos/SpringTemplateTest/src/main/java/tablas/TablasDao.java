@@ -32,12 +32,22 @@ public class TablasDao {
                     Configuration.getInstance().getUserDB(),
                     Configuration.getInstance().getPassDB());
 
+            stmt = con.prepareStatement("CREATE TABLE miembros (\n"
+                + "  ID_MIEMBRO INTEGER IDENTITY NOT NULL ,\n"
+                + "  NOMBRE_MIEMBRO varchar(250)  DEFAULT NULL,\n"
+                + "  ES_PAPA BOOLEAN DEFAULT NULL,\n"
+                + "  PRIMARY KEY (ID_MIEMBRO)\n"
+                + ");");
+            filas = stmt.executeUpdate();
+
             stmt = con.prepareStatement("CREATE TABLE alumnos (\n"
                     + "  ID INTEGER IDENTITY NOT NULL ,\n"
                     + "  NOMBRE varchar(250)  DEFAULT NULL,\n"
                     + "  FECHA_NACIMIENTO date DEFAULT NULL,\n"
                     + "  MAYOR_EDAD BOOLEAN DEFAULT NULL,\n"
-                    + "  PRIMARY KEY (ID)\n"
+                    + "  ID_MIEMBRO INTEGER NOT NULL,\n"
+                    + "  PRIMARY KEY (ID),\n"
+                    + "  CONSTRAINT MIEMBROS_ALUMNOS FOREIGN KEY (ID_MIEMBRO) REFERENCES miembros (ID_MIEMBRO)\n"
                     + ");");
             filas = stmt.executeUpdate();
             stmt = con.prepareStatement(
@@ -60,7 +70,11 @@ public class TablasDao {
                     + ")");
             filas = stmt.executeUpdate();
 
-            stmt = con.prepareStatement("INSERT INTO alumnos VALUES (403,'manolamhhhh','0032-08-10',0),(412,'Andres Iniesta Iniaquella','1990-11-30',1),(426,'Manolito pue','2017-11-16',1),(431,'papapapajas eso es!!!','2017-11-16',1),(460,'alumno con nota3','2017-01-01',0),(523,'Paco Jones','2017-11-16',1),(525,'holacaracoola','2017-11-30',1),(526,'holacaraculo','2017-11-30',1),(527,'holacaracoola','2017-11-30',1),(530,'admin','2009-11-08',1),(532,'morta','2017-11-30',1),(535,'hola','2019-02-02',0),(723,'test4','2019-02-02',0),(724,'dfgdfg','2018-09-08',1);");
+            stmt = con.prepareStatement("INSERT INTO miembros VALUES (1,'miembro1',0),(2,'miembro2',1),(426,'Manolito pue',1),(431,'papapapajas eso es!!!',1),(460,'alumno con nota3',0),(523,'Paco Jones',1),(525,'holacaracoola',1),(526,'holacaraculo',1),(527,'holacaracoola',1),(530,'admin',1),(532,'morta',1),(535,'hola',0),(723,'test4',0),(724,'dfgdfg',1);");
+
+            filas = stmt.executeUpdate();
+
+            stmt = con.prepareStatement("INSERT INTO alumnos VALUES (403,'manolamhhhh','0032-08-10',0,1),(412,'Andres Iniesta Iniaquella','1990-11-30',1,2),(426,'Manolito pue','2017-11-16',1,426),(431,'papapapajas eso es!!!','2017-11-16',1,431),(460,'alumno con nota3','2017-01-01',0,460),(523,'Paco Jones','2017-11-16',1,523),(525,'holacaracoola','2017-11-30',1,525),(526,'holacaraculo','2017-11-30',1,526),(527,'holacaracoola','2017-11-30',1,527),(530,'admin','2009-11-08',1,530),(532,'morta','2017-11-30',1,532),(535,'hola','2019-02-02',0,535),(723,'test4','2019-02-02',0,723),(724,'dfgdfg','2018-09-08',1,724);");
 
             filas = stmt.executeUpdate();
 

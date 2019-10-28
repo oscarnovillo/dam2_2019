@@ -16,14 +16,15 @@ import java.util.List;
  */
 public class AlumnosServicios {
 
-  private FactoriaDao factory;
+  private FactoriaDao factory = new FactoriaDao();
 
   private AlumnosDao dao;
 
 
   public List<Alumno> getAllAlumnos() {
-//        AlumnosDao dao = factory.getAlumnosDAO
-//        (FactoriaDao.DAO_JDBC);
+
+        AlumnosDao dao = factory.getAlumnosDAO
+        (FactoriaDao.DAO_JDBC);
 
     return dao.getAllAlumnosDBUtils();
   }
