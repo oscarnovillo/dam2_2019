@@ -6,7 +6,6 @@
 package dao;
 
 import model.Alumno;
-import model.Asignatura;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
@@ -32,7 +31,8 @@ public class AlumnosDaoImpl implements AlumnosDao {
     public List<Alumno> getAllAlumnosDBUtils() {
         JdbcTemplate jtm = new JdbcTemplate(
             DBConnectionPool.getInstance().getDataSource());
-        return jtm.query("Select * from alumnos inner join miembros on alumnos.id_miembro = miembros.id_miembro",
+        return jtm.query("Select * from alumnos inner join miembros " +
+                        "on alumnos.id_miembro = miembros.id_miembro",
             BeanPropertyRowMapper.newInstance(Alumno.class));
     }
 
@@ -44,6 +44,13 @@ public class AlumnosDaoImpl implements AlumnosDao {
             new RowMapper<Alumno>() {
                 @Override
                 public Alumno mapRow(ResultSet rs, int rowNum) throws SQLException {
+                    /*
+                    Alumno a = new Alumno();
+                    Usuario u = new Usuario();
+                    a.setUsu(u);
+                    u.setNombre(rs.getString("LOGIN_PK!");
+                    */
+
                     return null;
                 }
             });

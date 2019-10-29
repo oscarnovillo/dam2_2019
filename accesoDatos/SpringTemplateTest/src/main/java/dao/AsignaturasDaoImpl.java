@@ -27,6 +27,7 @@ import java.util.logging.Logger;
 public class AsignaturasDaoImpl implements AsignaturasDao {
 
   //select JDBCTemplate
+
   @Override
   public List<Asignatura> getAllAsignaturasJDBCTemplate() {
 
@@ -37,33 +38,41 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
   }
 
 
+
   @Override
   public Asignatura getAsignaturaJDBCTemplate(int id) {
 
     JdbcTemplate jtm = new JdbcTemplate(
         DBConnectionPool.getInstance().getDataSource());
-    List<Asignatura> asignatura = jtm.query("Select * from asignaturas where ID = ?", new Object[]{id},
+    List<Asignatura> asignatura =
+            jtm.query("Select * from asignaturas where ID = ?",
+                    new Object[]{id},
         BeanPropertyRowMapper.newInstance(Asignatura.class));
     return asignatura.isEmpty() ? null : asignatura.get(0);
 
   }
 
   //Select JDBCTemplate
+
   @Override
   public List<Asignatura> getAllAsignaturasNotasJDBCTemplate() {
     JdbcTemplate jtm = new JdbcTemplate(
         DBConnectionPool.getInstance().getDataSource());
     List<Asignatura> asignatura = jtm.query("SELECT * FROM asignaturas where id in(select distinct(ID_ASIGNATURAS) from notas)",
-        new BeanPropertyRowMapper(Asignatura.class));
+            BeanPropertyRowMapper.newInstance(Asignatura.class));
+
     return asignatura;
   }
 
   //insert spring jdbc template
+
   @Override
   public Asignatura addAsignaturaJDBCTemplate(Asignatura a) {
 
     SimpleJdbcInsert jdbcInsert = new SimpleJdbcInsert(
-        DBConnectionPool.getInstance().getDataSource()).withTableName("asignaturas").usingGeneratedKeyColumns("ID");
+        DBConnectionPool.getInstance().getDataSource())
+            .withTableName("asignaturas")
+            .usingGeneratedKeyColumns("ID");
     Map<String, Object> parameters = new HashMap<>();
 
     parameters.put("NOMBRE", a.getNombre());
@@ -74,6 +83,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
   }
 
   // update JDBCTemplate
+
   @Override
   public int updateJDBCTemplate(Asignatura a) {
 
@@ -84,6 +94,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
   }
 
   //delete JDBCTemplate
+
   @Override
   public int deleteJDBCTemplate(int id) {
     int filas = -1;
@@ -105,6 +116,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
   }
 
   // delete trannsaccion JDBCTemplate
+
   @Override
   public int deleteTransaccJDBCTemplate(Asignatura a) {
     int filas = -1;
