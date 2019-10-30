@@ -5,6 +5,7 @@
  */
 package dao;
 
+import dao.SpringTemplate.AsignaturasDaoImplSpring;
 import model.Alumno;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
@@ -70,7 +71,7 @@ public class AlumnosDaoImpl implements AlumnosDao {
             lista = qr.query(con, "SELECT * FROM alumnos a join notas n on n.ID_ALUMNOS=a.id where n.ID_ASIGNATURAS=?", handler, id);
 
         } catch (Exception ex) {
-            Logger.getLogger(AsignaturasDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AsignaturasDaoImplSpring.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
 
             DBConnectionPool.getInstance().cerrarConexion(con);

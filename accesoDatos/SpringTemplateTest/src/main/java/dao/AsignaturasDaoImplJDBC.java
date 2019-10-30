@@ -4,7 +4,7 @@ import model.Asignatura;
 
 import java.util.List;
 
-public class AsignaturaDaoImplJDBC implements AsignaturasDao{
+public class AsignaturasDaoImplJDBC implements AsignaturasDao {
     @Override
     public List<Asignatura> getAllAsignaturasJDBCTemplate() {
         return null;

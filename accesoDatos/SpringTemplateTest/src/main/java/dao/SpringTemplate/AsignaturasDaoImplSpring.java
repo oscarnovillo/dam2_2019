@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package dao.SpringTemplate;
 
+import dao.AsignaturasDao;
+import dao.DBConnectionPool;
 import model.Asignatura;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -24,10 +26,11 @@ import java.util.logging.Logger;
 /**
  * @author oscar
  */
-public class AsignaturasDaoImpl implements AsignaturasDao {
+public class AsignaturasDaoImplSpring implements AsignaturasDao {
 
   //select JDBCTemplate
 
+ 
   @Override
   public List<Asignatura> getAllAsignaturasJDBCTemplate() {
 
@@ -39,6 +42,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
 
 
 
+ 
   @Override
   public Asignatura getAsignaturaJDBCTemplate(int id) {
 
@@ -54,6 +58,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
 
   //Select JDBCTemplate
 
+ 
   @Override
   public List<Asignatura> getAllAsignaturasNotasJDBCTemplate() {
     JdbcTemplate jtm = new JdbcTemplate(
@@ -66,6 +71,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
 
   //insert spring jdbc template
 
+ 
   @Override
   public Asignatura addAsignaturaJDBCTemplate(Asignatura a) {
 
@@ -84,6 +90,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
 
   // update JDBCTemplate
 
+ 
   @Override
   public int updateJDBCTemplate(Asignatura a) {
 
@@ -95,6 +102,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
 
   //delete JDBCTemplate
 
+ 
   @Override
   public int deleteJDBCTemplate(int id) {
     int filas = -1;
@@ -110,13 +118,14 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
         filas = -2;
       }
     } catch (Exception ex) {
-      Logger.getLogger(AsignaturasDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(AsignaturasDaoImplSpring.class.getName()).log(Level.SEVERE, null, ex);
     }
     return filas;
   }
 
   // delete trannsaccion JDBCTemplate
 
+ 
   @Override
   public int deleteTransaccJDBCTemplate(Asignatura a) {
     int filas = -1;
