@@ -13,6 +13,8 @@ public interface AsignaturasDao {
 
     Asignatura addAsignaturaJDBCTemplate(Asignatura a);
 
+    int insertJDBCTemplate(Asignatura a);
+
     int updateJDBCTemplate(Asignatura a);
 
     int deleteJDBCTemplate(int id);

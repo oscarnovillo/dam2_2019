@@ -1,5 +1,7 @@
 package main;
 
+import dao.SpringTemplate.AsignaturasDaoImplSpring;
+import model.Asignatura;
 import servicios.AlumnosServicios;
 import servicios.AsignaturasServicios;
 import tablas.TablasDao;
@@ -19,6 +21,10 @@ public class Main {
 
     AlumnosServicios al = new AlumnosServicios();
     al.getAllAlumnos().forEach(System.out::println);
+
+    AsignaturasDaoImplSpring sp = new AsignaturasDaoImplSpring();
+    System.out.println(sp.insertJDBCTemplate(a.getAsigntura(212)));
+    System.out.println(sp.insertJDBCTemplate(a.getAsigntura(212)));
 
   }
 }

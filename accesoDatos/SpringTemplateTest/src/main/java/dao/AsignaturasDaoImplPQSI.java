@@ -26,6 +26,11 @@ public class AsignaturasDaoImplPQSI implements AsignaturasDao{
     }
 
     @Override
+    public int insertJDBCTemplate(Asignatura a) {
+        return 0;
+    }
+
+    @Override
     public int updateJDBCTemplate(Asignatura a) {
         return 0;
     }

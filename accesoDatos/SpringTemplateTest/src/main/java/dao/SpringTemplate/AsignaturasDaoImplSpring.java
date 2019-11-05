@@ -13,10 +13,14 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -87,6 +91,31 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
     a.setId((int) jdbcInsert.executeAndReturnKey(parameters).longValue());
     return a;
   }
+
+
+  @Override
+  public int insertJDBCTemplate(Asignatura a) {
+    KeyHolder keyHolder = new GeneratedKeyHolder();
+
+    JdbcTemplate jtm = new JdbcTemplate(
+            DBConnectionPool.getInstance().getDataSource());
+    jtm.update(connection -> {
+      PreparedStatement ps = connection
+              .prepareStatement("insert into asignaturas (NOMBRE,CICLO,CURSO) VALUES (?,?,?)",
+                      Statement.RETURN_GENERATED_KEYS);
+      ps.setString(1, a.getNombre());
+      ps.setString(2, a.getCiclo());
+      ps.setString(3, a.getCurso());
+
+      return ps;
+    },keyHolder);
+
+      a.setId((int)keyHolder.getKey());
+
+    return (int)keyHolder.getKey();
+  }
+
+
 
   // update JDBCTemplate
 
