@@ -5,7 +5,7 @@ import java.sql.Date;
 import java.util.Collection;
 
 @Entity
-@Table(name = "teacher", schema = "test", catalog = "")
+@Table(name = "teacher")
 public class TeacherEntityjpa {
   private int idteacher;
   private String type;
