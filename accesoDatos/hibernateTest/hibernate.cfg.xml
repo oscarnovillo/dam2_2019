@@ -23,6 +23,7 @@
         <mapping class="modelo.TeachEntityjpa"/>
         <mapping class="modelo.TeacherEntityjpa"/>
         <mapping class="modelo.UserEntityjpa"/>
+        <mapping class="modelo.MemberEntityjpa"/>
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

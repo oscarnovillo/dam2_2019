@@ -3,8 +3,13 @@ package modelo;
 import javax.persistence.*;
 import java.sql.Date;
 
-@MappedSuperclass
+
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name= "member")
 public class MemberEntityjpa {
+
   private int idmember;
   private String nif;
   private String name;
@@ -12,16 +17,6 @@ public class MemberEntityjpa {
   private String telephonenum;
   private Date dateofbirth;
   private UserEntityjpa userByIduser;
-
-
-  @Column(table="member" ,name = "idmember", nullable = false)
-  public int getIdmember() {
-    return idmember;
-  }
-
-  public void setIdmember(int idmember) {
-    this.idmember = idmember;
-  }
 
   @Basic
   @Column(table="member" ,name = "NIF", nullable = false, length = 11)
@@ -84,9 +79,7 @@ public class MemberEntityjpa {
 
     MemberEntityjpa that = (MemberEntityjpa) o;
 
-    if (idmember != that.idmember) {
-      return false;
-    }
+
     if (nif != null ? !nif.equals(that.nif) : that.nif != null) {
       return false;
     }
@@ -109,8 +102,8 @@ public class MemberEntityjpa {
   @Override
   public String toString() {
     return "MemberEntityjpa{" +
-        "idmember=" + idmember +
-        ", nif='" + nif + '\'' +
+" idmember ='" + idmember + '\'' +
+        "nif='" + nif + '\'' +
         ", name='" + name + '\'' +
         ", address='" + address + '\'' +
         ", telephonenum='" + telephonenum + '\'' +
@@ -121,7 +114,7 @@ public class MemberEntityjpa {
 
   @Override
   public int hashCode() {
-    int result = idmember;
+    int result = 1;
     result = 31 * result + (nif != null ? nif.hashCode() : 0);
     result = 31 * result + (name != null ? name.hashCode() : 0);
     result = 31 * result + (address != null ? address.hashCode() : 0);
@@ -138,5 +131,15 @@ public class MemberEntityjpa {
 
   public void setUserByIduser(UserEntityjpa userByIduser) {
     this.userByIduser = userByIduser;
+  }
+
+  @Id
+  @Column(name = "idmember", nullable = false)
+  public int getIdmember() {
+    return idmember;
+  }
+
+  public void setIdmember(int idmember) {
+    this.idmember = idmember;
   }
 }

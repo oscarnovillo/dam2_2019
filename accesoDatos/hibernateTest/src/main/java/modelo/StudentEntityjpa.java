@@ -6,21 +6,13 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "student")
-@SecondaryTable(name = "member", pkJoinColumns = @PrimaryKeyJoinColumn(name = "idmember", referencedColumnName = "idstudent"))
+@PrimaryKeyJoinColumn(name = "idstudent")
 public class StudentEntityjpa extends MemberEntityjpa{
-  private int idstudent;
+
   private Date schoolYear;
   private Collection<EnrolledEntityjpa> enrolledsByIdstudent;
 
-  @Id
-  @Column(name = "idstudent", nullable = false)
-  public int getIdstudent() {
-    return idstudent;
-  }
 
-  public void setIdstudent(int idstudent) {
-    this.idstudent = idstudent;
-  }
 
   @Basic
   @Column(name = "schoolYear", nullable = false)
@@ -43,9 +35,7 @@ public class StudentEntityjpa extends MemberEntityjpa{
 
     StudentEntityjpa that = (StudentEntityjpa) o;
 
-    if (idstudent != that.idstudent) {
-      return false;
-    }
+
     if (schoolYear != null ? !schoolYear.equals(that.schoolYear) : that.schoolYear != null) {
       return false;
     }
@@ -56,7 +46,7 @@ public class StudentEntityjpa extends MemberEntityjpa{
   @Override
   public String toString() {
     return "StudentEntityjpa{" +
-        "idstudent=" + idstudent +
+
         ", schoolYear=" + schoolYear +
 
         "} " + super.toString();
@@ -64,7 +54,7 @@ public class StudentEntityjpa extends MemberEntityjpa{
 
   @Override
   public int hashCode() {
-    int result = idstudent;
+    int result = 1;
     result = 31 * result + (schoolYear != null ? schoolYear.hashCode() : 0);
     return result;
   }

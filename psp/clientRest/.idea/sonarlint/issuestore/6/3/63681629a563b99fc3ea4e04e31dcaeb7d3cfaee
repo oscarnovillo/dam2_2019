@@ -1,0 +1,9 @@
+
+asquid:UselessImportCheck"8Remove this unused import 'java.util.stream.Collectors'.(Óóº´úÿÿÿÿ
+Xsquid:UselessImportCheck"4Remove this unused import 'org.w3c.dom.ls.LSOutput'.(Ò½¾Š
+squid:S1186>"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(õ­¥Ûþÿÿÿÿ
+˜squid:S1186B"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚“¶î
+2squid:S3626&"Remove this redundant jump.(ûÁÝ…
+Vsquid:S1161>":Add the "@Override" annotation above this method signature(õ­¥Ûþÿÿÿÿ
+Qsquid:S1161B":Add the "@Override" annotation above this method signature(‚“¶î
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(–“Ù
