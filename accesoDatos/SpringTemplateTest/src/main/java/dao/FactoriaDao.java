@@ -5,6 +5,8 @@
  */
 package dao;
 
+import dao.SpringTemplate.AsignaturasDaoImplSpring;
+
 /**
  *
  * @author oscar
@@ -12,7 +14,7 @@ package dao;
 public class FactoriaDao {
   
   public static final int DAO_JDBC = 1;
-  public static final int DAO_DBUTILS = 2;
+  public static final int DAO_SPRING = 2;
   
   
   public AlumnosDao getAlumnosDAO(int tipoDAO)
@@ -20,8 +22,18 @@ public class FactoriaDao {
     AlumnosDao dao = null;
     if (tipoDAO == DAO_JDBC)
       dao = new AlumnosDaoImpl();
-    else if (tipoDAO == DAO_DBUTILS)
+    else if (tipoDAO == DAO_SPRING)
       dao = new AlumnosDaoImpl();
+    return dao;
+  }
+
+  public AsignaturasDao getAsignaturasDAO(int tipoDAO)
+  {
+    AsignaturasDao dao = null;
+    if (tipoDAO == DAO_JDBC)
+      dao = new AsignaturasDaoImplJDBC();
+    else if (tipoDAO == DAO_SPRING)
+      dao = new AsignaturasDaoImplSpring();
     return dao;
   }
   

@@ -3,18 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dao;
+package dao.SpringTemplate;
 
+import dao.AsignaturasDao;
+import dao.DBConnectionPool;
 import model.Asignatura;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.transaction.TransactionDefinition;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,10 +30,11 @@ import java.util.logging.Logger;
 /**
  * @author oscar
  */
-public class AsignaturasDaoImpl implements AsignaturasDao {
+public class AsignaturasDaoImplSpring implements AsignaturasDao {
 
   //select JDBCTemplate
 
+ 
   @Override
   public List<Asignatura> getAllAsignaturasJDBCTemplate() {
 
@@ -39,6 +46,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
 
 
 
+ 
   @Override
   public Asignatura getAsignaturaJDBCTemplate(int id) {
 
@@ -54,6 +62,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
 
   //Select JDBCTemplate
 
+ 
   @Override
   public List<Asignatura> getAllAsignaturasNotasJDBCTemplate() {
     JdbcTemplate jtm = new JdbcTemplate(
@@ -66,6 +75,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
 
   //insert spring jdbc template
 
+ 
   @Override
   public Asignatura addAsignaturaJDBCTemplate(Asignatura a) {
 
@@ -82,8 +92,34 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
     return a;
   }
 
+
+  @Override
+  public int insertJDBCTemplate(Asignatura a) {
+    KeyHolder keyHolder = new GeneratedKeyHolder();
+
+    JdbcTemplate jtm = new JdbcTemplate(
+            DBConnectionPool.getInstance().getDataSource());
+    jtm.update(connection -> {
+      PreparedStatement ps = connection
+              .prepareStatement("insert into asignaturas (NOMBRE,CICLO,CURSO) VALUES (?,?,?)",
+                      Statement.RETURN_GENERATED_KEYS);
+      ps.setString(1, a.getNombre());
+      ps.setString(2, a.getCiclo());
+      ps.setString(3, a.getCurso());
+
+      return ps;
+    },keyHolder);
+
+      a.setId((int)keyHolder.getKey());
+
+    return (int)keyHolder.getKey();
+  }
+
+
+
   // update JDBCTemplate
 
+ 
   @Override
   public int updateJDBCTemplate(Asignatura a) {
 
@@ -95,6 +131,7 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
 
   //delete JDBCTemplate
 
+ 
   @Override
   public int deleteJDBCTemplate(int id) {
     int filas = -1;
@@ -110,13 +147,14 @@ public class AsignaturasDaoImpl implements AsignaturasDao {
         filas = -2;
       }
     } catch (Exception ex) {
-      Logger.getLogger(AsignaturasDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
+      Logger.getLogger(AsignaturasDaoImplSpring.class.getName()).log(Level.SEVERE, null, ex);
     }
     return filas;
   }
 
   // delete trannsaccion JDBCTemplate
 
+ 
   @Override
   public int deleteTransaccJDBCTemplate(Asignatura a) {
     int filas = -1;
