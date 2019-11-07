@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24e8a3b3-b20f-442b-8de3-90491bed0049" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/main/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/main/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpringTemplateTest/src/main/resources/beas.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/clientRest/.idea/sonarlint/issuestore/2/4/24cd55c90a209e9a111a7cdb2d15b8a172fb2176" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/clientRest/.idea/sonarlint/issuestore/4/7/4748f7564a75dbeb5501268114760becaeba0762" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/clientRest/.idea/sonarlint/issuestore/4/8/48bd41109c4ca378e47da5dcbf5fbb35f964028c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/clientRest/.idea/sonarlint/issuestore/6/3/63681629a563b99fc3ea4e04e31dcaeb7d3cfaee" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/clientRest/.idea/sonarlint/issuestore/c/d/cd1daca0b7550568318464a2ba2aa4fa1e10f2e8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/okhttpRetrofit/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/okhttpRetrofit/.idea/sonarlint/issuestore/6/1/612dc326ef624a6ff449c7a977ed5ba55a6fa3d5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/okhttpRetrofit/.idea/sonarlint/issuestore/7/6/761f864510b6499b71b271c05c31cfad21f85453" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/okhttpRetrofit/.idea/sonarlint/issuestore/7/f/7f08be4e9c62f2e5f8f02242af89b918cb9a135f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/okhttpRetrofit/.idea/sonarlint/issuestore/d/4/d44980a57a84025b83b9dd91f353f8c2945d7a7c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/okhttpRetrofit/.idea/sonarlint/issuestore/e/4/e43151f8c181db0df1f7f5f73e76b744009a88a8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../psp/okhttpRetrofit/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringTemplateTest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringTemplateTest/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/dao/AlumnosDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/dao/AlumnosDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/dao/AlumnosDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/dao/AlumnosDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernateTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/MemberEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/MemberEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/StudentEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/StudentEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modelo/UserEntityjpa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/UserEntityjpa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../psp/TestCalculadoraWeb/TestCalculadoraWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../psp/TestCalculadoraWeb/TestCalculadoraWeb.iml" afterDir="false" />
-    </list>
+    <list default="true" id="24e8a3b3-b20f-442b-8de3-90491bed0049" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1572977690962</updated>
       <workItem from="1572977696044" duration="3648000" />
-      <workItem from="1573061883830" duration="4532000" />
+      <workItem from="1573061883830" duration="4565000" />
     </task>
     <task id="LOCAL-00001" summary="hibernate">
       <created>1572980645531</created>
@@ -228,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572980746071</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="hibernate">
+      <created>1573078660675</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573078660675</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -118,8 +118,8 @@ public class PantallaInicio implements Initializable {
 
     @FXML
     private void menuVisitas(ActionEvent actionEvent) throws IOException {
-        Task<String> tarea = new Task<String>() {
-
+        var tarea = new Task<String>() {
+            public StringProperty test;
             @Override
             protected String call() throws Exception {
                 HttpUrl.Builder urlBuilder
@@ -136,6 +136,7 @@ public class PantallaInicio implements Initializable {
                 //return "OK";
             }
         };
+
 
        // fxText.textProperty().bind(tarea.valueProperty());
         tarea.setOnSucceeded(cadena -> {
