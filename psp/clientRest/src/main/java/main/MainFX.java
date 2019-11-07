@@ -28,4 +28,5 @@ public class MainFX extends Application {
     primaryStage.show();
     primaryStage.setResizable(false);
   }
+
 }
