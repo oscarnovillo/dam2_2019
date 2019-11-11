@@ -17,6 +17,6 @@ public interface AreasAPI {
   Call<Area> loadOneArea(@Path("id") int id);
 
   @GET("competitions/")
-  Call<CompetitionsRequest> loadCompetitions(@Header("X-Auth-Token") String authKey, @Query("areas") int areas);
+  Call<CompetitionsRequest> loadCompetitions( @Query("areas") int areas);
 
 }
