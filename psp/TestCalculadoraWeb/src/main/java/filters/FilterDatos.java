@@ -41,13 +41,18 @@ public class FilterDatos implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
+        resp.setContentType("text/html;charset=UTF-8");
+
         doBeforeProcessing(req);
 
         chain.doFilter(req, resp);
 
-        String resultadoCifrado = doAfterProcessing((HttpServletRequest) req);
-
+        String nombreDesCifrado = (String) req.getAttribute(Constantes.RESULTADO);
+        String resultadoCifrado = "";
+        CifradoCesar cf = new CifradoCesar();
+        resultadoCifrado = cf.cifra(nombreDesCifrado,1);
         resp.getWriter().println(resultadoCifrado);
+
 
     }
 

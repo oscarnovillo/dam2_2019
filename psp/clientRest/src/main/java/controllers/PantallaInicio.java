@@ -13,6 +13,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
+import utils.CifradoCesar;
 import utils.Constantes;
 
 import java.io.IOException;
@@ -132,6 +133,8 @@ public class PantallaInicio implements Initializable {
 
                 Call call = clientOK.newCall(request);
                 Response response = call.execute();
+                CifradoCesar cf = new CifradoCesar();
+                cf.descifra(response.body().string(),1);
                 return response.body().string();
                 //return "OK";
             }
@@ -139,13 +142,14 @@ public class PantallaInicio implements Initializable {
 
 
        // fxText.textProperty().bind(tarea.valueProperty());
-        tarea.setOnSucceeded(cadena -> {
-            fxText.setText(tarea.getValue());
+        tarea.setOnSucceeded(workerStateEvent -> {
+            fxText.setText((String)workerStateEvent.getSource().getValue());
         });
         tarea.setOnFailed(workerStateEvent ->
                 Logger.getLogger("PantallaInicio")
                         .log(Level.SEVERE, "error ",
                                 workerStateEvent.getSource().getException()));
+        new Thread(tarea).start();
         executorService.submit(tarea);
 
 
