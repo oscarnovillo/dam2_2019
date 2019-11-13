@@ -11,3 +11,5 @@ U
 %src/main/java/modelo/Competition.java,7\6\761f864510b6499b71b271c05c31cfad21f85453
 N
 src/main/java/modelo/Area.java,d\4\d44980a57a84025b83b9dd91f353f8c2945d7a7c
+W
+'src/main/java/modelo/CurrentSeason.java,c\3\c3de41f598086f0eb17738a5ea3acb912fd0788f
