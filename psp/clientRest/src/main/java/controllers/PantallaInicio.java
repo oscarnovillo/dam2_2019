@@ -119,7 +119,7 @@ public class PantallaInicio implements Initializable {
 
     @FXML
     private void menuVisitas(ActionEvent actionEvent) throws IOException {
-        var tarea = new Task<String>() {
+        Task<String> tarea = new Task<String>() {
             public StringProperty test;
             @Override
             protected String call() throws Exception {
@@ -135,6 +135,7 @@ public class PantallaInicio implements Initializable {
                 Response response = call.execute();
                 CifradoCesar cf = new CifradoCesar();
                 cf.descifra(response.body().string(),1);
+
                 return response.body().string();
                 //return "OK";
             }
@@ -143,7 +144,7 @@ public class PantallaInicio implements Initializable {
 
        // fxText.textProperty().bind(tarea.valueProperty());
         tarea.setOnSucceeded(workerStateEvent -> {
-            fxText.setText((String)workerStateEvent.getSource().getValue());
+                fxText.setText(tarea.getValue());
         });
         tarea.setOnFailed(workerStateEvent ->
                 Logger.getLogger("PantallaInicio")

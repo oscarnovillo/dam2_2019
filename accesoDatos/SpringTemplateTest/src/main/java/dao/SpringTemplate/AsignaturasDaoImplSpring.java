@@ -67,10 +67,9 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
   public List<Asignatura> getAllAsignaturasNotasJDBCTemplate() {
     JdbcTemplate jtm = new JdbcTemplate(
         DBConnectionPool.getInstance().getDataSource());
-    List<Asignatura> asignatura = jtm.query("SELECT * FROM asignaturas where id in(select distinct(ID_ASIGNATURAS) from notas)",
+   return  jtm.query("SELECT * FROM asignaturas where id in(select distinct(ID_ASIGNATURAS) from notas)",
             BeanPropertyRowMapper.newInstance(Asignatura.class));
 
-    return asignatura;
   }
 
   //insert spring jdbc template
@@ -167,7 +166,7 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
       JdbcTemplate jtm = new JdbcTemplate(
           transactionManager.getDataSource());
       String updateQuery = "delete from notas where ID_ASIGNATURAS = ?";
-      filas = jtm.update(updateQuery, a.getId());
+      jtm.update(updateQuery, a.getId());
 
       updateQuery = "delete from asignaturas where ID = ?";
       filas = jtm.update(updateQuery, a.getId());

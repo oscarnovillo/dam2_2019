@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class SeriesBatch {
@@ -16,14 +17,18 @@ public class SeriesBatch {
         PreparedStatement stmt = con.prepareStatement
                 ("insert into series (name) values (?)",
                         Statement.RETURN_GENERATED_KEYS);
-        for (int i = 0; i < 500000; i++) {
+        for (int i = 0; i < 10; i++) {
             stmt.setString(1, f.funnyName().name() + " " + f.number().digits(10));
             stmt.addBatch();
-            if (i%100000 == 0)
+            if (i % 100000 == 0)
                 System.out.println(i);
         }
 
         stmt.executeBatch();
+        ResultSet rs = stmt.getGeneratedKeys();
+        while (rs.next()) {
+            System.out.println(rs.getInt(1));
+        }
         con.commit();
         con.close();
     }
