@@ -25,5 +25,7 @@ public class MainUsuario {
     LoginApi login = retrofit.create(LoginApi.class);
 
     System.out.println(login.login(new Usuario("jj","mm")).execute().body());
+
+    login.login().execute().body().stream().forEach(System.out::println);
   }
 }
