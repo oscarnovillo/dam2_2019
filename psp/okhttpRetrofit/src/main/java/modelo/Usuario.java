@@ -1,4 +1,4 @@
-package dao.modelo;
+package modelo;
 
 public class Usuario {
 

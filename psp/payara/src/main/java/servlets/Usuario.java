@@ -7,12 +7,18 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
+import java.util.stream.Collectors;
 
 @WebServlet(name = "Usuario",urlPatterns = {"/login"})
 public class Usuario extends javax.servlet.http.HttpServlet {
 
   protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
+    //String body = request.getReader().lines().collect(Collectors.joining());
+    Jsonb jsonb = JsonbBuilder.create();
+    dao.modelo.Usuario user = jsonb.fromJson(request.getReader(), dao.modelo.Usuario.class);
+
+    response.getWriter().println(user.getLogin());
   }
 
   @Inject
