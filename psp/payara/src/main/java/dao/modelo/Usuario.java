@@ -1,9 +1,13 @@
 package dao.modelo;
 
+import javax.json.bind.annotation.JsonbProperty;
+
 public class Usuario {
 
 
+  @JsonbProperty
   private String login;
+  @JsonbProperty
   private String pass;
 
   public Usuario(String login, String pass) {

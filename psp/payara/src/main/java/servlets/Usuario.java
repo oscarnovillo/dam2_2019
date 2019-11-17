@@ -2,7 +2,9 @@ package servlets;
 
 import servicios.ServiciosUsuarios;
 
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.servlet.annotation.WebServlet;
@@ -22,12 +24,12 @@ public class Usuario extends javax.servlet.http.HttpServlet {
   }
 
   @Inject
+  @RequestScoped
   private ServiciosUsuarios su;
 
   protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
     Jsonb jsonb = JsonbBuilder.create();
     jsonb.toJson(su.getUsers(),response.getWriter());
-
   }
 
 
