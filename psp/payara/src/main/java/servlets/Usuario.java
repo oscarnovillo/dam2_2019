@@ -12,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.stream.Collectors;
 
 @WebServlet(name = "Usuario",urlPatterns = {"/login"})
@@ -44,8 +46,27 @@ public class Usuario extends javax.servlet.http.HttpServlet {
     }
     else
     {
+      ServiciosUsuarios su = new ServiciosUsuarios();
       Jsonb jsonb = JsonbBuilder.create();
       jsonb.toJson(su.getUsers(),response.getWriter());
+
+      try {
+        MessageDigest digest = MessageDigest.getInstance("SHA-512");
+        digest.update(su.getUsers().get(0).getPass().getBytes());
+        byte[] bytes= digest.digest();
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i< bytes.length ;i++)
+        {
+          sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16)
+                  .substring(1));
+        }
+        //Get complete hashed password in hex format
+        //generatedPassword = sb.toString();
+        System.out.println(sb.toString());
+
+      } catch (NoSuchAlgorithmException e) {
+        e.printStackTrace();
+      }
 //      response.setStatus(403);
 //      response.getWriter().println("mensaje del error");
     }

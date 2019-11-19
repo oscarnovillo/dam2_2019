@@ -13,3 +13,17 @@ N
 src/main/java/modelo/Area.java,d\4\d44980a57a84025b83b9dd91f353f8c2945d7a7c
 W
 'src/main/java/modelo/CurrentSeason.java,c\3\c3de41f598086f0eb17738a5ea3acb912fd0788f
+]
+-src/main/java/modelo/CompetitionsRequest.java,4\a\4a97c19c1873da4264d88f640172f49866735514
+T
+$src/main/java/modelo/ParentArea.java,5\e\5e69f60cbec44a16dc52b66107723e347a410d97
+Q
+!src/main/java/modelo/Filters.java,4\3\43d5e043c93c04546a4bff2ec914a3fb7fc4d4fc
+V
+&src/main/java/modelo/AreasRequest.java,c\3\c395848291520930e7e2d53a9aa37c54e8509781
+Q
+!src/main/java/modelo/Usuario.java,c\1\c10377ac52b816c92626a7ffb44c73d6ccb58577
+S
+#src/main/java/main/MainUsuario.java,b\5\b514be7b0fc0b2c06c7db2bf788bd020ebd1732a
+T
+$src/main/java/retrofit/LoginApi.java,5\1\51c55c6ec15291e25bb666871235c5ddffd80cad

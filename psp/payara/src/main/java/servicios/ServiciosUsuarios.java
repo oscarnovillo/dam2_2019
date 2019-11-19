@@ -17,6 +17,8 @@ public class ServiciosUsuarios {
 
 
   public List<Usuario> getUsers(){
+
+    usuario = new DaoUsuarios();
     return usuario.getUsuarios();
   }
 

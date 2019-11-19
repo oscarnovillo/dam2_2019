@@ -8,10 +8,15 @@
   <component name="ChangeListManager">
     <list default="true" id="d8d6dd45-f126-4b0a-87f7-a36fe07e648e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestCalculadoraWeb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TestCalculadoraWeb.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../okhttpRetrofit/src/main/java/retrofit/LoginApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../okhttpRetrofit/src/main/java/retrofit/LoginApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payara/payara.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../payara/src/main/java/dao/modelo/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../payara/src/main/java/dao/modelo/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/7/6/761f864510b6499b71b271c05c31cfad21f85453" beforeDir="false" afterPath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/7/6/761f864510b6499b71b271c05c31cfad21f85453" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/7/f/7f08be4e9c62f2e5f8f02242af89b918cb9a135f" beforeDir="false" afterPath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/7/f/7f08be4e9c62f2e5f8f02242af89b918cb9a135f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/d/4/d44980a57a84025b83b9dd91f353f8c2945d7a7c" beforeDir="false" afterPath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/d/4/d44980a57a84025b83b9dd91f353f8c2945d7a7c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/e/4/e43151f8c181db0df1f7f5f73e76b744009a88a8" beforeDir="false" afterPath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/e/4/e43151f8c181db0df1f7f5f73e76b744009a88a8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../okhttpRetrofit/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payara/src/main/java/dao/DaoUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/../payara/src/main/java/dao/DaoUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payara/src/main/java/servicios/ServiciosUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/../payara/src/main/java/servicios/ServiciosUsuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payara/src/main/java/servlets/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../payara/src/main/java/servlets/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../payara/target/payara.war" beforeDir="false" afterPath="$PROJECT_DIR$/../payara/target/payara.war" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -533,6 +538,7 @@
       <workItem from="1573460868309" duration="1559000" />
       <workItem from="1573558935330" duration="2301000" />
       <workItem from="1573633874750" duration="977000" />
+      <workItem from="1574163218546" duration="628000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1569882068270</created>
