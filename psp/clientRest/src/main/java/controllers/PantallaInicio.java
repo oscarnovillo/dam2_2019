@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import okhttp3.*;
@@ -29,7 +30,12 @@ import java.util.logging.Logger;
 
 public class PantallaInicio implements Initializable {
 
+
+
+    @FXML
+    private ListView fxListView;
     ExecutorService executorService;
+
     @FXML
     private MenuItem fxMenuLogin;
     @FXML
@@ -40,6 +46,7 @@ public class PantallaInicio implements Initializable {
         Alert a = new Alert(Alert.AlertType.INFORMATION);
         a.setContentText("file");
         a.showAndWait();
+
     }
 
 
