@@ -1,33 +1,31 @@
 package dao.modelo;
 
 
+import javax.json.bind.annotation.JsonbCreator;
+import javax.json.bind.annotation.JsonbProperty;
 
 public class Usuario {
   private String login;
 
   private String pass;
 
-  public Usuario(String login, String pass) {
+  @JsonbCreator
+  public Usuario(@JsonbProperty("login") String login, @JsonbProperty("pass") String pass) {
     this.login = login;
     this.pass = pass;
   }
 
-  public Usuario() {
-  }
+
 
   public String getLogin() {
     return login;
   }
 
-  public void setLogin(String login) {
-    this.login = login;
-  }
+
 
   public String getPass() {
     return pass;
   }
 
-  public void setPass(String pass) {
-    this.pass = pass;
-  }
+
 }

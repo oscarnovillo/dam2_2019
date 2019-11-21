@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "509738337231",
+    "firebase_url": "https://entornosquevedo.firebaseio.com",
+    "project_id": "entornosquevedo",
+    "storage_bucket": "entornosquevedo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509738337231:android:8d4a821f896d2ba81f08ba",
+        "android_client_info": {
+          "package_name": "thunkable.ko.ko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509738337231-lp2lg1rrubl9jgge7okhobbb0cbagkl6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiSByYyAzx4NLmaOLkc7CYAGwMmnvQfNc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509738337231-lp2lg1rrubl9jgge7okhobbb0cbagkl6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
