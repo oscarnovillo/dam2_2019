@@ -5,9 +5,6 @@ import javax.json.bind.annotation.JsonbCreator;
 import javax.json.bind.annotation.JsonbProperty;
 
 public class Usuario {
-
-
-
   private String login;
 
   private String pass;
