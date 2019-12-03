@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.BorderPane?>
-
+<?import javafx.scene.layout.VBox?>
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PantallaInicio">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false"  text="File">
+          <Menu mnemonicParsing="false" text="File">
             <items>
               <MenuItem fx:id="fxMenuLogin" mnemonicParsing="false" onAction="#menuLogin" text="Login" />
                 <MenuItem fx:id="fxMenuVisitas" mnemonicParsing="false" onAction="#menuVisitas" text="Visitas" />
@@ -20,8 +21,8 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Contador">
             <items>
-              <MenuItem  fx:id="fxMenuContador" onAction="#menuContador" mnemonicParsing="false" text="Contador" />
-                <MenuItem  fx:id="fxMenuContadorOk" onAction="#menuContadorOk" mnemonicParsing="false" text="ContadorOk" />
+              <MenuItem fx:id="fxMenuContador" mnemonicParsing="false" onAction="#menuContador" text="Contador" />
+                <MenuItem fx:id="fxMenuContadorOk" mnemonicParsing="false" onAction="#menuContadorOk" text="ContadorOk" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -33,6 +34,11 @@
       </MenuBar>
    </top>
    <center>
-      <TextArea fx:id="fxText" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="fxText" prefHeight="200.0" prefWidth="200.0" />
+             <ListView fx:id="fxListView" onScrollFinished="#scrollFinised" prefHeight="206.0" prefWidth="600.0" />
+         </children>
+      </VBox>
    </center>
 </BorderPane>
