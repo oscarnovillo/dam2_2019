@@ -22,6 +22,12 @@ public class ServiciosUsuarios {
     return usuario.getUsuarios();
   }
 
+  public Usuario getUser(String login){
+
+    usuario = new DaoUsuarios();
+    return usuario.getUsuario(login);
+  }
+
   public String getUserString() { return "conseguido"; }
 
 
