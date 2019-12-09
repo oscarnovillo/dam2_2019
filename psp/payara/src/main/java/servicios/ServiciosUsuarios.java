@@ -16,19 +16,25 @@ public class ServiciosUsuarios {
   private DaoUsuarios usuario;
 
 
-  public List<Usuario> getUsers(){
+  public List<Usuario> getUsers() {
 
     usuario = new DaoUsuarios();
     return usuario.getUsuarios();
   }
 
-  public Usuario getUser(String login){
+  public Usuario getUser(String login) {
 
     usuario = new DaoUsuarios();
     return usuario.getUsuario(login);
   }
 
-  public String getUserString() { return "conseguido"; }
+  public String getUserString() {
+    return "conseguido";
+  }
+
+  public Usuario addUser(Usuario user) {
+    return usuario.addUser(user);
+  }
 
 
 }

@@ -27,6 +27,13 @@ public class DaoUsuarios {
     return users.stream().filter(usuario -> usuario.getLogin().equals(login)).findFirst().orElse(null);
   }
 
+  public Usuario addUser(Usuario u)
+  {
+    users.add(u);
+    return u;
+
+  }
+
 
 
 }
