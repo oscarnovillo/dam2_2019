@@ -5,7 +5,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="connection.url">jdbc:mysql://dam2.mysql.iesquevedo.es:3335/test</property>
+        <property name="connection.url">jdbc:mysql://dam2.mysql.iesquevedo.es:3335/gonzalo_cuadrado_schooldatabase</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
@@ -17,13 +17,14 @@
         <property name="hibernate.hikari.idleTimeout">300000</property>
 
 
-        <mapping class="modelo.EnrolledEntityjpa"/>
-        <mapping class="modelo.StudentEntityjpa"/>
-        <mapping class="modelo.SubjectEntityjpa"/>
-        <mapping class="modelo.TeachEntityjpa"/>
-        <mapping class="modelo.TeacherEntityjpa"/>
-        <mapping class="modelo.UserEntityjpa"/>
-        <mapping class="modelo.MemberEntityjpa"/>
+        <mapping class="dao.modelo.EntitySubject" />
+        <mapping class="wizard.modelo.EnrolledEntityjpa"/>
+        <mapping class="wizard.modelo.StudentEntityjpa"/>
+        <mapping class="wizard.modelo.SubjectEntityjpa"/>
+        <mapping class="wizard.modelo.TeachEntityjpa"/>
+        <mapping class="wizard.modelo.TeacherEntityjpa"/>
+        <mapping class="wizard.modelo.UserEntityjpa"/>
+        <mapping class="wizard.modelo.MemberEntityjpa"/>
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

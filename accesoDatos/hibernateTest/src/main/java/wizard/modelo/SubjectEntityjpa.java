@@ -1,10 +1,10 @@
-package modelo;
+package wizard.modelo;
 
 import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-@Table(name = "subject", schema = "test", catalog = "")
+@Table(name = "subject")
 public class SubjectEntityjpa {
   private int idsubject;
   private String name;

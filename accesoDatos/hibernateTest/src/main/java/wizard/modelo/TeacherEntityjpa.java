@@ -1,4 +1,4 @@
-package modelo;
+package wizard.modelo;
 
 import javax.persistence.*;
 import java.sql.Date;
