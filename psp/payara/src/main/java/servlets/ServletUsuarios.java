@@ -15,7 +15,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 @WebServlet(name = "Usuario", urlPatterns = {"/login"})
-public class Usuario extends javax.servlet.http.HttpServlet {
+public class ServletUsuarios extends javax.servlet.http.HttpServlet {
 
     @Inject
     @RequestScoped

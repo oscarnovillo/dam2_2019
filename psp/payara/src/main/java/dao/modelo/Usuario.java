@@ -9,13 +9,22 @@ public class Usuario {
 
   private String pass;
 
-  @JsonbCreator
-  public Usuario(@JsonbProperty("login") String login, @JsonbProperty("pass") String pass) {
+  public Usuario(String login, String pass) {
     this.login = login;
     this.pass = pass;
   }
 
+  public Usuario() {
+  }
 
+  public void setLogin(String login) {
+    this.login = login;
+  }
+
+
+  public void setPass(String pass) {
+    this.pass = pass;
+  }
 
   public String getLogin() {
     return login;

@@ -9,11 +9,31 @@ import java.util.List;
 
 public class DaoUsuarios {
 
-  public List<Usuario> getUsuarios()
-  {
-    List<Usuario> users =  new ArrayList<>();
+  private static List<Usuario> users;
+
+  static {
+    users =  new ArrayList<>();
     users.add(new Usuario("1","C@sita2028LA"));
     users.add(new Usuario("2","2"));
+  }
+
+  public List<Usuario> getUsuarios()
+  {
     return users;
   }
+
+  public Usuario getUsuario(String login)
+  {
+    return users.stream().filter(usuario -> usuario.getLogin().equals(login)).findFirst().orElse(null);
+  }
+
+  public Usuario addUser(Usuario u)
+  {
+    users.add(u);
+    return u;
+
+  }
+
+
+
 }

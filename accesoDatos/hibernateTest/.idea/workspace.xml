@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="24e8a3b3-b20f-442b-8de3-90491bed0049" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/HibernateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/modelo/EntitySubject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/HibernateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao/Enroll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao/EnrollPK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao/Members.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao/Typeuser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao2/Enroll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao2/EnrollPK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao2/Members.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao2/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao2/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao2/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao2/Typeuser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wizard/dao2/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/dao/SpringTemplate/AsignaturasDaoImplSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/dao/SpringTemplate/AsignaturasDaoImplSpring.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernate/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/359419e7-7253-4d96-a04d-b3ddd6d95a20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/359419e7-7253-4d96-a04d-b3ddd6d95a20.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hibernateTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/hibernateTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/EnrolledEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wizard/modelo/EnrolledEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/MemberEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wizard/modelo/MemberEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/StudentEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wizard/modelo/StudentEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/SubjectEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wizard/modelo/SubjectEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/TeachEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wizard/modelo/TeachEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/TeacherEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wizard/modelo/TeacherEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/UserEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wizard/modelo/UserEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modelo/UserEntityjpa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../psp/payara/src/main/java/servlets/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../psp/payara/src/main/java/servlets/Usuario.java" afterDir="false" />
-    </list>
+    <list default="true" id="24e8a3b3-b20f-442b-8de3-90491bed0049" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,52 +25,49 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="gonzalo" type="feb32156:DbDataSourceImpl" />
+        <item name="iesquevedo" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="gonzalo" type="feb32156:DbDataSourceImpl" />
+        <item name="iesquevedo" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="gonzalo" type="feb32156:DbDataSourceImpl" />
+        <item name="iesquevedo" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="gonzalo_cuadrado_schooldatabase: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="test: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="gonzalo" type="feb32156:DbDataSourceImpl" />
+        <item name="iesquevedo" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="gonzalo_cuadrado_schooldatabase: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="test: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="enrolled: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="iesquevedo" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="test: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="member: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="iesquevedo" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="test: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="student: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="gonzalo" type="feb32156:DbDataSourceImpl" />
+        <item name="iesquevedo" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="gonzalo_cuadrado_schooldatabase: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="test: schema" type="76f4a085:MysqlImplModel$Schema" />
         <item name="subject: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="gonzalo" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="gonzalo_cuadrado_schooldatabase: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="teacher: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="gonzalo" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="gonzalo_cuadrado_schooldatabase: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="hibernateTest" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -138,13 +95,13 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="JPA.DatabaseSchemaImportDialog" value="504b4d6f-09cf-45f7-a471-96a94a8e2e5d" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="359419e7-7253-4d96-a04d-b3ddd6d95a20" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../hibernate" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -152,17 +109,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\oscar\Documents\CLASES ALCALA\2019-2020\CODIGO\dam2_2019\accesoDatos\hibernateTest\src\main\resources" />
-    </key>
-    <key name="ImportMappingsDialog.RecentPackages">
-      <recent name="dao2" />
-      <recent name="" />
-      <recent name="dao" />
-      <recent name="modelo" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\oscar\Documents\CLASES ALCALA\2019-2020\CODIGO\dam2_2019\accesoDatos\hibernateTest" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="modelo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\oscar\Documents\CLASES ALCALA\2019-2020\CODIGO\dam2_2019\accesoDatos\hibernateTest\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -177,20 +131,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HibernateTest">
-    <configuration name="HibernateTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.HibernateTest" />
-      <module name="hibernateTest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="hibernateTest" />
@@ -200,7 +141,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HibernateTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -212,12 +152,22 @@
           <expand>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5c84dd09" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@10a36fcc" type="7427dc5b:ServiceModel$ServiceGroupNode" />
             </path>
             <path>
               <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@5c84dd09" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@50672c3" type="9fbbdea:ServiceModel$ServiceNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@10a36fcc" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@6629f0cd" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@10a36fcc" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@1276bf2c" type="9fbbdea:ServiceModel$ServiceNode" />
+            </path>
+            <path>
+              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@10a36fcc" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@eadbaa3" type="9fbbdea:ServiceModel$ServiceNode" />
             </path>
           </expand>
           <select />
@@ -237,7 +187,6 @@
       <updated>1572977690962</updated>
       <workItem from="1572977696044" duration="3648000" />
       <workItem from="1573061883830" duration="4565000" />
-      <workItem from="1575970994514" duration="6134000" />
     </task>
     <task id="LOCAL-00001" summary="hibernate">
       <created>1572980645531</created>
