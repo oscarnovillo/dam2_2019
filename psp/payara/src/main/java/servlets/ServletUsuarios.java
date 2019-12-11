@@ -18,7 +18,6 @@ import java.security.NoSuchAlgorithmException;
 public class ServletUsuarios extends javax.servlet.http.HttpServlet {
 
     @Inject
-    @RequestScoped
     private ServiciosUsuarios su;
 
     @Override
@@ -50,7 +49,6 @@ public class ServletUsuarios extends javax.servlet.http.HttpServlet {
         if (request.getParameter("id") != null) {
 
         } else {
-            ServiciosUsuarios su = new ServiciosUsuarios();
             Jsonb jsonb = JsonbBuilder.create();
             jsonb.toJson(su.getUsers(), response.getWriter());
 
