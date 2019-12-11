@@ -13,9 +13,8 @@ public class HibernateQuerys {
 
     public static void main(String[] args) {
         Session session = HibernateUtils.getSession();
-        Query q = session.createQuery("select t from Teacher as t , " +
-                "Subject as s where " +
-                "s.name = :name " );
+        Query q = session.createQuery("select t from Teacher as t inner join t.subjects as s " +
+                " where s.name = :name " );
         q.setParameter("name","PSP");
         List<Teacher> teachers = q.list();
         teachers.forEach(teacher -> {
@@ -26,12 +25,13 @@ public class HibernateQuerys {
         session.close();
 
         session = HibernateUtils.getSession();
-         q = session.createQuery("select s.name from Teacher as t,Subject as s  " +
+         q = session.createQuery("select s.name from Subject as s  " +
                 " where " +
-                "t.idteacher = :idTeacher " );
+                "s.teacher.idteacher = :idTeacher " );
         q.setParameter("idTeacher",18);
         q.stream().forEach(System.out::println);
         session.close();
+
 
 
 

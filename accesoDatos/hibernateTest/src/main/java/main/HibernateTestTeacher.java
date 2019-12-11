@@ -6,6 +6,7 @@ import dao.modelo.Teacher;
 import org.hibernate.Session;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class HibernateTestTeacher {
 
@@ -28,12 +29,13 @@ public class HibernateTestTeacher {
         session.close();
         System.out.println(s.getTeacher());
 
-        s.getTeacher().setStart_date(LocalDate.now());
+        s.getTeacher().setStart_date(LocalDate.now().plus(10, ChronoUnit.DAYS));
         s.setName("llll");
         session = HibernateUtils.getSession();
         session.beginTransaction();
-        session.save(s);
         session.saveOrUpdate(s.getTeacher());
+        session.save(s);
+
         s.getTeacher().getStart_date();
         session.getTransaction().commit();
         session.close();
