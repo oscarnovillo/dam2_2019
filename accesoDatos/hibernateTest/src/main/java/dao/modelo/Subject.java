@@ -5,15 +5,26 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "subject")
-public class EntitySubject {
+public class Subject {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idsubject;
-    private int idteacher;
     private String name;
 
-    public EntitySubject() {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idteacher", referencedColumnName = "idteacher")
+    private Teacher teacher;
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Subject() {
     }
 
     public int getIdsubject() {
@@ -22,14 +33,6 @@ public class EntitySubject {
 
     public void setIdsubject(int idsubject) {
         this.idsubject = idsubject;
-    }
-
-    public int getIdteacher() {
-        return idteacher;
-    }
-
-    public void setIdteacher(int idteacher) {
-        this.idteacher = idteacher;
     }
 
     public String getName() {
@@ -44,7 +47,6 @@ public class EntitySubject {
     public String toString() {
         return "Subject{" +
                 "idsubject=" + idsubject +
-                ", idteacher=" + idteacher +
                 ", name='" + name + '\'' +
                 '}';
     }

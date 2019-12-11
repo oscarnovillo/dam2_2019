@@ -2,45 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e13119bc-6fc6-455b-8cb3-294320a0141f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/dao/HibernateUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/dao/modelo/EntitySubject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/main/HibernateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao/Enroll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao/EnrollPK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao/Members.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao/Typeuser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao2/Enroll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao2/EnrollPK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao2/Members.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao2/Student.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao2/Subject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao2/Teacher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao2/Typeuser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/dao2/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/dao/SpringTemplate/AsignaturasDaoImplSpring.java" beforeDir="false" afterPath="$PROJECT_DIR$/../SpringTemplateTest/src/main/java/dao/SpringTemplate/AsignaturasDaoImplSpring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/dao/modelo/Teacher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/main/HibernateQuerys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/main/HibernateTestTeacher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/.idea/dataSources/359419e7-7253-4d96-a04d-b3ddd6d95a20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/.idea/dataSources/359419e7-7253-4d96-a04d-b3ddd6d95a20.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernateTest/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hibernateTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hibernateTest/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/hibernateTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/hibernateTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../hibernateTest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/modelo/EnrolledEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/modelo/EnrolledEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/modelo/MemberEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/modelo/MemberEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/modelo/StudentEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/modelo/StudentEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/modelo/SubjectEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/modelo/SubjectEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/modelo/TeachEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/modelo/TeachEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/modelo/TeacherEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/modelo/TeacherEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/modelo/UserEntityjpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/wizard/modelo/UserEntityjpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../hibernateTest/target/classes/modelo/UserEntityjpa.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../psp/payara/src/main/java/servlets/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../psp/payara/src/main/java/servlets/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/dao/modelo/EntitySubject.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/dao/modelo/Subject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hibernateTest/src/main/java/main/HibernateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../hibernateTest/src/main/java/main/HibernateTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,6 +59,7 @@
       <updated>1572977482794</updated>
       <workItem from="1572977485044" duration="114000" />
       <workItem from="1575972451764" duration="1093000" />
+      <workItem from="1576061124805" duration="582000" />
     </task>
     <servers />
   </component>

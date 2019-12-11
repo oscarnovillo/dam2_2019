@@ -17,7 +17,8 @@
         <property name="hibernate.hikari.idleTimeout">300000</property>
 
 
-        <mapping class="dao.modelo.EntitySubject" />
+        <mapping class="dao.modelo.Subject" />
+        <mapping class="dao.modelo.Teacher" />
         <mapping class="wizard.modelo.EnrolledEntityjpa"/>
         <mapping class="wizard.modelo.StudentEntityjpa"/>
         <mapping class="wizard.modelo.SubjectEntityjpa"/>
