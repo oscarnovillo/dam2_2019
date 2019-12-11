@@ -27,3 +27,7 @@ S
 #src/main/java/main/MainUsuario.java,b\5\b514be7b0fc0b2c06c7db2bf788bd020ebd1732a
 T
 $src/main/java/retrofit/LoginApi.java,5\1\51c55c6ec15291e25bb666871235c5ddffd80cad
+V
+&src/main/java/retrofit/UsuarioApi.java,3\7\37467d8f1c498de812c4d98f45ae2fe3477d99bc
+V
+&src/main/java/main/MainUsuarioJAX.java,4\9\49e2c1f446d0404bdda4b16df9f4da04ad582626
