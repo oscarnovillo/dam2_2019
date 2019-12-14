@@ -1,8 +1,7 @@
 package main;
 
 import dao.HibernateUtils;
-import dao.modelo.Resultado;
-import dao.modelo.Subject;
+
 import dao.modelo.Teacher;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -42,27 +41,31 @@ public class HibernateQuerys {
         session.close();
 
         session = HibernateUtils.getSession();
-        q = session.createQuery("select count(s.name) from Subject as s inner join s.teacher as t " +
+        q = session.createQuery("select new list(t,count(s.name)) from Subject as s inner join s.teacher as t " +
                 " where " +
-                " t.start_date > :fecha " );
+                " t.start_date < :fecha ");
         q.setParameter("fecha", LocalDate.now().minus(1, ChronoUnit.YEARS));
-        q.stream().forEach(System.out::println);
+        q.stream().forEach(o -> {
+            List result = (List)o;
+            result.stream().forEach(System.out::println);
+
+        });
         session.close();
 
-        session = HibernateUtils.getSession();
-        q = session.createNativeQuery("select count(s.name) from subject as s inner join teacher as t on s.idteacher = t.idteacher " +
-                " where " +
-                " t.start_date > :fecha " );
-        q.setParameter("fecha", LocalDate.now().minus(1, ChronoUnit.YEARS));
-        q.stream().forEach(System.out::println);
-        session.close();
-
-
-        session = HibernateUtils.getSession();
-        q = session.createQuery("select count(s.name) as count from Subject as s inner join s.teacher as t " +
-        " group by t " );
-        q.stream().forEach(o -> System.out.println(o));
-        session.close();
+//        session = HibernateUtils.getSession();
+//        q = session.createNativeQuery("select count(s.name) from subject as s inner join teacher as t on s.idteacher = t.idteacher " +
+//                " where " +
+//                " t.start_date > :fecha " );
+//        q.setParameter("fecha", LocalDate.now().minus(1, ChronoUnit.YEARS));
+//        q.stream().forEach(System.out::println);
+//        session.close();
+//
+//
+//        session = HibernateUtils.getSession();
+//        q = session.createQuery("select count(s.name) as count from Subject as s inner join s.teacher as t " +
+//        " group by t " );
+//        q.stream().forEach(o -> System.out.println(o));
+//        session.close();
 
 
     }

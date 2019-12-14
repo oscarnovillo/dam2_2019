@@ -3,7 +3,7 @@ package wizard.dao;
 import javax.persistence.*;
 
 @Entity
-public class Subject {
+public class Subjectsdsdf {
     private int idsubject;
     private String name;
     private Teacher teacherByIdteacher;
@@ -33,7 +33,7 @@ public class Subject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Subject subject = (Subject) o;
+        Subjectsdsdf subject = (Subjectsdsdf) o;
 
         if (idsubject != subject.idsubject) return false;
         if (name != null ? !name.equals(subject.name) : subject.name != null) return false;
