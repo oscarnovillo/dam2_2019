@@ -68,6 +68,7 @@ public class Usuarios {
 //  }
 
   @POST
+  @Filtered
   public Response addUsuario(Usuario user )
   {
     return Response.ok(su.addUser(user)).build();

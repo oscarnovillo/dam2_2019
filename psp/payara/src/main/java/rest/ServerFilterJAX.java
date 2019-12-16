@@ -12,6 +12,7 @@ import java.io.IOException;
 
 
 @Provider
+@Filtered
 @PreMatching
 public class ServerFilterJAX  implements ContainerRequestFilter {
 
@@ -21,6 +22,7 @@ public class ServerFilterJAX  implements ContainerRequestFilter {
 
   @Override
   public void filter(ContainerRequestContext containerRequestContext) throws IOException {
+
     if (httpServletRequest.getSession().getAttribute("kk")==null) {
       httpServletRequest.getSession().setAttribute("kk",1);
       containerRequestContext.abortWith(Response.status(500, "jj").build());
