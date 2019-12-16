@@ -8,6 +8,7 @@ import org.hibernate.query.Query;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.List;
 
 public class HibernateQuerys {
@@ -16,7 +17,14 @@ public class HibernateQuerys {
     public static void main(String[] args) {
         Session session = HibernateUtils.getSession();
 
-        Query q = session.createQuery("select t from Teacher as t inner join t.subjects as s " +
+        Query q = session.createQuery("from Teacher ");
+        List<Teacher> teachers = q.getResultList();
+        teachers.forEach(teacher -> teacher.getSubjects().forEach(System.out::println));
+        session.close();
+
+
+        session = HibernateUtils.getSession();
+         q = session.createQuery("select t from Teacher as t inner join t.subjects as s " +
                 " where s.name = :name " );
         q.setParameter("name","PSP");
         Teacher teacher = (Teacher)q.getSingleResult();
@@ -41,13 +49,14 @@ public class HibernateQuerys {
         session.close();
 
         session = HibernateUtils.getSession();
-        q = session.createQuery("select new list(t,count(s.name)) from Subject as s inner join s.teacher as t " +
+        q = session.createQuery("select t,count(s.name) from Subject as s inner join s.teacher as t " +
                 " where " +
                 " t.start_date < :fecha ");
         q.setParameter("fecha", LocalDate.now().minus(1, ChronoUnit.YEARS));
         q.stream().forEach(o -> {
-            List result = (List)o;
-            result.stream().forEach(System.out::println);
+            Object[] result = (Object[])o;
+
+            Arrays.stream(result).forEach(System.out::println);
 
         });
         session.close();
