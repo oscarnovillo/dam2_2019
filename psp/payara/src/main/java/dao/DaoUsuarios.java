@@ -4,10 +4,14 @@ package dao;
 
 import dao.modelo.Usuario;
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
 
+@RequestScoped
 public class DaoUsuarios {
+
 
   private static List<Usuario> users;
 
@@ -31,6 +35,12 @@ public class DaoUsuarios {
   {
     users.add(u);
     return u;
+
+  }
+
+  @PostConstruct
+  public void init()
+  {
 
   }
 

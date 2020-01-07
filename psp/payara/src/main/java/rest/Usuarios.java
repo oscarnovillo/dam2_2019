@@ -2,6 +2,7 @@ package rest;
 
 
 import dao.modelo.Usuario;
+import rest.dto.UserDTO;
 import servicios.ServiciosUsuarios;
 
 import javax.enterprise.context.RequestScoped;
@@ -10,12 +11,13 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.*;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.*;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Path("usuario")
 @Produces(MediaType.APPLICATION_JSON)
@@ -26,11 +28,10 @@ public class Usuarios {
   @Inject
   private ServiciosUsuarios su;
 
-
   @GET
-  public List<Usuario> getUsers(@Context HttpServletResponse response, @Context HttpServletRequest request)
+  public List<UserDTO> getUsers(@Context UriInfo uriInfo,
+      @Context HttpServletResponse response, @Context HttpServletRequest request)
   {
-    ServiciosUsuarios su = new ServiciosUsuarios();
     if (request.getSession().getAttribute("kk") == null)
     {
       request.getSession().setAttribute("kk",0);
@@ -42,7 +43,12 @@ public class Usuarios {
 //    } catch (IOException e) {
 //      e.printStackTrace();
 //    }
-    return su.getUsers();
+
+
+    return su.getUsers().stream().map(usuario -> UserDTO.builder().login(usuario.getLogin()).url(
+        uriInfo.getAbsolutePathBuilder().path(this.getClass(),"getUserLogin").queryParam("test","te st").buildFromEncoded(usuario.getLogin()).toString()
+        ).build()
+    ).collect(Collectors.toList());
   }
 
 
@@ -54,18 +60,18 @@ public class Usuarios {
 //    return su.getUser(login);
 //  }
 
-//  @GET
-//  @Produces(MediaType.APPLICATION_JSON)
-//  @Path("/get/{login}")
-//  public Usuario getUserLogin(@PathParam("login") String login,@QueryParam("loginId") String loginId)
-//  {
-//    if (login == null)
-//    {
-//      login = loginId;
-//    }
-//    ServiciosUsuarios su = new ServiciosUsuarios();
-//    return su.getUser(login);
-//  }
+  @GET
+  @Produces(MediaType.APPLICATION_JSON)
+  @Path("/get/{login}")
+  public UserDTO getUserLogin(@NotEmpty @PathParam("login") String login,@NotEmpty @QueryParam("loginId") String loginId)
+  {
+    if (login == null)
+    {
+      login = loginId;
+    }
+
+    return su.conversorUsertoDTO(su.getUser(login));
+  }
 
   @POST
   @Filtered

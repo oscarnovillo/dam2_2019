@@ -2,29 +2,33 @@ package servicios;
 
 import dao.DaoUsuarios;
 import dao.modelo.Usuario;
+import lombok.AllArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import rest.dto.UserDTO;
+import rest.dto.converters.UserConverter;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.inject.Named;
 import java.util.List;
 
+
+@RequiredArgsConstructor
 @RequestScoped
-@Named
 public class ServiciosUsuarios {
 
   @Inject
   private DaoUsuarios usuario;
 
+  @Inject
+  private UserConverter userConverter;
+
 
   public List<Usuario> getUsers() {
-
-    usuario = new DaoUsuarios();
     return usuario.getUsuarios();
   }
 
   public Usuario getUser(String login) {
-
-    usuario = new DaoUsuarios();
     return usuario.getUsuario(login);
   }
 
@@ -36,5 +40,9 @@ public class ServiciosUsuarios {
     return usuario.addUser(user);
   }
 
+public UserDTO conversorUsertoDTO(Usuario user){
+
+  return userConverter.converterUserUserDTO(user);
+}
 
 }
