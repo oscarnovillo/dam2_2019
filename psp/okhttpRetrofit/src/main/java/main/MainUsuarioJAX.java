@@ -2,6 +2,10 @@ package main;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import fj.data.Either;
+
+import fj.parser.Result;
+import modelo.ApiError;
 import modelo.Usuario;
 import okhttp3.JavaNetCookieJar;
 import okhttp3.OkHttpClient;
@@ -20,7 +24,7 @@ import java.util.List;
 public class MainUsuarioJAX {
 
   public static void main(String[] args) throws IOException {
-    final String BASE_URL = "http://localhost:8080/login/api/";
+    final String BASE_URL = "http://localhost:8080/payara/api/";
     CookieManager cookieManager = new CookieManager();
     cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
 
@@ -78,4 +82,27 @@ public class MainUsuarioJAX {
     }
     //    login.login().execute().body().stream().forEach(System.out::println);
   }
+
+
+
+  public static Either<ApiError, List<Usuario>> loadUsuarios(UsuarioApi login) throws IOException{
+
+    Response<List<Usuario>> resp = login.loadUsuarios().execute();
+    if (resp.isSuccessful()) {
+      return Either.right(resp.body());
+    } else {
+      return Either.left(ApiError.builder().message("ERROR " + resp.code() + resp.message()).build());
+    }
+  }
+
+//  public static Result<List<Usuario>> loadUsuarios2(UsuarioApi login) throws IOException{
+//
+//    Response<List<Usuario>> resp = login.loadUsuarios().execute();
+//    if (resp.isSuccessful()) {
+//      return (resp.body());
+//    } else {
+//      return Either.left(ApiError.builder().message("ERROR " + resp.code() + resp.message()).build());
+//    }
+//  }
+
 }

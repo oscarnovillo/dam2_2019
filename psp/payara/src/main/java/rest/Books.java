@@ -28,7 +28,6 @@ public class Books {
   {
     if (user.getName().equals("error"))
       throw new CustomException("Hola q tal");
-
     return user;
   }
 }
