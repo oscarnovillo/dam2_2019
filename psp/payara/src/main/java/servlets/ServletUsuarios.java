@@ -25,6 +25,9 @@ public class ServletUsuarios extends javax.servlet.http.HttpServlet {
   @Inject
   private Jsonb jsonb;
 
+  @Inject
+  Validator validator;
+
   @Override
   protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 //        Jsonb jsonb = JsonbBuilder.create();
@@ -48,9 +51,6 @@ public class ServletUsuarios extends javax.servlet.http.HttpServlet {
   protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     resp.getWriter().println("hola");
   }
-
-    @Inject
-    Validator validator;
   protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
     final StringBuilder error = new StringBuilder();

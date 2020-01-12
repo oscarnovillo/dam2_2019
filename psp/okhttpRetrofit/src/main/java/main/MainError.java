@@ -7,17 +7,28 @@ import modelo.Book;
 import okhttp3.JavaNetCookieJar;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import org.hibernate.validator.cdi.HibernateValidator;
 import retrofit.BooksApi;
 import retrofit.UsuarioApi;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import javax.inject.Inject;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+import javax.validation.executable.ExecutableValidator;
+import javax.validation.metadata.BeanDescriptor;
 import java.io.IOException;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
+import java.util.Set;
+
 
 public class MainError {
+
 
   public static void main(String[] args) throws IOException {
 
@@ -49,8 +60,14 @@ public class MainError {
 
     BooksApi bookApi = retrofit.create(BooksApi.class);
 
-    bookApi.addBook(new Book("error")).execute();
-    bookApi.addBook(new Book("error")).execute();
+    Book book = new Book("",2);
+    ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+    Validator val = factory.getValidator();
+    val.validate(book).stream().forEach(bookConstraintViolation -> System.out.println(bookConstraintViolation.getMessage()));
+
+
+    bookApi.addBook(book).execute();
+    bookApi.addBook(Book.builder().name("error").build()).execute();
     bookError(bookApi,gson);
 
 
@@ -59,7 +76,7 @@ public class MainError {
 
   public static void bookError(BooksApi bookApi,Gson gson) throws IOException
   {
-    Response<Book> resp = bookApi.addBook(new Book("error")).execute();
+    Response<Book> resp = bookApi.addBook(Book.builder().name("error").build()).execute();
     if (resp.isSuccessful())
     {
       System.out.println(resp.body());

@@ -73,8 +73,15 @@ public class Main {
 
   }
 
+
+  public static int generateSequenceMongo(String seqName, MongoCollection<Document> col) {
+    Document counter = col.findOneAndUpdate(new Document().append("_id",seqName),
+        new Document().append("$inc",new Document().append("seq",1)));
+    return !Objects.isNull(counter) ? counter.getInteger("seq") : 1;
+  }
+
   public static long generateSequence(String seqName, MongoTemplate mongo) {
-    DatabaseSequence counter = mongo.findAndModify(query(where("_id").is(seqName)),
+    DatabaseSequence counter =mongo.findAndModify(query(where("_id").is(seqName)),
 	    new Update().inc("seq", 1), options().returnNew(true).upsert(true),
 	    DatabaseSequence.class);
     return !Objects.isNull(counter) ? counter.getSeq() : 1;
@@ -84,7 +91,7 @@ public class Main {
     System.setProperty("log4j.configurationFile", "log4j2.xml");
 
     MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb+srv://oscar:YIpRRecZrUoOLmFX@cluster0-w4glh.mongodb.net/test?retryWrites=true"));
-/*
+
     for (String s :mongoClient.listDatabaseNames() )
     {
       System.out.println(s);
@@ -145,13 +152,15 @@ public class Main {
     buscar.put("clientes",9);
             
     col.find(and(eq("name","item2"),nin("clientes",9))).first();
-    
-    
-    getAllDocuments(col);
+    MongoCollection<Document> col1 = db.getCollection("database_sequences");
+    System.out.println(generateSequenceMongo(Customer.SEQUENCE_NAME,col1));
+    System.out.println(generateSequenceMongo(Customer.SEQUENCE_NAME,col1));
 
-  */
+    //getAllDocuments(col);
+
+
         
-        
+ /*
         System.out.println(" CON SPRING ");
         
         MongoTemplate mp = new MongoTemplate(mongoClient, "Test");
@@ -208,7 +217,7 @@ List<Customer> lista = mp.findAll(Customer.class);
 //        getAllDocuments(coll);
 //
 //        db.listCollectionNames().forEach((Consumer<String>) System.out::println);
-     
+   */
   }
 
  
