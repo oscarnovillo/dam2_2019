@@ -14,6 +14,17 @@
             <SshTunnelingConfiguration />
           </option>
         </ServerConfiguration>
+        <ServerConfiguration>
+          <option name="label" value="iesquevedo" />
+          <option name="serverUrls">
+            <list>
+              <option value="informatica.iesquevedo.es:3334" />
+            </list>
+          </option>
+          <option name="sshTunnelingConfiguration">
+            <SshTunnelingConfiguration />
+          </option>
+        </ServerConfiguration>
       </list>
     </option>
     <option name="shellPath" value="C:\tools\mongodb-win32-x86_64-enterprise-windows-64-4.2.2\bin\mongo.exe" />
