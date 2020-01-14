@@ -54,7 +54,6 @@ public class Main {
 
     // Performing a read operation on the collection.
     FindIterable<Document> fi = col.find();
-
     MongoCursor<Document> cursor = fi.iterator();
 
     try {
@@ -127,6 +126,9 @@ public class Main {
     d.put("clientes", clientes);
 
     col.insertOne(d);
+
+
+
     System.out.println("ID "+d.get("_id"));
 
     Document buscar = new Document();
