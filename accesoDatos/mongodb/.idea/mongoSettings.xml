@@ -18,7 +18,7 @@
           <option name="label" value="iesquevedo" />
           <option name="serverUrls">
             <list>
-              <option value="informatica.iesquevedo.es:3334" />
+              <option value="dam2.tomcat.iesquevedo.es:3334" />
             </list>
           </option>
           <option name="sshTunnelingConfiguration">
