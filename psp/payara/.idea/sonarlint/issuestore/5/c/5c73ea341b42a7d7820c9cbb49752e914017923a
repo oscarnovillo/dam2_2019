@@ -1,0 +1,12 @@
+
+psquid:UselessImportCheck"GRemove this unused import 'java.security.spec.InvalidKeySpecException'.(ëóÅëüÿÿÿÿ
+Dsquid:S1989W"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+bsquid:CommentedOutCodeLine6"<This block of commented-out lines of code should be removed.(´ºç
+lsquid:UselessImportCheck
+"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ
+Dsquid:S1989W"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+Isquid:S1135:"2Complete the task associated to this TODO comment.(¢§‰
+Dsquid:S1989e"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+dsquid:S1192/"HDefine a constant instead of duplicating this literal "</html>" 3 times.(š¶„—ıÿÿÿÿ
+^squid:UselessImportCheck":Remove this unused import 'javax.mail.MessagingException'.(ÇîŞ
+Dsquid:S1989e"-Add a "try/catch" block for "processRequest".(‘ŸÑ

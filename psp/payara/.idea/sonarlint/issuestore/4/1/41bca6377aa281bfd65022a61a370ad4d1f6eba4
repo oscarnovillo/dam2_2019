@@ -1,0 +1,26 @@
+
+isquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(š×–Ñ8´•ç¢ø-
+?squid:S1989#"(Add a "try/catch" block for "getReader".(¥§¨
+@squid:S1481#")Remove this unused "user" local variable.(¥§¨
+gsquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(©ˆ…ïøÿÿÿÿ
+isquid:CommentedOutCodeLine`"<This block of commented-out lines of code should be removed.(˜Ù¢ï8Á«Ãú-
+Fsquid:S1989M"(Add a "try/catch" block for "getWriter".(¬ğÑñ8Á«Ãú-
+Ssquid:S1481A"0Remove this unused "errorString" local variable.(ÒÜ•üÿÿÿÿ8Ò¬»Ãú-
+>squid:S1989*"'Add a "try/catch" block for "fromJson".(·çÎ€
+Jsquid:S1612B",Replace this lambda with a method reference.(òÿÅù8µÊºÃú-
+?squid:S1989."(Add a "try/catch" block for "getWriter".(Ó–éü
+Fsquid:S19895"(Add a "try/catch" block for "getWriter".(—Óñƒ8óêŒÊï-
+bsquid:S1854A"?Remove this useless assignment to local variable "errorString".(ÒÜ•üÿÿÿÿ8Ò¬»Ãú-
+Csquid:S1989M"%Add a "try/catch" block for "toJson".(¬ğÑñ8Á«Ãú-
+Fsquid:S1148]"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8Á«Ãú-
+lsquid:UselessImportCheck"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8ø½ªÃú-
+Vsquid:S1161'":Add the "@Override" annotation above this method signature(šŒêóûÿÿÿÿ
+isquid:CommentedOutCodeLineY"<This block of commented-out lines of code should be removed.(ğ¾ï‚8Á«Ãú-
+isquid:CommentedOutCodeLineL"<This block of commented-out lines of code should be removed.(š×–Ñ8Á«Ãú-
+[
+squid:S106Z"9Replace this use of System.out or System.err by a logger.(åö¡½úÿÿÿÿ8Á«Ãú-
+?squid:S1989*"(Add a "try/catch" block for "getReader".(·çÎ€
+Fsquid:S1989I"(Add a "try/catch" block for "getWriter".(û†¶Ü8´•ç¢ø-
+Qsquid:S11617":Add the "@Override" annotation above this method signature(ùŠœ¬
+Osquid:S1854#"8Remove this useless assignment to local variable "user".(¥§¨
+>squid:S1989#"'Add a "try/catch" block for "fromJson".(¥§¨

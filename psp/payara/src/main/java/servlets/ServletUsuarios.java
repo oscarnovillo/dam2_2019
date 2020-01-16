@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @WebServlet(name = "Usuario", urlPatterns = {"/login"})
 public class ServletUsuarios extends javax.servlet.http.HttpServlet {
@@ -54,14 +55,17 @@ public class ServletUsuarios extends javax.servlet.http.HttpServlet {
   protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
     final StringBuilder error = new StringBuilder();
-    @NotEmpty(message ="no puede ser vacio el id") String id = Optional.ofNullable(request.getParameter("id")).orElse("");
-    validator.validate(id).stream().forEach(testDtoConstraintViolation ->
-        error.append(testDtoConstraintViolation.getMessage()));
-
+    String id = Optional.ofNullable(request.getParameter("id")).orElse("");
 
     TestDto dto = new TestDto(id);
-    validator.validate(dto).stream().forEach(testDtoConstraintViolation ->
+    validator.validate(dto).stream().forEach(
+            testDtoConstraintViolation ->
           error.append(testDtoConstraintViolation.getMessage()));
+
+    String errorString = validator.validate(dto).stream().map(
+            testDtoConstraintViolation ->
+                    testDtoConstraintViolation.getMessage())
+            .collect(Collectors.joining("\n"));
 
       if (error.length() > 0)
       {

@@ -3,6 +3,7 @@ package rest;
 
 import dao.modelo.Book;
 import dao.modelo.Usuario;
+import rest.error.ApiError;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -27,7 +28,20 @@ public class Books {
   public Book addUsuario(Book user)
   {
     if (user.getName().equals("error"))
-      throw new CustomException("Hola q tal");
+          throw new CustomException("Hola q tal");
     return user;
+}
+  @PUT
+  public Response putUsuario(Book user)
+  {
+    if (user.getName().equals("error")) {
+      ApiError apiError = new ApiError("mi mensaje");
+      return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
+              .entity(apiError)
+              .type(MediaType.APPLICATION_JSON_TYPE).build();
+    }
+    return Response.ok(user).build();
   }
+
+
 }

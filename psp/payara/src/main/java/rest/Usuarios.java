@@ -11,6 +11,7 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
@@ -28,10 +29,12 @@ public class Usuarios {
   @Inject
   private ServiciosUsuarios su;
 
+
   @GET
   public List<UserDTO> getUsers(@Context UriInfo uriInfo,
       @Context HttpServletResponse response, @Context HttpServletRequest request)
   {
+    ServiciosUsuarios su = new ServiciosUsuarios();
     if (request.getSession().getAttribute("kk") == null)
     {
       request.getSession().setAttribute("kk",0);
@@ -45,7 +48,8 @@ public class Usuarios {
 //    }
 
 
-    return su.getUsers().stream().map(usuario -> UserDTO.builder().login(usuario.getLogin()).url(
+    return su.getUsers().stream().map(usuario ->
+            UserDTO.builder().login(usuario.getLogin()).url(
         uriInfo.getAbsolutePathBuilder().path(this.getClass(),"getUserLogin").queryParam("test","te st").buildFromEncoded(usuario.getLogin()).toString()
         ).build()
     ).collect(Collectors.toList());
@@ -63,8 +67,9 @@ public class Usuarios {
   @GET
   @Produces(MediaType.APPLICATION_JSON)
   @Path("/get/{login}")
-  public UserDTO getUserLogin(@NotEmpty @PathParam("login") String login,@NotEmpty @QueryParam("loginId") String loginId)
+  public UserDTO getUserLogin(@NotBlank @PathParam("login") String login,@QueryParam("loginId") String loginId)
   {
+
     if (login == null)
     {
       login = loginId;
@@ -85,7 +90,7 @@ public class Usuarios {
   @Consumes(MediaType.TEXT_PLAIN)
   public Response addUsuario(String user )
   {
-    return Response.ok(su.addUser(new Usuario(user,user))).build();
+    return Response.status(Response.Status.CREATED).entity(su.addUser(new Usuario(user,user))).build();
   }
 
   @PUT
@@ -97,7 +102,7 @@ public class Usuarios {
   @DELETE
   public Response delUsuario( )
   {
-    return Response.ok().build();
+    return Response.noContent().build();
   }
 
 }

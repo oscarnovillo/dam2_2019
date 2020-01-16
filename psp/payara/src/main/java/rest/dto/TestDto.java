@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 
 public class TestDto {
 
-  @NotEmpty
+  @NotEmpty(message = "mi mensaje")
   private String id;
 
   public TestDto(String id) {

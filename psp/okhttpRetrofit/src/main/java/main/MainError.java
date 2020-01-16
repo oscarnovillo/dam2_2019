@@ -63,7 +63,8 @@ public class MainError {
     Book book = new Book("",2);
     ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
     Validator val = factory.getValidator();
-    val.validate(book).stream().forEach(bookConstraintViolation -> System.out.println(bookConstraintViolation.getMessage()));
+    val.validate(book).stream().forEach(bookConstraintViolation ->
+            System.out.println(bookConstraintViolation.getMessage()));
 
 
     bookApi.addBook(book).execute();
@@ -84,7 +85,8 @@ public class MainError {
     else
     {
       //System.out.println(resp.errorBody().string());
-      ApiError error = gson.fromJson(resp.errorBody().charStream(), ApiError.class);
+      ApiError error = gson.fromJson(
+              resp.errorBody().charStream(), ApiError.class);
       System.out.println(error);
     }
   }

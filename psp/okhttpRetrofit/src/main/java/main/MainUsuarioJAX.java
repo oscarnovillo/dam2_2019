@@ -81,6 +81,8 @@ public class MainUsuarioJAX {
       System.out.println("ERROR " + resp1.code()+resp1.message());
     }
     //    login.login().execute().body().stream().forEach(System.out::println);
+
+    //loadUsuarios(login).isLeft()
   }
 
 
