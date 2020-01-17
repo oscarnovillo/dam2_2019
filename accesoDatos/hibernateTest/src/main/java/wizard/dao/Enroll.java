@@ -11,7 +11,7 @@ public class Enroll {
     private Integer ncalls;
     private Integer mark;
     private Student studentByIdstudent;
-    private Subject subjectByIdsubject;
+    private Subjectsdsdf subjectByIdsubject;
 
     @Id
     @Column(name = "idenroll", nullable = false)
@@ -101,11 +101,11 @@ public class Enroll {
 
     @ManyToOne
     @JoinColumn(name = "idsubject", referencedColumnName = "idsubject", nullable = false)
-    public Subject getSubjectByIdsubject() {
+    public Subjectsdsdf getSubjectByIdsubject() {
         return subjectByIdsubject;
     }
 
-    public void setSubjectByIdsubject(Subject subjectByIdsubject) {
+    public void setSubjectByIdsubject(Subjectsdsdf subjectByIdsubject) {
         this.subjectByIdsubject = subjectByIdsubject;
     }
 }

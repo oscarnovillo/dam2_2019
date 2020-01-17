@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
-public class Subject {
+public class SubjectTest {
     private int idsubject;
     private String name;
     private Collection<Enroll> enrollsByIdsubject;
@@ -35,7 +35,7 @@ public class Subject {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Subject subject = (Subject) o;
+        SubjectTest subject = (SubjectTest) o;
 
         if (idsubject != subject.idsubject) return false;
         if (name != null ? !name.equals(subject.name) : subject.name != null) return false;

@@ -1,0 +1,36 @@
+
+Msquid:S4432í"0Use Galois/Counter Mode (GCM/NoPadding) instead.(ø¾¢çýÿÿÿÿ
+Vsquid:S4719Ñ"9Replace charset name argument with StandardCharsets.UTF_8(Û†ÉØÿÿÿÿÿ
+=squid:S1170<"!Make this final field static too.(ÝŠÁµýÿÿÿÿ
+[squid:HiddenFieldChecku"9Rename "salt" which hides the field declared at line 225.(ûŠë÷
+qsquid:S11924"UDefine a constant instead of duplicating this literal "PBKDF2WithHmacSHA256" 3 times.(€Ò¾»úÿÿÿÿ
+ysquid:S1488É"aImmediately return this expression instead of assigning it to the temporary variable "sinCifrar".(£ûÀ¼
+=squid:S11707"!Make this final field static too.(ÉžÒÛùÿÿÿÿ
+qsquid:S001168"YRename this field "HASH_BYTE_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ý¥Æä
+rsquid:S00116;"ZRename this field "ITERATION_INDEX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â®í˜
+Jsquid:S1172ö"-Remove this unused method parameter "secret".(ßï®åüÿÿÿÿ
+U
+squid:S106†"9Replace this use of System.out or System.err by a logger.(Ï¢þýÿÿÿÿ
+^squid:S1192À"FDefine a constant instead of duplicating this literal "UTF-8" 4 times.(ô½Ì†
+8squid:S1170;"!Make this final field static too.(â®í˜
+Hsquid:S4432Ö"0Use Galois/Counter Mode (GCM/NoPadding) instead.(ì‹ÁÉ
+^squid:S3457¹"AFormat specifiers should be used instead of string concatenation.(¾ì¦¤ýÿÿÿÿ
+_squid:S00112Í"FDefine and throw a dedicated exception instead of using a generic one.(¯½Í¥
+Qsquid:S4719ï"9Replace charset name argument with StandardCharsets.UTF_8(Œ˜ù»
+U
+squid:S106ñ"9Replace this use of System.out or System.err by a logger.(ÑÐœ†ûÿÿÿÿ
+[squid:HiddenFieldCheckT"9Rename "salt" which hides the field declared at line 225.(†±ï•
+Qsquid:S4719É"9Replace charset name argument with StandardCharsets.UTF_8(£ûÀ¼
+rsquid:S00116<"URename this field "SALT_INDEX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÝŠÁµýÿÿÿÿ
+Dsquid:S1172ã"-Remove this unused method parameter "secret".(îž`
+=squid:S1170="!Make this final field static too.(ýèàÅùÿÿÿÿ
+Qsquid:S4719À"9Replace charset name argument with StandardCharsets.UTF_8(ô½Ì†
+tsquid:S00116="WRename this field "PBKDF2_INDEX" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ýèàÅùÿÿÿÿ
+Jsquid:S1068à"-Remove this unused "secretKey" private field.(ôÅË€ùÿÿÿÿ
+|squid:S1488Â"_Immediately return this expression instead of assigning it to the temporary variable "cifrado".(€¨Êòýÿÿÿÿ
+tsquid:S001169"\Rename this field "PBKDF2_ITERATIONS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çõ‚
+=squid:S11704"!Make this final field static too.(€Ò¾»úÿÿÿÿ
+8squid:S11708"!Make this final field static too.(ý¥Æä
+xsquid:S001164"[Rename this field "PBKDF2_ALGORITHM" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€Ò¾»úÿÿÿÿ
+8squid:S11709"!Make this final field static too.(çõ‚
+vsquid:S001167"YRename this field "SALT_BYTE_SIZE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉžÒÛùÿÿÿÿ

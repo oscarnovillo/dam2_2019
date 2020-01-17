@@ -12,6 +12,7 @@ import java.io.IOException;
 
 
 @Provider
+@Filtered
 @PreMatching
 public class ServerFilterJAX  implements ContainerRequestFilter {
 

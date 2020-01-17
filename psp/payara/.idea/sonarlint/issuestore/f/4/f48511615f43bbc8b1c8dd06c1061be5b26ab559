@@ -1,0 +1,6 @@
+
+ssquid:S1192%"\Define a constant instead of duplicating this literal "alumnosDamQuevedo@gmail.com" 3 times.(Ê¸ÍÃ
+À%squid:RedundantThrowsDeclarationCheck5"‰Remove the declaration of thrown exception 'javax.mail.internet.AddressException' which is a subclass of 'javax.mail.MessagingException'.(Âªûÿÿÿÿ
+ksquid:S1192#"ODefine a constant instead of duplicating this literal "smtp.gmail.com" 3 times.(–ÓĞ³üÿÿÿÿ
+Zsquid:S4499'">Enable server identity validation on this SMTP SSL connection.(ãÖÊÛÿÿÿÿÿ
+bsquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(Éä€ş

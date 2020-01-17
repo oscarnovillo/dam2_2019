@@ -13,7 +13,6 @@ public class FilterLogin implements Filter {
 
   public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
 
-
     HttpServletRequest request = (HttpServletRequest) req;
     if (request.getSession().getAttribute("hola") == null) {
       request.getSession().setAttribute("hola", 1);

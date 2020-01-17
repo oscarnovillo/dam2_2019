@@ -22,7 +22,10 @@ public class Main {
             .build();
     FirebaseApp.initializeApp(options);
 
-// The app only has access to public data as defined in the Security Rules
+
+
+
+
     DatabaseReference ref = FirebaseDatabase
             .getInstance()
             .getReference("entornosquevedo/clientes/6");
@@ -74,4 +77,57 @@ public class Main {
       Thread.sleep(1000);
     };
   }
+     /*   DatabaseReference ref = FirebaseDatabase
+                .getInstance()
+                .getReference("clientes");
+        //ref.getKey();
+
+
+
+//          ref.addChildEventListener(new ChildEventListener() {
+//
+//            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+//                String dinosaur = (String) dataSnapshot.getValue();
+//                System.out.println(dataSnapshot.getKey() + " was " + dinosaur + " meters tall.");
+//            }
+//
+//
+//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+//                String dinosaur = (String) dataSnapshot.getValue();
+//                System.out.println(dataSnapshot.getKey() + " was " + dinosaur + " meters tall.");
+//            }
+//
+//
+//            public void onChildRemoved(DataSnapshot dataSnapshot) {
+//
+//            }
+//
+//
+//            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+//
+//            }
+//
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        });
+
+        ref.addValueEventListener(new ValueEventListener() {
+
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                //String res = (String) dataSnapshot.getChildrenCount();
+                System.out.println(dataSnapshot.getValue());
+            }
+
+
+            public void onCancelled(DatabaseError databaseError) {
+                System.out.println(databaseError.getMessage());
+            }
+        });
+
+
+        Scanner sc = new Scanner(System.in);
+        while (!sc.hasNext())
+            Thread.sleep(1000);
+    }*/
 }

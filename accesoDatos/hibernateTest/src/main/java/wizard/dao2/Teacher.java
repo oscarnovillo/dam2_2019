@@ -8,7 +8,7 @@ import java.util.Collection;
 public class Teacher {
     private int idteacher;
     private Date startDate;
-    private Collection<Subject> subjectsByIdteacher;
+    private Collection<SubjectTest> subjectsByIdteacher;
     private Members membersByIdteacher;
 
     @Id
@@ -52,11 +52,11 @@ public class Teacher {
     }
 
     @OneToMany(mappedBy = "teacherByIdteacher")
-    public Collection<Subject> getSubjectsByIdteacher() {
+    public Collection<SubjectTest> getSubjectsByIdteacher() {
         return subjectsByIdteacher;
     }
 
-    public void setSubjectsByIdteacher(Collection<Subject> subjectsByIdteacher) {
+    public void setSubjectsByIdteacher(Collection<SubjectTest> subjectsByIdteacher) {
         this.subjectsByIdteacher = subjectsByIdteacher;
     }
 
