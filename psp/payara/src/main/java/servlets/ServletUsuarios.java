@@ -54,6 +54,9 @@ public class ServletUsuarios extends javax.servlet.http.HttpServlet {
   }
   protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
 
+    // para sacar la url
+    request.getRequestURL().substring(0,request.getRequestURL().indexOf(request.getServletPath()));
+
     final StringBuilder error = new StringBuilder();
     String id = Optional.ofNullable(request.getParameter("id")).orElse("");
 

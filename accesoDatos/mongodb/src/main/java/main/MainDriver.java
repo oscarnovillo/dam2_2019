@@ -32,9 +32,9 @@ public class MainDriver {
     CodecRegistry pojoCodecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(),
         fromProviders(PojoCodecProvider.builder().automatic(true).build()));
 
-    MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://localhost:27017"));
+    MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://dam2.tomcat.iesquevedo.es:3334"));
 
-    MongoDatabase db = mongoClient.getDatabase("test");
+    MongoDatabase db = mongoClient.getDatabase("oscar");
 
     MongoCollection<Persona> col = db.getCollection("est", Persona.class).withCodecRegistry(pojoCodecRegistry);
     Persona p = new Persona();
