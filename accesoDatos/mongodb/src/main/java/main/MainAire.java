@@ -27,5 +27,23 @@ public class MainAire {
     MongoDatabase db = mongoClient.getDatabase("oscar");
 
     MongoCollection<Document> col = db.getCollection("aire");
+
+
+/*
+
+{$match : {"subjects.name":"Data Access"}},
+{$unwind: {path:"subjects.calls"}}
+{$project : {"_id":1,"nif":1,"subjects":1}}
+
+{$project : {"subjects":1,nif:1}},
+{$unwind : "$subjects"},
+{$unwind: "$subjects.calls"},
+{$group:
+    {_id: "$nif",
+    media:{ $avg: "$subjects.calls.mark"}}
+}
+
+
+ */
   }
 }
