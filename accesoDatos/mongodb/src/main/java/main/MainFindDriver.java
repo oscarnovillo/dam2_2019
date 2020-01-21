@@ -46,13 +46,14 @@ public class MainFindDriver {
     col.find(Document.parse("{\"name\":/kk/}"))
         .forEach((Consumer<Document>)document -> personas.add(pc.convertDocumentPersona(document)));
 
+
     personas.forEach(System.out::println);
 
     MongoCollection<Document> colMadrid = db.getCollection("madrid");
     colMadrid.find(Document.parse("{\"title\":{\"$regex\":\"amor.*e$\"}}"))
         .forEach((Consumer<Document>)document -> System.out.println(document.toJson()));
 
-    List<String> dates = colMadrid.find(Document.parse("{\"title\":/^C.*amor.*e$/}")).projection(Document.parse("{\"dtstart\":1}"))
+    List<String> dates = colMadrid.find(Document.parse("{\"title\":/.*^Camor.*e$/}")).projection(Document.parse("{\"dtstart\":1}"))
         .map(document -> document.getString("dtstart")).into(new ArrayList<String>());
 
     dates.forEach(System.out::println);

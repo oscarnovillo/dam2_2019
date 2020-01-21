@@ -33,52 +33,41 @@ public class MainTestEstudiantesProfesores {
 
     col.distinct("asignaturas.nombre",String.class).into(new ArrayList<>()).forEach(System.out::println);
 
-    col.updateOne(Document.parse("{\"nif\":\"profe\"}"),Document.parse("{\"$push\":{\"asignaturas\":{\"nombre\":\"testing\"}}}"));
+    //col.updateOne(Document.parse("{\"nif\":\"profe\"}"),Document.parse("{\"$push\":{\"asignaturas\":{\"nombre\":\"testing\"}}}"));
 
     col.distinct("asignaturas.nombre",String.class).into(new ArrayList<>()).forEach(System.out::println);
 
-    col.updateOne(Document.parse("{\"nif\":\"profe\"}"),Document.parse("{\"$pull\":{\"asignaturas\":{\"nombre\":\"testing\"}}}"));
+    col.updateOne(Document.parse("{\"asignaturas.nombre\":\"testing\"}"),Document.parse("{\"$set\":{\"asignaturas.$$.nombre\":\"cambio\"}}"));
 
-    col.aggregate(List.of(Document.parse("{$unwind : \"$asignaturas\"}"),Document.parse("{$unwind: \"$asignaturas.notas\"}"),
-        Document.parse("{$group:\n" +
-            "    {_id:  {nif: \"$nif\",\n" +
-            "     asignatura: \"$asignaturas.nombre\"},\n" +
-            "    media:{ $avg: \"$asignaturas.notas.nota\"}}\n" +
-            "}")))
+    col.distinct("asignaturas.nombre",String.class).into(new ArrayList<>()).forEach(System.out::println);
 
-        .map(document -> document.getString("nif")+" "+document.getString("asignatura")+ " "+document.getString("media")).into(new ArrayList<>()).forEach(System.out::println);
+    //col.updateOne(Document.parse("{\"nif\":\"profe\"}"),Document.parse("{\"$pull\":{\"asignaturas\":{\"nombre\":\"testing\"}}}"));
+
+
+    col = db.getCollection("estudiantes");
+
+
+    col.aggregate(List.of(Document.parse("{$unwind : \"$asignaturas\"}"),Document.parse("{$set : {maxConv : {$max:\"$asignaturas.notas.convocatoria\"}}}"),
+        Document.parse("{$unwind: \"$asignaturas.notas\"}"),
+            Document.parse("{$match : { $expr: { $eq: [ \"$asignaturas.notas.convocatoria\" , \"$maxConv\" ] } }}"),
+            Document.parse("{$set : {nota: \"$asignaturas.notas.nota\",asignatura:\"$asignaturas.nombre\"}}"),
+            Document.parse("{$project : {\"nota\":1,\"nombre\":1,\"asignatura\":1,\"_id\":0}}")
+            ))
+        .map(document -> document.getString("nombre")+" tiene "+document.getInteger("nota")).into(new ArrayList<>()).forEach(System.out::println);
 
 
 /*
 
-{$match : {"subjects.name":"Data Access"}},
-{$unwind: {path:"subjects.calls"}}
-{$project : {"_id":1,"nif":1,"subjects":1}}
 
-{$project : {"subjects":1,nif:1}},
-{$unwind : "$subjects"},
-{$unwind: "$subjects.calls"},
-{$group:
-    {_id: "$nif",
-    media:{ $avg: "$subjects.calls.mark"}}
-}
-
-
-{$unwind : "$asignaturas"},
-{$unwind: "$asignaturas.notas"},
-{$set : {maxCall : {"$max":"$asignaturas.notas.convocatoria" }},
-{$group:
-    {_id:{nif: "$nif",asignatura:"$asignaturas.nombre"},
-    media:{ $avg: "$asignaturas.notas.nota"}}
-}
 
 
 //Buena
-
 {$unwind: "$asignaturas"},
 {$set : {maxConv : {$max:"$asignaturas.notas.convocatoria"}}},
 {$unwind: "$asignaturas.notas"},
-{$match : { $expr: { $eq: [ "$asignaturas.notas.convocatoria" , "$maxConv" ] } }}
+{$match : { $expr: { $eq: [ "$asignaturas.notas.convocatoria" , "$maxConv" ] } }},
+{$set : {nota: "$asignaturas.notas.nota",nombre:"$asignaturas.nombre"}},
+{$project : {"nota":1,"nombre":1,"_id":0}}
 
 
  */
