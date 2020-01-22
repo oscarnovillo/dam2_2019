@@ -71,6 +71,20 @@ public class MainTestEstudiantesProfesores {
     ))
         .map(document -> document.getString("nombre")+" tiene "+document.getInteger("numeroAlumnos")+ " alumnos ").into(new ArrayList<>()).forEach(System.out::println);
 
+    col = db.getCollection("profesores");
+    col.aggregate(List.of(Document.parse("{$unwind : \"$asignaturas\"}"),
+        Document.parse("{ $lookup:  {from: \"estudiantes\",\n" +
+            "           localField: \"asignaturas.nombre\",\n" +
+            "           foreignField: \"asignaturas.nombre\",\n" +
+            "           as: \"asi\"\n" +
+            "        }\n" +
+            "    }"),
+        Document.parse("{$set : {tam: {$size: \"$asi\"}}}"),
+        Document.parse("{$project : { nif: \"$nif\",asignatura: \"$asignaturas.nombre\",tam: 1, _id:0}}")
+    ))
+        .map(document -> "profesor " + document.getString("nif")+ " "+document.getString("asignatura")+" tiene "+document.getInteger("tam")+ " alumnos ").into(new ArrayList<>()).forEach(System.out::println);
+
+
 
 
 /*
@@ -93,6 +107,17 @@ public class MainTestEstudiantesProfesores {
 {$group: {_id : "$asignaturas.nombre",numeroAlumnos : { $sum: 1} }},
 {$project: { nombre: "$_id",numeroAlumnos:1,_id:0}}
 
+
+// otra opcion con el lookup dando el profesor.
+{$unwind : "$asignaturas"},
+{ $lookup:  {from: "estudiantes",
+           localField: "asignaturas.nombre",
+           foreignField: "asignaturas.nombre",
+           as: "asi"
+        }
+    },
+    {$set : {tam: {$size: "$asi"}}},
+    {$project : { nif: "$nif",asignatura: "$asignaturas.nombre",tam: 1, _id:0}}
  */
   }
 
