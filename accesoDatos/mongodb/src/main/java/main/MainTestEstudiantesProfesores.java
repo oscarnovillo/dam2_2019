@@ -33,7 +33,7 @@ public class MainTestEstudiantesProfesores {
     MongoCollection<Document> col = db.getCollection("profesores");
 
     col.distinct("asignaturas.nombre",String.class).into(new ArrayList<>()).forEach(System.out::println);
-
+//
     col.updateOne(Document.parse("{\"nif\":\"profe\"}"),Document.parse("{\"$push\":{\"asignaturas\":{\"nombre\":\"testing\"}}}"));
     col.updateOne(Document.parse("{\"nif\":\"profe\"}"),Document.parse("{\"$push\":{\"asignaturas\":{\"nombre\":\"testing\"}}}"));
     col.updateOne(Document.parse("{\"nif\":\"profeTest\"}"),Document.parse("{\"$push\":{\"asignaturas\":{\"nombre\":\"testing\"}}}"));
@@ -42,18 +42,38 @@ public class MainTestEstudiantesProfesores {
     col.distinct("asignaturas.nombre",String.class).into(new ArrayList<>()).forEach(System.out::println);
 
     //cambia la primera ocurrencia por documento
-    //col.updateMany(Document.parse("{\"asignaturas.nombre\":\"testing\"}"),Document.parse("{\"$set\":{\"asignaturas.$.nombre\":\"cc\"}}"));
+    col.updateMany(Document.parse("{\"asignaturas.nombre\":\"testing\"}"),Document.parse("{\"$set\":{\"asignaturas.$.nombre\":\"cc\"}}"));
 
     //cambia todo
-   col.updateMany(Document.parse("{\"asignaturas.nombre\":\"cambio\"}"),Document.parse("{\"$set\":{\"asignaturas.$[asig].nombre\":\"22\"}}"),
-       new UpdateOptions().arrayFilters(List.of(Document.parse("{\"asig.nombre\" : { $eq: \"cambio\" } }"))));
+      col = db.getCollection("estudiantes");
 
-    col.distinct("asignaturas.nombre",String.class).into(new ArrayList<>()).forEach(System.out::println);
+      col.updateMany(Document.parse("{\"asignaturas.nombre\":\"cambio\"}"),
+              Document.parse("{\"$set\":{\"asignaturas.$[asig].nombre\":\"22\"}}"),
+              new UpdateOptions().arrayFilters(List.of(Document.parse("{\"asig.nombre\" : { $eq: \"cambio\" } }"))));
 
-    //col.updateOne(Document.parse("{\"nif\":\"profe\"}"),Document.parse("{\"$pull\":{\"asignaturas\":{\"nombre\":\"testing\"}}}"));
+
+
+      col.distinct("asignaturas.nombre",String.class).into(new ArrayList<>()).forEach(System.out::println);
+
+    col.updateOne(Document.parse("{\"nif\":\"profe\"}"),Document.parse("{\"$pull\":{\"asignaturas\":{\"nombre\":\"testing\"}}}"));
 
 
     col = db.getCollection("estudiantes");
+
+    // actualizar nota asignatura
+      col.updateMany(new Document().append("nombre","Pepa"),
+              Document.parse("{\"$set\":{\"asignaturas.$[asig].notas.$[nota].nota\":22}}"),
+              new UpdateOptions().arrayFilters(
+                      List.of(Document.parse("{\"asig.nombre\" : { $eq: \"Lengua\" } }"),
+                              Document.parse("{\"nota.convocatoria\" : { $eq: 2 } }"))));
+
+      // añadir nota
+      col.updateMany(new Document().append("nombre","Pepa"),
+              Document.parse("{\"$push\":{\"asignaturas.$[asig].notas\":{\"nota\":4,\"convocatiria\":3}}}"),
+              new UpdateOptions().arrayFilters(
+                      List.of(Document.parse("{\"asig.nombre\" : { $eq: \"Lengua\" } }")
+                      )));
+
 
 
     col.aggregate(List.of(Document.parse("{$unwind : \"$asignaturas\"}"),Document.parse("{$set : {maxConv : {$max:\"$asignaturas.notas.convocatoria\"}}}"),
