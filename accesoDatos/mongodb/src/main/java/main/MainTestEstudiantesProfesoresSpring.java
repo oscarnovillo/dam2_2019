@@ -1,5 +1,6 @@
 package main;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import modelo.MongoDBConfig;
@@ -39,10 +40,14 @@ public class MainTestEstudiantesProfesoresSpring {
     {$project: { nombre: "$_id",numeroAlumnos:1,_id:0}}
 
  */
-    mp.aggregate(Aggregation.newAggregation(Aggregation.match(Criteria.where("asignaturas.nombre").in(List.of("Lengua","Fisica"))),
-    Aggregation.unwind("asignaturas"),
+
+    mp.aggregate(Aggregation.newAggregation(Aggregation.match(Criteria.where("asignaturas.nombre").is("Lengua")),
+        Aggregation.unwind("asignaturas"),
     Aggregation.group("asignaturas.nombre").count().as("numeroAlumnos"),
-    Aggregation.project().andExpression("_id").as("nombre").andExpression("numeroAlumnos")),"estudiantes",String.class);
+    Aggregation.project("numeroAlumnos").andExclude("_id").andExpression("_id").as("nombre")),
+        "estudiantes", BasicDBObject.class)
+        .forEach(item -> System.out.println(item.getString("nombre")+" "+item.getString("numeroAlumnos")));
+
 
 
   }
