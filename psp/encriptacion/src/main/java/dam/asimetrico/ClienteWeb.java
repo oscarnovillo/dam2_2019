@@ -5,11 +5,12 @@
  */
 package dam.asimetrico;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+
 import java.security.KeyFactory;
 import java.security.PublicKey;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,7 +55,7 @@ public class ClienteWeb {
             KeyFactory keyFactoryRSA = KeyFactory.getInstance("RSA"); // Hace uso del provider BC
 
             // 4.2 Recuperar clave publica desde datos codificados en formato X509
-            X509EncodedKeySpec clavePublicaSpec = new X509EncodedKeySpec(Base64.decode(base64Publica));
+            X509EncodedKeySpec clavePublicaSpec = new X509EncodedKeySpec(Base64.getUrlDecoder().decode(base64Publica));
             PublicKey clavePublica2 = keyFactoryRSA.generatePublic(clavePublicaSpec);
 
             
@@ -71,7 +72,7 @@ public class ClienteWeb {
             
             cifrador.init(Cipher.DECRYPT_MODE, clavePublica2);  // Cifra con la clave publica
              
-            System.out.println(new String(cifrador.doFinal(Base64.decode(base64Publica))));
+            System.out.println(new String(cifrador.doFinal(Base64.getUrlDecoder().decode(base64Publica))));
 
         } catch (Exception ex) {
             Logger.getLogger(ClienteWeb.class.getName()).log(Level.SEVERE, null, ex);

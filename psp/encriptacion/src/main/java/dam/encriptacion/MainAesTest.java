@@ -31,15 +31,15 @@ public class MainAesTest {
             IvParameterSpec ivspec = new IvParameterSpec(iv);
 
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-            KeySpec spec = new PBEKeySpec(secret.toCharArray(), sSalt.getBytes(), 65536,128);
+            KeySpec spec = new PBEKeySpec(secret.toCharArray(), sSalt.getBytes(), 65536,256);
             SecretKey tmp = factory.generateSecret(spec);
             SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
 
-             MessageDigest digest =
-                MessageDigest.getInstance("SHA-256");
-        digest.update(secret.getBytes("UTF-8"));
-         SecretKeySpec key = new SecretKeySpec(
-                digest.digest(), "AES");
+//             MessageDigest digest =
+//                MessageDigest.getInstance("SHA-256");
+//        digest.update(secret.getBytes("UTF-8"));
+//         SecretKeySpec key = new SecretKeySpec(
+//                digest.digest(), "AES");
 
 
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
@@ -57,15 +57,15 @@ public class MainAesTest {
             IvParameterSpec ivspec = new IvParameterSpec(iv);
 
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-            KeySpec spec = new PBEKeySpec(secret.toCharArray(), sSalt.getBytes(), 65536,128);
+            KeySpec spec = new PBEKeySpec(secret.toCharArray(), sSalt.getBytes(), 65536,256);
             SecretKey tmp = factory.generateSecret(spec);
             SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
 
-              MessageDigest digest =
-                MessageDigest.getInstance("SHA-256");
-        digest.update(secret.getBytes("UTF-8"));
-         SecretKeySpec key = new SecretKeySpec(
-                digest.digest(),  "AES");
+//              MessageDigest digest =
+//                MessageDigest.getInstance("SHA-256");
+//        digest.update(secret.getBytes("UTF-8"));
+//         SecretKeySpec key = new SecretKeySpec(
+//                digest.digest(),  "AES");
 
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
             cipher.init(Cipher.DECRYPT_MODE, secretKey, ivspec);

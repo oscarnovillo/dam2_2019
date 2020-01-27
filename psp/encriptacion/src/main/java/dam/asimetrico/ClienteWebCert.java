@@ -5,13 +5,14 @@
  */
 package dam.asimetrico;
 
-import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
+
 import java.io.ByteArrayInputStream;
 import java.security.KeyStore;
 import java.security.Signature;
 import java.security.cert.X509Certificate;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -49,7 +50,7 @@ public class ClienteWebCert {
 
             //Security.addProvider(new BouncyCastleProvider());  // Cargar el provider BC
             char[] password = "abc".toCharArray();
-            ByteArrayInputStream input = new ByteArrayInputStream(Base64.decode(base64Publica));
+            ByteArrayInputStream input = new ByteArrayInputStream(java.util.Base64.getUrlDecoder().decode(base64Publica));
             KeyStore ksLoad = KeyStore.getInstance("PKCS12");
             ksLoad.load(input, password);
 
@@ -69,7 +70,7 @@ public class ClienteWebCert {
 
             nvps.add(new BasicNameValuePair("op", "MANDAR"));
             //mandar certificado
-            nvps.add(new BasicNameValuePair("cert", Base64.encode(certLoad.getEncoded())));
+            nvps.add(new BasicNameValuePair("cert", Base64.getUrlEncoder().encodeToString(certLoad.getEncoded())));
             
             //mandar texto
             nvps.add(new BasicNameValuePair("texto", "firmado"));
@@ -79,7 +80,7 @@ public class ClienteWebCert {
             sign.initSign(keyLoad);
             sign.update("firmado".getBytes());
             byte[] firma = sign.sign();
-            nvps.add(new BasicNameValuePair("firma", Base64.encode(firma)));
+            nvps.add(new BasicNameValuePair("firma", Base64.getUrlEncoder().encodeToString(firma)));
             
             httpPost.setEntity(new UrlEncodedFormEntity(nvps));
             response2 = httpclient.execute(httpPost);
