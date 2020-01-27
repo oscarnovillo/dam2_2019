@@ -1,0 +1,23 @@
+
+Qsquid:S1191	"5Use classes from the Java API instead of Sun classes.(ÂÙ€Œùÿÿÿÿ
+gsquid:S13016"KReplace this "switch" statement by "if" statements to increase readability.(õÙÆ‚úÿÿÿÿ
+Qsquid:S1141G"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
+U"squid:SwitchLastCaseIsDefaultCheck6""Add a default case to this switch.(õÙÆ‚úÿÿÿÿ
+msquid:S2068x"V'password' detected in this expression, review this potentially hard-coded credential.(ä›Ë¿
+P
+squid:S106¦"9Replace this use of System.out or System.err by a logger.(ˆªçÖ
+U
+squid:S106§"9Replace this use of System.out or System.err by a logger.(€î“Åùÿÿÿÿ
+O
+squid:S106«"9Replace this use of System.out or System.err by a logger.(Å±Ën
+P
+squid:S106®"9Replace this use of System.out or System.err by a logger.(öøÿê
+Esquid:S1989Ä"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+Esquid:S1989Ä"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+Esquid:S1989Ò"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+Esquid:S1989Ò"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+bsquid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(¨Ÿ†Ç
+bsquid:CommentedOutCodeLineu"<This block of commented-out lines of code should be removed.(õÙÃ¨
+gsquid:CommentedOutCodeLinez"<This block of commented-out lines of code should be removed.(‡»¥Óûÿÿÿÿ
+bsquid:CommentedOutCodeLine–"<This block of commented-out lines of code should be removed.(ø€Ø*
+csquid:CommentedOutCodeLineà"<This block of commented-out lines of code should be removed.(äõëğ
