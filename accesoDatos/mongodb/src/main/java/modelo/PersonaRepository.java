@@ -14,6 +14,7 @@ public interface PersonaRepository extends MongoRepository<Persona,String> {
 
   List<Persona> findDistinctByName(String name);
   List<Persona> findAllByName();
+
   @Query("{'cosas.nombre': ?0,'cosas.cantidad' : ?1}")
   List<Persona> findByCosasNombre(String nombreCosa,int cantidad);
 
