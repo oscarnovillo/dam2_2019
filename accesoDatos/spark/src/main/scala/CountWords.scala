@@ -20,9 +20,10 @@ object CountWords extends App {
   println(textFile.count())
 
   val text2 = textFile.flatMap(linea => linea.split(" "))
-
-
-  val wordCounts = textFile.flatMap(line => line.split(" ")).groupByKey(identity).count().withColumnRenamed("count(1)","count")
+val chars = textFile.flatMap(linea => linea.chars().toArray())
+  println(chars.count())
+println(text2.count());
+  val wordCounts = textFile.flatMap(line => line.split(" ")).filter(palabra => palabra.length> 4).groupByKey(identity).count().withColumnRenamed("count(1)","count")
 
 wordCounts.sort(desc("count"))
   val array = wordCounts.orderBy($"count".desc).limit(10).collect()
@@ -31,7 +32,13 @@ wordCounts.sort(desc("count"))
 
   val lista = wordCounts.orderBy($"count".desc).limit(10).collectAsList()
 
+  println(65.toChar)
 
   println(array.deep.mkString("\n"))
+
+  println(chars.groupByKey(identity).count().withColumnRenamed("count(1)","count")
+    .sort(desc("count"))
+    .limit(10).map(row => row(0).##.toChar+ " " + row(1)).collect().deep.mkString("\n"))
+
 
 }
