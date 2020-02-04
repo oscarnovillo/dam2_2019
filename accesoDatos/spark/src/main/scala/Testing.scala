@@ -45,7 +45,7 @@ object Testing {
     val muertosDistrito = muertosPorParte.join(data ,muertosPorParte("Num Parte") === data("Num Parte"),"inner").select(col("DISTRITO"),data("Num Parte")).distinct.groupBy("DISTRITO").
       agg(count("Num Parte") as "count")
 
-
+muertosPorParte.filter(col("count").lt(1))
     println(muertos.count())
     muertosPorParte.filter(col("count") > 1).show()
     return muertosDistrito
