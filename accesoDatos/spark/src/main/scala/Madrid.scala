@@ -1,4 +1,4 @@
-import java.util.Collections
+import java.util.{Collections, Date}
 import java.util.function.Consumer
 import java.util.stream.Collectors
 
@@ -25,9 +25,22 @@ object Madrid extends App {
 
   madrid.printSchema()
 madrid.show()
-  madrid.filter(col("NOMBRE-INSTALACION").like("(Latina)") && $"TIPO".contains("kk"))
-  madrid.filter(col("NOMBRE-INSTALACION").equalTo("Auditorio y sala de exposiciones Paco de Lucía (Latina)") || col("TIPO") === "jjj")
-    .select(col("TITULO"),col("TIPO")).foreach(row => println(row(0)+ " "+row(1).toString.split("/")(3)))
+
+  def lastIndexSplit(s: String): String = {
+    val array = s.split("/")
+    array(array.length-1)
+  }
+
+  val lastIndexSplitUDF = udf[String, String](lastIndexSplit)
+
+
+  madrid.filter(col("NOMBRE-INSTALACION").equalTo("Auditorio y sala de exposiciones Paco de Lucía (Latina)"))
+    .withColumn("TIPO", lastIndexSplitUDF($"TIPO"))
+    .select(col("TITULO"),col("TIPO")).foreach(row => println(row(0)+ " "+row(1)))
+  madrid.filter(col("NOMBRE-INSTALACION").equalTo("Auditorio y sala de exposiciones Paco de Lucía (Latina)"))
+    .withColumn("TIPO", substring_index($"TIPO","/",-1))
+    .select(col("TITULO"),col("TIPO")).foreach(row => println(row(0)+ " "+row(1)))
+
 
   madrid.filter(month($"FECHA").equalTo(1))
     .select(col("TITULO"),date_format(to_date(col("FECHA")),"dd/MM/YYYY")).foreach(row => println(row(0)+ " "+row(1)))
@@ -39,12 +52,30 @@ madrid.show()
 //    override def accept(t: Row): Unit = {println(t)}
 //  })
 
+
   lista.foreach(println);
   for (row <- lista)
     {
       println(row)
     }
 
+  madrid.groupBy($"NOMBRE-INSTALACION").count().sort(desc("count")).limit(1).show(false)
+  madrid.filter(col("NOMBRE-INSTALACION").like("%Latina%")).groupBy($"NOMBRE-INSTALACION").count().sort(desc("count"))
+    .select(avg($"count").as("media")).show(false)
+
+  val d = madrid.filter(col("NOMBRE-INSTALACION").like("%Latina%")).groupBy($"NOMBRE-INSTALACION").count().sort(desc("count"))
+    .select(avg($"count").as("media")).first().getDouble(0);
+  println(d);
+
+  madrid.filter(col("NOMBRE-INSTALACION").like("%Latina%")).groupBy($"NOMBRE-INSTALACION").count()
+    .sort(desc("count")).withColumn("media",lit(d)).filter(col("count") > col("media")).show(false)
 
 
+
+
+madrid.select(date_format(to_date($"FECHA"),"yyyy-MM")).distinct().show(false)
+
+madrid.withColumn("FECHA2",date_format(to_date($"FECHA"),"yyyy-MM")).stat.crosstab("FECHA2","CODIGO-POSTAL-INSTALACION").sort(asc("FECHA2_CODIGO-POSTAL-INSTALACION"))
+  .show(false)
+  madrid.stat.freqItems(Seq("FECHA")).show(false)
 }
