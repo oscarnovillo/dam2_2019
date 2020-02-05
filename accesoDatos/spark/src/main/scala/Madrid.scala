@@ -16,11 +16,6 @@ object Madrid extends App {
 
   spark.sparkContext.setLogLevel("ERROR");
 
-  val madridJson = spark.read.json("datos/students.json")
-
-  madridJson.printSchema()
-  madridJson.show()
-
   val madrid = spark.read.option("header", "true").option("encoding", "windows-1252").csv("datos/206974-0-agenda-eventos-culturales-100.csv")
 
   madrid.printSchema()
