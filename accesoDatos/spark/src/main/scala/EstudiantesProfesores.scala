@@ -22,8 +22,8 @@ object EstudiantesProfesores extends App{
 
   madridJson.select(col("*"),explode($"subjects").as("subject")).drop("subjects")
     .filter(col("subject.name").equalTo("Android")).select(col("*"),explode($"subject.calls").as("call"))
-    .withColumn("con",col("call.call.$numberInt").cast("Int")).withColumn("nota",col("call.mark.$numberInt").cast("Int"))
-
+    .withColumn("con",col("call.call.$numberInt").cast("Int"))
+    .withColumn("nota",col("call.mark.$numberInt").cast("Int"))
     .filter(col("con").equalTo(1) && col("nota").geq(4))
     .show(false)
     //.printSchema()

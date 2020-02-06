@@ -62,7 +62,8 @@ madrid.show()
     .select(avg($"count").as("media")).first().getDouble(0);
   println(d);
 
-  madrid.filter(col("NOMBRE-INSTALACION").like("%Latina%")).groupBy($"NOMBRE-INSTALACION").count()
+  madrid.filter(col("NOMBRE-INSTALACION").like("%Latina%"))
+    .groupBy($"NOMBRE-INSTALACION").count()
     .sort(desc("count")).withColumn("media",lit(d)).filter(col("count") > col("media")).show(false)
 
 
@@ -70,7 +71,8 @@ madrid.show()
 
 madrid.select(date_format(to_date($"FECHA"),"yyyy-MM")).distinct().show(false)
 
-madrid.withColumn("FECHA2",date_format(to_date($"FECHA"),"yyyy-MM")).stat.crosstab("FECHA2","CODIGO-POSTAL-INSTALACION").sort(asc("FECHA2_CODIGO-POSTAL-INSTALACION"))
+madrid.withColumn("FECHA2",date_format(to_date($"FECHA"),"yyyy-MM"))
+  .stat.crosstab("FECHA2","CODIGO-POSTAL-INSTALACION").sort(asc("FECHA2_CODIGO-POSTAL-INSTALACION"))
   .show(false)
   madrid.stat.freqItems(Seq("FECHA")).show(false)
 }
