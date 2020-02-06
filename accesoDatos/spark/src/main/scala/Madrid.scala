@@ -19,7 +19,7 @@ object Madrid extends App {
   val madrid = spark.read.option("header", "true").option("encoding", "windows-1252").csv("datos/206974-0-agenda-eventos-culturales-100.csv")
 
   madrid.printSchema()
-madrid.show()
+  madrid.show()
 
   def lastIndexSplit(s: String): String = {
     val array = s.split("/")
@@ -43,18 +43,13 @@ madrid.show()
   val lista = madrid.filter(month($"FECHA").equalTo(1))
     .select(col("TITULO"),date_format(to_date(col("FECHA")),"dd/MM/YYYY")).collect()
 
-//  lista.forEach(new Consumer[Row] {
-//    override def accept(t: Row): Unit = {println(t)}
-//  })
-
-
   lista.foreach(println);
   for (row <- lista)
     {
       println(row)
     }
 
-  madrid.groupBy($"NOMBRE-INSTALACION").count().sort(desc("count")).limit(1).show(false)
+  madrid.groupBy($"NOMBRE-INSTALACION").agg(max("HORA").as("hora"),count("NOMBRE-INSTALACION").as("count")).sort(desc("count")).limit(1).show(false)
   madrid.filter(col("NOMBRE-INSTALACION").like("%Latina%")).groupBy($"NOMBRE-INSTALACION").count().sort(desc("count"))
     .select(avg($"count").as("media")).show(false)
 

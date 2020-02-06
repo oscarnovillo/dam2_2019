@@ -23,7 +23,7 @@ object CountWords extends App {
 val chars = textFile.flatMap(linea => linea.chars().toArray())
   println(chars.count())
 println(text2.count());
-  val wordCounts = textFile.flatMap(line => line.split(" ")).filter(palabra => palabra.length> 4).groupByKey(identity).count().withColumnRenamed("count(1)","count")
+  val wordCounts = textFile.flatMap(line => line.split(" ")).filter(palabra => palabra.length> 1).groupByKey(identity).count().withColumnRenamed("count(1)","count")
 
 wordCounts.sort(desc("count"))
   val array = wordCounts.orderBy($"count".desc).limit(10).collect()

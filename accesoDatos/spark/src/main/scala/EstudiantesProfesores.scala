@@ -1,5 +1,5 @@
 import org.apache.log4j.{Level, Logger}
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.{Column, Row, SparkSession}
 import org.apache.spark.sql.functions._
 
 object EstudiantesProfesores extends App{
@@ -8,6 +8,9 @@ object EstudiantesProfesores extends App{
   val spark = SparkSession.builder().
     master("local").getOrCreate()
   import spark.implicits._
+
+
+
 
   spark.sparkContext.setLogLevel("ERROR");
 
@@ -18,7 +21,15 @@ object EstudiantesProfesores extends App{
   madridJson.select(col("*"),explode($"subjects").as("subject")).drop("subjects")
     .withColumn("calls",$"subject.calls").withColumn("nombreAsig",$"subject.name")
     .select(col("*"),element_at(reverse(array_sort($"calls")),1).as("notas"))
+    .withColumn("con",col("notas.call.$numberInt").cast("Int")).withColumn("nota",col("notas.mark.$numberInt").cast("Int"))
     .show(false)
+
+
+  madridJson.select(col("*"),explode($"subjects").as("subject")).drop("subjects")
+    .withColumn("calls",$"subject.calls").withColumn("nombreAsig",$"subject.name")
+    .select(col("*"),element_at(reverse(array_sort($"calls")),1).as("notas"))
+    .withColumn("con",col("notas.call.$numberInt").cast("Int")).withColumn("nota",col("notas.mark.$numberInt").cast("Int"))
+    .stat.crosstab("nombreAsig","con").show(false)
 
   madridJson.select(col("*"),explode($"subjects").as("subject")).drop("subjects")
     .filter(col("subject.name").equalTo("Android")).select(col("*"),explode($"subject.calls").as("call"))
@@ -27,5 +38,8 @@ object EstudiantesProfesores extends App{
     .filter(col("con").equalTo(1) && col("nota").geq(4))
     .show(false)
     //.printSchema()
+
+
+
 
 }
