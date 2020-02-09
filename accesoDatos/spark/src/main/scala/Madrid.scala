@@ -54,15 +54,14 @@ object Madrid extends App {
 
   madrid.filter(!col("NOMBRE-INSTALACION").isNull).groupBy($"NOMBRE-INSTALACION").agg(max("HORA").as("hora"))
     .sort(desc("HORA")).limit(1).show(false)
-  madrid.filter(col("NOMBRE-INSTALACION").like("%Latina%")).groupBy($"NOMBRE-INSTALACION").count().sort(desc("count"))
-    .select(avg($"count").as("media")).show(false)
 
-  val d = madrid.filter(col("NOMBRE-INSTALACION").like("%Latina%")).groupBy($"NOMBRE-INSTALACION").count().sort(desc("count"))
+
+  val d = madrid.filter(col("DIAS-SEMANA").like("%L%")).groupBy($"DIAS-SEMANA").count().sort(desc("count"))
     .select(avg($"count").as("media")).first().getDouble(0);
   println(d);
 
-  madrid.filter(col("NOMBRE-INSTALACION").like("%Latina%"))
-    .groupBy($"NOMBRE-INSTALACION").count()
+  madrid.filter(col("DIAS-SEMANA").like("%L%"))
+    .groupBy($"DIAS-SEMANA").count()
     .sort(desc("count")).withColumn("media", lit(d)).filter(col("count") > col("media")).show(false)
 
 
