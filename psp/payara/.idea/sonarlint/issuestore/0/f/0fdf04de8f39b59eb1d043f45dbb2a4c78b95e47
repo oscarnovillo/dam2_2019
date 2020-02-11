@@ -1,10 +1,10 @@
 
-lsquid:UselessImportCheck"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8Ã”ÄÃú-
 nsquid:UselessImportCheck"CRemove this unused import 'javax.enterprise.context.RequestScoped'.(‚Õ…½8Õ¬ÀŸú-
-_squid:UselessImportCheck"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿ8Õ¬ÀŸú-
+dsquid:HiddenFieldCheck%"6Rename "su" which hides the field declared at line 29.(¡ÀßÉüÿÿÿÿ8Õ¬ÀŸú-
+lsquid:UselessImportCheck"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8Ã”ÄÃú-
+isquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(Ú°à¬8Õ¬ÀŸú-
 bsquid:UselessImportCheck
 "2Remove this unused import 'javax.json.bind.Jsonb'.(Ø”€¡üÿÿÿÿ8Õ¬ÀŸú-
-isquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(Ú°à¬8Õ¬ÀŸú-
-nsquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8Õ¬ÀŸú-
 dsquid:UselessImportCheck"9Remove this unused import 'javax.json.bind.JsonbBuilder'.(ûÿÖþ8Õ¬ÀŸú-
-dsquid:HiddenFieldCheck%"6Rename "su" which hides the field declared at line 29.(¡ÀßÉüÿÿÿÿ8Õ¬ÀŸú-
+nsquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8Õ¬ÀŸú-
+_squid:UselessImportCheck"/Remove this unused import 'java.util.Optional'.(¨˜ëÝüÿÿÿÿ8Õ¬ÀŸú-

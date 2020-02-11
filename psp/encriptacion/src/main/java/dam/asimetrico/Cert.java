@@ -38,8 +38,8 @@ import javax.naming.InvalidNameException;
 import javax.naming.ldap.LdapName;
 import javax.naming.ldap.Rdn;
 
-//import sun.security.tools.keytool.CertAndKeyGen;
-//import sun.security.x509.X500Name;
+import sun.security.tools.keytool.CertAndKeyGen;
+import sun.security.x509.X500Name;
 
 /**
  *

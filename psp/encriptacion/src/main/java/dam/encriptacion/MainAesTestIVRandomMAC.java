@@ -33,17 +33,17 @@ public class MainAesTestIVRandomMAC {
 
     public static String encrypt(String strToEncrypt, String secret) {
         try {
-            byte[] iv = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+            byte[] iv = new byte[12];
             byte []salt = new byte[16];
             SecureRandom sr = new SecureRandom();
             sr.nextBytes(iv);
             sr.nextBytes(salt);
-            GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv); 
+            GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv);
             
 
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
             // en el jdk8 esta limitado a 128 bits, desde el 9 puede ser de 256
-            KeySpec spec = new PBEKeySpec(secret.toCharArray(), salt, 65536, 128);
+            KeySpec spec = new PBEKeySpec(secret.toCharArray(), salt, 65536, 256);
             SecretKey tmp = factory.generateSecret(spec);
             SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
 
@@ -63,10 +63,10 @@ public class MainAesTestIVRandomMAC {
             byte[] iv = Arrays.copyOf(decoded, 12);
             byte []salt = Arrays.copyOfRange(decoded, 12,28);
 
-            GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv); 
+            GCMParameterSpec parameterSpec = new GCMParameterSpec(128, iv);
 
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-            KeySpec spec = new PBEKeySpec(secret.toCharArray(), salt, 65536,128);
+            KeySpec spec = new PBEKeySpec(secret.toCharArray(), salt, 65536,256);
             SecretKey tmp = factory.generateSecret(spec);
             SecretKeySpec secretKey = new SecretKeySpec(tmp.getEncoded(), "AES");
 

@@ -61,3 +61,9 @@ j
 :src/main/java/rest/dto/converters/ModelMapperProducer.java,7\4\7467b7d5be55940d848e7fab4e62ad31134186e4
 ]
 -src/main/java/rest/CustomExceptionMapper.java,8\7\87374fb346f3ed5897768813e04da90b91d3b0bd
+W
+'src/main/java/config/Configuration.java,7\f\7f9a1455549e9958f1cfe6993a695569484b133b
+T
+$src/main/java/servlets/CheckJWT.java,9\c\9c170d829a519966f0e9c07e35044f168a14cc52
+O
+src/main/java/servlets/JWT.java,a\6\a6a2fe0742ebc2930e45ece88d0e0d091a1fd493

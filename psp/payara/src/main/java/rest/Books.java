@@ -34,6 +34,7 @@ public class Books {
   @PUT
   public Response putUsuario(Book user)
   {
+
     if (user.getName().equals("error")) {
       ApiError apiError = new ApiError("mi mensaje");
       return Response.status(Response.Status.INTERNAL_SERVER_ERROR)

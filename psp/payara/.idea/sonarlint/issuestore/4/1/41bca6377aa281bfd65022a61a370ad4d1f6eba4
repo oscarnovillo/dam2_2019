@@ -1,26 +1,26 @@
 
-Ssquid:S1481D"0Remove this unused "errorString" local variable.(ŽÒÜ•üÿÿÿÿ8Ò¬»Ãú-
-lsquid:UselessImportCheck"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8ø½ªÃú-
-?squid:S1989#"(Add a "try/catch" block for "getReader".(ž¥§¨
-gsquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(©ˆ…ïøÿÿÿÿ
-Fsquid:S1989P"(Add a "try/catch" block for "getWriter".(¬ðÑñ8Áž«Ãú-
-Fsquid:S1989L"(Add a "try/catch" block for "getWriter".(û†¶Ü8´•ç¢ø-
->squid:S1989#"'Add a "try/catch" block for "fromJson".(ž¥§¨
-Osquid:S1854#"8Remove this useless assignment to local variable "user".(ž¥§¨
-Csquid:S1989P"%Add a "try/catch" block for "toJson".(¬ðÑñ8Áž«Ãú-
+isquid:CommentedOutCodeLineO"<This block of commented-out lines of code should be removed.(š×–Ñ8Áž«Ãú-
 Fsquid:S1148`"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8Áž«Ãú-
-@squid:S1481#")Remove this unused "user" local variable.(ž¥§¨
-?squid:S1989*"(Add a "try/catch" block for "getReader".(·çÎ€
+Jsquid:S1612E",Replace this lambda with a method reference.(òÿÅù8µÊºÃú-
+>squid:S1989*"'Add a "try/catch" block for "fromJson".(·çÎ€
+isquid:CommentedOutCodeLine\"<This block of commented-out lines of code should be removed.(ð¾ï‚8Áž«Ãú-
+isquid:CommentedOutCodeLinec"<This block of commented-out lines of code should be removed.(˜Ù¢ï8Áž«Ãú-
 Vsquid:S1161'":Add the "@Override" annotation above this method signature(šŒêóûÿÿÿÿ
+lsquid:UselessImportCheck"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8ø½ªÃú-
+Fsquid:S19895"(Add a "try/catch" block for "getWriter".(—Óñƒ8óêŒÊï-
+>squid:S1989#"'Add a "try/catch" block for "fromJson".(ž¥§¨
+?squid:S1989#"(Add a "try/catch" block for "getReader".(ž¥§¨
+?squid:S1989*"(Add a "try/catch" block for "getReader".(·çÎ€
+Fsquid:S1989L"(Add a "try/catch" block for "getWriter".(û†¶Ü8´•ç¢ø-
+isquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(š×–Ñ8´•ç¢ø-
+gsquid:CommentedOutCodeLine("<This block of commented-out lines of code should be removed.(©ˆ…ïøÿÿÿÿ
+Qsquid:S11617":Add the "@Override" annotation above this method signature(ùŠœ¬
+Fsquid:S1989P"(Add a "try/catch" block for "getWriter".(¬ðÑñ8Áž«Ãú-
 [
 squid:S106]"9Replace this use of System.out or System.err by a logger.(åö¡½úÿÿÿÿ8Áž«Ãú-
-?squid:S1989."(Add a "try/catch" block for "getWriter".(Ó–éü
-Fsquid:S19895"(Add a "try/catch" block for "getWriter".(—Óñƒ8óêŒÊï-
-Jsquid:S1612E",Replace this lambda with a method reference.(òÿÅù8µÊºÃú-
+Csquid:S1989P"%Add a "try/catch" block for "toJson".(¬ðÑñ8Áž«Ãú-
+@squid:S1481#")Remove this unused "user" local variable.(ž¥§¨
+Osquid:S1854#"8Remove this useless assignment to local variable "user".(ž¥§¨
+Ssquid:S1481D"0Remove this unused "errorString" local variable.(ŽÒÜ•üÿÿÿÿ8Ò¬»Ãú-
 bsquid:S1854D"?Remove this useless assignment to local variable "errorString".(ŽÒÜ•üÿÿÿÿ8Ò¬»Ãú-
-isquid:CommentedOutCodeLine""<This block of commented-out lines of code should be removed.(š×–Ñ8´•ç¢ø-
-isquid:CommentedOutCodeLine\"<This block of commented-out lines of code should be removed.(ð¾ï‚8Áž«Ãú-
-Qsquid:S11617":Add the "@Override" annotation above this method signature(ùŠœ¬
-isquid:CommentedOutCodeLinec"<This block of commented-out lines of code should be removed.(˜Ù¢ï8Áž«Ãú-
->squid:S1989*"'Add a "try/catch" block for "fromJson".(·çÎ€
-isquid:CommentedOutCodeLineO"<This block of commented-out lines of code should be removed.(š×–Ñ8Áž«Ãú-
+?squid:S1989."(Add a "try/catch" block for "getWriter".(Ó–éü
