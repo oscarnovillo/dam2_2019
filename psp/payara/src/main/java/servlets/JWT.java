@@ -22,6 +22,8 @@ import java.security.PrivateKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
 import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -70,6 +72,8 @@ public class JWT extends HttpServlet {
 
          keyFactoryRSA = KeyFactory.getInstance("RSA");
         clavePrivada2 = keyFactoryRSA.generatePrivate(clavePrivadaSpec);
+
+
         String jws = Jwts.builder()
                 .setIssuer("Stormpath")
                 .setSubject("msilverman")
@@ -79,7 +83,8 @@ public class JWT extends HttpServlet {
                 // Fri Jun 24 2016 15:33:42 GMT-0400 (EDT)
                 .setIssuedAt(Date.from(Instant.ofEpochSecond(1466796822L)))
                 // Sat Jun 24 2116 15:33:42 GMT-0400 (EDT)
-                .setExpiration(Date.from(Instant.ofEpochSecond(4622470422L)))
+                .setExpiration(Date.from(LocalDate.of(2020,10,10).atStartOfDay(ZoneId.systemDefault())
+                    .toInstant()))
                 .signWith(clavePrivada2, SignatureAlgorithm.RS256
                 )
                 .compact();

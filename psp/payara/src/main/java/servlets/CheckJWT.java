@@ -5,24 +5,24 @@
  */
 package servlets;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.JwtException;
-import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.*;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;
 import java.security.PrivateKey;
+import java.security.PublicKey;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.PKCS8EncodedKeySpec;
+import java.security.spec.X509EncodedKeySpec;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -50,6 +50,7 @@ public class CheckJWT extends HttpServlet {
             String jwsString = request.getHeader("JWT");
             
             PKCS8EncodedKeySpec clavePrivadaSpec = null;
+            X509EncodedKeySpec clavePublicaSpec = null;
             byte[] bufferPriv = new byte[5000];
             InputStream in = request.getServletContext().getResourceAsStream("/WEB-INF/jwt.privada");
             int chars;
@@ -62,7 +63,20 @@ public class CheckJWT extends HttpServlet {
                 
                 // 2.2 Recuperar clave privada desde datos codificados en formato PKCS8
                 clavePrivadaSpec = new PKCS8EncodedKeySpec(bufferPriv2);
-                
+
+                byte[] bufferPub = new byte[5000];
+                in = request.getServletContext().getResourceAsStream("/WEB-INF/jwt.publica");
+                chars = in.read(bufferPub, 0, 5000);
+                in.close();
+
+                byte[] bufferPub2 = new byte[chars];
+                System.arraycopy(bufferPub, 0, bufferPub2, 0, chars);
+                clavePublicaSpec = new X509EncodedKeySpec(bufferPub);
+                // 4.2 Recuperar clave publica desde datos codificados en formato X509
+
+
+
+
             } catch (IOException ex) {
                 Logger.getLogger(JWT.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -71,32 +85,39 @@ public class CheckJWT extends HttpServlet {
             KeyFactory keyFactoryRSA = null;
             keyFactoryRSA = KeyFactory.getInstance("RSA");
             clavePrivada2 = keyFactoryRSA.generatePrivate(clavePrivadaSpec);
+
+            PublicKey clavePublica2 = keyFactoryRSA.generatePublic(clavePublicaSpec);
             Jws<Claims> jws = null;
             try {
-                jws = Jwts.parser() // (1)
+                jws = Jwts.parserBuilder() // (1)
                         .setSigningKey(clavePrivada2) // (2)
+                        .build()
                         .parseClaimsJws(jwsString); // (3)
-                
+
                 // we can safely trust the JWT
-            } catch (JwtException ex) {       // (4)
-               response.setStatus(403);
+            } catch (ExpiredJwtException ex) {       // (4)
+               response.sendError(403,ex.getMessage());
+            }
+            catch (JwtException ex) {       // (4)
+                response.sendError(403,ex.getMessage());
             }
             
-            
-            response.setContentType("text/html;charset=UTF-8");
-            try (PrintWriter out = response.getWriter()) {
-                /* TODO output your page here. You may use following sample code. */
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("<head>");
-                out.println("<title>Servlet CheckJWT</title>");
-                out.println("</head>");
-                out.println("<body>");
-                out.println("<h1>Servlet CheckJWT at " + jws.getBody().get("name", String.class) + "</h1>");
-                out.println("<h1>Servlet CheckJWT at " + jws.getBody().get("scope", String.class) + "</h1>");
-              out.println("<h1>Servlet CheckJWT at " + jws.getBody().get("admin", Boolean.class) + "</h1>");
-              out.println("</body>");
-                out.println("</html>");
+            if (jws != null) {
+                response.setContentType("text/html;charset=UTF-8");
+                try (PrintWriter out = response.getWriter()) {
+                    /* TODO output your page here. You may use following sample code. */
+                    out.println("<!DOCTYPE html>");
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println("<title>Servlet CheckJWT</title>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.println("<h1>Servlet CheckJWT at " + jws.getBody().get("name", String.class) + "</h1>");
+                    out.println("<h1>Servlet CheckJWT at " + jws.getBody().get("scope", String.class) + "</h1>");
+                    out.println("<h1>Servlet CheckJWT at " + jws.getBody().get("admin", Boolean.class) + "</h1>");
+                    out.println("</body>");
+                    out.println("</html>");
+                }
             }
         } catch (NoSuchAlgorithmException ex) {
             Logger.getLogger(CheckJWT.class.getName()).log(Level.SEVERE, null, ex);
