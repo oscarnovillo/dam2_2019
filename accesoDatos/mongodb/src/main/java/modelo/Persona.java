@@ -23,6 +23,7 @@ public class Persona {
 
   private String name;
   private LocalDate fecha;
+  private ObjectId _idLector;
 
   private List<Things> cosas;
 

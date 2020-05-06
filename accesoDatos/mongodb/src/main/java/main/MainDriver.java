@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import static com.mongodb.client.model.Filters.eq;
+import static com.mongodb.client.model.Filters.or;
 import static org.bson.codecs.configuration.CodecRegistries.fromProviders;
 import static org.bson.codecs.configuration.CodecRegistries.fromRegistries;
 
@@ -36,22 +37,26 @@ public class MainDriver {
 
     MongoDatabase db = mongoClient.getDatabase("oscar");
 
-    MongoCollection<Persona> col = db.getCollection("est", Persona.class).withCodecRegistry(pojoCodecRegistry);
+
+    // con driver 3.12 y mapeo de objetos
+//    MongoCollection<Persona> col = db.getCollection("est", Persona.class).withCodecRegistry(pojoCodecRegistry);
     Persona p = new Persona();
     p.setName("jj");
     List<Things> cosas;
     cosas = new ArrayList<>();
     cosas.add(Things.builder().nombre("cachos").cantidad(2).build());
     p.setCosas(cosas);
-    col.insertOne(p);
-    System.out.println(p.get_id());
+//    col.insertOne(p);
+//    System.out.println(p.get_id());
 
 
-    Gson gson = new Gson();
+    // insert normal.
+//    Gson gson = new Gson();
     MongoCollection<Document> col1 = db.getCollection("est");
-    Document d = Document.parse( gson.toJson(p));
-    col1.insertOne(d);
-    System.out.println(d.getObjectId("_id"));
+    Document d = null;
+//    Document d = Document.parse( gson.toJson(p));
+//    col1.insertOne(d);
+//    System.out.println(d.getObjectId("_id"));
 
 
 
@@ -59,7 +64,8 @@ public class MainDriver {
     p.getCosas().add(Things.builder().nombre("extra").cantidad(1).build());
     Document d1 = pc.convertPersonaDocument(p);
     col1.insertOne(d1);
-    p = pc.convertDocumentPersona(d1);
+    //p = pc.convertDocumentPersona(d1);
+    p.set_id(d1.getObjectId("_id"));
     System.out.println(p);
 
 
@@ -72,7 +78,8 @@ public class MainDriver {
         new Document().append("$set",pc.convertPersonaDocument(p)));
 
 
-    d = col1.find(eq("_id",p.get_id())).first();
+    d = col1.find(eq("_id",p.get_id()))
+        .projection(Document.parse("{articulos.autor:1,nombre:1,_id:0}")).first();
     p = pc.convertDocumentPersona(d);
     System.out.println("START");
 
@@ -80,7 +87,7 @@ public class MainDriver {
         System.out.println(pc.convertDocumentPersona(document)));
 
 
-    // System.out.println(col1.deleteMany(new Document()).getDeletedCount());
+     System.out.println(col1.deleteOne(new Document()).getDeletedCount());
   }
 
 
