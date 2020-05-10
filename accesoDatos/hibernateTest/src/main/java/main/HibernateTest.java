@@ -1,13 +1,17 @@
 package main;
 
 import dao.HibernateUtils;
-import dao.modelo.Subject;
+
+import org.apache.logging.log4j.LogManager;
 import org.hibernate.Session;
 import org.hibernate.exception.ConstraintViolationException;
+import wizard.test1.Subject;
+import wizard.test1.Teacher;
 
 public class HibernateTest {
 
     public static void main(String[] args) {
+
 
         Session session = HibernateUtils.getSession();
         // get Object
@@ -17,10 +21,12 @@ public class HibernateTest {
         System.out.println(s);
 
         session.close();
-
+    Teacher t = new Teacher();
+        t.setIdteacher(17);
         Subject s1 = new Subject();
         //s1.setIdsubject(5);
         s1.setName("kkkk");
+        s1.setTeacherByIdteacher(t);
         //s1.setIdteacher(17);
         session = HibernateUtils.getSession();
         session.beginTransaction();
@@ -72,6 +78,7 @@ public class HibernateTest {
         }
         catch (Exception e)
         {
+            LogManager.getLogger(HibernateTest.class).error(e);
             session.getTransaction().rollback();
         }
         finally {

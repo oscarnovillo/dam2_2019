@@ -32,6 +32,7 @@ public class TutorialFind {
 
     PersonaConverter pc = new PersonaConverter();
     List<Document> personas = new ArrayList<>();
+
     est.find().skip(5).limit(5).into(personas);
 
     personas.stream().map(document -> pc.convertDocumentPersona(document)).forEach(System.out::println);
@@ -54,6 +55,10 @@ public class TutorialFind {
     est.find(size("cosas",1)).into(new ArrayList()).forEach(System.out::println);
 
 
+// $expr
+//    est.find(expr("cosas",1)).into(new ArrayList()).forEach(System.out::println);
+
+
     //distinct
     System.out.println("find con size de un array");
     est.distinct("cosas.nombre",String.class).into(new ArrayList()).forEach(System.out::println);
@@ -67,7 +72,10 @@ public class TutorialFind {
 
     System.out.println("projection de solo algun elemento de un array");
 
-    est.find().projection(new Document("name",1).append("_id",0).append("cosas",new Document("$elemMatch",new Document("cantidad",1)))).into(new ArrayList()).forEach(System.out::println);
+    est.find().projection(new Document("name",1).append("_id",0).append("cosas.nombre",1).append("cosas",new Document("$elemMatch",
+        new Document("$gt",new Document("cantidad",1))))).into(new ArrayList()).forEach(System.out::println);
+
+
 
     System.out.println("ordenando ");
 
@@ -78,7 +86,8 @@ public class TutorialFind {
 
     List<Document> cosas = (List)est.find()
         .sort(Sorts.ascending("name"))
-        .projection(fields(include("name"), excludeId(), Projections.elemMatch("cosas",gt("cantidad",1))))
+        .projection(fields(include("name"), excludeId(),
+            Projections.elemMatch("cosas",gt("cantidad",1))))
         .into(new ArrayList());
 
     cosas.forEach(System.out::println);

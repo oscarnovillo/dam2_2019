@@ -29,7 +29,10 @@ public class PersonaConverter {
   public Persona convertDocumentPersona(Document d) {
 
     return Persona.builder().name(d.getString("name"))
-        .fecha(Optional.ofNullable(d.getDate("fecha")).orElse(new Date()).toInstant().atZone(ZoneId.systemDefault()).toLocalDate())
+        .fecha(
+            Optional.ofNullable(d.getDate("fecha"))
+                .map(date -> date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate())
+                .orElse(null))
         ._id(d.getObjectId("_id"))
         .cosas((d.getList("cosas",Document.class)).stream().map(document ->
             Things.builder()

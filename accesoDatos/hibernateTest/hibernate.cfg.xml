@@ -17,15 +17,14 @@
         <property name="hibernate.hikari.idleTimeout">300000</property>
 
 
-        <mapping class="dao.modelo.Subject" />
-        <mapping class="dao.modelo.Teacher" />
-        <mapping class="wizard.modelo.EnrolledEntityjpa"/>
-        <mapping class="wizard.modelo.StudentEntityjpa"/>
-        <mapping class="wizard.modelo.SubjectEntityjpa"/>
-        <mapping class="wizard.modelo.TeachEntityjpa"/>
-        <mapping class="wizard.modelo.TeacherEntityjpa"/>
-        <mapping class="wizard.modelo.UserEntityjpa"/>
-        <mapping class="wizard.modelo.MemberEntityjpa"/>
+
+        <mapping class="wizard.test1.Enroll"/>
+        <mapping class="wizard.test1.Members"/>
+        <mapping class="wizard.test1.Student"/>
+        <mapping class="wizard.test1.Subject"/>
+        <mapping class="wizard.test1.Teacher"/>
+        <mapping class="wizard.test1.Typeuser"/>
+        <mapping class="wizard.test1.User"/>
 
         <!-- DB schema will be updated if needed -->
         <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->

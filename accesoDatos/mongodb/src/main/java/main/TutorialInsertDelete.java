@@ -22,7 +22,7 @@ public class TutorialInsertDelete {
 
     MongoDatabase db = mongo.getDatabase("oscar");
 
-    MongoCollection est = db.getCollection("est");
+    MongoCollection<Document> est = db.getCollection("est");
 
 
     Persona p = new Persona();
