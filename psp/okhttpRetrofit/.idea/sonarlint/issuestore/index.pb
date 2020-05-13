@@ -31,3 +31,7 @@ V
 &src/main/java/retrofit/UsuarioApi.java,3\7\37467d8f1c498de812c4d98f45ae2fe3477d99bc
 V
 &src/main/java/main/MainUsuarioJAX.java,4\9\49e2c1f446d0404bdda4b16df9f4da04ad582626
+N
+src/main/java/modelo/Book.java,d\b\dbef175dd44dadca407ec8bfdf0da10cde3d7d3f
+Q
+!src/main/java/main/MainError.java,8\d\8d8ea5646522d9c528293bc2b8340f65a8db1293

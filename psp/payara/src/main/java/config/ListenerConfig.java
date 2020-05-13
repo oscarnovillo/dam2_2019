@@ -17,6 +17,7 @@ public class ListenerConfig implements ServletContextListener {
   // ServletContextListener implementation
   // -------------------------------------------------------
   public void contextInitialized(ServletContextEvent sce) {
+
     Configuration.getInstance(sce.getServletContext()
         .getResourceAsStream("/WEB-INF/config/config.yaml"));
   }

@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="okhttpRetrofit" />
+        <module name="loginoauth" />
         <module name="payara" />
       </profile>
     </annotationProcessing>

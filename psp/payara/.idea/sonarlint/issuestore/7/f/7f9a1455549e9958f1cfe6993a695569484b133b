@@ -1,0 +1,12 @@
+
+Q
+java:S1128"4Remove this unused import 'java.util.logging.Level'.(…µÛ¶8½Şü¿—.
+Q
+java:S1128
+"4Remove this unused import 'java.io.FileInputStream'.(˜³ÉÓ8½Şü¿—.
+M
+java:S1905"0Remove this unnecessary cast to "Configuration".(‘—˜8½Şü¿—.
+R
+java:S1128"5Remove this unused import 'java.util.logging.Logger'.(ƒ¥óš8½Şü¿—.
+\
+java:S1128":Remove this unused import 'java.io.FileNotFoundException'.(·î™ùÿÿÿÿ8½Şü¿—.

@@ -1,0 +1,25 @@
+
+†
+java:S1989•"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8¡±÷œ.
+O
+java:S1135f"2Complete the task associated to this TODO comment.(¢§‰8¡±÷œ.
+v
+java:S1192m"YDefine a constant instead of duplicating this literal "<h1>Servlet CheckJWT at " 3 times.(şšÎÃ8¡±÷œ.
+W
+java:S1141:"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¡±÷œ.
+Q
+java:S1128"4Remove this unused import 'java.io.FileInputStream'.(˜³ÉÓ8¡±÷œ.
+W
+java:S1141U"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¡±÷œ.
+a
+java:S2147_"DCombine this catch with the one at line 92, which has the same body.(é…ëĞ8¡±÷œ.
+†
+java:S1989‡"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8¡±÷œ.
+`
+java:S1128"CRemove this unused import 'java.security.spec.PKCS8EncodedKeySpec'.(”–«‡8§âõĞ .
+W
+java:S1128"5Remove this unused import 'java.security.PrivateKey'.(‘äÄîúÿÿÿÿ8§âõĞ .
+c
+java:S1192m"FDefine a constant instead of duplicating this literal "</h1>" 3 times.(şšÎÃ8¡±÷œ.
+b
+java:S2147v"ECombine this catch with the one at line 116, which has the same body.(¶£½Á8¡±÷œ.

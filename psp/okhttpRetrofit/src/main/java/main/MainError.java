@@ -38,15 +38,15 @@ public class MainError {
 
     OkHttpClient clientOK = new OkHttpClient.Builder()
         .cookieJar(new JavaNetCookieJar(cookieManager))
-//        .addInterceptor(chain -> {
-//          Request original = chain.request();
-//
-//          Request.Builder builder1 = original.newBuilder()
-//              .header("X-Auth-Token", "2deee83e549c4a6e9709871d0fd58a0a")
-//              .url(original.url().newBuilder().addQueryParameter("headToken","adfsdf").build());
-//          Request request = builder1.build();
-//          return chain.proceed(request);}
-//        )
+        .addInterceptor(chain -> {
+          Request original = chain.request();
+
+          Request.Builder builder1 = original.newBuilder()
+              .header("Authorization", "Bearer :234234234jkhl");
+              //.url(original.url().newBuilder().addQueryParameter("headToken","adfsdf").build());
+          Request request = builder1.build();
+          return chain.proceed(request);}
+        )
         .build();
     Gson gson = new GsonBuilder()
         .setLenient()

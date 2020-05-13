@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="okhttpRetrofit" target="12" />
+      <module name="okhttpRetrofit" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

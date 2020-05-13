@@ -47,25 +47,20 @@ public class CheckJWT extends HttpServlet {
 
         try {
             
-            String jwsString = request.getHeader("JWT");
-            
-            PKCS8EncodedKeySpec clavePrivadaSpec = null;
+            String jwsString = request.getHeader("Authorization");
+
+            //"Bearer :skldjfalskdfnlaskdflsfdaslkf"
+            jwsString = jwsString.substring(7);
+
             X509EncodedKeySpec clavePublicaSpec = null;
-            byte[] bufferPriv = new byte[5000];
-            InputStream in = request.getServletContext().getResourceAsStream("/WEB-INF/jwt.privada");
+
+
             int chars;
             try {
-                chars = in.read(bufferPriv, 0, 5000);
-                in.close();
-                
-                byte[] bufferPriv2 = new byte[chars];
-                System.arraycopy(bufferPriv, 0, bufferPriv2, 0, chars);
-                
-                // 2.2 Recuperar clave privada desde datos codificados en formato PKCS8
-                clavePrivadaSpec = new PKCS8EncodedKeySpec(bufferPriv2);
+
 
                 byte[] bufferPub = new byte[5000];
-                in = request.getServletContext().getResourceAsStream("/WEB-INF/jwt.publica");
+                InputStream in = request.getServletContext().getResourceAsStream("/WEB-INF/jwt.publica");
                 chars = in.read(bufferPub, 0, 5000);
                 in.close();
 
@@ -81,16 +76,16 @@ public class CheckJWT extends HttpServlet {
                 Logger.getLogger(JWT.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            PrivateKey clavePrivada2;
+
             KeyFactory keyFactoryRSA = null;
             keyFactoryRSA = KeyFactory.getInstance("RSA");
-            clavePrivada2 = keyFactoryRSA.generatePrivate(clavePrivadaSpec);
+
 
             PublicKey clavePublica2 = keyFactoryRSA.generatePublic(clavePublicaSpec);
             Jws<Claims> jws = null;
             try {
                 jws = Jwts.parserBuilder() // (1)
-                        .setSigningKey(clavePrivada2) // (2)
+                        .setSigningKey(clavePublica2) // (2)
                         .build()
                         .parseClaimsJws(jwsString); // (3)
 

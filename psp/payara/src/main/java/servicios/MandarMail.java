@@ -34,7 +34,7 @@ public class MandarMail {
             
             email.setHostName("smtp.gmail.com");
             email.setSmtpPort(Integer.parseInt("587"));
-            email.setAuthentication("alumnosDamQuevedo@gmail.com", "quevedo2019");
+            email.setAuthentication("alumnosdamquevedo@gmail.com", "quevedo2020");
             //email.setSSLOnConnect(true);
             email.setStartTLSEnabled(true);
             email.setFrom("alumnosDamQuevedo@gmail.com");
@@ -80,8 +80,8 @@ public class MandarMail {
         // Enter your correct gmail UserID and Password
         // if you have 2FA enabled then provide App Specific Password
         transport.connect("smtp.gmail.com", 
-                "alumnosDamQuevedo@gmail.com",
-                "quevedo2019");
+                "alumnosdamquevedo@gmail.com",
+                "quevedo2020");
         transport.sendMessage(generateMailMessage, generateMailMessage.getAllRecipients());
         transport.close();
     }

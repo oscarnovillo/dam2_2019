@@ -1,10 +1,16 @@
 
-dsquid:UselessImportCheck"9Remove this unused import 'javax.json.bind.JsonbBuilder'.(ûÿÖş8Ñ»³ƒ.
-lsquid:UselessImportCheck"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8Ñ»³ƒ.
-nsquid:UselessImportCheck"CRemove this unused import 'javax.enterprise.context.RequestScoped'.(‚Õ…½8Ñ»³ƒ.
-_squid:UselessImportCheck"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8Ñ»³ƒ.
-bsquid:UselessImportCheck
-"2Remove this unused import 'javax.json.bind.Jsonb'.(Ø”€¡üÿÿÿÿ8Ñ»³ƒ.
-dsquid:HiddenFieldCheck%"6Rename "su" which hides the field declared at line 29.(¡ÀßÉüÿÿÿÿ8Ñ»³ƒ.
-nsquid:CommentedOutCodeLine,"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8Ñ»³ƒ.
-isquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(Ú°à¬8Ñ»³ƒ.
+V
+java:S1128"9Remove this unused import 'javax.json.bind.JsonbBuilder'.(ûÿÖş8¤±÷œ.
+Q
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8¤±÷œ.
+]	java:S125,"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8¤±÷œ.
+X
+java:S1117%"6Rename "su" which hides the field declared at line 29.(¡ÀßÉüÿÿÿÿ8¤±÷œ.
+X	java:S125>"<This block of commented-out lines of code should be removed.(Ú°à¬8¤±÷œ.
+^
+java:S1128"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8¤±÷œ.
+`
+java:S1128"CRemove this unused import 'javax.enterprise.context.RequestScoped'.(‚Õ…½8¤±÷œ.
+T
+java:S1128
+"2Remove this unused import 'javax.json.bind.Jsonb'.(Ø”€¡üÿÿÿÿ8¤±÷œ.
