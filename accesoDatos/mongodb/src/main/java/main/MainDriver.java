@@ -39,56 +39,57 @@ public class MainDriver {
 
 
     // con driver 3.12 y mapeo de objetos
-//    MongoCollection<Persona> col = db.getCollection("est", Persona.class).withCodecRegistry(pojoCodecRegistry);
+    MongoCollection<Persona> col = db.getCollection("est", Persona.class).withCodecRegistry(pojoCodecRegistry);
     Persona p = new Persona();
     p.setName("jj");
     List<Things> cosas;
     cosas = new ArrayList<>();
     cosas.add(Things.builder().nombre("cachos").cantidad(2).build());
     p.setCosas(cosas);
-//    col.insertOne(p);
+   col.insertOne(p);
+
 //    System.out.println(p.get_id());
 
-
-    // insert normal.
-//    Gson gson = new Gson();
-    MongoCollection<Document> col1 = db.getCollection("est");
-    Document d = null;
-//    Document d = Document.parse( gson.toJson(p));
-//    col1.insertOne(d);
-//    System.out.println(d.getObjectId("_id"));
-
-
-
-    PersonaConverter pc = new PersonaConverter();
-    p.getCosas().add(Things.builder().nombre("extra").cantidad(1).build());
-    Document d1 = pc.convertPersonaDocument(p);
-    col1.insertOne(d1);
-    //p = pc.convertDocumentPersona(d1);
-    p.set_id(d1.getObjectId("_id"));
-    System.out.println(p);
-
-
-    p.setName("kk");
-    p.setFecha(LocalDate.of(1000,1,1));
-    col1.updateOne(new Document().append("_id",p.get_id()),
-       new Document().append("$set",pc.convertPersonaDocument(p)));
-
-    col1.updateOne(new Document().append("_id",p.get_id()),
-        new Document().append("$set",pc.convertPersonaDocument(p)));
-
-
-    d = col1.find(eq("_id",p.get_id()))
-        .projection(Document.parse("{articulos.autor:1,nombre:1,_id:0}")).first();
-    p = pc.convertDocumentPersona(d);
-    System.out.println("START");
-
-    col1.find(Document.parse("{$expr:{$gt:[{$size:\"$cosas\"}, 2]}}")).forEach((Consumer<Document>)document ->
-        System.out.println(pc.convertDocumentPersona(document)));
-
-
-     System.out.println(col1.deleteOne(new Document()).getDeletedCount());
-  }
+//
+//    // insert normal.
+////    Gson gson = new Gson();
+//    MongoCollection<Document> col1 = db.getCollection("est");
+//    Document d = null;
+////    Document d = Document.parse( gson.toJson(p));
+////    col1.insertOne(d);
+////    System.out.println(d.getObjectId("_id"));
+//
+//
+//
+//    PersonaConverter pc = new PersonaConverter();
+//    p.getCosas().add(Things.builder().nombre("extra").cantidad(1).build());
+//    Document d1 = pc.convertPersonaDocument(p);
+//    col1.insertOne(d1);
+//    //p = pc.convertDocumentPersona(d1);
+//    p.set_id(d1.getObjectId("_id"));
+//    System.out.println(p);
+//
+//
+//    p.setName("kk");
+//    p.setFecha(LocalDate.of(1000,1,1));
+//    col1.updateOne(new Document().append("_id",p.get_id()),
+//       new Document().append("$set",pc.convertPersonaDocument(p)));
+//
+//    col1.updateOne(new Document().append("_id",p.get_id()),
+//        new Document().append("$set",pc.convertPersonaDocument(p)));
+//
+//
+//    d = col1.find(eq("_id",p.get_id()))
+//        .projection(Document.parse("{articulos.autor:1,nombre:1,_id:0}")).first();
+//    p = pc.convertDocumentPersona(d);
+//    System.out.println("START");
+//
+//    col1.find(Document.parse("{$expr:{$gt:[{$size:\"$cosas\"}, 2]}}")).forEach((Consumer<Document>)document ->
+//        System.out.println(pc.convertDocumentPersona(document)));
+//
+//
+//     System.out.println(col1.deleteOne(new Document()).getDeletedCount());
+ }
 
 
 }
