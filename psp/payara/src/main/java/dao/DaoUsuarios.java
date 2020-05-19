@@ -9,6 +9,7 @@ import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @RequestScoped
 public class DaoUsuarios {
 

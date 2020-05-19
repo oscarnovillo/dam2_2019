@@ -10,7 +10,7 @@ import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
 
 
-@RequestScoped
+
 public class ModelMapperProducer {
 
   @Produces

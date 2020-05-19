@@ -1,0 +1,11 @@
+
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ö¬®8ûŸÍé.
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(†é¸ü8ûŸÍé.
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(€¡¼§8ûŸÍé.
+l
+java:S2095"QUse try-with-resources or close this "CloseableHttpClient" in a "finally" clause.( ¤­†8ûŸÍé.
+V	java:S125"<This block of commented-out lines of code should be removed.(¨Ÿ†Ç8ûŸÍé.
+=
+java:S5542"#Use secure mode and padding scheme.(‹ï8ûŸÍé.

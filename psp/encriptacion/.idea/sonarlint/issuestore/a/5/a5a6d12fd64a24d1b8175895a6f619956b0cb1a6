@@ -1,0 +1,41 @@
+
+]	java:S125x"<This block of commented-out lines of code should be removed.(Ÿ¾Æáşÿÿÿÿ8Œ Íé.
+`
+java:S1128">Remove this unused import 'java.security.InvalidKeyException'.(ì£ğ»ÿÿÿÿÿ8Œ Íé.
+]	java:S125z"<This block of commented-out lines of code should be removed.(«™îöùÿÿÿÿ8Œ Íé.
+f
+java:S1128"DRemove this unused import 'java.security.cert.CertificateException'.(èÙ¿ùÿÿÿÿ8Œ Íé.
+e
+java:S1128"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ8Œ Íé.
+X	java:S125a"<This block of commented-out lines of code should be removed.(…§¾8Œ Íé.
+X	java:S125|"<This block of commented-out lines of code should be removed.(¥œñ·8Œ Íé.
+^	java:S125"<This block of commented-out lines of code should be removed.(†Ğãÿùÿÿÿÿ8Œ Íé.
+]	java:S125O"<This block of commented-out lines of code should be removed.(ÕËÕúÿÿÿÿ8Œ Íé.
+X	java:S125^"<This block of commented-out lines of code should be removed.(ò”Òã8Œ Íé.
+Z
+java:S1128"=Remove this unused import 'java.security.SignatureException'.(¦ÃşŠ8Œ Íé.
+^	java:S125‰"<This block of commented-out lines of code should be removed.(Ğ¾¼úÿÿÿÿ8Œ Íé.
+]	java:S125~"<This block of commented-out lines of code should be removed.(¯ÒË¶üÿÿÿÿ8Œ Íé.
+]	java:S125t"<This block of commented-out lines of code should be removed.(½Åñÿÿÿÿÿ8Œ Íé.
+X	java:S125B"<This block of commented-out lines of code should be removed.(‘‘š8Œ Íé.
+R
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8Œ Íé.
+^	java:S125"<This block of commented-out lines of code should be removed.(¶şç©ıÿÿÿÿ8Œ Íé.
+_
+java:S1128"BRemove this unused import 'java.security.NoSuchProviderException'.(®²»›8Œ Íé.
+^	java:S125…"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8Œ Íé.
+]	java:S125@"<This block of commented-out lines of code should be removed.(«îšşÿÿÿÿ8Œ Íé.
+W
+java:S1191)"5Use classes from the Java API instead of Sun classes.(ÂÙ€Œùÿÿÿÿ8Œ Íé.
+`
+java:S1128%">Remove this unused import 'javax.naming.InvalidNameException'.(¨´å‰ûÿÿÿÿ8Œ Íé.
+X	java:S125F"<This block of commented-out lines of code should be removed.(‹ª ó8Œ Íé.
+d
+java:S1128!"BRemove this unused import 'java.security.interfaces.RSAPublicKey'.(‘±–˜ÿÿÿÿÿ8Œ Íé.
+]	java:S1254"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8Œ Íé.
+]	java:S1257"<This block of commented-out lines of code should be removed.(ÑçÆòùÿÿÿÿ8Œ Íé.
+]	java:S1259"<This block of commented-out lines of code should be removed.(¼Š—Ôøÿÿÿÿ8Œ Íé.
+]	java:S125T"<This block of commented-out lines of code should be removed.(Ğ„ÀÀıÿÿÿÿ8Œ Íé.
+X	java:S125j"<This block of commented-out lines of code should be removed.(‚‚ûù8Œ Íé.
+X	java:S125r"<This block of commented-out lines of code should be removed.(ÆŞ³8Œ Íé.
+W	java:S125f"<This block of commented-out lines of code should be removed.(ì›¨8Œ Íé.

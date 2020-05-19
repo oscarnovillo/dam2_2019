@@ -1,0 +1,19 @@
+
+H
+java:S1481)"&Remove this unused "d" local variable.(ÚŞûëùÿÿÿÿ8¦ğ­¸.
+X
+java:S1854!"<Remove this useless assignment to local variable "cifrador".(‹ï8¦ğ­¸.
+W
+java:S1854)"5Remove this useless assignment to local variable "d".(ÚŞûëùÿÿÿÿ8¦ğ­¸.
+o
+java:S2095;"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¤Œ¹ãşÿÿÿÿ8¦ğ­¸.
+j
+java:S2095("MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Ğ…Ôî8¦ğ­¸.
+Z	java:S106N"9Replace this use of System.out or System.err by a logger.(ŞƒåÓúÿÿÿÿ8¦ğ­¸.
+?
+java:S5542!"#Use secure mode and padding scheme.(‹ï8¦ğ­¸.
+X	java:S125 "<This block of commented-out lines of code should be removed.(¨Ÿ†Ç8¦ğ­¸.
+o
+java:S2095)"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(ÚŞûëùÿÿÿÿ8¦ğ­¸.
+I
+java:S1481!"-Remove this unused "cifrador" local variable.(‹ï8¦ğ­¸.

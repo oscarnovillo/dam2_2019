@@ -1,8 +1,8 @@
 
+X	java:S125&"<This block of commented-out lines of code should be removed.(Éä€ş8Ã™˜Ğ .
+q
+java:S1192#"ODefine a constant instead of duplicating this literal "smtp.gmail.com" 3 times.(–ÓĞ³üÿÿÿÿ8Ã™˜Ğ .
 ¬
 java:S11305"‰Remove the declaration of thrown exception 'javax.mail.internet.AddressException' which is a subclass of 'javax.mail.MessagingException'.(Âªûÿÿÿÿ8Ã™˜Ğ .
 a
 java:S5527'"?Enable server hostname verification on this SSL/TLS connection.(ãÖÊÛÿÿÿÿÿ8Ã™˜Ğ .
-q
-java:S1192#"ODefine a constant instead of duplicating this literal "smtp.gmail.com" 3 times.(–ÓĞ³üÿÿÿÿ8Ã™˜Ğ .
-X	java:S125&"<This block of commented-out lines of code should be removed.(Éä€ş8Ã™˜Ğ .

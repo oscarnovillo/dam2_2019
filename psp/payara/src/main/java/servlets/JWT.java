@@ -77,7 +77,7 @@ public class JWT extends HttpServlet {
         String jws = Jwts.builder()
                 .setIssuer("Stormpath")
                 .setSubject("msilverman")
-                .claim("name", "DAM2")
+                .claim("name", "DAM")
                 .claim("scope", "Clase")
                 .claim("admin", true)
                 // Fri Jun 24 2016 15:33:42 GMT-0400 (EDT)

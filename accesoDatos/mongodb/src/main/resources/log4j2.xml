@@ -7,9 +7,7 @@
   </Appenders>
  
   <Loggers>
-    <logger name="quevedo.hibernatetest.Main" level="INFO" /> 
-    <logger name="org.hibernate.SQL" level="TRACE" /> 
-    <logger name="org.hibernate.type.descriptor.sql" level="TRACE" /> 
+    <logger name="org.mongodb.driver" level="DEBUG" />
     <Root level="ERROR">
       <AppenderRef ref="Console"/>
     </Root>

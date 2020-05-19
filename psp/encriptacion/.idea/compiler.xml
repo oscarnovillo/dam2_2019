@@ -6,13 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="encriptacionServidor" />
         <module name="encriptacion" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="encriptacion" target="1.8" />
+      <module name="encriptacionServidor" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="encriptacion" options="-XDignore.symbol.file" />
+      <module name="encriptacionServidor" options="-endorseddirs &quot;C:\Users\oscar\Documents\CLASES ALCALA\2019-2020\CODIGO\dam2_2019\psp\encriptacionServidor\target/endorsed&quot; -XDignore.symbol.file" />
     </option>
   </component>
 </project>

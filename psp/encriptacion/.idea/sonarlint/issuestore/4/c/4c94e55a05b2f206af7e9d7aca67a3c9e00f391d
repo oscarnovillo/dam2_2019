@@ -1,0 +1,24 @@
+
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(½¦Ôùÿÿÿÿÿ8æÉ£¸.
+Z	java:S106C"9Replace this use of System.out or System.err by a logger.(‡Úâœøÿÿÿÿ8æÉ£¸.
+Z	java:S106K"9Replace this use of System.out or System.err by a logger.(Ğè²øÿÿÿÿ8æÉ£¸.
+E
+java:S5542 "#Use secure mode and padding scheme.(—×«øÿÿÿÿ8æÉ£¸.
+Z	java:S1068"9Replace this use of System.out or System.err by a logger.(‚ÇÓ™ùÿÿÿÿ8æÉ£¸.
+
+java:S11922"bDefine a constant instead of duplicating this literal "\n-------------------------------" 3 times.(¢ŠúÒ8æÉ£¸.
+Z	java:S106f"9Replace this use of System.out or System.err by a logger.(«…‰úÿÿÿÿÿ8æÉ£¸.
+Z	java:S106M"9Replace this use of System.out or System.err by a logger.(ø…úÿÿÿÿ8æÉ£¸.
+Z	java:S106:"9Replace this use of System.out or System.err by a logger.(ø…úÿÿÿÿ8æÉ£¸.
+Z	java:S106O"9Replace this use of System.out or System.err by a logger.(Àš±îøÿÿÿÿ8æÉ£¸.
+U	java:S1062"9Replace this use of System.out or System.err by a logger.(¢ŠúÒ8æÉ£¸.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(è¯·•ùÿÿÿÿ8æÉ£¸.
+U	java:S106<"9Replace this use of System.out or System.err by a logger.(¢ŠúÒ8æÉ£¸.
+\
+java:S4426"@Use a key length of at least 2048 bits for RSA cipher algorithm.(Ô—İc8æÉ£¸.
+U	java:S106A"9Replace this use of System.out or System.err by a logger.(ó—¿8æÉ£¸.
+U	java:S106-"9Replace this use of System.out or System.err by a logger.(˜£·8æÉ£¸.
+Z	java:S106/"9Replace this use of System.out or System.err by a logger.(‡Úâœøÿÿÿÿ8æÉ£¸.
+U	java:S106E"9Replace this use of System.out or System.err by a logger.(¢ŠúÒ8æÉ£¸.
+v
+java:S3012`"YUse "Arrays.copyOf", "Arrays.asList", "Collections.addAll" or "System.arraycopy" instead.(…Ğ¯8æÉ£¸.

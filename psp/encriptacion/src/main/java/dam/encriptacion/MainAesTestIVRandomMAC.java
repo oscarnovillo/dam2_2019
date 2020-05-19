@@ -49,7 +49,8 @@ public class MainAesTestIVRandomMAC {
 
             Cipher cipher = Cipher.getInstance("AES/GCM/noPadding");
             cipher.init(Cipher.ENCRYPT_MODE, secretKey, parameterSpec);
-            return Base64.getEncoder().encodeToString(Bytes.concat(iv,salt,cipher.doFinal(strToEncrypt.getBytes("UTF-8"))));
+            return Base64.getEncoder().encodeToString(Bytes.concat(iv,salt,
+                cipher.doFinal(strToEncrypt.getBytes("UTF-8"))));
         } catch (Exception e) {
             System.out.println("Error while encrypting: " + e.toString());
         }

@@ -30,6 +30,7 @@ public class PersonaConverter {
 
     return Persona.builder().name(d.getString("name"))
         .fecha(
+            //d.getDate("fecha") == null ? null : d.getDate("fecha").toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             Optional.ofNullable(d.getDate("fecha"))
                 .map(date -> date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate())
                 .orElse(null))

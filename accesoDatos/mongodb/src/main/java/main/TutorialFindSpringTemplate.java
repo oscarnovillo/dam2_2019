@@ -19,6 +19,7 @@ public class TutorialFindSpringTemplate {
     Query query = new Query().addCriteria(Criteria.where("name").regex("^L"));
     query.fields().include("name").exclude("_id");
 
+
     Persona p = mp.findOne(query, Persona.class);
 
     System.out.println(p);

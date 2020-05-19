@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/encriptacion.iml" filepath="$PROJECT_DIR$/encriptacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../encriptacionServidor/encriptacionServidor.iml" filepath="$PROJECT_DIR$/../encriptacionServidor/encriptacionServidor.iml" />
     </modules>
   </component>
 </project>

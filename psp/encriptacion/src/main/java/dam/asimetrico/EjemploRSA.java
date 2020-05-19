@@ -29,7 +29,7 @@ public class EjemploRSA  {
       byte[] bufferPlano = leerLinea(System.in);
 
       // PASO 2: Crear cifrador RSA
-      Cipher cifrador = Cipher.getInstance("RSA/ECB/NoPadding"); 
+      Cipher cifrador = Cipher.getInstance("RSA");
       /************************************************************************
        * IMPORTANTE: En BouncyCastle el algoritmo RSA no funciona realmente en modo ECB
        *		  * No divide el mensaje de entrada en bloques
