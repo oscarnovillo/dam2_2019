@@ -75,7 +75,6 @@ public class MainTestEstudiantesProfesores {
                       )));
 
 
-
     col.aggregate(List.of(Document.parse("{$unwind : \"$asignaturas\"}"),Document.parse("{$set : {maxConv : {$max:\"$asignaturas.notas.convocatoria\"}}}"),
         Document.parse("{$unwind: \"$asignaturas.notas\"}"),
             Document.parse("{$match : { $expr: { $eq: [ \"$asignaturas.notas.convocatoria\" , \"$maxConv\" ] } }}"),
