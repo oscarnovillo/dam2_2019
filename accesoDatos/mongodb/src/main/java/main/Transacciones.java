@@ -18,6 +18,7 @@ public class Transacciones {
 
     MongoDatabase db = mongo.getDatabase("oscar");
 
+
     MongoCollection<Document> est = db.getCollection("est");
     Persona p = new Persona();
     p.setName(faker.name().name());
