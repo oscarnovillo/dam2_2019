@@ -1,4 +1,3 @@
-<!-- 
 /*
  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
  *
@@ -38,33 +37,59 @@
  * only if the new code is made subject to such option by the copyright
  * holder.
  */
--->
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Getting Started with JSR 356 - Annotated Endpoint</title>
+var wsUri = "ws://localhost:8080/chatServer/websocket/pepe";
+console.log("Connecting to " + wsUri);
+var websocket = new WebSocket(wsUri);
+websocket.onopen = function(evt) { onOpen(evt) };
+websocket.onmessage = function(evt) { onMessage(evt) };
+websocket.onerror = function(evt) { onError(evt) };
+websocket.onclose = function(evt) { onClose(evt) };
 
-    </head>
-    <body>
-        <h1>Getting Started with JSR 356 - Annotated Endpoint</h1>
+var output = document.getElementById("output");
 
-        <div style="text-align: center;">
-            <form action=""> 
-                <h2>Text Data</h2>
-                <input onclick="sayHello();" value="Say Hello" type="button"> 
-                <input id="myField" value="WebSocket" type="text"><br>
-            </form>
-            <form action=""> 
-                <h2>Binary Data</h2>
-                <input onclick="echoBinary();" value="Echo" type="button"> 
-                <input id="myField2" value="12345678" type="text"><br>
-            </form>
-        </div>
-        <div id="output"></div>
-        <script language="javascript" type="text/javascript" src="websocket.js">
-        </script>
-    </body>
-</html>
+function sayHello() {
+    console.log("sayHello: " + myField.value);
+    websocket.send(myField.value);
+    writeToScreen("SENT (text): " + myField.value);
+}
+
+function echoBinary() {
+//                alert("Sending " + myField2.value.length + " bytes")
+    var buffer = new ArrayBuffer(myField2.value.length);
+    var bytes = new Uint8Array(buffer);
+    for (var i=0; i<bytes.length; i++) {
+        bytes[i] = i;
+    }
+//                alert(buffer);
+    websocket.send(buffer);
+    writeToScreen("SENT (binary): " + buffer.byteLength + " bytes");
+}
+
+function onOpen() {
+    console.log("onOpen");
+    writeToScreen("CONNECTED");
+}
+function onClose() {
+    
+    writeToScreen("DISCONNECTED");
+}
+
+function onMessage(evt) {
+    if (typeof evt.data == "string") {
+        writeToScreen("RECEIVED (text): " + evt.data);
+    } else {
+        writeToScreen("RECEIVED (binary): " + evt.data);
+    }
+}
+
+function onError(evt) {
+    writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+}
+
+function writeToScreen(message) {
+    var pre = document.createElement("p");
+    pre.style.wordWrap = "break-word";
+    pre.innerHTML = message;
+    output.appendChild(pre);
+}

@@ -52,7 +52,8 @@ object Madrid extends App {
     println(row)
   }
 
-  madrid.filter(!col("NOMBRE-INSTALACION").isNull).groupBy($"NOMBRE-INSTALACION").agg(max("HORA").as("hora"))
+  madrid.filter(!col("NOMBRE-INSTALACION").isNull).groupBy($"NOMBRE-INSTALACION")
+    .agg(max("HORA").as("hora"))
     .sort(desc("HORA")).limit(1).show(false)
 
 

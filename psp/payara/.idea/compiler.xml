@@ -10,6 +10,7 @@
         <module name="okhttpRetrofit" />
         <module name="loginoauth" />
         <module name="payara" />
+        <module name="chatShared" />
       </profile>
     </annotationProcessing>
   </component>

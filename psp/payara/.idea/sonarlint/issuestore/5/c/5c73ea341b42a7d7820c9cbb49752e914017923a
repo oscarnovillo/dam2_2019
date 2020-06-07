@@ -1,17 +1,17 @@
 
+X	java:S1256"<This block of commented-out lines of code should be removed.(´ºç8¯¼”Ğ .
 W
 java:S1128":Remove this unused import 'javax.mail.MessagingException'.(ÇîŞ8¯¼”Ğ .
-X	java:S1256"<This block of commented-out lines of code should be removed.(´ºç8¯¼”Ğ .
+O
+java:S1135:"2Complete the task associated to this TODO comment.(¢§‰8¯¼”Ğ .
 e
 java:S1128
 "CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ8¯¼”Ğ .
-j
-java:S1192/"HDefine a constant instead of duplicating this literal "</html>" 3 times.(š¶„—ıÿÿÿÿ8¯¼”Ğ .
 …
 java:S1989e"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8¯¼”Ğ .
-…
-java:S1989W"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8¯¼”Ğ .
-O
-java:S1135:"2Complete the task associated to this TODO comment.(¢§‰8¯¼”Ğ .
 i
 java:S1128"GRemove this unused import 'java.security.spec.InvalidKeySpecException'.(ëóÅëüÿÿÿÿ8¯¼”Ğ .
+…
+java:S1989W"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8¯¼”Ğ .
+j
+java:S1192/"HDefine a constant instead of duplicating this literal "</html>" 3 times.(š¶„—ıÿÿÿÿ8¯¼”Ğ .

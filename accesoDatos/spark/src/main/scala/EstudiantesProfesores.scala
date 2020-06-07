@@ -16,6 +16,7 @@ object EstudiantesProfesores extends App{
 
   val madridJson = spark.read.json("datos/students.json")
 
+
   madridJson.printSchema()
   madridJson.show(false)
   madridJson.select(col("*"),explode($"subjects").as("subject")).drop("subjects")

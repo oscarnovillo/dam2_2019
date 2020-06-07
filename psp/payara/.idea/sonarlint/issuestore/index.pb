@@ -79,5 +79,3 @@ b
 2src/test/java/servicios/ServiciosUsuariosTest.java,6\4\641196be67b3dc50720f333803fbb7bffa79af62
 [
 +src/test/java/servicios/ServiciosTests.java,5\3\53452ab63007290db919171c1a535945ef6caf5a
-Q
-!src/main/java/main/MainError.java,8\d\8d8ea5646522d9c528293bc2b8340f65a8db1293
