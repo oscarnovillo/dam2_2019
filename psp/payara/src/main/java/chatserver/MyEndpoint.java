@@ -45,6 +45,8 @@ import com.datoshttp.OrdenRoomsWS;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import encoders.MensajeEncoder;
+import encoders.MetaMensajeDecoder;
 import model.UserWS;
 
 import javax.servlet.http.HttpSession;
@@ -59,107 +61,114 @@ import java.util.logging.Logger;
  * @author Arun Gupta
  */
 @ServerEndpoint(value = "/websocket",
-    configurator = ServletAwareConfig.class)
+    configurator = ServletAwareConfig.class,
+    encoders = MensajeEncoder.class,
+    decoders = MetaMensajeDecoder.class)
 public class MyEndpoint {
 
-    @OnOpen
-    public void onOpen(Session session,
-                       EndpointConfig config) {
+  @OnOpen
+  public void onOpen(Session session,
+                     EndpointConfig config) {
 
-        HttpSession httpSession = (HttpSession) config.getUserProperties().get("httpsession");
+    HttpSession httpSession = (HttpSession) config.getUserProperties().get("httpsession");
 
-        UserWS u = new UserWS();
-        u.setUser((String) httpSession.getAttribute("user"));
-        session.getUserProperties().put("user",
-                u);
+    UserWS u = new UserWS();
+    u.setUser((String) httpSession.getAttribute("user"));
+    session.getUserProperties().put("user",
+        u);
 
-        session.getUserProperties().put("httpsession", httpSession);
+    session.getUserProperties().put("httpsession", httpSession);
 
-        httpSession.setAttribute("perro", "pitbull");
+    httpSession.setAttribute("perro", "pitbull");
 
+  }
+
+  @OnClose
+  public void onClose(Session session) {
+    for (Session s : session.getOpenSessions()) {
+      try {
+        System.out.println(s.getUserProperties().get("user"));
+        Mensaje m = new Mensaje();
+        m.setMensaje("SALIDO " + session.getUserProperties().get("user").toString());
+        s.getBasicRemote().sendObject(m);
+      } catch (Exception ex) {
+        Logger.getLogger(MyEndpoint.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }
+  }
 
-    @OnClose
-    public void onClose(Session session) {
-        for (Session s : session.getOpenSessions()) {
+  @OnMessage
+  public void echoText(MetaMensajeWS mensaje, Session sessionQueManda) {
+//    try {
+
+      // descencriptar mensaje
+      HttpSession httpSession = (HttpSession) sessionQueManda.getUserProperties().get("httpsession");
+
+      String key = (String) httpSession.getAttribute("key");
+
+//      ObjectMapper mapper = new ObjectMapper();
+//      mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+//      MetaMensajeWS meta = mapper.readValue(mensaje,
+//          new TypeReference<MetaMensajeWS>() {
+//          });
+
+      switch (mensaje.getTipo()) {
+        case MENSAJE:
+          for (Session sesionesMandar : sessionQueManda.getOpenSessions()) {
             try {
-                System.out.println(s.getUserProperties().get("user"));
-                s.getBasicRemote().sendText("SALIDO " + session.getUserProperties().get("user").toString());
-            } catch (IOException ex) {
-                Logger.getLogger(MyEndpoint.class.getName()).log(Level.SEVERE, null, ex);
+//              Mensaje mensajeCliente = mapper.readValue(
+//                  (String) meta.getContenido(),
+//                  new TypeReference<Mensaje>() {
+//                  });
+                Mensaje mensajeCliente = (Mensaje)mensaje.getContenido();
+
+              httpSession = (HttpSession) sesionesMandar.getUserProperties().get("httpsession");
+
+              key = (String) httpSession.getAttribute("key");
+              mensajeCliente.setRoom(key);
+              UserWS userMandar = (UserWS) sesionesMandar.getUserProperties().get("user");
+
+              // if (userMandar.buscaRoom(mensajeCliente.getRoom())) {
+              //sesionesMandar.getBasicRemote().sendText(mapper.writeValueAsString(mensajeCliente));
+                sesionesMandar.getBasicRemote().sendObject(mensajeCliente);
+              //}
+            } catch (Exception ex) {
+              Logger.getLogger(MyEndpoint.class.getName()).log(Level.SEVERE, null, ex);
             }
-        }
+          }
+          break;
+        case ORDEN:
+//          OrdenRoomsWS orden = mapper.readValue(mensaje,
+//              new TypeReference<OrdenRoomsWS>() {
+//              });
+            OrdenRoomsWS orden = (OrdenRoomsWS)mensaje.getContenido();
+          if (orden.getOrden().equals("ADD")) {
+            UserWS u = (UserWS) sessionQueManda.getUserProperties().get("user");
+            u.getRoom().add(orden.getRoom());
+          }
+          break;
+      }
+//    } catch (Exception ex) {
+//      Logger.getLogger(MyEndpoint.class.getName()).log(Level.SEVERE, null, ex);
+//    }
+
+  }
+
+  @OnMessage
+  public void echoBinary(byte[] data, Session session) throws IOException {
+    System.out.println("echoBinary: " + data);
+    StringBuilder builder = new StringBuilder();
+    for (byte b : data) {
+      builder.append(b);
+    }
+    System.out.println(builder);
+
+    for (Session s : session.getOpenSessions()) {
+      System.out.println(s.getUserProperties().get("nombre"));
+      s.getBasicRemote().sendBinary(ByteBuffer.wrap(data));
     }
 
-    @OnMessage
-    public void echoText(String mensaje, Session sessionQueManda) {
-        try {
-
-            // descencriptar mensaje
-            HttpSession httpSession = (HttpSession) sessionQueManda.getUserProperties().get("httpsession");
-
-            String key = (String) httpSession.getAttribute("key");
-                       
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            MetaMensajeWS meta = mapper.readValue(mensaje,
-                    new TypeReference<MetaMensajeWS>() {
-            });
-
-            switch (meta.getTipo()) {
-                case MENSAJE:
-                    for (Session sesionesMandar : sessionQueManda.getOpenSessions()) {
-                        try {
-                            Mensaje mensajeCliente = mapper.readValue(
-                                    (String) meta.getContenido(),
-                                    new TypeReference<Mensaje>() {
-                            });
-
-                             httpSession = (HttpSession) sesionesMandar.getUserProperties().get("httpsession");
-
-                             key = (String) httpSession.getAttribute("key");
-                            mensajeCliente.setRoom(key);
-                            UserWS userMandar = (UserWS) sesionesMandar.getUserProperties().get("user");
-
-                           // if (userMandar.buscaRoom(mensajeCliente.getRoom())) {
-                                sesionesMandar.getBasicRemote().sendText(mapper.writeValueAsString(mensajeCliente));
-                            //}
-                        } catch (IOException ex) {
-                            Logger.getLogger(MyEndpoint.class.getName()).log(Level.SEVERE, null, ex);
-                        }
-                    }
-                    break;
-                case ORDEN:
-                    OrdenRoomsWS orden = mapper.readValue(mensaje,
-                            new TypeReference<OrdenRoomsWS>() {
-                    });
-                    if (orden.getOrden().equals("ADD")) {
-                        UserWS u = (UserWS) sessionQueManda.getUserProperties().get("user");
-                        u.getRoom().add(orden.getRoom());
-                    }
-                    break;
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(MyEndpoint.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-
-    @OnMessage
-    public void echoBinary(byte[] data, Session session) throws IOException {
-        System.out.println("echoBinary: " + data);
-        StringBuilder builder = new StringBuilder();
-        for (byte b : data) {
-            builder.append(b);
-        }
-        System.out.println(builder);
-
-        for (Session s : session.getOpenSessions()) {
-            System.out.println(s.getUserProperties().get("nombre"));
-            s.getBasicRemote().sendBinary(ByteBuffer.wrap(data));
-        }
-
-    }
+  }
 
 //    @WebSocketMessage
 //    public void echoBinary(ByteBuffer data, Session session) throws IOException {

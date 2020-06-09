@@ -9,7 +9,7 @@ package com.datoshttp;
  *
  * @author oscar
  */
-public class Mensaje {
+public class Mensaje  extends ContenidoMensaje {
     
     private String room;
     private String mensaje;

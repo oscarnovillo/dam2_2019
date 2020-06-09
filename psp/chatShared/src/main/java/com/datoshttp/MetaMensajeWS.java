@@ -9,10 +9,12 @@ package com.datoshttp;
  *
  * @author oscar
  */
-public class MetaMensajeWS {
+
+
+public class MetaMensajeWS{
     
     private TipoMensaje tipo;
-    private Object contenido;
+    private ContenidoMensaje contenido;
 
     public MetaMensajeWS() {
     }
@@ -25,11 +27,11 @@ public class MetaMensajeWS {
         this.tipo = tipo;
     }
 
-    public Object getContenido() {
+    public ContenidoMensaje getContenido() {
         return contenido;
     }
 
-    public void setContenido(Object contenido) {
+    public void setContenido(ContenidoMensaje contenido) {
         this.contenido = contenido;
     }
     

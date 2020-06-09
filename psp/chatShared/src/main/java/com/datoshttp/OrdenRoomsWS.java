@@ -9,7 +9,7 @@ package com.datoshttp;
  *
  * @author oscar
  */
-public class OrdenRoomsWS {
+public class OrdenRoomsWS extends ContenidoMensaje {
     
     private String orden;
     private String room;

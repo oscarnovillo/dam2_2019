@@ -38,6 +38,7 @@ public class SimpleEndpoint {
 
     ClientManager client = ClientManager.createClient();
     client.connectToServer(this,new URI("ws://localhost:8080/payara/simple?user="+user));
+
   }
 
 

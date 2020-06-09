@@ -48,6 +48,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import encoders.MensajeDecoder;
+import encoders.MetaMensajeEncoder;
 import org.glassfish.tyrus.client.ClientManager;
 
 import javax.websocket.*;
@@ -63,7 +65,9 @@ import java.util.logging.Logger;
  * @author Arun Gupta
  */
 
-@ClientEndpoint(configurator = ClientEndPointConfig.class)
+@ClientEndpoint(configurator = ClientEndPointConfig.class,
+encoders = MetaMensajeEncoder.class,
+decoders = MensajeDecoder.class)
 public class MyClient {
 
     private Session userSession;
@@ -115,7 +119,7 @@ public class MyClient {
             ObjectMapper mapper = new ObjectMapper();
             MetaMensajeWS ms = new MetaMensajeWS();
             ms.setTipo(TipoMensaje.MENSAJE);
-            ms.setContenido(mapper.writeValueAsString(message));
+            ms.setContenido(message);
             String men = mapper.writeValueAsString(ms);
             
             //encriptar el men con la key
@@ -128,37 +132,42 @@ public class MyClient {
 
      public void sendOrden(OrdenRoomsWS orden) {
         try {
-            ObjectMapper mapper = new ObjectMapper();
+
             MetaMensajeWS ms = new MetaMensajeWS();
             ms.setTipo(TipoMensaje.ORDEN);
-            ms.setContenido(mapper.writeValueAsString(orden));
-            String men = mapper.writeValueAsString(ms);
-            userSession.getAsyncRemote().sendText(men);
-        } catch (JsonProcessingException ex) {
+            ms.setContenido(orden);
+          //ObjectMapper mapper = new ObjectMapper();
+            //String men = mapper.writeValueAsString(ms);
+            userSession.getAsyncRemote().sendObject(ms);
+        } catch (Exception ex) {
             Logger.getLogger(MyClient.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
 
     @OnMessage
-    public void processMessage(String message) {
+    public void processMessage(Mensaje message) {
       System.out.println(message);
         if (messageHandler != null) {
-            try {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-                Mensaje mensaje = mapper.readValue(message,
-                        new TypeReference<Mensaje>() {
-                });
+//            try {
+//                ObjectMapper mapper = new ObjectMapper();
+//                mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+//                Mensaje mensaje = mapper.readValue(message,
+//                        new TypeReference<Mensaje>() {
+//                });
 
-                messageHandler.handleMessage(mensaje);
-            } catch (IOException ex) {
-                Logger.getLogger(MyClient.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                messageHandler.handleMessage(message);
+//            } catch (IOException ex) {
+//                Logger.getLogger(MyClient.class.getName()).log(Level.SEVERE, null, ex);
+//            }
         }
     }
 
-     public static interface MessageListener {
+
+
+
+
+  public static interface MessageListener {
 
         public void handleMessage(Mensaje message);
     }
