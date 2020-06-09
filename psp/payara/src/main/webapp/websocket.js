@@ -38,15 +38,21 @@
  * holder.
  */
 
-var wsUri = "ws://localhost:8080/chatServer/websocket/pepe";
+var wsUri = "ws://localhost:8080/payara/simple?user=";
 console.log("Connecting to " + wsUri);
-var websocket = new WebSocket(wsUri);
-websocket.onopen = function(evt) { onOpen(evt) };
-websocket.onmessage = function(evt) { onMessage(evt) };
-websocket.onerror = function(evt) { onError(evt) };
-websocket.onclose = function(evt) { onClose(evt) };
+var websocket ;
 
 var output = document.getElementById("output");
+
+function connect()
+{
+    websocket = new WebSocket(wsUri+user.value);
+    websocket.onopen = function(evt) { onOpen(evt) };
+    websocket.onmessage = function(evt) { onMessage(evt) };
+    websocket.onerror = function(evt) { onError(evt) };
+    websocket.onclose = function(evt) { onClose(evt) };
+}
+
 
 function sayHello() {
     console.log("sayHello: " + myField.value);

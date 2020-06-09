@@ -9,9 +9,6 @@ object EstudiantesProfesores extends App{
     master("local").getOrCreate()
   import spark.implicits._
 
-
-
-
   spark.sparkContext.setLogLevel("ERROR");
 
   val madridJson = spark.read.json("datos/students.json")
@@ -19,6 +16,8 @@ object EstudiantesProfesores extends App{
 
   madridJson.printSchema()
   madridJson.show(false)
+
+
   madridJson.select(col("*"),explode($"subjects").as("subject")).drop("subjects")
     .withColumn("calls",$"subject.calls").withColumn("nombreAsig",$"subject.name")
     .select(col("*"),element_at(reverse(array_sort($"calls")),1).as("notas"))

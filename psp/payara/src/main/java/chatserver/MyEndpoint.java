@@ -58,7 +58,8 @@ import java.util.logging.Logger;
 /**
  * @author Arun Gupta
  */
-@ServerEndpoint(value = "/websocket", configurator = ServletAwareConfig.class)
+@ServerEndpoint(value = "/websocket",
+    configurator = ServletAwareConfig.class)
 public class MyEndpoint {
 
     @OnOpen

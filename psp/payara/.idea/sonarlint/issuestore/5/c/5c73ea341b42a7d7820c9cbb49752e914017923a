@@ -1,5 +1,6 @@
 
-X	java:S1256"<This block of commented-out lines of code should be removed.(´ºç8¯¼”Ð .
+…
+java:S1989W"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8¯¼”Ð .
 W
 java:S1128":Remove this unused import 'javax.mail.MessagingException'.(ÇîÞ8¯¼”Ð .
 O
@@ -9,9 +10,8 @@ java:S1128
 "CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾þÿÿÿÿ8¯¼”Ð .
 …
 java:S1989e"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8¯¼”Ð .
-i
-java:S1128"GRemove this unused import 'java.security.spec.InvalidKeySpecException'.(ëóÅëüÿÿÿÿ8¯¼”Ð .
-…
-java:S1989W"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8¯¼”Ð .
 j
 java:S1192/"HDefine a constant instead of duplicating this literal "</html>" 3 times.(š¶„—ýÿÿÿÿ8¯¼”Ð .
+X	java:S1256"<This block of commented-out lines of code should be removed.(´ºç8¯¼”Ð .
+i
+java:S1128"GRemove this unused import 'java.security.spec.InvalidKeySpecException'.(ëóÅëüÿÿÿÿ8¯¼”Ð .

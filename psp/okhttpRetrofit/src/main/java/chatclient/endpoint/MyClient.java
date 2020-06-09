@@ -37,7 +37,7 @@
  * only if the new code is made subject to such option by the copyright
  * holder.
  */
-package chatclient;
+package chatclient.endpoint;
 
 
 import com.datoshttp.Mensaje;
@@ -63,7 +63,9 @@ import java.util.logging.Logger;
  * @author Arun Gupta
  */
 
-public class MyClient extends Endpoint {
+@ClientEndpoint(configurator = ClientEndPointConfig.class)
+public class MyClient {
+
     private Session userSession;
     private MessageListener messageHandler;
     
@@ -82,22 +84,24 @@ public class MyClient extends Endpoint {
                              cookieList.add("JSESSIONID=\""+sessionId+"\"");
                              headers.put("Cookie", cookieList);
 
-            } 
+            }
+
+
         }).build(); 
             
             ClientManager client = ClientManager.createClient();
-            client.connectToServer (this, cec,endpointURI);
+            client.connectToServer (this,endpointURI);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
         
     }
   
-    @Override
+    @OnOpen
     public void onOpen(Session session, EndpointConfig ec) {
        this.userSession = session;
 
-       session.addMessageHandler((MessageHandler.Whole<String>) message -> processMessage(message));
+       //session.addMessageHandler((MessageHandler.Whole<String>) message -> processMessage(message));
         System.out.println("Connected to endpoint: " + session.getBasicRemote());
     }
     
@@ -134,9 +138,11 @@ public class MyClient extends Endpoint {
             Logger.getLogger(MyClient.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
+
+
+    @OnMessage
     public void processMessage(String message) {
+      System.out.println(message);
         if (messageHandler != null) {
             try {
                 ObjectMapper mapper = new ObjectMapper();

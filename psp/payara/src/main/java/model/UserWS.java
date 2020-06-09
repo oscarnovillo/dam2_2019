@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class UserWS {
     
     private String user;
-    private ArrayList<String> productos;
+    private ArrayList<String> juegos;
 
     public String getUser() {
         return user;
@@ -25,16 +25,16 @@ public class UserWS {
     }
 
     public ArrayList<String> getRoom() {
-        return productos;
+        return juegos;
     }
 
     public void setRoom(ArrayList<String> room) {
-        this.productos = room;
+        this.juegos = room;
     }
     
     public boolean buscaRoom(String producto)
     {
-        return this.productos.contains(producto);
+        return this.juegos.contains(producto);
     }
     
 }

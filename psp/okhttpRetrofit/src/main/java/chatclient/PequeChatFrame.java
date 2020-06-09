@@ -5,6 +5,7 @@
  */
 package chatclient;
 
+import chatclient.endpoint.MyClient;
 import com.datoshttp.Mensaje;
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
@@ -32,6 +33,8 @@ import java.util.logging.Logger;
  */
 public class PequeChatFrame extends javax.swing.JFrame {
 
+
+    public static String jsessionId;
     MyClient client = null;
     CloseableHttpClient httpclient = null;
     HttpClientContext context = null;
@@ -183,21 +186,16 @@ public class PequeChatFrame extends javax.swing.JFrame {
                 sessionId = cookie.getValue();
                 
         }
+        jsessionId= sessionId;
         return sessionId;
     }
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
                         // TODO add your handling code here:
-            client = new MyClient(new URI("ws://localhost:8080/chatServer/websocket"),
+            client = new MyClient(new URI("ws://localhost:8080/payara/websocket"),
                     getSessionFromContext(context));
-            client.addMessageHandler(new MyClient.MessageListener() {
-                @Override
-                public void handleMessage(Mensaje message) {
-                    
-                    jTextArea1.append(message.getFrom() + "::" + message.getMensaje()+"::"+message.getRoom());
-                }
-            });
+            client.addMessageHandler(message -> jTextArea1.append(message.getFrom() + "::" + message.getMensaje()+"::"+message.getRoom()));
         } catch (URISyntaxException ex) {
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
@@ -219,7 +217,7 @@ public class PequeChatFrame extends javax.swing.JFrame {
         
         //pedir clave publica
         try {
-            HttpPost httpPost = new HttpPost("http://localhost:8080/chatServer/Login");
+            HttpPost httpPost = new HttpPost("http://localhost:8080/payara/Login");
             List<NameValuePair> nvps = new ArrayList<NameValuePair>();
 
             nvps.add(new BasicNameValuePair("user", 
@@ -228,7 +226,7 @@ public class PequeChatFrame extends javax.swing.JFrame {
             
             CloseableHttpResponse response2 = httpclient.execute(httpPost,context);
             HttpEntity entity = response2.getEntity();
-
+           //  entity = response2.getEntity();
         } catch (Exception ex) {
             Logger.getLogger(PequeChatFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -238,7 +236,7 @@ public class PequeChatFrame extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
        try {
-            HttpPost httpPost = new HttpPost("http://localhost:8080/chatServer/Sesion");
+            HttpPost httpPost = new HttpPost("http://localhost:8080/payara/Sesion");
             List<NameValuePair> nvps = new ArrayList<NameValuePair>();
             httpPost.setEntity(new UrlEncodedFormEntity(nvps));
             

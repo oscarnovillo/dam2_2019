@@ -50,8 +50,9 @@
     </head>
     <body>
         <h1>Getting Started with JSR 356 - Annotated Endpoint</h1>
-
+        <input onclick="connect()" value="connect" type="button">
         <div style="text-align: center;">
+            <input id="user" value="user" type="text"><br>
             <form action=""> 
                 <h2>Text Data</h2>
                 <input onclick="sayHello();" value="Say Hello" type="button"> 
@@ -63,6 +64,7 @@
                 <input id="myField2" value="12345678" type="text"><br>
             </form>
         </div>
+        <input onclick="websocket.close()" value="close" type="button">
         <div id="output"></div>
         <script language="javascript" type="text/javascript" src="websocket.js">
         </script>

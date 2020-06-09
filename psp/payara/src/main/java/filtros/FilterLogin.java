@@ -14,13 +14,13 @@ public class FilterLogin implements Filter {
   public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
 
     HttpServletRequest request = (HttpServletRequest) req;
-    if (request.getSession().getAttribute("hola") == null) {
-      request.getSession().setAttribute("hola", 1);
-      HttpServletResponse response = (HttpServletResponse) resp;
-      response.sendError(403, "hola ");
-    } else {
+//    if (request.getSession().getAttribute("hola") == null) {
+//      request.getSession().setAttribute("hola", 1);
+//      HttpServletResponse response = (HttpServletResponse) resp;
+//      response.sendError(403, "hola ");
+//    } else {
       chain.doFilter(req, resp);
-    }
+//    }
   }
 
   public void init(FilterConfig config) throws ServletException {

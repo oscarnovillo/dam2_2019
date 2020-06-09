@@ -14,13 +14,22 @@ import javax.websocket.server.ServerEndpointConfig;
  *
  * @author oscar
  */
-public class ServletAwareConfig extends ServerEndpointConfig.Configurator{
+public class ServletAwareConfig extends
+    ServerEndpointConfig.Configurator{
    
 
     @Override
-    public void modifyHandshake(ServerEndpointConfig config, HandshakeRequest request, HandshakeResponse response) {
+    public void modifyHandshake(ServerEndpointConfig config,
+                                HandshakeRequest request,
+                                HandshakeResponse response) {
         HttpSession httpSession = (HttpSession) request.getHttpSession();
+        String cabe = request.getHeaders().get("Authorization").get(0);
+        String jwt = cabe.substring(7);
+        //comprobar jwt.
+
+
         config.getUserProperties().put("httpsession",httpSession );
+
     }
 
 }

@@ -33,12 +33,14 @@ object Madrid extends App {
 
   madrid.filter(col("NOMBRE-INSTALACION").like("%Moratalaz%"))
     .withColumn("TIPO", lastIndexSplitUDF($"DIAS-SEMANA"))
-    .select(col("TITULO"), col("TIPO")).foreach(row => println(row(0) + " " + row(1)))
+    .select(col("TITULO"), col("TIPO"))
+    .foreach(row => println(row(0) + " " + row(1)))
 
 
   madrid.filter(col("NOMBRE-INSTALACION").like("%Moratalaz%"))
     .withColumn("ULTIMO_DIA-SEMANA", substring_index($"DIAS-SEMANA", ",", -1))
-    .select(col("TITULO"), col("ULTIMO_DIA-SEMANA")).foreach(row => println(row(0) + " " + row(1)))
+    .select(col("TITULO"), col("ULTIMO_DIA-SEMANA"))
+    .foreach(row => println(row(0) + " " + row(1)))
 
 
   madrid.filter(month($"FECHA").equalTo(1))
@@ -52,12 +54,14 @@ object Madrid extends App {
     println(row)
   }
 
-  madrid.filter(!col("NOMBRE-INSTALACION").isNull).groupBy($"NOMBRE-INSTALACION")
-    .agg(max("HORA").as("hora"))
+  madrid.filter(!col("NOMBRE-INSTALACION").isNull)
+    .groupBy($"NOMBRE-INSTALACION")
+    .agg(max("HORA").as("hora"),min("HORA").as("hora"))
     .sort(desc("HORA")).limit(1).show(false)
 
 
-  val d = madrid.filter(col("DIAS-SEMANA").like("%L%")).groupBy($"DIAS-SEMANA").count().sort(desc("count"))
+  val d = madrid.filter(col("DIAS-SEMANA").like("%L%"))
+    .groupBy($"DIAS-SEMANA").count().sort(desc("count"))
     .select(avg($"count").as("media")).first().getDouble(0);
   println(d);
 

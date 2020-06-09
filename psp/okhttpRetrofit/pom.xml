@@ -124,13 +124,49 @@
         <dependency>
             <groupId>org.glassfish.tyrus</groupId>
             <artifactId>tyrus-client</artifactId>
-            <version>1.12</version>
+            <version>1.17</version>
         </dependency>
+        <dependency>
+            <groupId>org.glassfish.tyrus</groupId>
+            <artifactId>tyrus-container-grizzly-client</artifactId>
+            <version>1.17</version>
+        </dependency>
+
+
         <dependency>
             <groupId>com</groupId>
             <artifactId>chatShared</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
+    <build>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <archive>
+                                <manifest>
+                                    <mainClass>
+                                        chatclient.PequeChatFrame
+                                    </mainClass>
+                                </manifest>
+                            </archive>
+                            <descriptorRefs>
+                                <descriptorRef>jar-with-dependencies</descriptorRef>
+                            </descriptorRefs>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin></plugins>
+    </build>
 
 </project>
