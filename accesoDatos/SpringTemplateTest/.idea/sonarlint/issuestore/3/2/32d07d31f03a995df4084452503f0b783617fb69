@@ -1,0 +1,8 @@
+
+Psquid:S1172ι"1Remove this unused method parameter "activacion".(ησ¶8•όχΨ-
+esquid:S2095%"GUse try-with-resources or close this "Statement" in a "finally" clause.(ομ”8•όχΨ-
+rsquid:S2095V"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ην…Οψÿÿÿÿ8•όχΨ-
+osquid:CommentedOutCodeLine„"<This block of commented-out lines of code should be removed.(”ήώσϋÿÿÿÿ8•όχΨ-
+Psquid:S1172¥"1Remove this unused method parameter "activacion".(ήνή8•όχΨ-
+Isquid:S00108–")Either remove or fill this block of code.(Ϊξψ›8•όχΨ-
+Isquid:S1481ς"*Remove this unused "filas" local variable.(²ς…δ8•όχΨ-

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PrimeFinderTask.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CarcasaJavaFX</a> &gt; <a href="index.source.html" class="el_package">concurrent</a> &gt; <span class="el_source">PrimeFinderTask.java</span></div><h1>PrimeFinderTask.java</h1><pre class="source lang-java linenums">package concurrent;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
+
+public class PrimeFinderTask extends Task&lt;ObservableList&lt;Long&gt;&gt;
+{
+	// Define the Limits
+<span class="nc" id="L10">	private long lowerLimit = 1;</span>
+<span class="nc" id="L11">	private long upperLimit = 30;</span>
+<span class="nc" id="L12">	private long sleepTimeInMillis = 500;</span>
+
+	public PrimeFinderTask()
+<span class="nc" id="L15">	{</span>
+<span class="nc" id="L16">	}</span>
+
+	public PrimeFinderTask(long lowerLimit, long upperLimit)
+<span class="nc" id="L19">	{</span>
+<span class="nc" id="L20">		this.lowerLimit = lowerLimit;</span>
+<span class="nc" id="L21">		this.upperLimit = upperLimit;</span>
+<span class="nc" id="L22">	}</span>
+
+	public PrimeFinderTask(long lowerLimit,long upperLimit,long sleepTimeInMillis)
+	{
+<span class="nc" id="L26">		this(lowerLimit, upperLimit);</span>
+<span class="nc" id="L27">		this.sleepTimeInMillis = sleepTimeInMillis;</span>
+<span class="nc" id="L28">	}</span>
+
+	// The task implementation
+	@Override
+	protected ObservableList&lt;Long&gt; call()
+	{
+		// An observable list to represent the results
+<span class="nc" id="L35">		final ObservableList&lt;Long&gt; results = FXCollections.&lt;Long&gt;observableArrayList();</span>
+
+		// Update the title
+<span class="nc" id="L38">		this.updateTitle(&quot;Prime Number Finder Task&quot;);</span>
+<span class="nc" id="L39">		long count = this.upperLimit - this.lowerLimit + 1;</span>
+<span class="nc" id="L40">		long counter = 0;</span>
+
+		// Find the prime numbers
+<span class="nc bnc" id="L43" title="All 2 branches missed.">		for (long i = lowerLimit; i &lt;= upperLimit; i++)</span>
+		{
+			// Check if the task is cancelled
+<span class="nc bnc" id="L46" title="All 2 branches missed.">			if (this.isCancelled())</span>
+			{
+<span class="nc" id="L48">				break;</span>
+			}
+
+			// Increment the counter
+<span class="nc" id="L52">			counter++;</span>
+
+			// Update message
+<span class="nc" id="L55">			this.updateMessage(&quot;Checking &quot; + i + &quot; for a prime number&quot;);</span>
+
+			// Sleep for some time
+			try
+			{
+<span class="nc" id="L60">				Thread.sleep(this.sleepTimeInMillis);</span>
+			}
+<span class="nc" id="L62">			catch (InterruptedException e)</span>
+			{
+				// Check if the task is cancelled
+<span class="nc bnc" id="L65" title="All 2 branches missed.">				if (this.isCancelled())</span>
+				{
+<span class="nc" id="L67">					break;</span>
+				}
+<span class="nc" id="L69">			}</span>
+
+			// Check if the number is a prime number
+<span class="nc bnc" id="L72" title="All 2 branches missed.">			if (PrimeUtil.isPrime(i))</span>
+			{
+				// Add to the list
+<span class="nc" id="L75">				results.add(i);</span>
+
+				// Publish the read-only list to give the GUI
+				// access to the partial results
+<span class="nc" id="L79">				updateValue(FXCollections.&lt;Long&gt;unmodifiableObservableList(results));</span>
+			}
+
+			// Update the progress
+<span class="nc" id="L83">			updateProgress(counter, count);</span>
+		}
+
+<span class="nc" id="L86">		return results;</span>
+	}
+
+	@Override
+	protected void cancelled()
+	{
+<span class="nc" id="L92">		super.cancelled();</span>
+<span class="nc" id="L93">		updateMessage(&quot;The task was cancelled.&quot;);</span>
+<span class="nc" id="L94">	}</span>
+
+	@Override
+	protected void failed()
+	{
+<span class="nc" id="L99">		super.failed();</span>
+<span class="nc" id="L100">		updateMessage(&quot;The task failed.&quot;);</span>
+<span class="nc" id="L101">	}</span>
+
+	@Override
+	public void succeeded()
+	{
+<span class="nc" id="L106">		super.succeeded();</span>
+<span class="nc" id="L107">		updateMessage(&quot;The task finished successfully.&quot;);</span>
+<span class="nc" id="L108">	}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

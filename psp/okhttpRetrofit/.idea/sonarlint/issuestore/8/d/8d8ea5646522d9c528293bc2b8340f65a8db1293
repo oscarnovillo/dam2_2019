@@ -1,0 +1,21 @@
+
+C
+java:S1128"*Remove this unused import 'java.util.Set'.(ö²„¤þÿÿÿÿ
+`
+java:S1128"LRemove this unused import 'javax.validation.executable.ExecutableValidator'.(ƒž°­
+D
+java:S1128"0Remove this unused import 'javax.inject.Inject'.(ì–íÔ
+d
+java:S1128"KRemove this unused import 'org.hibernate.validator.cdi.HibernateValidator'.(õôž¤ýÿÿÿÿ
+Y
+java:S1128"ERemove this unused import 'javax.validation.metadata.BeanDescriptor'.(çûœ­
+D
+java:S1128"0Remove this unused import 'retrofit.UsuarioApi'.(Ø‚‹í
+Z
+java:S1128"ARemove this unused import 'javax.validation.ConstraintViolation'.(›•¾ƒýÿÿÿÿ
+L	java:S106"9Replace this use of System.out or System.err by a logger.(à¹Äˆ
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(µÚ´üùÿÿÿÿ
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(ÆÎ±Üûÿÿÿÿ
+T	java:S125"<This block of commented-out lines of code should be removed.(©”£Ýùÿÿÿÿ
+T	java:S125"<This block of commented-out lines of code should be removed.(ù§ýþþÿÿÿÿ
+O	java:S125"<This block of commented-out lines of code should be removed.(«âõÈ

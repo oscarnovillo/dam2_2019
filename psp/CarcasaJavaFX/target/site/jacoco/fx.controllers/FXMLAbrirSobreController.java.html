@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FXMLAbrirSobreController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CarcasaJavaFX</a> &gt; <a href="index.source.html" class="el_package">fx.controllers</a> &gt; <span class="el_source">FXMLAbrirSobreController.java</span></div><h1>FXMLAbrirSobreController.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fx.controllers;
+
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
+
+/**
+ * FXML Controller class
+ *
+ * @author oscar
+ */
+<span class="nc" id="L21">public class FXMLAbrirSobreController implements Initializable {</span>
+
+  @FXML
+  private ComboBox&lt;String&gt; fxComboNiñato;
+  @FXML
+  private ComboBox fxComboAlbum;
+
+  private FXMLBorderPaneController principalController;
+
+  public void setPrincipalController(FXMLBorderPaneController principalController) {
+<span class="nc" id="L31">    this.principalController = principalController;</span>
+<span class="nc" id="L32">  }</span>
+
+  public void cargarNiñatos(ArrayList&lt;String&gt; niñatos) {
+<span class="nc" id="L35">    fxComboNiñato.getItems().clear();</span>
+<span class="nc" id="L36">    fxComboNiñato.getItems().addAll(niñatos);</span>
+<span class="nc" id="L37">  }</span>
+
+  @FXML
+  public void cambiaNiñato(ActionEvent event) {
+<span class="nc" id="L41">    String seleccion</span>
+<span class="nc" id="L42">	    = fxComboNiñato.getSelectionModel()</span>
+<span class="nc" id="L43">		    .getSelectedItem();</span>
+<span class="nc bnc" id="L44" title="All 2 branches missed.">    if (seleccion != null) {</span>
+<span class="nc" id="L45">      ArrayList&lt;String&gt; albums = principalController.dameAlbumsNiñato(seleccion);</span>
+<span class="nc" id="L46">      fxComboAlbum.getItems().clear();</span>
+<span class="nc" id="L47">      fxComboAlbum.getItems().addAll(albums);</span>
+    }
+<span class="nc" id="L49">  }</span>
+
+  /**
+   * Initializes the controller class.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle rb) {
+    // TODO
+
+<span class="nc" id="L58">  }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

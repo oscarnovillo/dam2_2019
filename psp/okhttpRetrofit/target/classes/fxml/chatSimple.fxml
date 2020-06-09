@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatclient.ChatController">
+   <children>
+      <Button layoutX="197.0" layoutY="80.0" onAction="#conectar" mnemonicParsing="false" text="conectar" />
+      <Button layoutX="37.0" layoutY="433.0" onAction="#mandar"  mnemonicParsing="false" text="mandar mensaje" />
+      <TextArea fx:id="chat" editable="false" layoutX="352.0" layoutY="80.0" prefHeight="432.0" prefWidth="425.0" />
+      <TextField fx:id="user" layoutX="31.0" layoutY="80.0" promptText="user" />
+      <TextArea fx:id="mensaje" layoutX="37.0" layoutY="180.0" prefHeight="242.0" prefWidth="282.0" promptText="mensaje" />
+      <Button onAction="#desconectar" layoutX="31.0" layoutY="117.0" mnemonicParsing="false" text="desconectar" />
+   </children>
+</AnchorPane>

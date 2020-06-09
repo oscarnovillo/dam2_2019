@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FXMLBorderPaneController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CarcasaJavaFX</a> &gt; <a href="index.source.html" class="el_package">fx.controllers</a> &gt; <span class="el_source">FXMLBorderPaneController.java</span></div><h1>FXMLBorderPaneController.java</h1><pre class="source lang-java linenums">/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package fx.controllers;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+
+/**
+ * FXML Controller class
+ *
+ * @author oscar
+ */
+<span class="fc" id="L27">public class FXMLBorderPaneController implements Initializable {</span>
+
+  @FXML
+  private BorderPane fxRoot;
+
+  private Alert alert;
+
+  private String nombre;
+
+  public String getNombre() {
+<span class="fc" id="L37">    return nombre;</span>
+  }
+
+  
+  public String probando;
+  
+  public void setNombre(String nombre) {
+<span class="fc" id="L44">    this.nombre = nombre;</span>
+<span class="fc" id="L45">  }</span>
+
+  private AnchorPane pagPrincipal;
+  private FXMLPrimeraPantallaController principalController;
+
+  private AnchorPane pag2;
+  private FXMLPagina2Controller pag2Controller;
+
+  private AnchorPane abrirSobre;
+  private FXMLAbrirSobreController abrirSobreController;
+
+  public FXMLPagina2Controller getPag2Controller() {
+<span class="fc" id="L57">    return pag2Controller;</span>
+  }
+
+  @FXML
+  public void cargar1(ActionEvent event) {
+
+<span class="fc" id="L63">    cargarPrincipal();</span>
+<span class="fc" id="L64">  }</span>
+
+  public void cargarAbrirSobre() {
+    try {
+<span class="nc bnc" id="L68" title="All 2 branches missed.">      if (abrirSobre == null) {</span>
+<span class="nc" id="L69">	FXMLLoader loaderMenu</span>
+<span class="nc" id="L70">		= new FXMLLoader(getClass().getResource(&quot;/fxml/FXMLAbrirSobre.fxml&quot;));</span>
+<span class="nc" id="L71">	abrirSobre = loaderMenu.load();</span>
+
+<span class="nc" id="L73">	abrirSobreController = loaderMenu.getController();</span>
+<span class="nc" id="L74">	abrirSobreController.setPrincipalController(this);</span>
+<span class="nc" id="L75">	ArrayList&lt;String&gt; niños = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L76">	niños.add(&quot;j&quot;);</span>
+<span class="nc" id="L77">	niños.add(&quot;p&quot;);</span>
+<span class="nc" id="L78">	niños.add(&quot;k&quot;);</span>
+<span class="nc" id="L79">	abrirSobreController.cargarNiñatos(niños);</span>
+      }
+
+<span class="nc" id="L82">      fxRoot.setCenter(abrirSobre);</span>
+
+<span class="nc" id="L84">    } catch (Exception ex) {</span>
+<span class="nc" id="L85">      Logger.getLogger(FXMLBorderPaneController.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="nc" id="L86">    }</span>
+<span class="nc" id="L87">  }</span>
+
+  public ArrayList&lt;String&gt; dameAlbumsNiñato(String niño) {
+<span class="nc" id="L90">    ArrayList&lt;String&gt; albums = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L91" title="All 3 branches missed.">    switch (niño) {</span>
+      case &quot;j&quot;:
+<span class="nc" id="L93">	albums.add(&quot;1&quot;);</span>
+<span class="nc" id="L94">	break;</span>
+      case &quot;p&quot;:
+<span class="nc" id="L96">	albums.add(&quot;3&quot;);</span>
+<span class="nc" id="L97">	break;</span>
+      default:
+<span class="nc" id="L99">	albums.add(&quot;2&quot;);</span>
+    }
+
+<span class="nc" id="L102">    return albums;</span>
+  }
+
+  public void cargarPrincipal() {
+    try {
+<span class="fc bfc" id="L107" title="All 2 branches covered.">      if (pagPrincipal == null) {</span>
+<span class="fc" id="L108">	FXMLLoader loaderMenu</span>
+<span class="fc" id="L109">		= new FXMLLoader(getClass().getResource(&quot;/fxml/FXMLPrimeraPantalla.fxml&quot;));</span>
+<span class="fc" id="L110">	pagPrincipal = loaderMenu.load();</span>
+<span class="fc" id="L111">	principalController = loaderMenu.getController();</span>
+<span class="fc" id="L112">	principalController.setBorderPane(this);</span>
+      }
+<span class="fc" id="L114">      principalController.resetear();</span>
+<span class="fc" id="L115">      fxRoot.setCenter(pagPrincipal);</span>
+
+<span class="nc" id="L117">    } catch (Exception ex) {</span>
+<span class="nc" id="L118">      Logger.getLogger(FXMLBorderPaneController.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="fc" id="L119">    }</span>
+<span class="fc" id="L120">  }</span>
+
+  private void preCargarPag2() {
+    try {
+<span class="fc" id="L124">      FXMLLoader loaderMenu</span>
+<span class="fc" id="L125">	      = new FXMLLoader(getClass().getResource(&quot;/fxml/FXMLPagina2.fxml&quot;));</span>
+<span class="fc" id="L126">      pag2 = loaderMenu.load();</span>
+<span class="fc" id="L127">      pag2Controller = loaderMenu.getController();</span>
+<span class="fc" id="L128">      pag2Controller.setPrincipalController(this);</span>
+<span class="nc" id="L129">    } catch (Exception ex) {</span>
+<span class="nc" id="L130">      Logger.getLogger(FXMLBorderPaneController.class.getName()).log(Level.SEVERE, null, ex);</span>
+<span class="fc" id="L131">    }</span>
+<span class="fc" id="L132">  }</span>
+
+  public void cargarPag2() {
+<span class="fc" id="L135">    fxRoot.setCenter(pag2);</span>
+<span class="fc" id="L136">  }</span>
+
+  @FXML
+  public void cargar2(ActionEvent event) {
+<span class="nc" id="L140">    cargarPag2();</span>
+
+<span class="nc" id="L142">  }</span>
+
+  /**
+   * Initializes the controller class.
+   */
+  @Override
+  public void initialize(URL url, ResourceBundle rb) {
+    // TODO
+<span class="fc" id="L150">    alert = new Alert(Alert.AlertType.INFORMATION);</span>
+<span class="fc" id="L151">    alert.setTitle(&quot;Information Dialog&quot;);</span>
+<span class="fc" id="L152">    alert.setHeaderText(null);</span>
+<span class="fc" id="L153">    preCargarPag2();</span>
+<span class="fc" id="L154">    cargarPrincipal();</span>
+<span class="fc" id="L155">    probando  =&quot;test&quot;;</span>
+<span class="fc" id="L156">  }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

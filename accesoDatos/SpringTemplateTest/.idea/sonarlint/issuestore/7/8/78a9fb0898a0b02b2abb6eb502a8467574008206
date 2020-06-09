@@ -1,0 +1,13 @@
+
+ksquid:S001000"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ¼µµøÿÿÿÿ
+hsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü½»%
+fsquid:S001004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌÀê·
+isquid:S001178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÅ¼Â
+xsquid:S1488F"\Immediately return this expression instead of assigning it to the temporary variable "hash".(‡Ô£úÿÿÿÿ
+hsquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ü½»%
+fsquid:S00100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»üÇš
+lsquid:S00116"URename this field "mayor_edad" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óí›l
+xsquid:S00116"[Rename this field "fecha_nacimiento" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Áßì¦ùÿÿÿÿ
+nsquid:S001170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğ¼µµøÿÿÿÿ
+fsquid:S001008"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õÅ¼Â
+Xsquid:S1126V"AReplace this if-then-else statement by a single return statement.(æ‰°³

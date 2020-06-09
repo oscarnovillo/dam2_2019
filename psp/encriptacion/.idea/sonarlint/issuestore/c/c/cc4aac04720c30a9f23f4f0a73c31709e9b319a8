@@ -1,0 +1,18 @@
+
+P	java:S125D"<This block of commented-out lines of code should be removed.(ÇÏ¸Q
+S	java:S1061"9Replace this use of System.out or System.err by a logger.(ÑÐœ†ûÿÿÿÿ
+Q	java:S125A"<This block of commented-out lines of code should be removed.(«à¿
+S	java:S106X"9Replace this use of System.out or System.err by a logger.(íá£ýÿÿÿÿ
+>
+java:S5542F"#Use secure mode and padding scheme.(ø¾¢çýÿÿÿÿ
+˜
+java:S1130O"}Remove the declaration of thrown exception 'java.io.UnsupportedEncodingException', as it cannot be thrown from method's body.(Ô‰‚õùÿÿÿÿ
+>
+java:S5542-"#Use secure mode and padding scheme.(ø¾¢çýÿÿÿÿ
+S	java:S106Y"9Replace this use of System.out or System.err by a logger.(ÅºÐ„ÿÿÿÿÿ
+Q	java:S125'"<This block of commented-out lines of code should be removed.(«à¿
+T
+java:S4719/"9Replace charset name argument with StandardCharsets.UTF_8(º‹ì®üÿÿÿÿ
+M	java:S106W"9Replace this use of System.out or System.err by a logger.(É¾r
+S	java:S106J"9Replace this use of System.out or System.err by a logger.(Ï¢þýÿÿÿÿ
+P	java:S125*"<This block of commented-out lines of code should be removed.(ÇÏ¸Q

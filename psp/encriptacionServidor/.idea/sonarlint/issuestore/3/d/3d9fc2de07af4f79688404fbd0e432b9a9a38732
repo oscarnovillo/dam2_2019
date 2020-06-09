@@ -1,0 +1,12 @@
+
+gsquid:S13010"KReplace this "switch" statement by "if" statements to increase readability.(õÙÆ‚úÿÿÿÿ
+bsquid:S2259p"KA "NullPointerException" could be thrown; "keyFactoryRSA" is nullable here.(—¹ƒâ
+U"squid:SwitchLastCaseIsDefaultCheck0""Add a default case to this switch.(õÙÆ‚úÿÿÿÿ
+`squid:S2147R"DCombine this catch with the one at line 80, which has the same body.(¾šİüÿÿÿÿ
+O
+squid:S106s"9Replace this use of System.out or System.err by a logger.(´“ 
+Psquid:S4719t"9Replace charset name argument with StandardCharsets.UTF_8(¯‹«
+Esquid:S1989Œ"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+Esquid:S1989š"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+asquid:CommentedOutCodeLine<"<This block of commented-out lines of code should be removed.(ø€Ø*
+bsquid:CommentedOutCodeLineI"<This block of commented-out lines of code should be removed.(¨Ÿ†Ç

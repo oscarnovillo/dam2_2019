@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">CarcasaJavaFX</a> &gt; <a href="index.source.html" class="el_package">main</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">
+package main;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+
+<span class="nc" id="L19">public class Main extends Application {</span>
+
+<span class="nc" id="L21">   private long n1 = 0;</span>
+<span class="nc" id="L22">   private long n2 = 1;</span>
+<span class="nc" id="L23">   private int num = 1;</span>
+
+   public static void main(String[] args) {
+<span class="nc" id="L26">      Application.launch(args);</span>
+<span class="nc" id="L27">   }</span>
+
+   @Override
+   public void start(Stage stage) throws Exception {
+<span class="nc" id="L31">      BorderPane root=new BorderPane();</span>
+<span class="nc" id="L32">      root.setCenter(createInterface());</span>
+<span class="nc" id="L33">      Scene scene = new Scene(root, 300, 275);</span>
+<span class="nc" id="L34">      stage.setTitle(&quot;Multithreading in JavaFX&quot;);</span>
+<span class="nc" id="L35">      stage.setScene(scene);</span>
+<span class="nc" id="L36">      stage.show();</span>
+<span class="nc" id="L37">   }</span>
+
+   private GridPane createInterface() {
+<span class="nc" id="L40">      GridPane gp = new GridPane();</span>
+<span class="nc" id="L41">      TextField tf1 = new TextField();</span>
+<span class="nc" id="L42">      Button btnStart = new Button(&quot;Start&quot;);</span>
+<span class="nc" id="L43">      Button btnNext = new Button(&quot;Next Fibonacci Number&quot;);</span>
+<span class="nc" id="L44">      Label lbl1 = new Label();</span>
+<span class="nc" id="L45">      Label lbl2 = new Label();</span>
+<span class="nc" id="L46">      Label lbl3 = new Label();</span>
+<span class="nc" id="L47">      Label lbl4 = new Label();</span>
+
+<span class="nc" id="L49">      btnStart.setOnAction(new</span>
+<span class="nc" id="L50">            EventHandler&lt;ActionEvent&gt;() {</span>
+         @Override
+         public void handle(ActionEvent event) {
+            try {
+<span class="nc" id="L54">               int ival = Integer.parseInt(tf1.getText());</span>
+<span class="nc" id="L55">               FiboCalcTask task = new FiboCalcTask(ival);</span>
+<span class="nc" id="L56">               lbl1.textProperty().bind(task.messageProperty());</span>
+
+<span class="nc" id="L58">               task.setOnRunning((succeesesEvent) -&gt; {</span>
+<span class="nc" id="L59">                  btnStart.setDisable(true);</span>
+<span class="nc" id="L60">                  lbl2.setText(&quot;&quot;);</span>
+<span class="nc" id="L61">               });</span>
+
+<span class="nc" id="L63">               task.setOnSucceeded((succeededEvent) -&gt; {</span>
+<span class="nc" id="L64">                  lbl2.setText(task.getValue().toString());</span>
+<span class="nc" id="L65">                  btnStart.setDisable(false);</span>
+<span class="nc" id="L66">               });</span>
+
+<span class="nc" id="L68">               ExecutorService executorService</span>
+<span class="nc" id="L69">                  = Executors.newFixedThreadPool(1);</span>
+<span class="nc" id="L70">               executorService.execute(task);</span>
+<span class="nc" id="L71">               executorService.shutdown();</span>
+
+<span class="nc" id="L73">            } catch (NumberFormatException e) {</span>
+<span class="nc" id="L74">               tf1.setText(&quot;Enter a number&quot;);</span>
+<span class="nc" id="L75">               tf1.selectAll();</span>
+<span class="nc" id="L76">               tf1.requestFocus();</span>
+<span class="nc" id="L77">            }</span>
+<span class="nc" id="L78">         }</span>
+      });
+
+<span class="nc" id="L81">      btnNext.setOnAction(new EventHandler&lt;ActionEvent&gt;() {</span>
+         @Override
+         public void handle(ActionEvent event) {
+<span class="nc" id="L84">            lbl3.setText(num+&quot;the Fibonacci number is = &quot;);</span>
+<span class="nc" id="L85">            lbl4.setText(String.valueOf(n2));</span>
+<span class="nc" id="L86">            long temp = n1 + n2;</span>
+<span class="nc" id="L87">            n1 = n2;</span>
+<span class="nc" id="L88">            n2 = temp;</span>
+<span class="nc" id="L89">            ++num;</span>
+<span class="nc" id="L90">         }</span>
+      });
+
+<span class="nc" id="L93">      gp.add(new Label(&quot;Enter a number: &quot;), 0, 0);</span>
+<span class="nc" id="L94">      gp.add(tf1, 1, 0);</span>
+<span class="nc" id="L95">      gp.add(lbl1, 2, 0);</span>
+<span class="nc" id="L96">      gp.add(btnStart, 0, 1);</span>
+<span class="nc" id="L97">      gp.add(lbl2, 1, 1);</span>
+<span class="nc" id="L98">      gp.add(lbl3, 0, 2);</span>
+<span class="nc" id="L99">      gp.add(lbl4, 1, 2);</span>
+<span class="nc" id="L100">      gp.add(btnNext, 0, 3);</span>
+<span class="nc" id="L101">      gp.setPadding(new Insets(10.0,10.0,10.0,10.0));</span>
+
+<span class="nc" id="L103">      return gp;</span>
+   }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

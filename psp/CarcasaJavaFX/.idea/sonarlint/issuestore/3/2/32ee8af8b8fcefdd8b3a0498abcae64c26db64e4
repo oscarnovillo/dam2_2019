@@ -1,0 +1,9 @@
+
+_squid:S2184"ECast one of the operands of this subtraction operation to a "double".(ÚŸ»æÿÿÿÿÿ
+Usquid:S2184"@Cast one of the operands of this addition operation to a "long".(˜ÎÕ©
+Usquid:S2184"@Cast one of the operands of this integer division to a "double".(úÓ¦£
+Usquid:S2184"@Cast one of the operands of this integer division to a "double".(ö±ÅÅ
+1squid:S1220""Move this file to a named package.
+rsquid:S1450"XRemove the "mainStage" field and declare it as a local variable in the relevant methods.(ñŒÕÚùÿÿÿÿ
+ %squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÙØ¤Þýÿÿÿÿ
+Gsquid:S1135"2Complete the task associated to this TODO comment.(ó‚‘²
