@@ -27,7 +27,7 @@ public class MainTest {
     m.setFrom("from");
     m.setMensaje("mensaje");
     m.setRoom("room");
-ms.setContenido(m);
+ms.setContenido(or);
 
     System.out.println();
     String s = mme.encode(ms);

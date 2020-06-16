@@ -5,6 +5,7 @@ import dao.modelo.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import rest.CustomException;
 import rest.dto.UserDTO;
 import rest.dto.converters.UserConverter;
 
@@ -25,10 +26,14 @@ public class ServiciosUsuarios {
 
 
   public List<Usuario> getUsers() {
+
     return usuario.getUsuarios();
   }
 
   public Usuario getUser(String login) {
+
+    if (login.isEmpty())
+      throw new CustomException("login no vacio");
     return usuario.getUsuario(login);
   }
 

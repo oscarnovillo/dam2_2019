@@ -48,6 +48,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import encoders.MensajeEncoder;
 import encoders.MetaMensajeDecoder;
 import model.UserWS;
+import redis.clients.jedis.Jedis;
 
 import javax.servlet.http.HttpSession;
 import javax.websocket.*;
@@ -130,8 +131,14 @@ public class MyEndpoint {
 
               // if (userMandar.buscaRoom(mensajeCliente.getRoom())) {
               //sesionesMandar.getBasicRemote().sendText(mapper.writeValueAsString(mensajeCliente));
-                sesionesMandar.getBasicRemote().sendObject(mensajeCliente);
+              Jedis jedis = new Jedis("192.168.1.5");
+
+              ObjectMapper mapper = new ObjectMapper();
+
+              jedis.rpush("mensajes",mapper.writeValueAsString(mensajeCliente));
+              sesionesMandar.getBasicRemote().sendObject(mensajeCliente);
               //}
+              jedis.close();
             } catch (Exception ex) {
               Logger.getLogger(MyEndpoint.class.getName()).log(Level.SEVERE, null, ex);
             }

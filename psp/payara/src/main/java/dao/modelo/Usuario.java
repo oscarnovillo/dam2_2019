@@ -3,8 +3,11 @@ package dao.modelo;
 
 import javax.json.bind.annotation.JsonbCreator;
 import javax.json.bind.annotation.JsonbProperty;
+import javax.validation.constraints.NotNull;
 
 public class Usuario {
+
+  @NotNull
   private String login;
 
   private String pass;

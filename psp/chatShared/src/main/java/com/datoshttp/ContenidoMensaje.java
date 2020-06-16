@@ -13,4 +13,5 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
     @JsonSubTypes.Type(value = OrdenRoomsWS.class, name = "orden")
 })
 public abstract class ContenidoMensaje {
+
 }

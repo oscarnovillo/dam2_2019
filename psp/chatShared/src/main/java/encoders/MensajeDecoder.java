@@ -15,6 +15,7 @@ public class MensajeDecoder implements Decoder.Text<Mensaje> {
   @Override
   public Mensaje decode(String message) throws DecodeException {
     ObjectMapper mapper = new ObjectMapper();
+
     mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     Mensaje mensaje;
     try {
@@ -22,7 +23,7 @@ public class MensajeDecoder implements Decoder.Text<Mensaje> {
           new TypeReference<Mensaje>() {
           });
     } catch (JsonProcessingException e) {
-      throw new DecodeException("","",e);
+      throw new DecodeException(message,message,e);
     }
 
     return mensaje;

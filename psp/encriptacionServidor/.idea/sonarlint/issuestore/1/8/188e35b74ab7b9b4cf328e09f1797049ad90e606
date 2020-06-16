@@ -1,23 +1,21 @@
 
-Esquid:S1989Ò"-Add a "try/catch" block for "processRequest".(‘ŸÑ
-bsquid:CommentedOutCodeLineu"<This block of commented-out lines of code should be removed.(õÙÃ¨
-U"squid:SwitchLastCaseIsDefaultCheck6""Add a default case to this switch.(õÙÆ‚úÿÿÿÿ
-P
-squid:S106®"9Replace this use of System.out or System.err by a logger.(öøÿê
-csquid:CommentedOutCodeLineà"<This block of commented-out lines of code should be removed.(äõëğ
-bsquid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(¨Ÿ†Ç
-msquid:S2068x"V'password' detected in this expression, review this potentially hard-coded credential.(ä›Ë¿
-Qsquid:S1141G"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
-Esquid:S1989Ò"-Add a "try/catch" block for "processRequest".(‘ŸÑ
-gsquid:CommentedOutCodeLinez"<This block of commented-out lines of code should be removed.(‡»¥Óûÿÿÿÿ
-bsquid:CommentedOutCodeLine–"<This block of commented-out lines of code should be removed.(ø€Ø*
-O
-squid:S106«"9Replace this use of System.out or System.err by a logger.(Å±Ën
-Qsquid:S1191	"5Use classes from the Java API instead of Sun classes.(ÂÙ€Œùÿÿÿÿ
-P
-squid:S106¦"9Replace this use of System.out or System.err by a logger.(ˆªçÖ
-Esquid:S1989Ä"-Add a "try/catch" block for "processRequest".(‘ŸÑ
-U
-squid:S106§"9Replace this use of System.out or System.err by a logger.(€î“Åùÿÿÿÿ
-gsquid:S13016"KReplace this "switch" statement by "if" statements to increase readability.(õÙÆ‚úÿÿÿÿ
-Esquid:S1989Ä"-Add a "try/catch" block for "processRequest".(‘ŸÑ
+m
+java:S13016"KReplace this "switch" statement by "if" statements to increase readability.(õÙÆ‚úÿÿÿÿ8ööØ¼«.
+W
+java:S1191	"5Use classes from the Java API instead of Sun classes.(ÂÙ€Œùÿÿÿÿ8ööØ¼«.
+X	java:S125u"<This block of commented-out lines of code should be removed.(õÙÃ¨8ööØ¼«.
+†
+java:S1989Ò"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8ööØ¼«.
+V	java:S106®"9Replace this use of System.out or System.err by a logger.(öøÿê8ööØ¼«.
+[	java:S106§"9Replace this use of System.out or System.err by a logger.(€î“Åùÿÿÿÿ8ööØ¼«.
+X	java:S125X"<This block of commented-out lines of code should be removed.(¨Ÿ†Ç8ööØ¼«.
+V	java:S106¦"9Replace this use of System.out or System.err by a logger.(ˆªçÖ8ööØ¼«.
+X	java:S125–"<This block of commented-out lines of code should be removed.(ø€Ø*8ööØ¼«.
+U	java:S106«"9Replace this use of System.out or System.err by a logger.(Å±Ën8ööØ¼«.
+W
+java:S1141G"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ööØ¼«.
+†
+java:S1989Ä"hHandle the following exceptions that could be thrown by "processRequest": ServletException, IOException.(‘ŸÑ8ööØ¼«.
+C	java:S1316""Add a default case to this switch.(õÙÆ‚úÿÿÿÿ8ööØ¼«.
+]	java:S125z"<This block of commented-out lines of code should be removed.(‡»¥Óûÿÿÿÿ8ööØ¼«.
+Y	java:S125à"<This block of commented-out lines of code should be removed.(äõëğ8ööØ¼«.

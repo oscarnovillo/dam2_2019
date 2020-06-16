@@ -67,6 +67,6 @@ public class SimpleEndpoint {
 
   public interface SimpleMessageListener {
 
-    public void handleMessage(String message);
+    void handleMessage(String message);
   }
 }

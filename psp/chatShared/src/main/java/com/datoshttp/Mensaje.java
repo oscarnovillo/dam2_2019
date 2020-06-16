@@ -5,11 +5,13 @@
  */
 package com.datoshttp;
 
+import java.io.Serializable;
+
 /**
  *
  * @author oscar
  */
-public class Mensaje  extends ContenidoMensaje {
+public class Mensaje  extends ContenidoMensaje implements Serializable {
     
     private String room;
     private String mensaje;

@@ -1,12 +1,12 @@
 
-Z	java:S106N"9Replace this use of System.out or System.err by a logger.(Ï¢şıÿÿÿÿ8ÅÊ·.
-Z	java:S1067"9Replace this use of System.out or System.err by a logger.(ÑĞœ†ûÿÿÿÿ8ÅÊ·.
-Q
-java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷”8ÅÊ·.
-Z	java:S106Z"9Replace this use of System.out or System.err by a logger.(íá£ıÿÿÿÿ8ÅÊ·.
 U
 java:S47195"9Replace charset name argument with StandardCharsets.UTF_8(×Õ§}8ÅÊ·.
+Z	java:S1067"9Replace this use of System.out or System.err by a logger.(ÑĞœ†ûÿÿÿÿ8ÅÊ·.
+Z	java:S106["9Replace this use of System.out or System.err by a logger.(ÅºĞ„ÿÿÿÿÿ8ÅÊ·.
 [
 java:S1128">Remove this unused import 'javax.crypto.spec.IvParameterSpec'.(­“§8ÅÊ·.
-Z	java:S106["9Replace this use of System.out or System.err by a logger.(ÅºĞ„ÿÿÿÿÿ8ÅÊ·.
+Z	java:S106N"9Replace this use of System.out or System.err by a logger.(Ï¢şıÿÿÿÿ8ÅÊ·.
+Z	java:S106Z"9Replace this use of System.out or System.err by a logger.(íá£ıÿÿÿÿ8ÅÊ·.
 T	java:S106Y"9Replace this use of System.out or System.err by a logger.(É¾r8ÅÊ·.
+Q
+java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷”8ÅÊ·.

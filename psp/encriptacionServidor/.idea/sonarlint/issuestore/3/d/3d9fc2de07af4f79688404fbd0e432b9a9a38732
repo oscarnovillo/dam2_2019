@@ -1,12 +1,19 @@
 
-gsquid:S13010"KReplace this "switch" statement by "if" statements to increase readability.(õÙÆ‚úÿÿÿÿ
-bsquid:S2259p"KA "NullPointerException" could be thrown; "keyFactoryRSA" is nullable here.(—¹ƒâ
-U"squid:SwitchLastCaseIsDefaultCheck0""Add a default case to this switch.(õÙÆ‚úÿÿÿÿ
-`squid:S2147R"DCombine this catch with the one at line 80, which has the same body.(¾šİüÿÿÿÿ
-O
-squid:S106s"9Replace this use of System.out or System.err by a logger.(´“ 
-Psquid:S4719t"9Replace charset name argument with StandardCharsets.UTF_8(¯‹«
-Esquid:S1989Œ"-Add a "try/catch" block for "processRequest".(‘ŸÑ
-Esquid:S1989š"-Add a "try/catch" block for "processRequest".(‘ŸÑ
-asquid:CommentedOutCodeLine<"<This block of commented-out lines of code should be removed.(ø€Ø*
-bsquid:CommentedOutCodeLineI"<This block of commented-out lines of code should be removed.(¨Ÿ†Ç
+h
+java:S2259p"KA "NullPointerException" could be thrown; "keyFactoryRSA" is nullable here.(—¹ƒâ8õöØ¼«.
+C	java:S1310""Add a default case to this switch.(õÙÆ‚úÿÿÿÿ8õöØ¼«.
+@
+java:S5542M"#Use secure mode and padding scheme.(È¾˜Ï8õöØ¼«.
+U	java:S106s"9Replace this use of System.out or System.err by a logger.(´“ 8õöØ¼«.
+m
+java:S13010"KReplace this "switch" statement by "if" statements to increase readability.(õÙÆ‚úÿÿÿÿ8õöØ¼«.
+x
+java:S1989Œ"ZHandle the following exception that could be thrown by "processRequest": ServletException.(‘ŸÑ8õöØ¼«.
+x
+java:S1989š"ZHandle the following exception that could be thrown by "processRequest": ServletException.(‘ŸÑ8õöØ¼«.
+X	java:S125I"<This block of commented-out lines of code should be removed.(¨Ÿ†Ç8õöØ¼«.
+W	java:S125<"<This block of commented-out lines of code should be removed.(ø€Ø*8õöØ¼«.
+f
+java:S2147R"DCombine this catch with the one at line 80, which has the same body.(¾šİüÿÿÿÿ8õöØ¼«.
+V
+java:S4719t"9Replace charset name argument with StandardCharsets.UTF_8(¯‹«8õöØ¼«.

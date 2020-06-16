@@ -1,20 +1,26 @@
 
-P
-java:S1141p"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ
-b
-java:S1192E"LDefine a constant instead of duplicating this literal "httpsession" 4 times.(¿í¾¢
-P	java:S125|"<This block of commented-out lines of code should be removed.(¼Úíl
-T	java:S106–"9Replace this use of System.out or System.err by a logger.(ÿò¢ÿøÿÿÿÿ
-Y
-java:S1854z">Remove this useless assignment to local variable "userMandar".(âŒ”£ùÿÿÿÿ
-f
-java:S1301m"KReplace this "switch" statement by "if" statements to increase readability.(‚à§£şÿÿÿÿ
-O	java:S106›"9Replace this use of System.out or System.err by a logger.(¨—êù
-J
-java:S1481z"/Remove this unused "userMandar" local variable.(âŒ”£ùÿÿÿÿ
-V	java:S125~"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
-R	java:S125¥"<This block of commented-out lines of code should be removed.(œÕø
-T	java:S106"9Replace this use of System.out or System.err by a logger.(¥‡Êüÿÿÿÿ
-N	java:S106V"9Replace this use of System.out or System.err by a logger.(Ùí¡
-M
-java:S1854e"7Remove this useless assignment to local variable "key".(¦Û»¨
+`
+java:S1192"LDefine a constant instead of duplicating this literal "httpsession" 4 times.(¿í¾¢
+L	java:S106"9Replace this use of System.out or System.err by a logger.(Ùí¡
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(¥‡Êüÿÿÿÿ
+W
+java:S1854">Remove this useless assignment to local variable "userMandar".(âŒ”£ùÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(øÜÊ…8Ì•şë©.
+[	java:S125"<This block of commented-out lines of code should be removed.(†Ğãÿùÿÿÿÿ8Ì•şë©.
+k
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(¶‹š²üÿÿÿÿ8Ì•şë©.
+N	java:S125"<This block of commented-out lines of code should be removed.(¼Úíl
+]
+java:S2095"CUse try-with-resources or close this "Jedis" in a "finally" clause.(Ë»ºy8ÉÑ‹¤ª.
+V	java:S125"<This block of commented-out lines of code should be removed.(Õçáå8Ì•şë©.
+O	java:S125"<This block of commented-out lines of code should be removed.(œÕø
+L	java:S106"9Replace this use of System.out or System.err by a logger.(¨—êù
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(ÿò¢ÿøÿÿÿÿ
+[	java:S125"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8Ì•şë©.
+H
+java:S1481"/Remove this unused "userMandar" local variable.(âŒ”£ùÿÿÿÿ
+T	java:S125"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+[	java:S125"<This block of commented-out lines of code should be removed.(©Ğ¦ƒøÿÿÿÿ8Ì•şë©.
+K
+java:S1854"7Remove this useless assignment to local variable "key".(¦Û»¨
+[	java:S125"<This block of commented-out lines of code should be removed.(È‡³£ıÿÿÿÿ8Ì•şë©.

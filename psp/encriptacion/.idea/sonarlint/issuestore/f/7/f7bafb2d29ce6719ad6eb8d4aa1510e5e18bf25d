@@ -1,10 +1,10 @@
 
+Z	java:S1063"9Replace this use of System.out or System.err by a logger.(ÑĞœ†ûÿÿÿÿ8øŸÍé.
 Q
 java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷”8øŸÍé.
-Z	java:S106U"9Replace this use of System.out or System.err by a logger.(ÅºĞ„ÿÿÿÿÿ8øŸÍé.
 Z	java:S106H"9Replace this use of System.out or System.err by a logger.(Ï¢şıÿÿÿÿ8øŸÍé.
 T	java:S106S"9Replace this use of System.out or System.err by a logger.(É¾r8øŸÍé.
+Z	java:S106U"9Replace this use of System.out or System.err by a logger.(ÅºĞ„ÿÿÿÿÿ8øŸÍé.
 V
 java:S47191"9Replace charset name argument with StandardCharsets.UTF_8(ûØˆò8øŸÍé.
 Z	java:S106T"9Replace this use of System.out or System.err by a logger.(íá£ıÿÿÿÿ8øŸÍé.
-Z	java:S1063"9Replace this use of System.out or System.err by a logger.(ÑĞœ†ûÿÿÿÿ8øŸÍé.

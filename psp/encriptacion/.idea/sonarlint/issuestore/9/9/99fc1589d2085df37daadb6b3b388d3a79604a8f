@@ -1,28 +1,28 @@
 
-[	java:S106’"9Replace this use of System.out or System.err by a logger.(”äÄûÿÿÿÿ8¦½ß·.
+V	java:S106"9Replace this use of System.out or System.err by a logger.(Å™Ÿ8¦½ß·.
 f
 java:S1192"IDefine a constant instead of duplicating this literal ".privada" 3 times.(·Ì¼8¦½ß·.
+X	java:S125"<This block of commented-out lines of code should be removed.(ÒÆ°ó8¦½ß·.
+o
+java:S20956"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¸óùÿÿÿÿ8¦½ß·.
+U	java:S106h"9Replace this use of System.out or System.err by a logger.(¶¼ã¦8¦½ß·.
+[	java:S106”"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¦½ß·.
 o
 java:S2095\"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(§è´Ìúÿÿÿÿ8¦½ß·.
-Z	java:S106V"9Replace this use of System.out or System.err by a logger.(‡“¥áüÿÿÿÿ8¦½ß·.
+Z	java:S106H"9Replace this use of System.out or System.err by a logger.(¡ÄµØşÿÿÿÿ8¦½ß·.
 p
 java:S2095{"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(ì±Ì¯üÿÿÿÿ8¦½ß·.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(¶Ê¾¸8¦½ß·.
+J
+java:S1128"-Remove this unused import 'java.util.Base64'.(ëŠ»Õ8¦½ß·.
 m	java:S117‰"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ì68¦½ß·.
-X	java:S125"<This block of commented-out lines of code should be removed.(ÒÆ°ó8¦½ß·.
-Z	java:S1060"9Replace this use of System.out or System.err by a logger.(é´¼Ëıÿÿÿÿ8¦½ß·.
-U	java:S106h"9Replace this use of System.out or System.err by a logger.(¶¼ã¦8¦½ß·.
+k
+java:S2095S"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(“©şÿ8¦½ß·.
 V	java:S106“"9Replace this use of System.out or System.err by a logger.(ıÛ–8¦½ß·.
 p
 java:S2095-"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(®ñ¯½şÿÿÿÿ8¦½ß·.
-J
-java:S1128"-Remove this unused import 'java.util.Base64'.(ëŠ»Õ8¦½ß·.
-k
-java:S2095S"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(“©şÿ8¦½ß·.
-o
-java:S20956"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¸óùÿÿÿÿ8¦½ß·.
-Z	java:S106H"9Replace this use of System.out or System.err by a logger.(¡ÄµØşÿÿÿÿ8¦½ß·.
-[	java:S106”"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¦½ß·.
-V	java:S106"9Replace this use of System.out or System.err by a logger.(Å™Ÿ8¦½ß·.
+Z	java:S106V"9Replace this use of System.out or System.err by a logger.(‡“¥áüÿÿÿÿ8¦½ß·.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¶Ê¾¸8¦½ß·.
 k
 java:S2095„"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(îï¾Ã8¦½ß·.
+Z	java:S1060"9Replace this use of System.out or System.err by a logger.(é´¼Ëıÿÿÿÿ8¦½ß·.
+[	java:S106’"9Replace this use of System.out or System.err by a logger.(”äÄûÿÿÿÿ8¦½ß·.

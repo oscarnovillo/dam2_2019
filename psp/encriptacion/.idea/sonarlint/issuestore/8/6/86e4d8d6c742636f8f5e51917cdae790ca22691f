@@ -1,41 +1,41 @@
 
+U	java:S106r"9Replace this use of System.out or System.err by a logger.(¢ŠúÒ8…ş¤¸.
+Z	java:S106R"9Replace this use of System.out or System.err by a logger.(·¨«²üÿÿÿÿ8…ş¤¸.
+X	java:S125+"<This block of commented-out lines of code should be removed.(¨Ÿ†Ç8…ş¤¸.
+U	java:S106D"9Replace this use of System.out or System.err by a logger.(˜£·8…ş¤¸.
+E
+java:S5542,"#Use secure mode and padding scheme.(—×«øÿÿÿÿ8…ş¤¸.
+Z	java:S106N"9Replace this use of System.out or System.err by a logger.(ŞÖÓ¼ûÿÿÿÿ8…ş¤¸.
+g
+java:S2147u"ECombine this catch with the one at line 115, which has the same body.(¾šİüÿÿÿÿ8…ş¤¸.
+W
+java:S18544"5Remove this useless assignment to local variable "d".(ÚŞûëùÿÿÿÿ8…ş¤¸.
+b
+java:S2147{"ECombine this catch with the one at line 115, which has the same body.(¶£½Á8…ş¤¸.
+V
+java:S4719I"9Replace charset name argument with StandardCharsets.UTF_8(Œö¼8…ş¤¸.
+_
+java:S1128"BRemove this unused import 'java.security.NoSuchProviderException'.(®²»›8…ş¤¸.
+U	java:S106I"9Replace this use of System.out or System.err by a logger.(Œö¼8…ş¤¸.
+Z	java:S106U"9Replace this use of System.out or System.err by a logger.(ûë¬Ìûÿÿÿÿ8…ş¤¸.
+j
+java:S20953"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Ğ…Ôî8…ş¤¸.
+Z	java:S106o"9Replace this use of System.out or System.err by a logger.(µ¸ÃĞıÿÿÿÿ8…ş¤¸.
+g
+java:S2147y"ECombine this catch with the one at line 115, which has the same body.(ªâŞ¿üÿÿÿÿ8…ş¤¸.
+Z	java:S106m"9Replace this use of System.out or System.err by a logger.(ø…úÿÿÿÿ8…ş¤¸.
+V
+java:S4719M"9Replace charset name argument with StandardCharsets.UTF_8(æ™8…ş¤¸.
+b
+java:S2147}"ECombine this catch with the one at line 115, which has the same body.(ßá®8…ş¤¸.
 b
 java:S2147w"ECombine this catch with the one at line 115, which has the same body.(Ãôş•8…ş¤¸.
 g
 java:S2147"ECombine this catch with the one at line 115, which has the same body.(­Ñˆ®ûÿÿÿÿ8…ş¤¸.
-o
-java:S20954"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(ÚŞûëùÿÿÿÿ8…ş¤¸.
-j
-java:S20953"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Ğ…Ôî8…ş¤¸.
-W
-java:S18544"5Remove this useless assignment to local variable "d".(ÚŞûëùÿÿÿÿ8…ş¤¸.
 H
 java:S14814"&Remove this unused "d" local variable.(ÚŞûëùÿÿÿÿ8…ş¤¸.
-U	java:S106r"9Replace this use of System.out or System.err by a logger.(¢ŠúÒ8…ş¤¸.
-Z	java:S106R"9Replace this use of System.out or System.err by a logger.(·¨«²üÿÿÿÿ8…ş¤¸.
-V
-java:S4719M"9Replace charset name argument with StandardCharsets.UTF_8(æ™8…ş¤¸.
-Z	java:S106o"9Replace this use of System.out or System.err by a logger.(µ¸ÃĞıÿÿÿÿ8…ş¤¸.
-U	java:S106I"9Replace this use of System.out or System.err by a logger.(Œö¼8…ş¤¸.
+o
+java:S20954"MUse try-with-resources or close this "DataInputStream" in a "finally" clause.(ÚŞûëùÿÿÿÿ8…ş¤¸.
+Z	java:S106j"9Replace this use of System.out or System.err by a logger.(‚ÇÓ™ùÿÿÿÿ8…ş¤¸.
 o
 java:S2095\"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(¤Œ¹ãşÿÿÿÿ8…ş¤¸.
-b
-java:S2147{"ECombine this catch with the one at line 115, which has the same body.(¶£½Á8…ş¤¸.
-E
-java:S5542,"#Use secure mode and padding scheme.(—×«øÿÿÿÿ8…ş¤¸.
-V
-java:S4719I"9Replace charset name argument with StandardCharsets.UTF_8(Œö¼8…ş¤¸.
-b
-java:S2147}"ECombine this catch with the one at line 115, which has the same body.(ßá®8…ş¤¸.
-Z	java:S106j"9Replace this use of System.out or System.err by a logger.(‚ÇÓ™ùÿÿÿÿ8…ş¤¸.
-_
-java:S1128"BRemove this unused import 'java.security.NoSuchProviderException'.(®²»›8…ş¤¸.
-Z	java:S106U"9Replace this use of System.out or System.err by a logger.(ûë¬Ìûÿÿÿÿ8…ş¤¸.
-Z	java:S106m"9Replace this use of System.out or System.err by a logger.(ø…úÿÿÿÿ8…ş¤¸.
-U	java:S106D"9Replace this use of System.out or System.err by a logger.(˜£·8…ş¤¸.
-g
-java:S2147y"ECombine this catch with the one at line 115, which has the same body.(ªâŞ¿üÿÿÿÿ8…ş¤¸.
-g
-java:S2147u"ECombine this catch with the one at line 115, which has the same body.(¾šİüÿÿÿÿ8…ş¤¸.
-Z	java:S106N"9Replace this use of System.out or System.err by a logger.(ŞÖÓ¼ûÿÿÿÿ8…ş¤¸.
-X	java:S125+"<This block of commented-out lines of code should be removed.(¨Ÿ†Ç8…ş¤¸.

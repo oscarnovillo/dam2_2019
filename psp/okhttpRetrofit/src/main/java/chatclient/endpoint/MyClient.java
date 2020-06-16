@@ -116,16 +116,16 @@ public class MyClient {
 
     public void sendMessage(Mensaje message) {
         try {
-            ObjectMapper mapper = new ObjectMapper();
+            //ObjectMapper mapper = new ObjectMapper();
             MetaMensajeWS ms = new MetaMensajeWS();
             ms.setTipo(TipoMensaje.MENSAJE);
             ms.setContenido(message);
-            String men = mapper.writeValueAsString(ms);
+            //String men = mapper.writeValueAsString(ms);
             
             //encriptar el men con la key
             
-            userSession.getAsyncRemote().sendText(men);
-        } catch (JsonProcessingException ex) {
+            userSession.getAsyncRemote().sendObject(ms);
+        } catch (Exception ex) {
             Logger.getLogger(MyClient.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
