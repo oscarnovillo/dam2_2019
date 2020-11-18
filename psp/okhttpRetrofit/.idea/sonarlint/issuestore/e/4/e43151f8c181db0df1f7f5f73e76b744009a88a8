@@ -1,7 +1,5 @@
 
-squid:S11861"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ºšëıøÿÿÿÿ
-?squid:S1148+"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
-O
-squid:S106&"9Replace this use of System.out or System.err by a logger.(½— ñ
-T
-squid:S106)"9Replace this use of System.out or System.err by a logger.(ºôûşÿÿÿÿ
+£
+java:S11861"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ºšëıøÿÿÿÿ8¥ì›ÓØ.
+U	java:S106&"9Replace this use of System.out or System.err by a logger.(½— ñ8¥ì›ÓØ.
+Z	java:S106)"9Replace this use of System.out or System.err by a logger.(ºôûşÿÿÿÿ8¥ì›ÓØ.

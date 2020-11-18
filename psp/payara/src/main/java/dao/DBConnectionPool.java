@@ -15,6 +15,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
+import java.io.Closeable;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -52,6 +53,7 @@ public class DBConnectionPool {
 //                Configuration.getInstance().getPassDB());
         connection = hirakiDatasource.getConnection();
 
+
         return connection;
     }
 
@@ -77,6 +79,7 @@ public class DBConnectionPool {
 
         HikariDataSource datasource = new HikariDataSource(config);
 
+
         return datasource;
     }
 
@@ -97,6 +100,7 @@ public class DBConnectionPool {
 //        dataSource.setPassword(Configuration.getInstance().getPassDB());
 
         //return mysql;
+
         return hirakiDatasource;
     }
 
@@ -112,6 +116,7 @@ public class DBConnectionPool {
     }
 
     public void cerrarPool() {
-       hirakiDatasource = null;
-    }
+//        ((Closeable)hirakiDatasource).close();
+//
+        }
 }

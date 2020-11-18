@@ -35,3 +35,5 @@ N
 src/main/java/modelo/Book.java,d\b\dbef175dd44dadca407ec8bfdf0da10cde3d7d3f
 Q
 !src/main/java/main/MainError.java,8\d\8d8ea5646522d9c528293bc2b8340f65a8db1293
+R
+"src/main/java/modelo/ApiError.java,f\c\fca43fd607de432aeb03255f5aba1f5028805bbf

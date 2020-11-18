@@ -8,8 +8,7 @@ package dao;
 import model.Alumno;
 import model.Asignatura;
 import model.Nota;
-import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.ScalarHandler;
+
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -72,7 +71,7 @@ public class NotasDao {
         return lista;
 
     }
-    
+
 
     //select where
     public Nota getNotaJDBC(int idAl, int idAsig) {
@@ -169,14 +168,14 @@ public class NotasDao {
         try {
             con = db.getConnection();
             con.setAutoCommit(false);
-            QueryRunner qr = new QueryRunner();
+//            QueryRunner qr = new QueryRunner();
 
-            Number id = qr.insert(con,
-                    "INSERT INTO notas (ID_ALUMNOS,ID_ASIGNATURAS) VALUES(?,?);",
-                    new ScalarHandler<>(),
-                    "", "");
+//            Number id = qr.insert(con,
+//                    "INSERT INTO notas (ID_ALUMNOS,ID_ASIGNATURAS) VALUES(?,?);",
+//                    new ScalarHandler<>(),
+//                    "", "");
 
-            nota.setNota((int) id.longValue());
+//            nota.setNota((int) id.longValue());
             con.commit();
 
         } catch (Exception ex) {
@@ -237,11 +236,11 @@ public class NotasDao {
         try {
             con = db.getConnection();
 
-            QueryRunner qr = new QueryRunner();
-
-            int filas = qr.update(con,
-                    "UPDATE notas " + "set notas=? " + "where ID_ASIGNATURAS=? AND ID_ALUMNOS=?",
-                    nota.getAl(), nota.getAsig(), nota.getNota());
+//            QueryRunner qr = new QueryRunner();
+//
+//            int filas = qr.update(con,
+//                    "UPDATE notas " + "set notas=? " + "where ID_ASIGNATURAS=? AND ID_ALUMNOS=?",
+//                    nota.getAl(), nota.getAsig(), nota.getNota());
 
         } catch (Exception ex) {
             Logger.getLogger(AlumnosDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -266,7 +265,7 @@ public class NotasDao {
 
         try (Connection con = db.getConnection();
              PreparedStatement stmt = con.prepareStatement("DELETE FROM notas where ID_ASIGNATURAS=? & ID_ALUMNOS=?");){
-            
+
             stmt.setInt(1, idAsig);
             stmt.setInt(2, idAlum);
 

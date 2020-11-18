@@ -39,12 +39,8 @@ S
 #src/main/java/tablas/TablasDao.java,9\0\9050a013e1bca9aef0f50edcd5b248c6f8e01439
 P
  src/main/java/model/Miembro.java,3\5\3581f9c0552b7efe3347769abe82e37d0bc44d92
-Q
-!src/main/java/main/AppConfig.java,f\a\fa1b6051751e385714f3786505e0dba22a0983e7
 K
 src/main/java/main/App.java,7\7\77d44174f834a469ebad42f0b4b1ea8f7ab58454
-W
-'src/main/java/main/ServiciosAlumno.java,1\0\10375a6c2f465e117d065cdc1d42a921a3749565
 n
 >src/main/java/dao/SpringTemplate/AsignaturasDaoImplSpring.java,9\8\9831142c4734bccdd4483bae99cd7d05c6e1b86d
 ]

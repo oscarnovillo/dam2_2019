@@ -52,6 +52,7 @@
             <scope>provided</scope>
         </dependency>
 
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-email</artifactId>
@@ -72,6 +73,11 @@
             <artifactId>snakeyaml</artifactId>
             <version>1.25</version>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.13.3</version>
         </dependency>
 
         <dependency>
@@ -165,6 +171,7 @@
             <artifactId>jedis</artifactId>
             <version>3.3.0</version>
         </dependency>
+
     </dependencies>
 
     <build>

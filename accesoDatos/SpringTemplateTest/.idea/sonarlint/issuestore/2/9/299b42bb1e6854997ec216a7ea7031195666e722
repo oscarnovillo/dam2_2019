@@ -1,7 +1,9 @@
 
-bsquid:CommentedOutCodeLinec"<This block of commented-out lines of code should be removed.(ˆž×à
-gsquid:CommentedOutCodeLine4"<This block of commented-out lines of code should be removed.(âþÃšùÿÿÿÿ
-]squid:S00112-"FDefine and throw a dedicated exception instead of using a generic one.(Ü¦œU
-asquid:CommentedOutCodeLineV"<This block of commented-out lines of code should be removed.(Š«Ô0
-vsquid:S1488<"ZImmediately return this expression instead of assigning it to the temporary variable "ds".(ºàºØøÿÿÿÿ
-~squid:S1488N"bImmediately return this expression instead of assigning it to the temporary variable "datasource".(âï®‰þÿÿÿÿ
+_	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(Ü¦œU8Áì­¾Ý.
+z
+java:S1488"ZImmediately return this expression instead of assigning it to the temporary variable "ds".(ºàºØøÿÿÿÿ8Áì­¾Ý.
+‚
+java:S1488"bImmediately return this expression instead of assigning it to the temporary variable "datasource".(âï®‰þÿÿÿÿ8Áì­¾Ý.
+[	java:S125"<This block of commented-out lines of code should be removed.(âþÃšùÿÿÿÿ8Áì­¾Ý.
+U	java:S125"<This block of commented-out lines of code should be removed.(Š«Ô08Áì­¾Ý.
+V	java:S125"<This block of commented-out lines of code should be removed.(ˆž×à8Áì­¾Ý.

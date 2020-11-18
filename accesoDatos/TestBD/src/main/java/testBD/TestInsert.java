@@ -1,5 +1,7 @@
 package testBD;
 
+import lombok.Cleanup;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,14 +15,15 @@ public class TestInsert {
         DBConnection db = new DBConnection();
         Connection con = null;
         PreparedStatement stmt = null;
-        ResultSet rs = null;
+        @Cleanup ResultSet rs = null;
         try {
             con = db.getConnection();
             stmt = con.prepareStatement
-                    ("insert into table_fechas (name,date,numero) values (?,?,?)",
+                    ("insert into table_fechas2 (name,date,numero) values (?,?,?)",
                             Statement.RETURN_GENERATED_KEYS);
             stmt.setTimestamp(2,
                     java.sql.Timestamp.valueOf(LocalDateTime.now()));
+
             stmt.setString(1, "nma");
             stmt.setInt(3, 7);
             int numeroFilas = stmt.executeUpdate();

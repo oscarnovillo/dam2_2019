@@ -6,7 +6,7 @@
 package dao;
 
 import model.Alumno;
-import org.springframework.stereotype.Component;
+
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author oscar
  */
-@Component
+
 public interface AlumnosDao {
 
   public List<Alumno> getAllAlumnosDBUtils();

@@ -7,6 +7,8 @@ package testBD;
 
 
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -15,6 +17,7 @@ import java.util.logging.Logger;
  *
  * @author oscar
  */
+@Slf4j
 public class DBConnection {
 
     public DBConnection() {

@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class TestDeleteAll {
 
     public static final String DELETE_TABLE_FECHAS_WHERE_ID =
-            "delete from table_fechas where id = ?";
+            "delete from table_fechas2 where id = ?";
     public static final String DELETE_TABLE_FK_FECHAS_WHERE_ID =
             "delete from table_fk where id_fechas = ?";
 

@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="@localhost" uuid="2b37a1d6-cc98-4e3d-be38-802334a8a31c">
-      <driver-ref>sqlserver.ms</driver-ref>
+    <data-source source="LOCAL" name="." uuid="59caf416-190f-4f53-b7a6-1350dcdc686c">
+      <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://localhost:1433</jdbc-url>
-      <driver-properties>
-        <property name="applicationName" value="DataGrip" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="@dam2.tomcat.iesquevedo.es" uuid="042ca34f-207c-4079-aa3e-5adb054d93da">
-      <driver-ref>sqlserver.ms</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
-      <jdbc-url>jdbc:sqlserver://dam2.tomcat.iesquevedo.es:3334</jdbc-url>
-      <driver-properties>
-        <property name="applicationName" value="DataGrip" />
-      </driver-properties>
-    </data-source>
-    <data-source source="LOCAL" name="andre_fonseca_schooldb@dam2.mysql.iesquevedo.es" uuid="4407a35a-a074-405e-8997-0ae0775a2818">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://dam2.mysql.iesquevedo.es:3335/andre_fonseca_schooldb</jdbc-url>
+      <jdbc-driver>org.h2.Driver</jdbc-driver>
+      <jdbc-url>jdbc:h2:mem:.</jdbc-url>
     </data-source>
   </component>
 </project>

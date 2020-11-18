@@ -11,6 +11,7 @@ import com.zaxxer.hikari.HikariDataSource;
 import config.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
+
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -28,7 +29,7 @@ public class DBConnectionPool {
 
     private static DBConnectionPool dbconection = null;
 
-    private DataSource hirakiDatasource = null;
+    private HikariDataSource hirakiDatasource = null;
 
     private DBConnectionPool() {
         hirakiDatasource = getDataSourceHikari();
@@ -62,7 +63,7 @@ public class DBConnectionPool {
 
     }
 
-    private DataSource getDataSourceHikari() {
+    private HikariDataSource getDataSourceHikari() {
         HikariConfig config = new HikariConfig();
 
         config.setJdbcUrl(Configuration.getInstance().getUrlDB());
@@ -112,6 +113,6 @@ public class DBConnectionPool {
     }
 
     public void cerrarPool() {
-       hirakiDatasource = null;
+       hirakiDatasource.close();
     }
 }

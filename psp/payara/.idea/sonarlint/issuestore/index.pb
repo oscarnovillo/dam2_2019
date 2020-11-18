@@ -95,3 +95,11 @@ L
 ,src/main/java/chatserver/SimpleEndpoint.java,1\5\1546943c9b193a8cbe1112cffd5305e1ac08c04b
 Q
 !src/main/java/servlets/Redis.java,d\7\d7f68f2286e6c29d5d834d3f58c4a920a5983508
+T
+$src/main/java/retrofit/AreasAPI.java,6\1\612dc326ef624a6ff449c7a977ed5ba55a6fa3d5
+T
+$src/main/java/retrofit/LoginApi.java,5\1\51c55c6ec15291e25bb666871235c5ddffd80cad
+L
+src/main/java/main/Main.java,7\f\7f08be4e9c62f2e5f8f02242af89b918cb9a135f
+Q
+!src/main/java/main/MainError.java,8\d\8d8ea5646522d9c528293bc2b8340f65a8db1293

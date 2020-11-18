@@ -37,6 +37,7 @@ public class ChatController implements Initializable {
       ws.addMessageHandler(message -> tratarMensaje(message));
     } catch (URISyntaxException e) {
       e.printStackTrace();
+
     } catch (IOException e) {
       e.printStackTrace();
     } catch (DeploymentException e) {

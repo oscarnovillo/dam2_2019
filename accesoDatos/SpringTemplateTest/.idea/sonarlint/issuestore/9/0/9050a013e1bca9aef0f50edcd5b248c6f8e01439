@@ -1,10 +1,19 @@
 
-msquid:S2095T"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‘™µö8Ÿå€ŸØ-
-rsquid:S2095I"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ËøüŒıÿÿÿÿ8Ò¬é…æ-
-rsquid:S2095?"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ï¿ÙĞùÿÿÿÿ8Ÿå€ŸØ-
-msquid:S2095+"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‘öãå8Ÿå€ŸØ-
-msquid:S20955"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(áè–8Ÿå€ŸØ-
-msquid:S2095Q"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¢öÚ8Ÿå€ŸØ-
-rsquid:S2095M"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÂÎ¢¬ûÿÿÿÿ8Ò¬é…æ-
-msquid:S2095#"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†À¾8Ÿå€ŸØ-
-ksquid:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(¹õøÏÿÿÿÿÿ8Ÿå€ŸØ-
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(¢öÚ8¿ì­¾İ.
+o
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ï¿ÙĞùÿÿÿÿ8¿ì­¾İ.
+o
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ÂÎ¢¬ûÿÿÿÿ8¿ì­¾İ.
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‘öãå8¿ì­¾İ.
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(†À¾8¿ì­¾İ.
+h
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(¹õøÏÿÿÿÿÿ8¿ì­¾İ.
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(‘™µö8¿ì­¾İ.
+o
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(ËøüŒıÿÿÿÿ8¿ì­¾İ.
+j
+java:S2095"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(áè–8¿ì­¾İ.

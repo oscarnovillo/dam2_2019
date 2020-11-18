@@ -34,7 +34,7 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
 
   //select JDBCTemplate
 
- 
+
   @Override
   public List<Asignatura> getAllAsignaturasJDBCTemplate() {
 
@@ -46,7 +46,7 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
 
 
 
- 
+
   @Override
   public Asignatura getAsignaturaJDBCTemplate(int id) {
 
@@ -54,8 +54,8 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
         DBConnectionPool.getInstance().getDataSource());
     List<Asignatura> asignatura =
             jtm.query("Select * from asignaturas where ID = ?",
-                    new Object[]{id},
-        BeanPropertyRowMapper.newInstance(Asignatura.class));
+       BeanPropertyRowMapper.newInstance(Asignatura.class),
+                    new Object[]{id});
     return asignatura.isEmpty() ? null : asignatura.get(0);
 
 
@@ -63,7 +63,7 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
 
   //Select JDBCTemplate
 
- 
+
   @Override
   public List<Asignatura> getAllAsignaturasNotasJDBCTemplate() {
     JdbcTemplate jtm = new JdbcTemplate(
@@ -75,7 +75,7 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
 
   //insert spring jdbc template
 
- 
+
   @Override
   public Asignatura addAsignaturaJDBCTemplate(Asignatura a) {
 
@@ -119,7 +119,7 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
 
   // update JDBCTemplate
 
- 
+
   @Override
   public int updateJDBCTemplate(Asignatura a) {
 
@@ -131,7 +131,7 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
 
   //delete JDBCTemplate
 
- 
+
   @Override
   public int deleteJDBCTemplate(int id) {
     int filas = -1;
@@ -154,7 +154,7 @@ public class AsignaturasDaoImplSpring implements AsignaturasDao {
 
   // delete trannsaccion JDBCTemplate
 
- 
+
   @Override
   public int deleteTransaccJDBCTemplate(Asignatura a) {
     int filas = -1;

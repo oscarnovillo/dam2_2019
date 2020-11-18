@@ -7,15 +7,12 @@ package dao;
 
 import dao.SpringTemplate.AsignaturasDaoImplSpring;
 import model.Alumno;
-import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.ResultSetHandler;
-import org.apache.commons.dbutils.handlers.BeanListHandler;
-import org.apache.commons.dbutils.handlers.ScalarHandler;
-import org.springframework.context.annotation.Bean;
+
+
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
-import org.springframework.stereotype.Component;
+
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -28,7 +25,7 @@ import java.util.logging.Logger;
  *
  * @author oscar
  */
-@Component
+
 public class AlumnosDaoImpl implements AlumnosDao {
 
     //Select DBUtils
@@ -68,10 +65,10 @@ public class AlumnosDaoImpl implements AlumnosDao {
         try {
             con = DBConnectionPool.getInstance().getConnection();
 
-            QueryRunner qr = new QueryRunner();
-            ResultSetHandler<List<Alumno>> handler
-                    = new BeanListHandler<>(Alumno.class);
-            lista = qr.query(con, "SELECT * FROM alumnos a join notas n on n.ID_ALUMNOS=a.id where n.ID_ASIGNATURAS=?", handler, id);
+//            QueryRunner qr = new QueryRunner();
+//            ResultSetHandler<List<Alumno>> handler
+//                    = new BeanListHandler<>(Alumno.class);
+//            lista = qr.query(con, "SELECT * FROM alumnos a join notas n on n.ID_ALUMNOS=a.id where n.ID_ASIGNATURAS=?", handler, id);
 
         } catch (Exception ex) {
             Logger.getLogger(AsignaturasDaoImplSpring.class.getName()).log(Level.SEVERE, null, ex);
@@ -90,16 +87,16 @@ public class AlumnosDaoImpl implements AlumnosDao {
         try {
             con = DBConnectionPool.getInstance().getConnection();
             con.setAutoCommit(false);
-            QueryRunner qr = new QueryRunner();
-
-            Number id = qr.insert(con,
-                    "INSERT INTO alumnos (NOMBRE, FECHA_NACIMIENTO, MAYOR_EDAD) VALUES(?,?,?)",
-                    new ScalarHandler<>(),
-                    alumno.getNombre(), 
-                    alumno.getFecha_nacimiento(), 
-                    alumno.getMayor_edad());
-
-            alumno.setId((int) id.longValue());
+//            QueryRunner qr = new QueryRunner();
+//
+//            Number id = qr.insert(con,
+//                    "INSERT INTO alumnos (NOMBRE, FECHA_NACIMIENTO, MAYOR_EDAD) VALUES(?,?,?)",
+//                    new ScalarHandler<>(),
+//                    alumno.getNombre(),
+//                    alumno.getFecha_nacimiento(),
+//                    alumno.getMayor_edad());
+//
+//            alumno.setId((int) id.longValue());
             con.commit();
 
         } catch (Exception ex) {
@@ -126,11 +123,11 @@ public class AlumnosDaoImpl implements AlumnosDao {
         try {
             con = DBConnectionPool.getInstance().getConnection();
 
-            QueryRunner qr = new QueryRunner();
-
-            filas = qr.update(con,
-                    "UPDATE alumnos SET NOMBRE = ?, FECHA_NACIMIENTO = ?, MAYOR_EDAD = ? WHERE ID = ?",
-                    alumno.getNombre(), alumno.getFecha_nacimiento(), alumno.getMayor_edad(), alumno.getId());
+//            QueryRunner qr = new QueryRunner();
+//
+//            filas = qr.update(con,
+//                    "UPDATE alumnos SET NOMBRE = ?, FECHA_NACIMIENTO = ?, MAYOR_EDAD = ? WHERE ID = ?",
+//                    alumno.getNombre(), alumno.getFecha_nacimiento(), alumno.getMayor_edad(), alumno.getId());
 
         } catch (Exception ex) {
             Logger.getLogger(AlumnosDaoImpl.class.getName()).log(Level.SEVERE, null, ex);
@@ -149,10 +146,10 @@ public class AlumnosDaoImpl implements AlumnosDao {
         try {
             con = DBConnectionPool.getInstance().getConnection();
 
-            QueryRunner qr = new QueryRunner();
-
-            filas = qr.update(con,
-                    "DELETE FROM alumnos WHERE ID = ?", id);
+//            QueryRunner qr = new QueryRunner();
+//
+//            filas = qr.update(con,
+//                    "DELETE FROM alumnos WHERE ID = ?", id);
 
         } catch (SQLException e) {
             if (e.getMessage().contains("violación")) {
@@ -177,13 +174,13 @@ public class AlumnosDaoImpl implements AlumnosDao {
 
             con.setAutoCommit(false);
 
-            QueryRunner qr = new QueryRunner();
-
-            filas = qr.update(con,
-                    "DELETE FROM notas WHERE ID_ALUMNOS = ?", alumno.getId());
-
-            filas += qr.update(con,
-                    "DELETE FROM alumnos WHERE ID = ?", alumno.getId());
+//            QueryRunner qr = new QueryRunner();
+//
+//            filas = qr.update(con,
+//                    "DELETE FROM notas WHERE ID_ALUMNOS = ?", alumno.getId());
+//
+//            filas += qr.update(con,
+//                    "DELETE FROM alumnos WHERE ID = ?", alumno.getId());
 
             con.commit();
 
