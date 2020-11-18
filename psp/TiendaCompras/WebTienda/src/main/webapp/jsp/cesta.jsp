@@ -26,7 +26,6 @@
         </c:forEach>
     </table>
 </c:if>
-
 <c:if test="${listaCesta.isEmpty() || listaCesta==null}">
     <br><h4 style="margin-left: 5%"> <c:out value="${cestaMensaje}"/></h4>
 </c:if>
