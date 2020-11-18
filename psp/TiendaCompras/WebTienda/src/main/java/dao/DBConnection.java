@@ -1,5 +1,6 @@
 package dao;
 
+import config.ConfigurationSingleton;
 import lombok.extern.log4j.Log4j2;
 
 import java.sql.*;
@@ -9,8 +10,6 @@ import java.util.logging.Logger;
 @Log4j2
 public class DBConnection {
 
-
-
     public Connection getConnection() throws SQLException, ClassNotFoundException {
 
         Connection connection;
@@ -18,10 +17,13 @@ public class DBConnection {
         // solo hace falta en web.
         Class.forName("com.mysql.cj.jdbc.Driver");
 
+
+        Class.forName(ConfigurationSingleton.getInstance().getDriver());
+
         connection = DriverManager.getConnection(
-                "jdbc:mysql://dam2.mysql.iesquevedo.es:3335/emilyGuerrero_tiendaPSP",
-                "root",
-                "quevedo2020");
+                ConfigurationSingleton.getInstance().getRuta(),
+                ConfigurationSingleton.getInstance().getUser(),
+                ConfigurationSingleton.getInstance().getPassword());
 
         return connection;
     }

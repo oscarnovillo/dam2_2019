@@ -5,6 +5,7 @@ import dao.modelo.Usuario;
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebFilter(filterName = "FilterLogin", urlPatterns = {"/productos", "/cesta", "/bienvenida"})
@@ -19,8 +20,7 @@ public class FilterLogin implements Filter {
         if (usuarioLogin != null) {
             chain.doFilter(req, resp);
         } else {
-            req.setAttribute("errores", "No has iniciado sesión");
-            req.getRequestDispatcher("jsp/error.jsp").forward(req, resp);
+            ((HttpServletResponse)resp).setStatus(HttpServletResponse.SC_FORBIDDEN);
         }
     }
 

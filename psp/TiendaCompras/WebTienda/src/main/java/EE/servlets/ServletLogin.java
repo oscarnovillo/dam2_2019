@@ -24,23 +24,20 @@ public class ServletLogin extends HttpServlet {
 
     private void login(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         SvUsuarios svUsuarios = new SvUsuarios();
-        AtomicReference<String> paginaDestino = new AtomicReference<>("");
+
 
         svUsuarios.usuarioLogin(new Usuario(request.getParameter("user"),
                 request.getParameter("password")))
                 .peek(usuario -> {
                     request.getSession().setAttribute("usuarioLogin", usuario);
                     request.getSession().setAttribute("nombreUsuario", usuario.getUsername());
-                    paginaDestino.set("jsp/bienvenida.jsp");
+                    response.setStatus(HttpServletResponse.SC_OK);
                 })
                 .peekLeft(s -> {
-                    request.setAttribute("errores", s);
-                    paginaDestino.set("jsp/error.jsp");
-
+                    response.setStatus(HttpServletResponse.SC_FORBIDDEN);
                 });
 
 
-        request.getRequestDispatcher(paginaDestino.get()).forward(request, response);
-
+        // no devuelve nada, con el code se controla todo
     }
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @WebServlet(name = "ServletProductos", urlPatterns = {"/productos"})
 public class ServletProductos extends HttpServlet {
@@ -29,14 +30,15 @@ public class ServletProductos extends HttpServlet {
         String paginaDestino;
         Either<String,List<Producto>> productos = svProductos.getTodosProductos();
         if (productos.isRight()) {
-            request.setAttribute("listaProductos", productos.get());
-            paginaDestino = "jsp/productos.jsp";
+            String productosResponse = productos.get().stream()
+                    .map(Producto::getNombreProducto).collect(Collectors.joining(","));
+            response.getWriter().println(productosResponse);
         }
         else
         {
-            request.setAttribute("errores", productos.getLeft());
-            paginaDestino = "jsp/error.jsp";
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().println(productos.getLeft());
         }
-        request.getRequestDispatcher(paginaDestino).forward(request, response);
+
     }
 }

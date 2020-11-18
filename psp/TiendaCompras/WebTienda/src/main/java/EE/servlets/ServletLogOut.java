@@ -22,9 +22,7 @@ public class ServletLogOut extends HttpServlet {
     protected void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getSession().setAttribute("cesta", null);
         request.getSession().setAttribute("login", null);
-        request.getSession().setAttribute("bienvenida", null);
-        request.getSession().setAttribute("productos", null);
         request.getSession().invalidate();
-        request.getRequestDispatcher("index.html").forward(request, response);
+        response.getWriter().println("Hasta la proxima!");
     }
 }

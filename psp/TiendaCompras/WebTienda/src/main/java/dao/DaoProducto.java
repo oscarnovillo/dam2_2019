@@ -34,10 +34,9 @@ public class DaoProducto {
                 producto.setId_producto(rs.getLong("id_producto"));
                 listaProductos.add(producto);
             }
-            if (!listaProductos.isEmpty())
-                resultado = Either.right(listaProductos);
-            else
-                resultado = Either.left("no hay productos");
+
+            resultado = Either.right(listaProductos);
+
         } catch (Exception e) {
             log.error(e.getMessage(),e);
             resultado = Either.left("error en la bd");
