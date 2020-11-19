@@ -35,8 +35,13 @@ public class DaoProducto_cliente {
                                 .onSuccess(s ->
                                         resultado.set(Either.right(Arrays.asList(s.split(",")))))
                                 .onFailure(throwable -> resultado.set(Either.left("error de comunicacion")));
-                    } else
-                        resultado.set(Either.left("Error en la comunicacion"));
+                    } else {
+                        Try.of(() -> response.body().string())
+                                .onSuccess(s ->
+                                        resultado.set(Either.left(s)))
+                                .onFailure(throwable -> resultado.set(Either.left("error de comunicacion")));
+
+                    }
                 })
                 .onFailure(ConnectException.class, throwable -> {
                     log.error(throwable.getMessage(), throwable);
@@ -47,36 +52,72 @@ public class DaoProducto_cliente {
         return resultado.get();
     }
 
-    public List addCesta(List productosAdd) {
-        List cesta = null;
-        try {
-            OkHttpClient clientOK = ConfigurationSingleton_OkHttpClient.getInstance();
-            //Por POST
-            String url = ConfigurationSingleton_Client.getInstance().getPath_base() + Constantes.CESTA;
-            FormBody.Builder b = new FormBody.Builder();
-            for (int i = 0; i < productosAdd.size(); i++) {
-                b.add(Constantes.PARAMETRO_PRODUCTOS, productosAdd.get(i).toString());
-            }
-            b.add(Constantes.PARAMETRO_OPCION_CESTA, Constantes.OPCION_ADD_CESTA);
-            RequestBody formBody = b.build();
-            Request request = new Request.Builder()
-                    .url(url)
-                    .post(formBody)
-                    .build();
-            Response resp = clientOK.newCall(request).execute();
-            String productos = resp.body().string();
-            //Desgloso string en array
-            cesta = Arrays.asList(productos.split(","));
-        } catch (ConnectException e) {
-            log.info(e.getMessage(), e);
-        } catch (IOException e) {
-            log.info(e.getMessage(), e);
+    public Either<String, List<String>> addCesta(List productosAdd) {
+
+
+        OkHttpClient clientOK = ConfigurationSingleton_OkHttpClient.getInstance();
+        //Por POST
+        String url = ConfigurationSingleton_Client.getInstance().getPath_base() + Constantes.CESTA;
+        FormBody.Builder b = new FormBody.Builder();
+        for (int i = 0; i < productosAdd.size(); i++) {
+            b.add(Constantes.PARAMETRO_PRODUCTOS, productosAdd.get(i).toString());
         }
-        return cesta;
+        b.add(Constantes.PARAMETRO_OPCION_CESTA, Constantes.OPCION_ADD_CESTA);
+        RequestBody formBody = b.build();
+        Request request = new Request.Builder()
+                .url(url)
+                .post(formBody)
+                .build();
+        return parseaListaProductos(request);
+    }
+
+    public Either<String, List<String>> verCesta() {
+        AtomicReference<Either<String, List<String>>> resultado = new AtomicReference<>();
+
+
+        //Por POST
+        String url = ConfigurationSingleton_Client.getInstance().getPath_base() + Constantes.CESTA;
+
+        RequestBody formBody = new FormBody.Builder()
+                .add(Constantes.PARAMETRO_OPCION_CESTA, Constantes.OPCION_VER_CESTA)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(url)
+                .post(formBody)
+                .build();
+        return parseaListaProductos(request);
+
     }
 
 
-    public String buyCesta(List productosBuy) {
+    private Either<String, List<String>> parseaListaProductos(Request request) {
+        AtomicReference<Either<String, List<String>>> resultado = new AtomicReference<>();
+        OkHttpClient clientOK = ConfigurationSingleton_OkHttpClient.getInstance();
+
+        Try.of(() -> clientOK.newCall(request).execute())
+                .onSuccess(response -> {
+                    if (response.isSuccessful()) {
+                        Try.of(() -> response.body().string())
+                                .onSuccess(s ->
+                                        resultado.set(Either.right(Arrays.asList(s.split(",")))))
+                                .onFailure(throwable -> resultado.set(Either.left("error de comunicacion")));
+                    } else {
+                        Try.of(() -> response.body().string())
+                                .onSuccess(s ->
+                                        resultado.set(Either.left(s)))
+                                .onFailure(throwable -> resultado.set(Either.left("error de comunicacion")));
+                    }
+                })
+                .onFailure(ConnectException.class, throwable -> {
+                    log.error(throwable.getMessage(), throwable);
+                    resultado.set(Either.left("El servidor va lento y no se\nha podido CERRAR.\nDisculpe las molestias"));
+                });
+
+        return resultado.get();
+    }
+
+    public String buyCesta() {
         String mensaje = null;
         try {
             OkHttpClient clientOK = ConfigurationSingleton_OkHttpClient.getInstance();
@@ -103,7 +144,7 @@ public class DaoProducto_cliente {
         return mensaje;
     }
 
-    public String clearCesta(List productosClear) {
+    public String clearCesta() {
         String mensaje = null;
         try {
             OkHttpClient clientOK = ConfigurationSingleton_OkHttpClient.getInstance();

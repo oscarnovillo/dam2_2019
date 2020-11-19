@@ -31,7 +31,11 @@ public class ProductosController implements Initializable {
 
     @FXML
     private void clickAdd(ActionEvent actionEvent) {
-        principalController.setCesta(sv_productos.addCesta(viewProductos.getSelectionModel().getSelectedItems()));
+        sv_productos.addCesta(viewProductos.getSelectionModel().getSelectedItems())
+                .peekLeft(s -> {
+                    alert.setContentText(s);
+                    alert.showAndWait();
+                });
         principalController.clickCesta();
     }
 

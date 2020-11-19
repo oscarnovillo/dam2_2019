@@ -27,15 +27,14 @@ public class CestaController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         alert = new Alert(Alert.AlertType.INFORMATION);
         sv_productos = new SvProductos_cliente();
+
     }
 
     @FXML
     private void clickComprar(ActionEvent actionEvent) {
-        String buy = sv_productos.buyCesta(viewProductosCesta.getItems());
+        String buy = sv_productos.buyCesta();
         if (buy.equals(Constantes.COMPRA_EXITOSA)) {
-            //Tengo que limpiar tanto view como lista global
             viewProductosCesta.getItems().clear();
-            principalController.setCesta(null);
         }
         alert.setContentText(buy);
         alert.showAndWait();
@@ -43,10 +42,9 @@ public class CestaController implements Initializable {
 
     @FXML
     private void clickVaciar(ActionEvent actionEvent) {
-        String clear = sv_productos.clearCesta(viewProductosCesta.getItems());
+        String clear = sv_productos.clearCesta();
         if (viewProductosCesta.getItems() != null) {
             viewProductosCesta.getItems().clear();
-            principalController.setCesta(null);
         }
         alert.setContentText(clear);
         alert.showAndWait();
@@ -57,12 +55,14 @@ public class CestaController implements Initializable {
         principalController.clickProductos();
     }
 
-    public void cargaViewCesta(List productosCesta) {
+    public void cargaViewCesta() {
         viewProductosCesta.getItems().clear();
-        if (productosCesta != null) {
-            viewProductosCesta.getItems().addAll(productosCesta);
-        } else {
-            viewProductosCesta.getItems().addAll("NO hay productos en la cesta");
-        }
+        sv_productos.verCesta()
+                .peek(strings -> viewProductosCesta.getItems().addAll(strings))
+                .peekLeft(s -> {
+                    alert.setContentText(s);
+                    alert.showAndWait();
+                });
+
     }
 }

@@ -11,18 +11,23 @@ public class SvProductos_cliente {
         return daoProducto_cliente.getTodosProductos();
     }
 
-    public List addCesta(List list_productos) {
+    public Either<String, List<String>> addCesta(List list_productos) {
         DaoProducto_cliente daoProducto_cliente = new DaoProducto_cliente();
         return daoProducto_cliente.addCesta(list_productos);
     }
 
-    public String buyCesta(List productosBuy) {
+    public Either<String, List<String>> verCesta() {
         DaoProducto_cliente daoProducto_cliente = new DaoProducto_cliente();
-        return daoProducto_cliente.buyCesta(productosBuy);
+        return daoProducto_cliente.verCesta();
     }
 
-    public String clearCesta(List productosClear) {
+    public String buyCesta() {
         DaoProducto_cliente daoProducto_cliente = new DaoProducto_cliente();
-        return daoProducto_cliente.clearCesta(productosClear);
+        return daoProducto_cliente.buyCesta();
+    }
+
+    public String clearCesta() {
+        DaoProducto_cliente daoProducto_cliente = new DaoProducto_cliente();
+        return daoProducto_cliente.clearCesta();
     }
 }

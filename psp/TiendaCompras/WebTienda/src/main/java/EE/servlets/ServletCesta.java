@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @WebServlet(name = "ServletCesta", urlPatterns = {"/cesta"})
 public class ServletCesta extends HttpServlet {
@@ -24,6 +25,8 @@ public class ServletCesta extends HttpServlet {
 
     protected void cesta(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        String respuesta = "";
+        int code=HttpServletResponse.SC_OK;
         List<String> productosCesta = (List<String>) request.getSession().getAttribute("listaCesta");
         if ( productosCesta == null) {
             productosCesta = new ArrayList<>();
@@ -37,30 +40,39 @@ public class ServletCesta extends HttpServlet {
                     if (itemsCesta != null) {
                         productosCesta.addAll(Arrays.asList(request.getParameterValues("producto")));
                     }
-                    if (productosCesta.isEmpty()) {
-                        request.setAttribute("cestaMensaje", "No hay productos en la cesta");
+               case "ver":
+                    if (!productosCesta.isEmpty()) {
+                        respuesta = productosCesta.stream().collect(Collectors.joining(","));
+                    }
+                    else{
+                        respuesta = "No hay productos en la cesta";
+                        code = HttpServletResponse.SC_SERVICE_UNAVAILABLE;
                     }
                     break;
                 case "buy":
                     if (!productosCesta.isEmpty()) {
                         productosCesta.clear();
-                        request.setAttribute("cestaMensaje", "Productos comprados correctamente. \nGracias por comprar en nuestra tienda");
+                        respuesta = "Productos comprados correctamente. \nGracias por comprar en nuestra tienda";
                     } else {
-                        request.setAttribute("cestaMensaje", "La lista esta vacia no puedes comprar");
+                        code = HttpServletResponse.SC_SERVICE_UNAVAILABLE;
+                        respuesta = "La lista esta vacia no puedes comprar";
                     }
                     break;
                 case "clear":
                     if (!productosCesta.isEmpty()) {
                         productosCesta.clear();
                     }
-                    request.setAttribute("cestaMensaje", "Has vaciado la cesta correctamente");
+                    respuesta = "Has vaciado la cesta correctamente";
                     break;
             }
         } else {
-            request.setAttribute("cestaMensaje", "No hay productos en la cesta");
+            respuesta = "Parametros incorrectos";
+            code = HttpServletResponse.SC_BAD_REQUEST;
         }
-        request.getSession().setAttribute("listaCesta", productosCesta);
-        request.getRequestDispatcher("jsp/cesta.jsp").forward(request, response);
+
+        request.getSession().setAttribute("listaCesta",productosCesta);
+        response.setStatus(code);
+        response.getWriter().println(respuesta);
 
     }
 }

@@ -14,14 +14,11 @@ import lombok.SneakyThrows;
 import servicios.SvUsuario_cliente;
 
 import java.net.URL;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class PrincipalController implements Initializable {
     private Alert alert;
-    @Getter
-    @Setter
-    private List cesta;
+
     @Getter
     @Setter
     private String nameUsuario;
@@ -94,7 +91,7 @@ public class PrincipalController implements Initializable {
             controller_cesta = fxmlLoader.getController();
             controller_cesta.setPrincipalController(this);
         }
-        controller_cesta.cargaViewCesta(cesta);
+        controller_cesta.cargaViewCesta();
         pantallaPrincipal.setCenter(pantalla_cesta);
     }
 
@@ -109,7 +106,7 @@ public class PrincipalController implements Initializable {
     }
 
     public void limpiarPantallas() {
-        cesta = null;
+
         pantalla_productos = null;
         controller_login.limpiarCamposLogin();
         menuTienda.setVisible(false);
