@@ -27,7 +27,7 @@ public class ServletUsuarios extends javax.servlet.http.HttpServlet {
   private Jsonb jsonb;
 
   @Inject
-  Validator validator;
+  private Validator validator;
 
   @Override
   protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

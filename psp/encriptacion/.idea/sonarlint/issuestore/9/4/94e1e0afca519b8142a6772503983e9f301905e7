@@ -1,32 +1,32 @@
 
-O	java:S106Œ"9Replace this use of System.out or System.err by a logger.(ÒâÀ 
-]
-java:S3457º"AFormat specifiers should be used instead of string concatenation.(¾ì¦¤ýÿÿÿÿ
-O	java:S106‘"9Replace this use of System.out or System.err by a logger.(¹àÛ¤
-x
-java:S1488Ê"aImmediately return this expression instead of assigning it to the temporary variable "sinCifrar".(£ûÀ¼
-W	java:S125÷"<This block of commented-out lines of code should be removed.(îÝ…Ðøÿÿÿÿ
+P
+java:S4719Ò"9Replace charset name argument with StandardCharsets.UTF_8(èåÎ
+O	java:S106ë"9Replace this use of System.out or System.err by a logger.(¶ïÞ¨
 \	java:S112Î"FDefine and throw a dedicated exception instead of using a generic one.(üóÐœ
-O	java:S106þ"9Replace this use of System.out or System.err by a logger.(Ì²Ýã
-N	java:S106ø"9Replace this use of System.out or System.err by a logger.(µÙ¿F
+W	java:S125ò"<This block of commented-out lines of code should be removed.(î‚½Àúÿÿÿÿ
+:
+java:S5542×"#Use secure mode and padding scheme.(ì‹ÁÉ
+{
+java:S1488Ã"_Immediately return this expression instead of assigning it to the temporary variable "cifrado".(€¨Êòýÿÿÿÿ
+W	java:S125÷"<This block of commented-out lines of code should be removed.(îÝ…Ðøÿÿÿÿ
+O	java:S106Œ"9Replace this use of System.out or System.err by a logger.(ÒâÀ 
+O	java:S106‘"9Replace this use of System.out or System.err by a logger.(¹àÛ¤
+R	java:S125ð"<This block of commented-out lines of code should be removed.(†ÎÏ
+W	java:S125ô"<This block of commented-out lines of code should be removed.(ïÛ»ñúÿÿÿÿ
 I
 java:S1128("3Remove this unused import 'javax.crypto.SecretKey'.(±•¸×
 P
-java:S4719Ê"9Replace charset name argument with StandardCharsets.UTF_8(£ûÀ¼
-P
 java:S4719Á"9Replace charset name argument with StandardCharsets.UTF_8(ô½Ì†
-N	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(Ïûíf
-R	java:S125ð"<This block of commented-out lines of code should be removed.(†ÎÏ
-O	java:S106‡"9Replace this use of System.out or System.err by a logger.(­ÚÌ¡
-O	java:S106ë"9Replace this use of System.out or System.err by a logger.(¶ïÞ¨
-{
-java:S1488Ã"_Immediately return this expression instead of assigning it to the temporary variable "cifrado".(€¨Êòýÿÿÿÿ
-P
-java:S4719Ò"9Replace charset name argument with StandardCharsets.UTF_8(èåÎ
-:
-java:S5542×"#Use secure mode and padding scheme.(ì‹ÁÉ
-O	java:S106Ž"9Replace this use of System.out or System.err by a logger.(ÒÿšÑ
-W	java:S125ô"<This block of commented-out lines of code should be removed.(ïÛ»ñúÿÿÿÿ
 ]
 java:S1192Á"FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(ô½Ì†
-W	java:S125ò"<This block of commented-out lines of code should be removed.(î‚½Àúÿÿÿÿ
+P
+java:S4719Ê"9Replace charset name argument with StandardCharsets.UTF_8(£ûÀ¼
+O	java:S106Ž"9Replace this use of System.out or System.err by a logger.(ÒÿšÑ
+O	java:S106þ"9Replace this use of System.out or System.err by a logger.(Ì²Ýã
+]
+java:S3457º"AFormat specifiers should be used instead of string concatenation.(¾ì¦¤ýÿÿÿÿ
+x
+java:S1488Ê"aImmediately return this expression instead of assigning it to the temporary variable "sinCifrar".(£ûÀ¼
+N	java:S106ø"9Replace this use of System.out or System.err by a logger.(µÙ¿F
+O	java:S106‡"9Replace this use of System.out or System.err by a logger.(­ÚÌ¡
+N	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(Ïûíf

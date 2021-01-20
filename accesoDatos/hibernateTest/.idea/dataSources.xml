@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="iesquevedo" uuid="359419e7-7253-4d96-a04d-b3ddd6d95a20">
+    <data-source source="LOCAL" name="iesquevedo" uuid="48ceece6-ef64-4ea7-817a-8c310376f7ef">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://dam2.mysql.iesquevedo.es:3335/gonzalo_cuadrado_schooldatabase</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="gonzalo" uuid="504b4d6f-09cf-45f7-a471-96a94a8e2e5d">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://dam2.mysql.iesquevedo.es:3335/hiberanteoscar</jdbc-url>
+      <jdbc-url>jdbc:mysql://dam2.mysql.iesquevedo.es:3335/profesor_periodico</jdbc-url>
     </data-source>
   </component>
 </project>

@@ -14,10 +14,10 @@ public class PersonaConverter {
 
 
   public Document convertPersonaDocument(Persona p) {
-    Document d = new Document().append("name", p.getName());
-//        .append("fecha", Date.from(p.getFecha().atStartOfDay()
-//            .atZone(ZoneId.systemDefault())
-//            .toInstant()));
+    Document d = new Document().append("name", p.getName())
+        .append("fecha", Date.from(p.getFecha().atStartOfDay()
+            .atZone(ZoneId.of("UTC"))
+            .toInstant()));
 
     d.append("cosas", p.getCosas().stream()
         .map(things -> new Document().append("nombre", things.getNombre())
@@ -32,7 +32,7 @@ public class PersonaConverter {
         .fecha(
             //d.getDate("fecha") == null ? null : d.getDate("fecha").toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             Optional.ofNullable(d.getDate("fecha"))
-                .map(date -> date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate())
+                .map(date -> date.toInstant().atZone(ZoneId.of("UTC")).toLocalDate())
                 .orElse(null))
         ._id(d.getObjectId("_id"))
         .cosas((d.getList("cosas",Document.class)).stream().map(document ->

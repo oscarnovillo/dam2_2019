@@ -10,6 +10,7 @@ import modelo.PersonaConverter;
 import modelo.Things;
 import org.bson.Document;
 
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class TutorialInsertDelete {
   public static Faker faker = new Faker();
 
   public static void main(String[] args) {
-    MongoClient mongo = MongoClients.create("mongodb://dam2.tomcat.iesquevedo.es:3334");
+    MongoClient mongo = MongoClients.create("mongodb://dam2.tomcat.iesquevedo.es:2323");
 
     MongoDatabase db = mongo.getDatabase("oscar");
 
@@ -27,6 +28,7 @@ public class TutorialInsertDelete {
 
     Persona p = new Persona();
     p.setName(faker.name().name());
+    p.setFecha(faker.date().birthday().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
     List<Things> cosas;
     cosas = new ArrayList<>();
     cosas.add(Things.builder().nombre(faker.food().dish()).cantidad(faker.number().numberBetween(10,20)).build());

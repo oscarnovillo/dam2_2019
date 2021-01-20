@@ -31,6 +31,7 @@ public class Transacciones {
     Document d = pc.convertPersonaDocument(p);
     est.insertOne( d);
 
+
     s.abortTransaction();
     mongo.close();
 

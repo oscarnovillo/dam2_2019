@@ -44,10 +44,10 @@ public class MandarMail extends HttpServlet {
       servicios.MandarMail mail = new servicios.MandarMail();
       PasswordHash ph = new PasswordHash();
 
-      mail.mandarMail("oscar.novillo@gmail.com", "<html>hola <a href=\"www.marca.com?activacion="+ Utils.randomBytes()+"\" >marca</a>"+ Utils.randomBytes()+"</html>",
-          ph.createHash("nuevo mail"));
+//      mail.mandarMail("oscar.novillo@gmail.com", "<html>hola <a href=\"www.marca.com?activacion="+ Utils.randomBytes()+"\" >marca</a>"+ Utils.randomBytes()+"</html>",
+//          ph.createHash("nuevo mail"));
 
-      mail.generateAndSendEmail("oscar.novillo@gmail.com", "<html>generado <a href=\"www.marca.com\" >marca</a>"+ Utils.randomBytes()+"</html>",
+      mail.generateAndSendEmail("oscar.novillo@gmail.com", "<html>generado <a href=\"www.marca.com?codigo= Utils.randomBytes()\" >marca</a>"+ Utils.randomBytes()+"</html>",
           ph.createHash("nuevo mail"));
 
       //mail.generateAndSendEmail("oscar.novillo@gmail.com", "hola ",

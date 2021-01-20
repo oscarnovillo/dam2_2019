@@ -4,13 +4,14 @@ import wizard.dao2.SubjectTest;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Objects;
 
 @Entity
 public class Teacher {
   private int idteacher;
-  private Date startDate;
+  private LocalDate startDate;
   private Collection<Subject> subjectsByIdteacher;
   private Members membersByIdteacher;
 
@@ -27,11 +28,11 @@ public class Teacher {
 
   @Basic
   @Column(name = "start_date", nullable = true)
-  public Date getStartDate() {
+  public LocalDate getStartDate() {
     return startDate;
   }
 
-  public void setStartDate(Date startDate) {
+  public void setStartDate(LocalDate startDate) {
     this.startDate = startDate;
   }
 

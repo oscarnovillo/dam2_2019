@@ -1,8 +1,2 @@
 
 y	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(é½ı‘ÿÿÿÿÿ8Àì­¾İ.
-©
-java:S4449"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(Øè¥ıÿÿÿÿ8Àì­¾İ.
-d
-java:S2259"IA "NullPointerException" could be thrown; "getMessage()" can return null.(¶ÅĞ˜8Àì­¾İ.
-S
-java:S3878"8Remove this array creation and simply pass the elements.(Š¶Ìø8Àì­¾İ.

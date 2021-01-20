@@ -20,7 +20,7 @@ public class HibernateQuerys {
 
         Session session = HibernateUtils.getSession();
 
-//        Query q = session.createQuery("from Teacher ");
+        Query q = session.createQuery("from Teacher ");
 //        List<Teacher> teachers = q.getResultList();
 //        teachers.forEach(teacher -> teacher.getSubjectsByIdteacher().forEach(subject -> subject.getName()));
 //        session.close();
@@ -53,9 +53,9 @@ public class HibernateQuerys {
 //        session.close();
 //
 //        session = HibernateUtils.getSession();
-//        q = session.createQuery("select t,count(s.name) from Subject as s inner join s.teacher as t " +
+//        q = session.createQuery("select t,count(s.name) from Subject as s inner join s.teacherByIdteacher as t " +
 //                " where " +
-//                " t.start_date < :fecha ");
+//                " t.startDate < :fecha ");
 //        q.setParameter("fecha", LocalDate.now().minus(1, ChronoUnit.YEARS));
 //        q.stream().forEach(o -> {
 //            Object[] result = (Object[])o;
@@ -78,7 +78,7 @@ public class HibernateQuerys {
 //        q = session.createQuery("select count(s.name) as count from Subject as s inner join s.teacher as t " +
 //        " group by t " );
 //        q.stream().forEach(o -> System.out.println(o));
-//        session.close();
+       session.close();
 
 
     }

@@ -4,17 +4,16 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="connection.url">jdbc:mysql://dam2.mysql.iesquevedo.es:3335/hiberanteoscar</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="connection.url">jdbc:mysql://dam2.mysql.iesquevedo.es:3335/profesor_periodico</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.username">root</property>
-        <property name="connection.password">root</property>
-
         <!-- pool configuration -->
         <property name="hibernate.hikari.connectionTimeout">20000</property>
         <property name="hibernate.hikari.minimumIdle">10</property>
         <property name="hibernate.hikari.maximumPoolSize">20</property>
         <property name="hibernate.hikari.idleTimeout">300000</property>
+        <!-- DB schema will be updated if needed -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
 
 
@@ -25,8 +24,15 @@
         <mapping class="wizard.test1.Teacher"/>
         <mapping class="wizard.test1.Typeuser"/>
         <mapping class="wizard.test1.User"/>
+        <mapping class="dao.modelo.test.Articulos"/>
+        <mapping class="dao.modelo.test.ArticulosLeidos"/>
+        <mapping class="dao.modelo.test.Autores"/>
+        <mapping class="dao.modelo.test.Lectores"/>
+        <mapping class="dao.modelo.test.Periodicos"/>
+        <mapping class="dao.modelo.test.Suscripciones"/>
+        <mapping class="dao.modelo.test.TiposArticulo"/>
+        <mapping class="dao.modelo.test.TiposUsuario"/>
+        <mapping class="dao.modelo.test.Usuarios"/>
 
-        <!-- DB schema will be updated if needed -->
-        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
     </session-factory>
 </hibernate-configuration>

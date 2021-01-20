@@ -1,28 +1,28 @@
-/* 
+/*
  * Password Hashing With PBKDF2 (http://crackstation.net/hashing-security.htm).
  * Copyright (c) 2013, Taylor Hornby
  * All rights reserved.
  *
- * Redistribution and use in source and binary forms, with or without 
+ * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
  *
- * 1. Redistributions of source code must retain the above copyright notice, 
+ * 1. Redistributions of source code must retain the above copyright notice,
  * this list of conditions and the following disclaimer.
  *
  * 2. Redistributions in binary form must reproduce the above copyright notice,
- * this list of conditions and the following disclaimer in the documentation 
+ * this list of conditions and the following disclaimer in the documentation
  * and/or other materials provided with the distribution.
  *
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" 
- * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE 
- * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE 
- * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE 
- * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR 
- * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
- * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
- * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
- * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
- * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+ * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+ * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+ * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+ * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
 package dam.encriptacion;
@@ -50,11 +50,11 @@ import static org.apache.commons.codec.binary.Base64.encodeBase64;
  */
 public class PasswordHash {
 
-    public static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA256";
+    public static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA512";
 
     // The following constants may be changed without breaking existing hashes.
-    public static final int SALT_BYTE_SIZE = 24;
-    public static final int HASH_BYTE_SIZE = 24;
+    public static final int SALT_BYTE_SIZE = 48;
+    public static final int HASH_BYTE_SIZE = 48;
     public static final int PBKDF2_ITERATIONS = 1000;
 
     public static final int ITERATION_INDEX = 0;
@@ -117,7 +117,7 @@ public class PasswordHash {
         int iterations = Integer.parseInt(params[ITERATION_INDEX]);
         byte[] salt = fromHex(params[SALT_INDEX]);
         byte[] hash = fromHex(params[PBKDF2_INDEX]);
-        // Compute the hash of the provided password, using the same salt, 
+        // Compute the hash of the provided password, using the same salt,
         // iteration count, and hash length
         byte[] testHash = pbkdf2(password, salt, iterations, hash.length);
         // Compare the hashes in constant time. The password is correct if
@@ -205,7 +205,7 @@ public class PasswordHash {
 
     private static Cipher obtieneCipher(String clave,boolean paraCifrar) throws Exception {
 
-        final MessageDigest digest = 
+        final MessageDigest digest =
                 MessageDigest.getInstance("SHA-256");
         digest.update(clave.getBytes("UTF-8"));
         final SecretKeySpec key = new SecretKeySpec(
@@ -238,12 +238,12 @@ public class PasswordHash {
             // Test password validation
             boolean failure = false;
             //byte[] cifrado = cifra("Hola");
-            
+
             //String hex = toHex(cifrado);
-            
+
             //System.out.println(cifrado.length+ " "+new String(encodeBase64(cifrado))+" "+hex);
             //System.out.println(descifra(fromHex(hex)));
-            
+
             //System.out.println(Security.getProviders()[0].getName());
             System.out.println("Running tests...");
             for (int i = 0; i < 100; i++) {

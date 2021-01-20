@@ -27,6 +27,7 @@ public class Books {
   @POST
   public Book addUsuario(Book user)
   {
+
     if (user.getName().equals("error"))
           throw new CustomException("Hola q tal");
     return user;

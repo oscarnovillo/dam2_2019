@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hibernateTest" />
         <module name="hibernateTest (1) (quevedo)" />
+        <module name="hibernateTest" />
       </profile>
     </annotationProcessing>
   </component>

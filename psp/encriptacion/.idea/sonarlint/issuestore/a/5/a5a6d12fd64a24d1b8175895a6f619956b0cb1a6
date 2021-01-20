@@ -1,41 +1,50 @@
 
-]	java:S125x"<This block of commented-out lines of code should be removed.(Ÿ¾Æáşÿÿÿÿ8Œ Íé.
 `
-java:S1128">Remove this unused import 'java.security.InvalidKeyException'.(ì£ğ»ÿÿÿÿÿ8Œ Íé.
-]	java:S125z"<This block of commented-out lines of code should be removed.(«™îöùÿÿÿÿ8Œ Íé.
-f
-java:S1128"DRemove this unused import 'java.security.cert.CertificateException'.(èÙ¿ùÿÿÿÿ8Œ Íé.
-e
-java:S1128"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ8Œ Íé.
-X	java:S125a"<This block of commented-out lines of code should be removed.(…§¾8Œ Íé.
-X	java:S125|"<This block of commented-out lines of code should be removed.(¥œñ·8Œ Íé.
-^	java:S125"<This block of commented-out lines of code should be removed.(†Ğãÿùÿÿÿÿ8Œ Íé.
-]	java:S125O"<This block of commented-out lines of code should be removed.(ÕËÕúÿÿÿÿ8Œ Íé.
-X	java:S125^"<This block of commented-out lines of code should be removed.(ò”Òã8Œ Íé.
-Z
-java:S1128"=Remove this unused import 'java.security.SignatureException'.(¦ÃşŠ8Œ Íé.
-^	java:S125‰"<This block of commented-out lines of code should be removed.(Ğ¾¼úÿÿÿÿ8Œ Íé.
-]	java:S125~"<This block of commented-out lines of code should be removed.(¯ÒË¶üÿÿÿÿ8Œ Íé.
-]	java:S125t"<This block of commented-out lines of code should be removed.(½Åñÿÿÿÿÿ8Œ Íé.
-X	java:S125B"<This block of commented-out lines of code should be removed.(‘‘š8Œ Íé.
+java:S1128">Remove this unused import 'java.security.InvalidKeyException'.(ì£ğ»ÿÿÿÿÿ8Œ Íé.
+b
+java:S1854F"@Remove this useless assignment to local variable "clavePublica".(¬·¢üüÿÿÿÿ8¼¬øïë.
+]	java:S1257"<This block of commented-out lines of code should be removed.(‹úÈüÿÿÿÿ8¼¬øïë.
+^	java:S125¡"<This block of commented-out lines of code should be removed.(”× ¬şÿÿÿÿ8¼¬øïë.
 R
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8Œ Íé.
-^	java:S125"<This block of commented-out lines of code should be removed.(¶şç©ıÿÿÿÿ8Œ Íé.
-_
-java:S1128"BRemove this unused import 'java.security.NoSuchProviderException'.(®²»›8Œ Íé.
-^	java:S125…"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8Œ Íé.
-]	java:S125@"<This block of commented-out lines of code should be removed.(«îšşÿÿÿÿ8Œ Íé.
-W
-java:S1191)"5Use classes from the Java API instead of Sun classes.(ÂÙ€Œùÿÿÿÿ8Œ Íé.
+java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8Œ Íé.
 `
-java:S1128%">Remove this unused import 'javax.naming.InvalidNameException'.(¨´å‰ûÿÿÿÿ8Œ Íé.
-X	java:S125F"<This block of commented-out lines of code should be removed.(‹ª ó8Œ Íé.
+java:S11283">Remove this unused import 'javax.naming.InvalidNameException'.(¨´å‰ûÿÿÿÿ8Œ Íé.
+U	java:S106ƒ"9Replace this use of System.out or System.err by a logger.(Å±Ën8¼¬øïë.
+]	java:S125"<This block of commented-out lines of code should be removed.(‹úÈüÿÿÿÿ8Œ Íé.
+U	java:S106§"9Replace this use of System.out or System.err by a logger.(Å±Ën8¼¬øïë.
+V	java:S106Â"9Replace this use of System.out or System.err by a logger.(ä¸Ø8¼¬øïë.
+]	java:S125o"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8¼¬øïë.
+F
+java:S5542­"#Use secure mode and padding scheme.(—×«øÿÿÿÿ8¼¬øïë.
+X	java:S125	"<This block of commented-out lines of code should be removed.(”¶ƒ8¼¬øïë.
+Y	java:S125ˆ"<This block of commented-out lines of code should be removed.(ĞÛœ¯8¼¬øïë.
+P
+java:S1128".Remove this unused import 'java.security.Key'.(ŞÃ“úÿÿÿÿ8¼¬øïë.
+]	java:S125h"<This block of commented-out lines of code should be removed.(›¤ïûûÿÿÿÿ8¼¬øïë.
+V	java:S106 "9Replace this use of System.out or System.err by a logger.(–„ôî8¼¬øïë.
+Z
+java:S1128%"=Remove this unused import 'java.security.SignatureException'.(¦ÃşŠ8Œ Íé.
 d
-java:S1128!"BRemove this unused import 'java.security.interfaces.RSAPublicKey'.(‘±–˜ÿÿÿÿÿ8Œ Íé.
-]	java:S1254"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8Œ Íé.
-]	java:S1257"<This block of commented-out lines of code should be removed.(ÑçÆòùÿÿÿÿ8Œ Íé.
-]	java:S1259"<This block of commented-out lines of code should be removed.(¼Š—Ôøÿÿÿÿ8Œ Íé.
-]	java:S125T"<This block of commented-out lines of code should be removed.(Ğ„ÀÀıÿÿÿÿ8Œ Íé.
-X	java:S125j"<This block of commented-out lines of code should be removed.(‚‚ûù8Œ Íé.
-X	java:S125r"<This block of commented-out lines of code should be removed.(ÆŞ³8Œ Íé.
-W	java:S125f"<This block of commented-out lines of code should be removed.(ì›¨8Œ Íé.
+java:S1128+"BRemove this unused import 'java.security.interfaces.RSAPublicKey'.(‘±–˜ÿÿÿÿÿ8Œ Íé.
+[	java:S106Ÿ"9Replace this use of System.out or System.err by a logger.(…ºáøÿÿÿÿ8¼¬øïë.
+Z	java:S106}"9Replace this use of System.out or System.err by a logger.(×Õêèÿÿÿÿÿ8¼¬øïë.
+e
+java:S1128"CRemove this unused import 'java.security.NoSuchAlgorithmException'.(ŒòÍ¾şÿÿÿÿ8Œ Íé.
+]	java:S125V"<This block of commented-out lines of code should be removed.(´ÈÍĞùÿÿÿÿ8¼¬øïë.
+_
+java:S1854|"=Remove this useless assignment to local variable "publicKey".(»•ˆ‘şÿÿÿÿ8¼¬øïë.
+]
+java:S1854E"@Remove this useless assignment to local variable "clavePrivada".(©¥ú8¼¬øïë.
+N
+java:S1481E"1Remove this unused "clavePrivada" local variable.(©¥ú8¼¬øïë.
+S
+java:S1481F"1Remove this unused "clavePublica" local variable.(¬·¢üüÿÿÿÿ8¼¬øïë.
+f
+java:S1128'"DRemove this unused import 'java.security.cert.CertificateException'.(èÙ¿ùÿÿÿÿ8Œ Íé.
+_
+java:S1128 "BRemove this unused import 'java.security.NoSuchProviderException'.(®²»›8Œ Íé.
+[	java:S106¼"9Replace this use of System.out or System.err by a logger.(ŞƒåÓúÿÿÿÿ8¼¬øïë.
+P
+java:S1481|".Remove this unused "publicKey" local variable.(»•ˆ‘şÿÿÿÿ8¼¬øïë.
+X
+java:S1141¾"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8¼¬øïë.

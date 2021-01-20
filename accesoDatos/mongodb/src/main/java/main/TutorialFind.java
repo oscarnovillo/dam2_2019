@@ -24,7 +24,7 @@ import static com.mongodb.client.model.Updates.set;
 public class TutorialFind {
 
   public static void main(String[] args) {
-    MongoClient mongo = MongoClients.create("mongodb://dam2.tomcat.iesquevedo.es:3334");
+    MongoClient mongo = MongoClients.create("mongodb://localhost:27017");
 
     MongoDatabase db = mongo.getDatabase("oscar");
 
@@ -39,6 +39,7 @@ public class TutorialFind {
     System.out.println("find con expresion regular");
 
     est.find(new Document("name",new Document("$regex","i.*"))).into(new ArrayList()).forEach(System.out::println);
+
 
 
     System.out.println("find con expresion regular y or");
@@ -72,8 +73,12 @@ public class TutorialFind {
 
     System.out.println("projection de solo algun elemento de un array");
 
-    est.find().projection(new Document("name",1).append("_id",0).append("cosas.nombre",1).append("cosas",new Document("$elemMatch",
-        new Document("$gt",new Document("cantidad",1))))).into(new ArrayList()).forEach(System.out::println);
+    est.find(Document.parse("{ \"cosas.cantidad\": { $exists: true}}")).into(new ArrayList()).forEach(System.out::println);
+
+    est.find(Document.parse("{ \"cosas.cantidad\": { $exists: true}}"))
+            .projection(new Document("name",1).append("_id",0).append("cosas",new Document("$elemMatch",
+        new Document("$gt",new Document("cantidad",1)))))
+            .into(new ArrayList()).forEach(System.out::println);
 
 
 

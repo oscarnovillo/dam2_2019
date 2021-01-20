@@ -8,6 +8,8 @@ import org.hibernate.exception.ConstraintViolationException;
 import wizard.test1.Subject;
 import wizard.test1.Teacher;
 
+import javax.persistence.EntityManager;
+
 public class HibernateTest {
 
     public static void main(String[] args) {
@@ -18,7 +20,9 @@ public class HibernateTest {
 
         Subject s = session.get(
                 Subject.class,9);
-        System.out.println(s);
+
+        
+    System.out.println(s);
 
         session.close();
     Teacher t = new Teacher();

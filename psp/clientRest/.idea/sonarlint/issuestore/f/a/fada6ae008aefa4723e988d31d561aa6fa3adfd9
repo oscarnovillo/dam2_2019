@@ -1,27 +1,27 @@
 
-[
-java:S1854";Remove this useless assignment to local variable "service".(àéüµùÿÿÿÿ8µ¿‡¿Ý.
-R
-java:S1172"2Remove this unused method parameter "actionEvent".(„Ëˆ‚ùÿÿÿÿ8µ¿‡¿Ý.
-R
-java:S1172"2Remove this unused method parameter "actionEvent".(¿éÖãøÿÿÿÿ8µ¿‡¿Ý.
-\
-java:S1075"ARefactor your code to get this URI from a customizable parameter.(Àÿ°–8µ¿‡¿Ý.
-V	java:S125"<This block of commented-out lines of code should be removed.(¸Õ¸æ8µ¿‡¿Ý.
-’
-java:S1130"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(íÿ¥í8µ¿‡¿Ý.
-V	java:S125"<This block of commented-out lines of code should be removed.(Ê¢‹ñ8µ¿‡¿Ý.
+Y	java:S125”"<This block of commented-out lines of code should be removed.(¸Õ¸æ8µ¿‡¿Ý.
+Š
+java:S1130€"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¨›¬8œá›ÃÝ.
 O
-java:S3740"/Provide the parametrized type for this generic.(µýáùÿÿÿÿ8µ¿‡¿Ý.
-‡
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(¨›¬8œá›ÃÝ.
+java:S1602š",Remove useless curly braces around statement(ÇÍóúÿÿÿÿ8µ¿‡¿Ý.
+S
+java:S1144<"6Remove this unused private "pedirHttpClient11" method.(¹ÕŽÛ8µ¿‡¿Ý.
+U
+java:S1172Ì"2Remove this unused method parameter "actionEvent".(„Ëˆ‚ùÿÿÿÿ8µ¿‡¿Ý.
+Y	java:S125ä"<This block of commented-out lines of code should be removed.(Ê¢‹ñ8µ¿‡¿Ý.
+•
+java:S1130Ú"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(íÿ¥í8µ¿‡¿Ý.
+P
+java:S1172Ú"2Remove this unused method parameter "actionEvent".(íÿ¥í8µ¿‡¿Ý.
+T
+java:S1172-"2Remove this unused method parameter "actionEvent".(¿éÖãøÿÿÿÿ8µ¿‡¿Ý.
+s
+java:S1104‚"PMake test a static final constant or non-public and provide accessors if needed.(ˆ°¢–úÿÿÿÿ8µ¿‡¿Ý.
+O
+java:S1481¥",Remove this unused "service" local variable.(àéüµùÿÿÿÿ8µ¿‡¿Ý.
+^
+java:S1075E"ARefactor your code to get this URI from a customizable parameter.(Àÿ°–8µ¿‡¿Ý.
 Q
-java:S1144"6Remove this unused private "pedirHttpClient11" method.(¹ÕŽÛ8µ¿‡¿Ý.
-L
-java:S1602",Remove useless curly braces around statement(ÇÍóúÿÿÿÿ8µ¿‡¿Ý.
-L
-java:S1481",Remove this unused "service" local variable.(àéüµùÿÿÿÿ8µ¿‡¿Ý.
-p
-java:S1104"PMake test a static final constant or non-public and provide accessors if needed.(ˆ°¢–úÿÿÿÿ8µ¿‡¿Ý.
-M
-java:S1172"2Remove this unused method parameter "actionEvent".(íÿ¥í8µ¿‡¿Ý.
+java:S3740$"/Provide the parametrized type for this generic.(µýáùÿÿÿÿ8µ¿‡¿Ý.
+^
+java:S1854¥";Remove this useless assignment to local variable "service".(àéüµùÿÿÿÿ8µ¿‡¿Ý.

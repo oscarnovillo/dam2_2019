@@ -33,7 +33,7 @@ public class MainDriver {
     CodecRegistry pojoCodecRegistry = fromRegistries(MongoClientSettings.getDefaultCodecRegistry(),
         fromProviders(PojoCodecProvider.builder().automatic(true).build()));
 
-    MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://dam2.tomcat.iesquevedo.es:3334"));
+    MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://informatica.iesquevedo.es:2323"));
 
     MongoDatabase db = mongoClient.getDatabase("oscar");
 

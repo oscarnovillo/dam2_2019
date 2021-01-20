@@ -1,41 +1,41 @@
 
-S
-java:S1854"8Remove this useless assignment to local variable "user".(ž¥§¨8¸íŽƒ¡.
-k
-java:S1989"PHandle the following exception that could be thrown by "toJson": JsonbException.(¬ðÑñ8¸íŽƒ¡.
-D
-java:S1481")Remove this unused "user" local variable.(ž¥§¨8¸íŽƒ¡.
-X	java:S106"9Replace this use of System.out or System.err by a logger.(åö¡½úÿÿÿÿ8¸íŽƒ¡.
-k
-java:S1989"PHandle the following exception that could be thrown by "getReader": IOException.(·çÎ€8¸íŽƒ¡.
-[	java:S125"<This block of commented-out lines of code should be removed.(©ˆ…ïøÿÿÿÿ8¸íŽƒ¡.
-k
-java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(û†¶Ü8¸íŽƒ¡.
-V	java:S125"<This block of commented-out lines of code should be removed.(š×–Ñ8¸íŽƒ¡.
-m
-java:S1989"RHandle the following exception that could be thrown by "fromJson": JsonbException.(·çÎ€8¸íŽƒ¡.
 _
 java:S1854"?Remove this useless assignment to local variable "errorString".(ŽÒÜ•üÿÿÿÿ8¸íŽƒ¡.
+k
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(¬ðÑñ8¸íŽƒ¡.
+k
+java:S1989"PHandle the following exception that could be thrown by "getReader": IOException.(·çÎ€8¸íŽƒ¡.
+m
+java:S1989"RHandle the following exception that could be thrown by "fromJson": JsonbException.(·çÎ€8¸íŽƒ¡.
+k
+java:S1989"PHandle the following exception that could be thrown by "toJson": JsonbException.(¬ðÑñ8¸íŽƒ¡.
 G
 java:S1612",Replace this lambda with a method reference.(òÿÅù8¸íŽƒ¡.
 k
 java:S1989"PHandle the following exception that could be thrown by "getReader": IOException.(ž¥§¨8¸íŽƒ¡.
-V	java:S125"<This block of commented-out lines of code should be removed.(š×–Ñ8¸íŽƒ¡.
-m
-java:S1989"RHandle the following exception that could be thrown by "fromJson": JsonbException.(ž¥§¨8¸íŽƒ¡.
 Z
 java:S1161":Add the "@Override" annotation above this method signature(šŒêóûÿÿÿÿ8¸íŽƒ¡.
-\
-java:S1128"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8¸íŽƒ¡.
-k
-java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(¬ðÑñ8¸íŽƒ¡.
-k
-java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(—Óñƒ8¸íŽƒ¡.
-U
-java:S1161":Add the "@Override" annotation above this method signature(ùŠœ¬8¸íŽƒ¡.
 k
 java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(Ó–éü8¸íŽƒ¡.
-V	java:S125"<This block of commented-out lines of code should be removed.(ð¾ï‚8¸íŽƒ¡.
-V	java:S125"<This block of commented-out lines of code should be removed.(˜Ù¢ï8¸íŽƒ¡.
+U
+java:S1161":Add the "@Override" annotation above this method signature(ùŠœ¬8¸íŽƒ¡.
+\
+java:S1128"BRemove this unused import 'javax.validation.constraints.NotEmpty'.(ÿÿör8¸íŽƒ¡.
+m
+java:S1989"RHandle the following exception that could be thrown by "fromJson": JsonbException.(ž¥§¨8¸íŽƒ¡.
 P
 java:S1481"0Remove this unused "errorString" local variable.(ŽÒÜ•üÿÿÿÿ8¸íŽƒ¡.
+k
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(û†¶Ü8¸íŽƒ¡.
+X	java:S106"9Replace this use of System.out or System.err by a logger.(åö¡½úÿÿÿÿ8¸íŽƒ¡.
+[	java:S125"<This block of commented-out lines of code should be removed.(©ˆ…ïøÿÿÿÿ8¸íŽƒ¡.
+S
+java:S1854"8Remove this useless assignment to local variable "user".(ž¥§¨8¸íŽƒ¡.
+V	java:S125"<This block of commented-out lines of code should be removed.(ð¾ï‚8¸íŽƒ¡.
+D
+java:S1481")Remove this unused "user" local variable.(ž¥§¨8¸íŽƒ¡.
+V	java:S125"<This block of commented-out lines of code should be removed.(š×–Ñ8¸íŽƒ¡.
+k
+java:S1989"PHandle the following exception that could be thrown by "getWriter": IOException.(—Óñƒ8¸íŽƒ¡.
+V	java:S125"<This block of commented-out lines of code should be removed.(˜Ù¢ï8¸íŽƒ¡.
+V	java:S125"<This block of commented-out lines of code should be removed.(š×–Ñ8¸íŽƒ¡.
