@@ -1,5 +1,5 @@
 
 # Datasource local storage ignored files
 /dataSources.local.xml
-sonarlint/*
+/sonarlint/
 /dataSources/
